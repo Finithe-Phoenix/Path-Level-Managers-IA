@@ -1,0 +1,208 @@
+1
+00:00:00,340 --> 00:00:05,362
+An engineering manager has three coding
+tools available and a team whose small
+
+2
+00:00:05,362 --> 00:00:07,294
+fixes sit in the review queue.
+
+3
+00:00:07,474 --> 00:00:12,514
+For this fictional order service, the
+business task is to make routine validator
+
+4
+00:00:12,514 --> 00:00:15,539
+fixes easier to review while preserving
+quality.
+
+5
+00:00:15,719 --> 00:00:20,309
+The manager starts with a real kind of
+change: a ticket that spells out which
+
+6
+00:00:20,309 --> 00:00:21,680
+quantities should pass.
+
+7
+00:00:21,860 --> 00:00:24,840
+This gives the team a clear way to judge
+the result.
+
+8
+00:00:26,298 --> 00:00:28,583
+The ticket gives us four examples.
+
+9
+00:00:28,763 --> 00:00:30,366
+One and five are valid.
+
+10
+00:00:30,546 --> 00:00:33,259
+Zero and negative one should be rejected.
+
+11
+00:00:33,439 --> 00:00:37,556
+We also want a small diff and a test that
+fails before the fix.
+
+12
+00:00:37,736 --> 00:00:43,268
+For a manager, these are useful acceptance
+criteria because a reviewer can check them
+
+13
+00:00:43,268 --> 00:00:44,179
+independently.
+
+14
+00:00:44,359 --> 00:00:48,326
+Look for equally clear examples in the
+tasks you want to pilot.
+
+15
+00:00:48,506 --> 00:00:51,908
+The team can discuss quality using the
+same evidence.
+
+16
+00:00:53,382 --> 00:00:58,447
+Copilot in Visual Studio Code is already
+where the author edits and checks diffs.
+
+17
+00:00:58,627 --> 00:01:03,648
+Claude Code and OpenCode are available in
+the approved corporate Google Cloud
+
+18
+00:01:03,648 --> 00:01:04,300
+workspace.
+
+19
+00:01:04,480 --> 00:01:10,014
+That remote workspace is a sensible option
+for tasks that genuinely need its tooling.
+
+20
+00:01:10,194 --> 00:01:13,770
+Here, the small change fits the existing
+editor workflow.
+
+21
+00:01:13,950 --> 00:01:18,592
+We choose Copilot for the pilot and
+reserve the remote tools for a separate
+
+22
+00:01:18,592 --> 00:01:20,510
+test with a reason to use them.
+
+23
+00:01:21,965 --> 00:01:24,679
+The model is a separate choice from the
+editor.
+
+24
+00:01:24,859 --> 00:01:28,412
+Suppose two model options are enabled by
+policy.
+
+25
+00:01:28,592 --> 00:01:33,673
+Give them the same eight synthetic tasks,
+the same instructions, and the same time
+
+26
+00:01:33,673 --> 00:01:34,107
+budget.
+
+27
+00:01:34,287 --> 00:01:39,429
+Ask a reviewer to score each final diff
+against the written acceptance criteria.
+
+28
+00:01:39,609 --> 00:01:43,118
+Capture how long the author had to steer
+or repair the work.
+
+29
+00:01:43,298 --> 00:01:47,469
+Model A and model B are placeholders for
+your approved choices.
+
+30
+00:01:48,923 --> 00:01:54,010
+In this illustration, model A met all
+criteria on seven of eight tasks.
+
+31
+00:01:54,190 --> 00:01:56,028
+Model B met them on eight.
+
+32
+00:01:56,208 --> 00:01:58,847
+The author spent a little longer with
+model B.
+
+33
+00:01:59,027 --> 00:02:04,099
+Since the team agreed that every boundary
+check must pass for this small benchmark,
+
+34
+00:02:04,099 --> 00:02:05,810
+model B is the pilot choice.
+
+35
+00:02:05,990 --> 00:02:08,852
+Keep the scores and the sample size
+together.
+
+36
+00:02:09,032 --> 00:02:13,699
+Eight synthetic tasks give a practical
+starting point, and the pilot will test
+
+37
+00:02:13,699 --> 00:02:15,195
+how that choice holds up.
+
+38
+00:02:16,673 --> 00:02:20,311
+Write down the decision while it is still
+easy to reconstruct.
+
+39
+00:02:20,491 --> 00:02:25,532
+We are using Copilot in the editor with
+the second approved model for tightly
+
+40
+00:02:25,532 --> 00:02:27,038
+scoped validator fixes.
+
+41
+00:02:27,218 --> 00:02:29,577
+The engineering lead owns the pilot.
+
+42
+00:02:29,757 --> 00:02:32,267
+A human reviews every proposed change.
+
+43
+00:02:32,447 --> 00:02:37,993
+Revisit the choice if the approved model
+changes, scope expands, or review quality
+
+44
+00:02:37,993 --> 00:02:38,399
+slips.
+
+45
+00:02:38,579 --> 00:02:44,041
+The next episode turns those expectations
+into explicit boundaries for an agent.
