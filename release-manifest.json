@@ -1,0 +1,85 @@
+{
+  "lessonsSha256": "c30337a373f7866dc0278d5356b8f2947acec9b6dea2fc4235eacd19b5f092b5",
+  "episodes": [
+    {
+      "id": "L01",
+      "title": "Choose a Model and Tool for a Business Task",
+      "frames": 5267,
+      "fps": 24,
+      "chapters": 6,
+      "sha256": {
+        "videos/L01.mp4": "cbe6c7f7a21739cb0da0dd47b609634646fe82166467a691111a6e84fe536f73",
+        "subtitles/L01.en.srt": "fdbd427802d22ed8f8d6244724703540f21c404327c11256ec8e4a0b045000f2",
+        "narration/L01/narration.m4a": "306fce8ed45e55de24969186e352259efe0bc0254dd94d1ab9a41c5212690a35",
+        "narration/L01/timing.json": "68ac53ba5042e1d9c754184a552fb98aff092bfb04748cdf20e04b37dee6639f",
+        "takes/L01/episode.json": "035e26594451d5d70a4809575cb249be63f284fc3e8c4439dfd329955a08826a",
+        "takes/L01/narration.m4a": "1aba2aa7fbb801ac15dd809181358fcda8303e7ca38ea0b348d93fdea25da28b",
+        "takes/L01/captions.srt": "85c566eb4a3206b6826a6b8c56a055eef6b929ca259ba1b563e05e5788d4bff9"
+      }
+    },
+    {
+      "id": "L02",
+      "title": "Decide What an Agent Can Do",
+      "frames": 5494,
+      "fps": 24,
+      "chapters": 6,
+      "sha256": {
+        "videos/L02.mp4": "39ed40ef6b22407014df023b97549da147b9500e61cd4906e78577536a892099",
+        "subtitles/L02.en.srt": "513e6942fefe23e092ef330908f92321452fd126cc5a7f68e4bd4d7b1eff78eb",
+        "narration/L02/narration.m4a": "2a610a1adde656b77456872ca710e94d158603416a521885c233e315ba964ddb",
+        "narration/L02/timing.json": "0d9ef855b7a1003e2690151a48895c539c69609cb6d46272b757366aece13ee1",
+        "takes/L02/episode.json": "b72a89f7ba4bb3dc09ed84127d8746f8c1e8b1496417dddaf091ee0eb8783751",
+        "takes/L02/narration.m4a": "dc229f3bc72dab5467a2647c068abe4225c8f441c084e85190fb887da45ceca7",
+        "takes/L02/captions.srt": "383afdf835101642b8faeb611fc4a31ff01d06e9c7ed925e626ad992e942fcb9"
+      }
+    },
+    {
+      "id": "L03",
+      "title": "Design a Pilot Around a Real Bottleneck",
+      "frames": 5395,
+      "fps": 24,
+      "chapters": 6,
+      "sha256": {
+        "videos/L03.mp4": "6b9ef9afd7ae0599c8cb3e980e1850c9a312eb9a0cdd8a7f13aa69c30b69a159",
+        "subtitles/L03.en.srt": "18314feb9883a8a04670a03c11646929e03923e304c32a5915b5d633b67e2c14",
+        "narration/L03/narration.m4a": "56712ceac67f6ccb05ad56592748aa84f6ab567cd96ec6634ce46df85aedbea0",
+        "narration/L03/timing.json": "c36aacf9c9b4c26f8f6c32a10f73c4f436f94d1313d6cfaf8bbdbf5d91caf8c7",
+        "takes/L03/episode.json": "3e3878d4514544671f4c2256a8e0c025a89878c8eee1027e1a132710525ea68f",
+        "takes/L03/narration.m4a": "44faa495dc0bee39743a6283db8feb666e2223699b0adcb35c30a270af243ae7",
+        "takes/L03/captions.srt": "d2e7dccc4de66c62441af5f4a6e2753286dfdd575835b9bf5e47936402b6ffa2"
+      }
+    },
+    {
+      "id": "L04",
+      "title": "Measure Review Time, Quality, and Cost",
+      "frames": 5257,
+      "fps": 24,
+      "chapters": 6,
+      "sha256": {
+        "videos/L04.mp4": "e08ecc6741bb5280abe75677902fef2e6b4001b57a3aa6b26a5edd83b26b6555",
+        "subtitles/L04.en.srt": "202f662cb6803e5ec1d2661be7fa48ff54d24b292911c71fcbae165e0f748b26",
+        "narration/L04/narration.m4a": "b3823f2bb4b1cfdfe0e60df55d0965104c6e763bca3476c453462440af13f290",
+        "narration/L04/timing.json": "eb2ca10cdd63783e41e4c0024244f425ff907cbc4bb67081cd3121e995924544",
+        "takes/L04/episode.json": "24ed539fef3612f700597a556351bfe98acea0a3fbd47909e096c496e198be19",
+        "takes/L04/narration.m4a": "a5f07108a8c1ef629e719b98bae841101e263e557afb6f9268af7705fe106e70",
+        "takes/L04/captions.srt": "d9f0d1c1750cece6386b6fcaf07f6f01388e2ed5e2fbedaf09653451e50850f5"
+      }
+    },
+    {
+      "id": "L05",
+      "title": "Decide Whether to Expand, Adjust, or Pause",
+      "frames": 5326,
+      "fps": 24,
+      "chapters": 6,
+      "sha256": {
+        "videos/L05.mp4": "960b50a232ab8a3ca86cc6a4ef2bced5190f190ff5bbb45fede8b7717c07c383",
+        "subtitles/L05.en.srt": "6e4dc4a007530cea3959123e94fec8c495fd9977296a6172d2c91d97ee24a10e",
+        "narration/L05/narration.m4a": "77d7b337798f43f762ceb0dc23a2764f00143a04584eb9db5f562361e3ab7ce7",
+        "narration/L05/timing.json": "5cfca1f4e67bf49b2ddde7c9eaa0f3e9222503ff8dcc56a715ca25c89b76a1c3",
+        "takes/L05/episode.json": "97f7059be541e515c84d79f31b809186d5a587cefa8626d743fc8ff6bf0ddcf4",
+        "takes/L05/narration.m4a": "d2c083c657bdcde40a484c25ea4b2a928642378f61d205e0e0062c143974663b",
+        "takes/L05/captions.srt": "0e9cdcaa7fc6c4a52935884947fe2bd14a22131a3d68ea4e5952e2e1d192d76d"
+      }
+    }
+  ]
+}
