@@ -1,209 +1,297 @@
 1
-00:00:00,340 --> 00:00:03,309
-The team says it wants to ship small fixes
-faster.
+00:00:00,427 --> 00:00:04,042
+I have two timestamps on this example
+pull request.
 
 2
-00:00:03,489 --> 00:00:08,238
-Before starting the pilot, the manager
-traces a few pull requests through
+00:00:04,096 --> 00:00:06,868
+The author marked it ready at ten on
+Monday.
 
 3
-00:00:08,238 --> 00:00:12,661
-authoring, readiness, the first
-substantive human review, and merge.
+00:00:06,923 --> 00:00:10,066
+The first teammate commented on the code
+at two on Tuesday.
 
 4
-00:00:12,841 --> 00:00:15,917
-The long wait appears after the change is
-ready.
+00:00:10,739 --> 00:00:15,087
+The team counts business hours, so with
+a nine-to-five schedule that is seven
 
 5
-00:00:16,097 --> 00:00:18,734
-A bottleneck can sit anywhere in that
-sequence.
+00:00:15,141 --> 00:00:18,340
+hours on Monday and five on Tuesday,
+twelve in all.
 
 6
-00:00:18,914 --> 00:00:23,999
-Once the team identifies this one, it can
-aim its intervention at better-prepared
+00:00:18,995 --> 00:00:23,208
+The baseline across forty requests is
+eighteen business hours.
 
 7
-00:00:23,999 --> 00:00:25,003
-review requests.
+00:00:23,289 --> 00:00:25,654
+This measurement starts at readiness.
 
 8
-00:00:26,465 --> 00:00:31,630
-Our hypothesis is that narrow changes with
-explicit boundary tests and a clear pull
+00:00:25,735 --> 00:00:29,486
+It tells the manager where work is
+waiting after the author has asked for a
 
 9
-00:00:31,630 --> 00:00:35,862
-request summary will make the team more
-willing to pick up a review.
-
-10
-00:00:36,042 --> 00:00:39,937
-Copilot helps the author draft that small
-change and its tests.
-
-11
-00:00:40,117 --> 00:00:43,319
-The existing review rules apply to every
-request.
-
-12
-00:00:43,499 --> 00:00:49,154
-Define eligibility up front: routine
-order-validator fixes with a reproducible
-
-13
-00:00:49,154 --> 00:00:50,314
-acceptance case.
-
-14
-00:00:50,494 --> 00:00:53,288
-Keep larger changes on the normal path.
-
-15
-00:00:54,757 --> 00:00:59,529
-The team takes forty eligible pull
-requests from the previous four weeks as
-
-16
-00:00:59,529 --> 00:01:00,357
-its baseline.
-
-17
-00:01:00,537 --> 00:01:06,224
-It then runs a four-week pilot, aiming for
-a similar task mix, size, and coverage of
-
-18
-00:01:06,224 --> 00:01:07,307
-reviewer shifts.
-
-19
-00:01:07,487 --> 00:01:11,809
-One clear eligibility rule helps everyone
-count consistently.
-
-20
-00:01:11,989 --> 00:01:16,627
-Record staffing, backlog, or changes in
-release cadence as they happen.
-
-21
-00:01:16,807 --> 00:01:21,779
-Those factors may affect the result even
-when the tool and process are documented.
-
-22
-00:01:23,257 --> 00:01:27,988
-Measure business hours from ready for
-review to the first substantive human
-
-23
-00:01:27,988 --> 00:01:28,430
+00:00:29,540 --> 00:00:30,025
 review.
 
+10
+00:00:30,725 --> 00:00:34,380
+Try tracing the same two points on a
+pull request from your team.
+
+11
+00:00:36,435 --> 00:00:40,240
+Suppose reviewers say small fixes are
+hard to pick up when the expected
+
+12
+00:00:40,295 --> 00:00:42,659
+outcomes are buried in the ticket.
+
+13
+00:00:42,713 --> 00:00:47,578
+The pilot gives every eligible change a
+focused diff, clear boundary tests,
+
+14
+00:00:47,654 --> 00:00:48,712
+and a short summary.
+
+15
+00:00:49,378 --> 00:00:52,531
+Copilot helps the author prepare that
+package.
+
+16
+00:00:52,613 --> 00:00:55,140
+Ask for a prediction the team can check.
+
+17
+00:00:55,195 --> 00:00:59,689
+We expect those pull requests to reach
+their first substantive review sooner.
+
+18
+00:01:00,382 --> 00:01:03,915
+Write an eligibility rule and try two
+examples.
+
+19
+00:01:03,970 --> 00:01:06,660
+The zero-quantity issue qualifies.
+
+20
+00:01:06,742 --> 00:01:11,498
+A database migration with several
+services and design decisions keeps its
+
+21
+00:01:11,552 --> 00:01:12,614
+usual process.
+
+22
+00:01:14,894 --> 00:01:18,754
+Set aside four weeks for the baseline
+and four for the pilot.
+
+23
+00:01:18,835 --> 00:01:23,347
+Use the same service and the same
+definition of an eligible fix in both
+
 24
-00:01:28,610 --> 00:01:30,617
-A comment about the code counts.
+00:01:23,401 --> 00:01:24,065
+windows.
 
 25
-00:01:30,797 --> 00:01:32,955
-A bot status update does not.
+00:01:24,720 --> 00:01:28,823
+Keep a small table of the task mix and
+which reviewers covered the queue each
 
 26
-00:01:33,135 --> 00:01:38,204
-Pair that measure with active review
-effort, rework, post-merge defects, and
+00:01:28,878 --> 00:01:29,748
+week.
 
 27
-00:01:38,204 --> 00:01:39,738
-incremental pilot cost.
+00:01:29,829 --> 00:01:32,804
+Suppose the pilot's third week had an
+extra reviewer.
 
 28
-00:01:39,918 --> 00:01:44,386
-Everyone agrees on what counts as rework
-before labeling any cases.
+00:01:33,521 --> 00:01:35,396
+Flag it in the scorecard.
 
 29
-00:01:44,566 --> 00:01:48,820
-The measurement owner checks the units,
-denominators, and any missing
+00:01:35,478 --> 00:01:38,195
+That coverage could contribute to the
+result.
 
 30
-00:01:48,820 --> 00:01:49,621
-observations.
+00:01:38,277 --> 00:01:41,973
+This is a useful pilot design for a
+local decision.
 
 31
-00:01:51,090 --> 00:01:54,460
-The baseline median wait is eighteen
-business hours.
+00:01:42,055 --> 00:01:45,805
+A historical comparison leaves several
+explanations open,
 
 32
-00:01:54,640 --> 00:01:56,680
-The target is fourteen or less.
+00:01:45,860 --> 00:01:48,745
+so save the context and bring it to the
+review meeting.
 
 33
-00:01:56,860 --> 00:02:01,420
-The team can absorb up to three extra
-minutes of active review effort from its
+00:01:51,033 --> 00:01:54,131
+Agree on how to count before you start
+measuring.
 
 34
-00:02:01,420 --> 00:02:03,057
-twenty-four minute baseline.
+00:01:54,213 --> 00:01:57,420
+A substantive first review discusses the
+change.
 
 35
-00:02:03,237 --> 00:02:07,782
-It sets a rework ceiling of fifteen
-percent, monitors defects, and budgets
+00:01:57,501 --> 00:02:01,415
+A bot result or an acknowledgment such
+as ‘looking soon’ leaves the clock
 
 36
-00:02:07,782 --> 00:02:10,607
-three hundred dollars in incremental
-spending.
+00:02:01,469 --> 00:02:01,877
+running.
 
 37
-00:02:10,787 --> 00:02:16,589
-A serious data or access incident triggers
-a pause and the agreed incident response.
+00:02:02,543 --> 00:02:07,707
+Active review minutes measure time spent
+reading and evaluating the pull request.
 
 38
-00:02:18,048 --> 00:02:23,095
-The pilot record lists the service,
-eligibility, baseline, review process,
+00:02:07,789 --> 00:02:12,572
+Material rework means the author has to
+change an important part of the proposed
 
 39
-00:02:23,095 --> 00:02:25,004
-metrics, and decision rules.
+00:02:12,626 --> 00:02:15,106
+behavior, tests, or scope.
 
 40
-00:02:25,184 --> 00:02:30,207
-Link it to one sample issue and pull
-request where the author and reviewer have
+00:02:15,773 --> 00:02:19,034
+A spelling suggestion is a different
+kind of feedback.
 
 41
-00:02:30,207 --> 00:02:31,669
-clear responsibilities.
+00:02:19,115 --> 00:02:23,056
+Give reviewers two sample comments and
+have them label each one.
 
 42
-00:02:31,849 --> 00:02:36,392
-The manager checks in weekly to look for
-access or quality problems.
+00:02:23,138 --> 00:02:26,500
+Compare answers so the team starts with
+a common definition.
 
 43
-00:02:36,572 --> 00:02:40,360
-At the end, the team reviews its evidence
-and context together.
+00:02:28,756 --> 00:02:32,289
+The team sets the finish line before the
+results arrive.
 
 44
-00:02:40,540 --> 00:02:45,084
-A historical comparison can support a
-decision while leaving room for
+00:02:32,371 --> 00:02:36,311
+Median wait should drop from eighteen
+business hours to fourteen or less.
 
 45
-00:02:45,084 --> 00:02:46,928
-uncertainty about causation.
+00:02:37,001 --> 00:02:40,969
+Active review starts at twenty-four
+minutes, and the team allows three
+
+46
+00:02:41,023 --> 00:02:42,708
+additional minutes.
+
+47
+00:02:42,789 --> 00:02:46,013
+Twenty-four plus three gives us a
+twenty-seven minute limit.
+
+48
+00:02:46,702 --> 00:02:50,806
+The rework ceiling is fifteen percent
+and the spending cap is three hundred
+
+49
+00:02:50,860 --> 00:02:51,947
+dollars.
+
+50
+00:02:52,029 --> 00:02:55,273
+Track post-merge defects with a fixed
+follow-up period.
+
+51
+00:02:55,962 --> 00:03:00,800
+A serious data or access incident
+triggers a pause and the agreed response
+
+52
+00:03:00,854 --> 00:03:02,023
+process.
+
+53
+00:03:02,077 --> 00:03:04,835
+Put these rules where the decision owner
+can find them.
+
+54
+00:03:07,070 --> 00:03:10,712
+The engineering lead is accountable for
+the pilot record.
+
+55
+00:03:10,767 --> 00:03:14,653
+The author and reviewer own their parts
+of each pull request.
+
+56
+00:03:14,734 --> 00:03:18,472
+Use issue seventeen and pull request
+forty-two as the walkthrough.
+
+57
+00:03:19,164 --> 00:03:24,491
+Read the change, check the times, and
+ask who would label a rework request.
+
+58
+00:03:24,600 --> 00:03:28,215
+Schedule a quick weekly check to catch
+missing evidence while the team can
+
+59
+00:03:28,269 --> 00:03:29,332
+still recover it.
+
+60
+00:03:29,961 --> 00:03:32,977
+Before starting, hand the record to a
+teammate.
+
+61
+00:03:33,059 --> 00:03:37,543
+Ask them to explain which tasks qualify,
+when the review clock starts,
+
+62
+00:03:37,598 --> 00:03:39,696
+and what result would make the team
+pause.
+
+63
+00:03:40,421 --> 00:03:42,869
+Fix anything they interpret differently.
