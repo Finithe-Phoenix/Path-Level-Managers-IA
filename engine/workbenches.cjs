@@ -93,10 +93,17 @@
       else if(t<at+.65)g+=point(684,442,comparing?684:853,comparing?480:412,at*.74,tone);
       return g;
     }
+    // A path mentioned inside a Markdown document may point to a reference.
+    // An explicit save target from the exercise identifies the document being edited.
+    const resultTarget=s.result.match(/^(?:Saved|Template|Changed file):\s+([^\s]+\.(?:md|py|json|ya?ml|ts|js))$/i)?.[1];
+    const skillFrontmatter=/^---\n[\s\S]*?\n---(?:\n|$)/.test(s.code);
+    const documentPath=resultTarget
+      || (skillFrontmatter&&/^[.\w/-]+\.md$/i.test(s.result)?s.result:null)
+      || (/^SKILL\.MD\s*[·—]/.test(s.eyebrow||'')?'SKILL.md':null);
     function editor(){
       const realCode=/^\s*(?:[+-]\s{2,}|def\s|import\s|from\s|return\s|const\s|function\s|assert\s|class\s|\{\s*$)/m.test(s.code);
-      if(realCode)return sourceEditor();
-      const isPrompt=/\b(?:ask|chat|prompt|request|attach|agent|plan mode|Copilot)\b/i.test(s.action+' '+s.code);
+      if(documentPath||realCode)return sourceEditor();
+      const isPrompt=/\b(?:ask|chat|prompt|request|attach|agent|plan mode|Copilot)\b/i.test(s.action+' '+s.code) || /\bfresh plan\b/i.test(s.action);
       if(!isPrompt)return sourceEditor();
       const tone='#c7adff',outX=833;
       let g=windowFrame({...s,kind:'editor'},t,38,177,1204,386);
@@ -131,25 +138,31 @@
       return g;
     }
     function sourceEditor(){
-      const tone='#c7adff',isDiff=/^[-+]\s/m.test(s.code);
+      const tone='#c7adff';
+      const isDiff=/^(?:diff --git |@@ -\d)/m.test(s.code) || (/^-(?!-)\s/m.test(s.code) && /^\+(?!\+)\s/m.test(s.code));
       let g=windowFrame(s,t,38,177,1204,386);
-      let file=files[0]||(isDiff?'Patch':/\b(?:evaluation|cases|score|criteria)\b/i.test(s.code)?'Case notes':'Working notes');
+      let file=documentPath||files[0]||(isDiff?'Patch':/\b(?:evaluation|cases|score|criteria)\b/i.test(s.code)?'Case notes':'Working notes');
       g+=box(54,243,1169,303,'#1c2433',8);
       g+=box(67,254,132,281,'#252d40',6);
       g+=label(80,278,isDiff?'CHANGES':'EXPLORER','#a7b6c9');
-      const items=[...new Set([file,...files.slice(1,4)])];
+      const items=[...new Set([file,...(documentPath?files:files.slice(1,4))])].slice(0,4);
       items.forEach((name,i)=>{
         const yy=309+i*44;
         g+=box(74,yy-16,120,37,i===0?'#39415a':'#2d3548',5);
-        const lines=wrap(name.replaceAll('/','/ '),13,105,face);
+        const item=documentPath?name.split('/').pop():name.replaceAll('/','/ ');
+        const lines=wrap(item,13,105,face);
         lines.slice(0,2).forEach((v,j)=>{g+=txt(81,yy+j*14,v,13,i===0?'#f1eafa':'#b2c3ce',600);});
       });
       const available=595;
       g+=label(219,279,isDiff?'UNIFIED DIFF':'ACTIVE DOCUMENT',tone)+line(216,292,823,292,'#444d60');
+      if(documentPath){
+        const px=Math.min(16,410/Math.max(1,h.width(documentPath,1,mono)));
+        g+=txt(814,278,documentPath,px,'#d0d9e5',500,mono,'text-anchor="end"');
+      }
       const layout=fit(s.code,available-42,215,21,mono,1.4);let off=0;
       s.lines.forEach((v,i)=>{
         const parts=wrap(v,layout.size,available-42,mono),start=off,y=323+off*layout.step;
-        const active=i===last,add=/^\+[^+]/.test(v),del=/^-[^-]/.test(v);
+        const active=i===last,add=isDiff&&/^\+[^+]/.test(v),del=isDiff&&/^-[^-]/.test(v);
         const shade=add?'#26453b':del?'#4d333c':active?'#30394e':null;
         if(shade)g+=box(218,y-22,601,parts.length*layout.step+2,shade,3);
         g+=txt(224,y,String(i+1).padStart(2,'0'),14,'#a7abc0',400,mono);
