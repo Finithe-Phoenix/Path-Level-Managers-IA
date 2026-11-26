@@ -1,0 +1,92 @@
+{
+  "id": "L01",
+  "title": "Choose a Model and Tool for a Business Task",
+  "subtitle": "Choose from the tools your team can use and test them against the work.",
+  "sources": [
+    {
+      "label": "GitHub Docs · Choosing a model",
+      "url": "https://docs.github.com/en/copilot/reference/ai-models/model-comparison"
+    },
+    {
+      "label": "GitHub Docs · Pilot a feature or model",
+      "url": "https://docs.github.com/en/enterprise-cloud@latest/copilot/tutorials/roll-out-at-scale/govern-at-scale/pilot-a-feature-or-model"
+    }
+  ],
+  "scenes": [
+    {
+      "id": "task",
+      "kind": "decision",
+      "eyebrow": "Fictional order service",
+      "title": "Start with the work",
+      "body": "A team wants smaller, easier-to-review fixes in its order service.",
+      "narration": "An engineering manager has three coding tools available and a team whose small fixes sit in the review queue. For this fictional order service, the business task is to make routine validator fixes easier to review while preserving quality. The manager starts with a real kind of change: a ticket that spells out which quantities should pass. This gives the team a clear way to judge the result.",
+      "code": "Task: address an order validation ticket\nEvidence: focused diff and boundary tests",
+      "result": "Goal: reduce the wait for human review",
+      "durationFrames": 623,
+      "duration": 25.958333333333332
+    },
+    {
+      "id": "criteria",
+      "kind": "diagram",
+      "eyebrow": "Acceptance examples",
+      "title": "Make quality observable",
+      "body": "State what a successful change looks like before choosing a model.",
+      "narration": "The ticket gives us four examples. One and five are valid. Zero and negative one should be rejected. We also want a small diff and a test that fails before the fix. For a manager, these are useful acceptance criteria because a reviewer can check them independently. Look for equally clear examples in the tasks you want to pilot. The team can discuss quality using the same evidence.",
+      "code": "Accept: 1, 5\nReject: 0, -1\nPreserve the validator interface",
+      "result": "Evidence: regression fails first, then passes",
+      "durationFrames": 650,
+      "duration": 27.083333333333332
+    },
+    {
+      "id": "surface",
+      "kind": "diagram",
+      "eyebrow": "Tools and environments",
+      "title": "Choose where the work runs",
+      "body": "Match the tool to the task, its approved environment, and the available setup.",
+      "narration": "Copilot in Visual Studio Code is already where the author edits and checks diffs. Claude Code and OpenCode are available in the approved corporate Google Cloud workspace. That remote workspace is a sensible option for tasks that genuinely need its tooling. Here, the small change fits the existing editor workflow. We choose Copilot for the pilot and reserve the remote tools for a separate test with a reason to use them.",
+      "code": "VS Code: GitHub Copilot\nCorporate GCP: Claude Code and OpenCode",
+      "result": "For this task: start in VS Code",
+      "durationFrames": 686,
+      "duration": 28.583333333333332
+    },
+    {
+      "id": "model",
+      "kind": "editor",
+      "eyebrow": "Controlled comparison",
+      "title": "Test the model on the same cases",
+      "body": "Use synthetic tasks and keep the editor, instructions, and scoring consistent.",
+      "narration": "The model is a separate choice from the editor. Suppose two model options are enabled by policy. Give them the same eight synthetic tasks, the same instructions, and the same time budget. Ask a reviewer to score each final diff against the written acceptance criteria. Capture how long the author had to steer or repair the work. Model A and model B are placeholders for your approved choices.",
+      "code": "Same eight synthetic tasks for both options\nPass: tests, scope, reviewer can explain diff",
+      "result": "Compare finished changes under equal conditions",
+      "durationFrames": 647,
+      "duration": 26.958333333333332
+    },
+    {
+      "id": "score",
+      "kind": "terminal",
+      "eyebrow": "Illustrative model benchmark",
+      "title": "Read the evidence side by side",
+      "body": "Choose an option that clears the quality bar and record the trade-off.",
+      "narration": "In this illustration, model A met all criteria on seven of eight tasks. Model B met them on eight. The author spent a little longer with model B. Since the team agreed that every boundary check must pass for this small benchmark, model B is the pilot choice. Keep the scores and the sample size together. Eight synthetic tasks give a practical starting point, and the pilot will test how that choice holds up.",
+      "code": "Model A: 7/8 pass | 2 min median author time\nModel B: 8/8 pass | 3 min median author time",
+      "result": "Pilot choice: approved Model B",
+      "durationFrames": 666,
+      "duration": 27.75
+    },
+    {
+      "id": "decision",
+      "kind": "decision",
+      "eyebrow": "Decision record",
+      "title": "Document the choice and when to revisit it",
+      "body": "Record the work, tool, model, owner, and evidence for a later review.",
+      "narration": "Write down the decision while it is still easy to reconstruct. We are using Copilot in the editor with the second approved model for tightly scoped validator fixes. The engineering lead owns the pilot. A human reviews every proposed change. Revisit the choice if the approved model changes, scope expands, or review quality slips. The next episode turns those expectations into explicit boundaries for an agent.",
+      "code": "Scope: small validator fixes\nTool: Copilot in VS Code\nModel: B, subject to organizational settings\nOwner: engineering lead",
+      "result": "Revisit when the model, task, or evidence changes",
+      "durationFrames": 692,
+      "duration": 28.833333333333332
+    }
+  ],
+  "fps": 24,
+  "width": 1280,
+  "height": 720
+}

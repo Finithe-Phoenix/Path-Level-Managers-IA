@@ -1,0 +1,100 @@
+{
+  "id": "L02",
+  "title": "Decide What an Agent Can Do",
+  "subtitle": "Map permissions to actions and keep approvals with the people who own them.",
+  "sources": [
+    {
+      "label": "NIST · AI Risk Management Framework",
+      "url": "https://www.nist.gov/itl/ai-risk-management-framework"
+    },
+    {
+      "label": "NIST · Generative AI Profile",
+      "url": "https://doi.org/10.6028/NIST.AI.600-1"
+    },
+    {
+      "label": "VS Code · Security for AI",
+      "url": "https://code.visualstudio.com/docs/agents/run/security"
+    },
+    {
+      "label": "Google Cloud · Use IAM securely",
+      "url": "https://docs.cloud.google.com/iam/docs/using-iam-securely"
+    }
+  ],
+  "scenes": [
+    {
+      "id": "task",
+      "kind": "decision",
+      "eyebrow": "Fictional order service",
+      "title": "Define one authorized task",
+      "body": "A narrow task makes permissions and review requirements concrete.",
+      "narration": "The pilot author has a ticket for the order validator. The assistant needs to understand two files and propose a small edit with a regression test. The manager and platform lead agree on that task before choosing permissions. In the same team, remote assistants can have different network and credential access, so we make this decision for this particular tool and workspace. The answer to who may do what is written down.",
+      "code": "Allowed target: training checkout\nWorking branch: fix/reject-zero-quantity\nExpected edits: validator and its tests",
+      "result": "Task boundary is explicit",
+      "durationFrames": 668,
+      "duration": 27.833333333333332
+    },
+    {
+      "id": "data",
+      "kind": "diagram",
+      "eyebrow": "Data flow",
+      "title": "Follow the context to its destination",
+      "body": "Review where the client runs and where model requests are processed.",
+      "narration": "First map the data. The editor reads approved repository context. The model request goes to the approved service for that configuration. A remote workspace is another place to run a client, and the provider, endpoint, and retention settings need their own confirmation. The manager asks the platform owner to record these details, along with which code and test data this pilot permits.",
+      "code": "Client or workspace -> configured model endpoint\nRecord: provider, data class, retention, owner",
+      "result": "Use approved source and synthetic test data",
+      "durationFrames": 654,
+      "duration": 27.25
+    },
+    {
+      "id": "access",
+      "kind": "editor",
+      "eyebrow": "Action matrix",
+      "title": "Give the agent only the access it needs",
+      "body": "Separate proposal, test execution, and changes to shared systems.",
+      "narration": "Allow the agent to read the needed repository context and propose edits on the working branch. Keep test execution within the approved environment and choose the permissions supported by that setup. The author confirms the resulting diff and publishes the branch with their own approved access. The reviewer has a separate identity and submits the review. Production access is outside the pilot scope.",
+      "code": "Read: relevant repository files\nEdit: working branch scope\nTest: approved environment\nPublish: authorized author",
+      "result": "Approve: separate authorized reviewer",
+      "durationFrames": 646,
+      "duration": 26.916666666666668
+    },
+    {
+      "id": "prompt",
+      "kind": "terminal",
+      "eyebrow": "Unexpected action",
+      "title": "Practice the approval decision",
+      "body": "A request for broader access is a decision point.",
+      "narration": "Now imagine the assistant thinks it needs a new dependency to write the test. The author sees a request to make a network call. The planned test uses the standard library, so the author declines the action and asks for a solution within the agreed files. Pause here and decide what you would do. Write down how the team reports repeated unexpected requests.",
+      "code": "Proposed action: download a test dependency\nApproved test: Python standard library",
+      "result": "Decision: decline and keep the task in scope",
+      "durationFrames": 584,
+      "duration": 24.333333333333332
+    },
+    {
+      "id": "controls",
+      "kind": "github",
+      "eyebrow": "Human controls",
+      "title": "Use the repository’s review workflow",
+      "body": "Show which person acts and which evidence supports that action.",
+      "narration": "The author checks the diff, tests the change, and opens the pull request. From an approved remote terminal, a separate reviewer sees the stated scope, the actual diff, and the check result. They can approve or ask for a correction. A manager can ask for the pull request link and review record as evidence that those responsibilities stayed separate through the workflow.",
+      "code": "Author: publishes the branch and opens the PR\nReviewer: reads diff and checks in GitHub CLI\nEvidence: review record on the PR",
+      "result": "Example: PR #42 links to issue #17",
+      "durationFrames": 572,
+      "duration": 23.833333333333332
+    },
+    {
+      "id": "record",
+      "kind": "decision",
+      "eyebrow": "Permission decision",
+      "title": "Record the owner and escalation path",
+      "body": "Revisit access when the task, tool, or data changes.",
+      "narration": "The manager records the approved environment, data scope, action limits, named human roles, and the person who handles exceptions. Apply the same questions if you later pilot Claude Code or OpenCode inside the corporate cloud workspace. Ask which identity actually grants access and which controls the workspace enforces. A new connector, new data source, or expanded permission brings the decision back to the platform owner.",
+      "code": "Decision owner: engineering lead\nAccess owner: platform lead\nReview owner: designated teammate",
+      "result": "Reassess when permissions or data change",
+      "durationFrames": 721,
+      "duration": 30.041666666666668
+    }
+  ],
+  "fps": 24,
+  "width": 1280,
+  "height": 720
+}

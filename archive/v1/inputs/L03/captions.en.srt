@@ -1,0 +1,209 @@
+1
+00:00:00,340 --> 00:00:03,309
+The team says it wants to ship small fixes
+faster.
+
+2
+00:00:03,489 --> 00:00:08,238
+Before starting the pilot, the manager
+traces a few pull requests through
+
+3
+00:00:08,238 --> 00:00:12,661
+authoring, readiness, the first
+substantive human review, and merge.
+
+4
+00:00:12,841 --> 00:00:15,917
+The long wait appears after the change is
+ready.
+
+5
+00:00:16,097 --> 00:00:18,734
+A bottleneck can sit anywhere in that
+sequence.
+
+6
+00:00:18,914 --> 00:00:23,999
+Once the team identifies this one, it can
+aim its intervention at better-prepared
+
+7
+00:00:23,999 --> 00:00:25,003
+review requests.
+
+8
+00:00:26,465 --> 00:00:31,630
+Our hypothesis is that narrow changes with
+explicit boundary tests and a clear pull
+
+9
+00:00:31,630 --> 00:00:35,862
+request summary will make the team more
+willing to pick up a review.
+
+10
+00:00:36,042 --> 00:00:39,937
+Copilot helps the author draft that small
+change and its tests.
+
+11
+00:00:40,117 --> 00:00:43,319
+The existing review rules apply to every
+request.
+
+12
+00:00:43,499 --> 00:00:49,154
+Define eligibility up front: routine
+order-validator fixes with a reproducible
+
+13
+00:00:49,154 --> 00:00:50,314
+acceptance case.
+
+14
+00:00:50,494 --> 00:00:53,288
+Keep larger changes on the normal path.
+
+15
+00:00:54,757 --> 00:00:59,529
+The team takes forty eligible pull
+requests from the previous four weeks as
+
+16
+00:00:59,529 --> 00:01:00,357
+its baseline.
+
+17
+00:01:00,537 --> 00:01:06,224
+It then runs a four-week pilot, aiming for
+a similar task mix, size, and coverage of
+
+18
+00:01:06,224 --> 00:01:07,307
+reviewer shifts.
+
+19
+00:01:07,487 --> 00:01:11,809
+One clear eligibility rule helps everyone
+count consistently.
+
+20
+00:01:11,989 --> 00:01:16,627
+Record staffing, backlog, or changes in
+release cadence as they happen.
+
+21
+00:01:16,807 --> 00:01:21,779
+Those factors may affect the result even
+when the tool and process are documented.
+
+22
+00:01:23,257 --> 00:01:27,988
+Measure business hours from ready for
+review to the first substantive human
+
+23
+00:01:27,988 --> 00:01:28,430
+review.
+
+24
+00:01:28,610 --> 00:01:30,617
+A comment about the code counts.
+
+25
+00:01:30,797 --> 00:01:32,955
+A bot status update does not.
+
+26
+00:01:33,135 --> 00:01:38,204
+Pair that measure with active review
+effort, rework, post-merge defects, and
+
+27
+00:01:38,204 --> 00:01:39,738
+incremental pilot cost.
+
+28
+00:01:39,918 --> 00:01:44,386
+Everyone agrees on what counts as rework
+before labeling any cases.
+
+29
+00:01:44,566 --> 00:01:48,820
+The measurement owner checks the units,
+denominators, and any missing
+
+30
+00:01:48,820 --> 00:01:49,621
+observations.
+
+31
+00:01:51,090 --> 00:01:54,460
+The baseline median wait is eighteen
+business hours.
+
+32
+00:01:54,640 --> 00:01:56,680
+The target is fourteen or less.
+
+33
+00:01:56,860 --> 00:02:01,420
+The team can absorb up to three extra
+minutes of active review effort from its
+
+34
+00:02:01,420 --> 00:02:03,057
+twenty-four minute baseline.
+
+35
+00:02:03,237 --> 00:02:07,782
+It sets a rework ceiling of fifteen
+percent, monitors defects, and budgets
+
+36
+00:02:07,782 --> 00:02:10,607
+three hundred dollars in incremental
+spending.
+
+37
+00:02:10,787 --> 00:02:16,589
+A serious data or access incident triggers
+a pause and the agreed incident response.
+
+38
+00:02:18,048 --> 00:02:23,095
+The pilot record lists the service,
+eligibility, baseline, review process,
+
+39
+00:02:23,095 --> 00:02:25,004
+metrics, and decision rules.
+
+40
+00:02:25,184 --> 00:02:30,207
+Link it to one sample issue and pull
+request where the author and reviewer have
+
+41
+00:02:30,207 --> 00:02:31,669
+clear responsibilities.
+
+42
+00:02:31,849 --> 00:02:36,392
+The manager checks in weekly to look for
+access or quality problems.
+
+43
+00:02:36,572 --> 00:02:40,360
+At the end, the team reviews its evidence
+and context together.
+
+44
+00:02:40,540 --> 00:02:45,084
+A historical comparison can support a
+decision while leaving room for
+
+45
+00:02:45,084 --> 00:02:46,928
+uncertainty about causation.

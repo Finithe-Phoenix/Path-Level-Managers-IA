@@ -1,0 +1,192 @@
+1
+00:00:00,340 --> 00:00:04,950
+The order-service rollout decision starts
+with an agreement the team made before
+
+2
+00:00:04,950 --> 00:00:06,045
+seeing the results.
+
+3
+00:00:06,225 --> 00:00:11,779
+Expand if the benefit and guardrails are
+met, adjust when a specific issue can be
+
+4
+00:00:11,779 --> 00:00:17,195
+addressed safely, and pause for a serious
+data or access incident or unresolved
+
+5
+00:00:17,195 --> 00:00:18,086
+quality risk.
+
+6
+00:00:18,266 --> 00:00:22,222
+Put those options on the screen first,
+then reveal the measurements.
+
+7
+00:00:22,402 --> 00:00:25,614
+This helps stakeholders discuss the same
+decision.
+
+8
+00:00:27,090 --> 00:00:31,123
+The median wait was thirteen hours against
+a target of fourteen.
+
+9
+00:00:31,303 --> 00:00:36,018
+Active review effort was twenty-six
+minutes against a limit of twenty-seven.
+
+10
+00:00:36,198 --> 00:00:40,581
+Cost was two hundred and forty dollars
+against a three hundred dollar cap.
+
+11
+00:00:40,761 --> 00:00:45,071
+Rework was seventeen and a half percent
+against a fifteen percent ceiling.
+
+12
+00:00:45,251 --> 00:00:50,487
+One post-merge defect appeared in each
+window, and the pilot recorded zero
+
+13
+00:00:50,487 --> 00:00:52,822
+serious data or access incidents.
+
+14
+00:00:54,298 --> 00:00:57,988
+Return to the seven requests that needed
+material rework.
+
+15
+00:00:58,168 --> 00:01:02,574
+Four touched extra files, which the
+reviewers identified from the diff.
+
+16
+00:01:02,754 --> 00:01:07,665
+The manager asks the tech lead to test a
+tighter scope instruction and an author
+
+17
+00:01:07,665 --> 00:01:09,814
+diff checkpoint before publication.
+
+18
+00:01:09,994 --> 00:01:14,367
+A reviewer still makes the independent
+decision on each pull request.
+
+19
+00:01:14,547 --> 00:01:19,576
+The follow-up evidence will show whether
+those two changes address the recurring
+
+20
+00:01:19,576 --> 00:01:20,520
+review concern.
+
+21
+00:01:21,965 --> 00:01:26,328
+The follow-up keeps the same service,
+tools, and eligibility rules.
+
+22
+00:01:26,508 --> 00:01:31,079
+For the next four weeks, the engineering
+lead updates the author workflow and
+
+23
+00:01:31,079 --> 00:01:33,216
+checks the rework reasons each week.
+
+24
+00:01:33,396 --> 00:01:38,387
+Use the same measurement definitions and
+keep a record of other process changes.
+
+25
+00:01:38,567 --> 00:01:43,571
+With another comparable sample of forty,
+six rework cases would meet the fifteen
+
+26
+00:01:43,571 --> 00:01:44,572
+percent ceiling.
+
+27
+00:01:44,752 --> 00:01:48,573
+Report the actual sample size alongside
+the rework rate.
+
+28
+00:01:50,048 --> 00:01:55,103
+If the benefit and all guardrails hold,
+propose expansion to one comparable team
+
+29
+00:01:55,103 --> 00:01:57,631
+and document what it must have in place.
+
+30
+00:01:57,811 --> 00:02:02,467
+If there is still a well-understood,
+correctable issue, decide whether a
+
+31
+00:02:02,467 --> 00:02:05,054
+further focused adjustment is justified.
+
+32
+00:02:05,234 --> 00:02:10,419
+If a serious data or access problem
+occurs, pause agent use in scope and
+
+33
+00:02:10,419 --> 00:02:13,084
+follow the existing incident process.
+
+34
+00:02:13,264 --> 00:02:17,404
+The decision record should make the
+evidence and owner easy to find.
+
+35
+00:02:18,882 --> 00:02:23,669
+The decision is to adjust this pilot by
+narrowing file scope and adding a diff
+
+36
+00:02:23,669 --> 00:02:24,344
+checkpoint.
+
+37
+00:02:24,524 --> 00:02:29,490
+The written rationale includes the shorter
+wait, the rework miss, the sample behind
+
+38
+00:02:29,490 --> 00:02:32,362
+that miss, and the small number of
+observations.
+
+39
+00:02:32,542 --> 00:02:37,321
+Name the engineering lead, give the date
+for the next review, and attach the
+
+40
+00:02:37,321 --> 00:02:39,208
+scorecard and review evidence.
+
+41
+00:02:39,388 --> 00:02:43,772
+The manager now has a decision the team
+can carry out and revisit.

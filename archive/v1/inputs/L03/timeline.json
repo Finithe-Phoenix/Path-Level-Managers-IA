@@ -1,0 +1,92 @@
+{
+  "id": "L03",
+  "title": "Design a Pilot Around a Real Bottleneck",
+  "subtitle": "Turn a review bottleneck into a testable pilot with a baseline and decision rules.",
+  "sources": [
+    {
+      "label": "DORA · Software delivery performance metrics",
+      "url": "https://dora.dev/guides/dora-metrics/"
+    },
+    {
+      "label": "GitHub Docs · Measuring a Copilot trial",
+      "url": "https://docs.github.com/en/copilot/tutorials/roll-out-at-scale/measure-success"
+    }
+  ],
+  "scenes": [
+    {
+      "id": "flow",
+      "kind": "diagram",
+      "eyebrow": "Fictional order service",
+      "title": "Find where work is waiting",
+      "body": "Use the same milestones on every pull request.",
+      "narration": "The team says it wants to ship small fixes faster. Before starting the pilot, the manager traces a few pull requests through authoring, readiness, the first substantive human review, and merge. The long wait appears after the change is ready. A bottleneck can sit anywhere in that sequence. Once the team identifies this one, it can aim its intervention at better-prepared review requests.",
+      "code": "Ticket -> working branch -> ready for review\nReady -> first substantive review -> merge",
+      "result": "Observed bottleneck: waiting for first review",
+      "durationFrames": 627,
+      "duration": 26.125
+    },
+    {
+      "id": "hypothesis",
+      "kind": "decision",
+      "eyebrow": "Pilot hypothesis",
+      "title": "Name the behavior you expect to change",
+      "body": "Connect the proposed technique to the problem in the flow.",
+      "narration": "Our hypothesis is that narrow changes with explicit boundary tests and a clear pull request summary will make the team more willing to pick up a review. Copilot helps the author draft that small change and its tests. The existing review rules apply to every request. Define eligibility up front: routine order-validator fixes with a reproducible acceptance case. Keep larger changes on the normal path.",
+      "code": "Pilot: Copilot-assisted, small validator changes\nEvery PR: scoped diff, tests, and summary",
+      "result": "Follow the existing human review process",
+      "durationFrames": 679,
+      "duration": 28.291666666666668
+    },
+    {
+      "id": "baseline",
+      "kind": "editor",
+      "eyebrow": "Baseline window",
+      "title": "Choose the cohort before you measure",
+      "body": "Use the same criteria across two four-week windows.",
+      "narration": "The team takes forty eligible pull requests from the previous four weeks as its baseline. It then runs a four-week pilot, aiming for a similar task mix, size, and coverage of reviewer shifts. One clear eligibility rule helps everyone count consistently. Record staffing, backlog, or changes in release cadence as they happen. Those factors may affect the result even when the tool and process are documented.",
+      "code": "Baseline window: previous four weeks\nPilot window: following four weeks\nCompare eligible PRs in the same service",
+      "result": "Record task mix, staffing, and queue changes",
+      "durationFrames": 684,
+      "duration": 28.5
+    },
+    {
+      "id": "measure",
+      "kind": "terminal",
+      "eyebrow": "Outcome and guardrails",
+      "title": "Define the measurements together",
+      "body": "Distinguish waiting time from active review effort.",
+      "narration": "Measure business hours from ready for review to the first substantive human review. A comment about the code counts. A bot status update does not. Pair that measure with active review effort, rework, post-merge defects, and incremental pilot cost. Everyone agrees on what counts as rework before labeling any cases. The measurement owner checks the units, denominators, and any missing observations.",
+      "code": "Wait: ready to first substantive human review\nEffort: active reviewer minutes\nRework: eligible PRs needing material revision",
+      "result": "Metrics owner: engineering lead",
+      "durationFrames": 668,
+      "duration": 27.833333333333332
+    },
+    {
+      "id": "thresholds",
+      "kind": "decision",
+      "eyebrow": "Rules before results",
+      "title": "Set thresholds while you have a baseline",
+      "body": "The benefit target and its guardrails all matter.",
+      "narration": "The baseline median wait is eighteen business hours. The target is fourteen or less. The team can absorb up to three extra minutes of active review effort from its twenty-four minute baseline. It sets a rework ceiling of fifteen percent, monitors defects, and budgets three hundred dollars in incremental spending. A serious data or access incident triggers a pause and the agreed incident response.",
+      "code": "Wait <= 14 h | Review effort <= 27 min\nRework <= 15% | Incremental cost <= $300\nEscaped defect rate <= baseline (monitor)",
+      "result": "Serious data or access incident: pause",
+      "durationFrames": 647,
+      "duration": 26.958333333333332
+    },
+    {
+      "id": "launch",
+      "kind": "github",
+      "eyebrow": "Pilot record",
+      "title": "Write down what was tested",
+      "body": "Keep the policy, scorecard, and timestamps together.",
+      "narration": "The pilot record lists the service, eligibility, baseline, review process, metrics, and decision rules. Link it to one sample issue and pull request where the author and reviewer have clear responsibilities. The manager checks in weekly to look for access or quality problems. At the end, the team reviews its evidence and context together. A historical comparison can support a decision while leaving room for uncertainty about causation.",
+      "code": "Record: eligibility, dates, owner, guardrails\nEvidence example: issue #17 and PR #42",
+      "result": "Four-week pilot ready for review",
+      "durationFrames": 728,
+      "duration": 30.333333333333332
+    }
+  ],
+  "fps": 24,
+  "width": 1280,
+  "height": 720
+}

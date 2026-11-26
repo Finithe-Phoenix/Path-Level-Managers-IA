@@ -1,0 +1,100 @@
+{
+  "id": "L04",
+  "title": "Measure Review Time, Quality, and Cost",
+  "subtitle": "Read a team-level scorecard and investigate the work behind the numbers.",
+  "sources": [
+    {
+      "label": "DORA · Software delivery performance metrics",
+      "url": "https://dora.dev/guides/dora-metrics/"
+    },
+    {
+      "label": "DORA · ROI of AI-assisted development",
+      "url": "https://dora.dev/ai/roi/report/"
+    },
+    {
+      "label": "GitHub Docs · Communicate Copilot impact",
+      "url": "https://docs.github.com/en/copilot/tutorials/roll-out-at-scale/communicate-copilot-impact"
+    },
+    {
+      "label": "Microsoft Research · SPACE of Developer Productivity",
+      "url": "https://www.microsoft.com/en-us/research/publication/the-space-of-developer-productivity-theres-more-to-it-than-you-think/"
+    }
+  ],
+  "scenes": [
+    {
+      "id": "sample",
+      "kind": "diagram",
+      "eyebrow": "Synthetic pilot results",
+      "title": "Check what you are comparing",
+      "body": "Use a common unit of work and report the sample sizes.",
+      "narration": "The four-week pilot is complete. The manager brings forty eligible pull requests from the baseline and forty from the pilot. First confirm that both sets use the same eligibility and labels, and make any missing data visible. Pull requests are the unit for the scorecard. Repeated reviewer observations belong to one pull request. The results describe this fictional team's service during these two windows.",
+      "code": "Baseline: 40 eligible PRs over four weeks\nPilot: 40 eligible PRs over four weeks",
+      "result": "Same eligibility and review definitions",
+      "durationFrames": 656,
+      "duration": 27.333333333333332
+    },
+    {
+      "id": "time",
+      "kind": "terminal",
+      "eyebrow": "Time",
+      "title": "Read queue time and effort together",
+      "body": "The team waited less while the active review took slightly longer.",
+      "narration": "Wait time is a queue measure. It fell from a median of eighteen to thirteen business hours, meeting the fourteen-hour target. Active review is the work someone spends inspecting a change. It went from twenty-four to twenty-six minutes and stayed within the twenty-seven minute limit. Tell this as two observations. The shorter queue is the measured benefit, and active review still costs people time.",
+      "code": "Median wait: 18 h -> 13 h | Target <= 14 h\nMedian effort: 24 min -> 26 min | Limit 27 min",
+      "result": "Both time thresholds met",
+      "durationFrames": 622,
+      "duration": 25.916666666666668
+    },
+    {
+      "id": "quality",
+      "kind": "github",
+      "eyebrow": "Quality",
+      "title": "Read the counts and the denominators",
+      "body": "The rework rate rose above the agreed guardrail.",
+      "narration": "Six of forty baseline requests needed material rework. Seven of forty pilot requests did, equal to seventeen and a half percent. That is above the fifteen percent ceiling. In this sample, all eighty requests merged and had the same follow-up period. Each group had one post-merge defect. Those counts are small. The manager reads the seven pilot rework cases and looks for patterns in the actual diffs.",
+      "code": "Rework: 6/40 (15%) -> 7/40 (17.5%)\nPost-merge defects: 1/40 -> 1/40",
+      "result": "Rework threshold missed",
+      "durationFrames": 680,
+      "duration": 28.333333333333332
+    },
+    {
+      "id": "cost",
+      "kind": "editor",
+      "eyebrow": "Incremental cost",
+      "title": "Show what the cost measure includes",
+      "body": "Use the same allocation rules and state what the total covers.",
+      "narration": "The pilot ledger attributes a hundred dollars to licenses, twenty to remote workspace use for tests and CLI review, and a hundred and twenty to getting the team started. The total is two hundred and forty dollars. Across forty eligible requests, that is six dollars per request. Active review minutes are tracked separately in this scorecard. A future cost model can include labor with a clear allocation method.",
+      "code": "Licenses $100 + workspace $20 + training $120\nTotal $240 / 40 eligible PRs = $6 per PR",
+      "result": "Incremental cost below the $300 cap",
+      "durationFrames": 670,
+      "duration": 27.916666666666668
+    },
+    {
+      "id": "inspect",
+      "kind": "github",
+      "eyebrow": "Follow the evidence",
+      "title": "Inspect a sample of the rework",
+      "body": "Check what happened in the actual changes and reviews.",
+      "narration": "Read the pull requests and their review reasons. In four of the seven pilot rework cases, the proposed change touched files outside the ticket. That gives the manager and tech lead a concrete issue to discuss. Product telemetry may show that the team used suggestions. The pull request evidence explains where the review and rework happened. The team avoids drawing an individual performance conclusion from these counts.",
+      "code": "Sample: 4 of 7 rework cases touched extra files\nEvidence: diff paths and review reasons",
+      "result": "Next question: can tighter scope reduce rework?",
+      "durationFrames": 669,
+      "duration": 27.875
+    },
+    {
+      "id": "report",
+      "kind": "decision",
+      "eyebrow": "Scorecard to decision",
+      "title": "Summarize benefit, limits, and evidence",
+      "body": "Carry the failed guardrail forward into the decision.",
+      "narration": "The scorecard records shorter median wait time and costs within the cap. It also records a quality guardrail miss, a small sample, and a historical comparison. That is enough to have a focused pilot decision. Share the team-level figures, definitions, and an example pull request. If a stakeholder asks whether the assistant caused the shorter wait, explain which parts of the process and staffing could also affect the estimate.",
+      "code": "Met: wait, active review effort, cost\nMissed: rework ceiling\nMonitored: defects and access incidents",
+      "result": "Carry the scorecard into the decision meeting",
+      "durationFrames": 687,
+      "duration": 28.625
+    }
+  ],
+  "fps": 24,
+  "width": 1280,
+  "height": 720
+}

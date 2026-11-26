@@ -1,0 +1,193 @@
+1
+00:00:00,340 --> 00:00:03,669
+The pilot author has a ticket for the
+order validator.
+
+2
+00:00:03,849 --> 00:00:08,631
+The assistant needs to understand two
+files and propose a small edit with a
+
+3
+00:00:08,631 --> 00:00:09,651
+regression test.
+
+4
+00:00:09,831 --> 00:00:14,417
+The manager and platform lead agree on
+that task before choosing permissions.
+
+5
+00:00:14,597 --> 00:00:19,419
+In the same team, remote assistants can
+have different network and credential
+
+6
+00:00:19,419 --> 00:00:23,929
+access, so we make this decision for this
+particular tool and workspace.
+
+7
+00:00:24,109 --> 00:00:26,693
+The answer to who may do what is written
+down.
+
+8
+00:00:28,173 --> 00:00:29,723
+First map the data.
+
+9
+00:00:29,903 --> 00:00:33,307
+The editor reads approved repository
+context.
+
+10
+00:00:33,487 --> 00:00:37,647
+The model request goes to the approved
+service for that configuration.
+
+11
+00:00:37,827 --> 00:00:43,223
+A remote workspace is another place to run
+a client, and the provider, endpoint, and
+
+12
+00:00:43,223 --> 00:00:46,242
+retention settings need their own
+confirmation.
+
+13
+00:00:46,422 --> 00:00:51,471
+The manager asks the platform owner to
+record these details, along with which
+
+14
+00:00:51,471 --> 00:00:53,962
+code and test data this pilot permits.
+
+15
+00:00:55,423 --> 00:01:00,320
+Allow the agent to read the needed
+repository context and propose edits on
+
+16
+00:01:00,320 --> 00:01:01,577
+the working branch.
+
+17
+00:01:01,757 --> 00:01:06,470
+Keep test execution within the approved
+environment and choose the permissions
+
+18
+00:01:06,470 --> 00:01:07,920
+supported by that setup.
+
+19
+00:01:08,100 --> 00:01:12,914
+The author confirms the resulting diff and
+publishes the branch with their own
+
+20
+00:01:12,914 --> 00:01:13,902
+approved access.
+
+21
+00:01:14,082 --> 00:01:17,688
+The reviewer has a separate identity and
+submits the review.
+
+22
+00:01:17,868 --> 00:01:20,898
+Production access is outside the pilot
+scope.
+
+23
+00:01:22,340 --> 00:01:27,192
+Now imagine the assistant thinks it needs
+a new dependency to write the test.
+
+24
+00:01:27,372 --> 00:01:30,446
+The author sees a request to make a
+network call.
+
+25
+00:01:30,626 --> 00:01:35,540
+The planned test uses the standard
+library, so the author declines the action
+
+26
+00:01:35,540 --> 00:01:38,603
+and asks for a solution within the agreed
+files.
+
+27
+00:01:38,783 --> 00:01:41,079
+Pause here and decide what you would do.
+
+28
+00:01:41,259 --> 00:01:45,229
+Write down how the team reports repeated
+unexpected requests.
+
+29
+00:01:46,673 --> 00:01:51,111
+The author checks the diff, tests the
+change, and opens the pull request.
+
+30
+00:01:51,291 --> 00:01:55,886
+From an approved remote terminal, a
+separate reviewer sees the stated scope,
+
+31
+00:01:55,886 --> 00:01:58,183
+the actual diff, and the check result.
+
+32
+00:01:58,363 --> 00:02:00,606
+They can approve or ask for a correction.
+
+33
+00:02:00,786 --> 00:02:05,446
+A manager can ask for the pull request
+link and review record as evidence that
+
+34
+00:02:05,446 --> 00:02:09,031
+those responsibilities stayed separate
+through the workflow.
+
+35
+00:02:10,507 --> 00:02:15,341
+The manager records the approved
+environment, data scope, action limits,
+
+36
+00:02:15,341 --> 00:02:19,167
+named human roles, and the person who
+handles exceptions.
+
+37
+00:02:19,347 --> 00:02:24,882
+Apply the same questions if you later
+pilot Claude Code or OpenCode inside the
+
+38
+00:02:24,882 --> 00:02:26,727
+corporate cloud workspace.
+
+39
+00:02:26,907 --> 00:02:32,484
+Ask which identity actually grants access
+and which controls the workspace enforces.
+
+40
+00:02:32,664 --> 00:02:37,394
+A new connector, new data source, or
+expanded permission brings the decision
+
+41
+00:02:37,394 --> 00:02:39,075
+back to the platform owner.

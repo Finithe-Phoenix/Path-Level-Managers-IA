@@ -1,0 +1,96 @@
+{
+  "id": "L05",
+  "title": "Decide Whether to Expand, Adjust, or Pause",
+  "subtitle": "Use the scorecard and review evidence to record a bounded decision.",
+  "sources": [
+    {
+      "label": "GitHub Docs · Pilot a feature or model",
+      "url": "https://docs.github.com/en/enterprise-cloud@latest/copilot/tutorials/roll-out-at-scale/govern-at-scale/pilot-a-feature-or-model"
+    },
+    {
+      "label": "DORA · AI Capabilities Model",
+      "url": "https://dora.dev/ai/capabilities-model/report/"
+    },
+    {
+      "label": "NIST · AI Risk Management Framework",
+      "url": "https://www.nist.gov/itl/ai-risk-management-framework"
+    }
+  ],
+  "scenes": [
+    {
+      "id": "meeting",
+      "kind": "decision",
+      "eyebrow": "Fictional order service",
+      "title": "Open with the agreed rules",
+      "body": "Use the same criteria chosen before the pilot started.",
+      "narration": "The order-service rollout decision starts with an agreement the team made before seeing the results. Expand if the benefit and guardrails are met, adjust when a specific issue can be addressed safely, and pause for a serious data or access incident or unresolved quality risk. Put those options on the screen first, then reveal the measurements. This helps stakeholders discuss the same decision.",
+      "code": "Expand: benefit and guardrails met\nAdjust: identifiable, correctable problem\nPause: serious incident or unresolved risk",
+      "result": "Use the thresholds agreed at pilot kickoff",
+      "durationFrames": 642,
+      "duration": 26.75
+    },
+    {
+      "id": "outcomes",
+      "kind": "diagram",
+      "eyebrow": "Results",
+      "title": "Compare every threshold",
+      "body": "One failed guardrail changes the next step.",
+      "narration": "The median wait was thirteen hours against a target of fourteen. Active review effort was twenty-six minutes against a limit of twenty-seven. Cost was two hundred and forty dollars against a three hundred dollar cap. Rework was seventeen and a half percent against a fifteen percent ceiling. One post-merge defect appeared in each window, and the pilot recorded zero serious data or access incidents.",
+      "code": "Wait 13 h | Effort 26 min | Cost $240\nRework 17.5% | Limit 15%\nPost-merge defects 1/40 | Serious incidents 0",
+      "result": "Decision candidate: adjust",
+      "durationFrames": 653,
+      "duration": 27.208333333333332
+    },
+    {
+      "id": "sample",
+      "kind": "github",
+      "eyebrow": "Review evidence",
+      "title": "Look for a change you can test",
+      "body": "Use pull request evidence to choose a targeted adjustment.",
+      "narration": "Return to the seven requests that needed material rework. Four touched extra files, which the reviewers identified from the diff. The manager asks the tech lead to test a tighter scope instruction and an author diff checkpoint before publication. A reviewer still makes the independent decision on each pull request. The follow-up evidence will show whether those two changes address the recurring review concern.",
+      "code": "Rework sample: 4/7 touched extra files\nAdjustment: explicit file scope in the plan\nCheckpoint: author inspects diff before push",
+      "result": "Human review gates stay in the workflow",
+      "durationFrames": 664,
+      "duration": 27.666666666666668
+    },
+    {
+      "id": "adjust",
+      "kind": "editor",
+      "eyebrow": "Follow-up pilot",
+      "title": "Keep the next round bounded",
+      "body": "Keep the same service and metrics so the next review is interpretable.",
+      "narration": "The follow-up keeps the same service, tools, and eligibility rules. For the next four weeks, the engineering lead updates the author workflow and checks the rework reasons each week. Use the same measurement definitions and keep a record of other process changes. With another comparable sample of forty, six rework cases would meet the fifteen percent ceiling. Report the actual sample size alongside the rework rate.",
+      "code": "Same service, approved tool, and eligibility\nAdd scope instruction and diff checkpoint\nReview the scorecard after four weeks",
+      "result": "Owner: engineering lead",
+      "durationFrames": 674,
+      "duration": 28.083333333333332
+    },
+    {
+      "id": "paths",
+      "kind": "decision",
+      "eyebrow": "Decision branches",
+      "title": "Define the evidence that changes the outcome",
+      "body": "Make each option actionable for the responsible person.",
+      "narration": "If the benefit and all guardrails hold, propose expansion to one comparable team and document what it must have in place. If there is still a well-understood, correctable issue, decide whether a further focused adjustment is justified. If a serious data or access problem occurs, pause agent use in scope and follow the existing incident process. The decision record should make the evidence and owner easy to find.",
+      "code": "Expand: select one comparable team\nAdjust: test a named correction\nPause: stop the affected workflow and escalate",
+      "result": "Return to the evidence before changing scope",
+      "durationFrames": 692,
+      "duration": 28.833333333333332
+    },
+    {
+      "id": "record",
+      "kind": "decision",
+      "eyebrow": "Decision record",
+      "title": "Write a decision someone else can act on",
+      "body": "Record the date, owner, action, and next review.",
+      "narration": "The decision is to adjust this pilot by narrowing file scope and adding a diff checkpoint. The written rationale includes the shorter wait, the rework miss, the sample behind that miss, and the small number of observations. Name the engineering lead, give the date for the next review, and attach the scorecard and review evidence. The manager now has a decision the team can carry out and revisit.",
+      "code": "Decision: adjust\nOwner: engineering lead | Review: in four weeks\nEvidence: scorecard and rework review sample",
+      "result": "Next review: check benefit and every guardrail",
+      "durationFrames": 632,
+      "duration": 26.333333333333332
+    }
+  ],
+  "fps": 24,
+  "width": 1280,
+  "height": 720
+}

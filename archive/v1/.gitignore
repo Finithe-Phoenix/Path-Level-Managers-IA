@@ -1,0 +1,8 @@
+render/node_modules/
+.venv/
+work/
+build/
+__pycache__/
+pilot-M01/hyperframes/node_modules/
+pilot-M01/hyperframes/v2/
+pilot-M01/*.mp4
