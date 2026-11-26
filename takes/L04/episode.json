@@ -1,0 +1,441 @@
+{
+  "id": "L04",
+  "title": "Measure Review Time, Quality, and Cost",
+  "subtitle": "Read a team-level scorecard and investigate the work behind the numbers.",
+  "sources": [
+    {
+      "label": "DORA · Software delivery performance metrics",
+      "url": "https://dora.dev/guides/dora-metrics/"
+    },
+    {
+      "label": "DORA · ROI of AI-assisted development",
+      "url": "https://dora.dev/ai/roi/report/"
+    },
+    {
+      "label": "GitHub Docs · Communicate Copilot impact",
+      "url": "https://docs.github.com/en/copilot/tutorials/roll-out-at-scale/communicate-copilot-impact"
+    },
+    {
+      "label": "Microsoft Research · SPACE of Developer Productivity",
+      "url": "https://www.microsoft.com/en-us/research/publication/the-space-of-developer-productivity-theres-more-to-it-than-you-think/"
+    }
+  ],
+  "scenes": [
+    {
+      "id": "sample",
+      "kind": "diagram",
+      "eyebrow": "Synthetic pilot results",
+      "title": "Check the comparison",
+      "body": "Keep the unit, denominator, and follow-up consistent.",
+      "narration": "The pilot is complete and the scorecard starts with two counts. Forty eligible requests in the baseline and forty in the pilot. Each row is one pull request, even if three teammates reviewed it. Count the rows and confirm the same eligibility rule applied in both windows. In this synthetic sample every request merged and had the same defect follow-up. In your own data, flag rows with missing dates or insufficient follow-up. That tells the next reader which denominator you used for each metric.",
+      "code": "Baseline: 40 eligible PRs | Pilot: 40 eligible PRs\nMatched definitions, same service\nAll merged with the same follow-up window",
+      "result": "Sample size stays visible",
+      "focus": "Each row represents one eligible PR",
+      "action": "Count both groups and review missing rows",
+      "durationFrames": 786,
+      "duration": 32.75,
+      "cues": [
+        {
+          "start": 0.389,
+          "end": 4.289,
+          "text": "The pilot is complete and the scorecard\nstarts with two counts."
+        },
+        {
+          "start": 4.389,
+          "end": 7.872,
+          "text": "Forty eligible requests in the baseline\nand forty in the pilot."
+        },
+        {
+          "start": 8.475,
+          "end": 12.875,
+          "text": "Each row is one pull request, even if\nthree teammates reviewed it."
+        },
+        {
+          "start": 12.95,
+          "end": 16.575,
+          "text": "Count the rows and confirm the same\neligibility rule applied in both"
+        },
+        {
+          "start": 16.625,
+          "end": 17.234,
+          "text": "windows."
+        },
+        {
+          "start": 17.872,
+          "end": 21.572,
+          "text": "In this synthetic sample every request\nmerged and had the same defect"
+        },
+        {
+          "start": 21.622,
+          "end": 22.772,
+          "text": "follow-up."
+        },
+        {
+          "start": 22.847,
+          "end": 27.097,
+          "text": "In your own data, flag rows with missing\ndates or insufficient follow-up."
+        },
+        {
+          "start": 27.727,
+          "end": 31.69,
+          "text": "That tells the next reader which\ndenominator you used for each metric."
+        }
+      ]
+    },
+    {
+      "id": "time",
+      "kind": "terminal",
+      "eyebrow": "Time",
+      "title": "Read the two time measures",
+      "body": "Read waiting and active effort as separate measures.",
+      "narration": "Read the wait row first. Eighteen minus thirteen is five fewer business hours before the first human review. Thirteen is within the fourteen-hour target. Next read the effort row. Twenty-six minus twenty-four gives us a two-minute increase in median active review. Twenty-six fits the twenty-seven minute limit. Say both findings in the same meeting. This result can reflect a shorter queue alongside a little more reviewer work. Report the medians separately because they describe different parts of the review process. Ask which row would reveal a reviewer workload problem.",
+      "code": "Wait: 18 h → 13 h | Target <= 14 h\nEffort: 24 min → 26 min | Limit <= 27 min",
+      "result": "Both time thresholds met",
+      "focus": "Wait fell five hours and effort rose two minutes",
+      "action": "Compare both medians to their thresholds",
+      "durationFrames": 867,
+      "duration": 36.125,
+      "cues": [
+        {
+          "start": 0.418,
+          "end": 2.268,
+          "text": "Read the wait row first."
+        },
+        {
+          "start": 2.343,
+          "end": 6.243,
+          "text": "Eighteen minus thirteen is five fewer\nbusiness hours before the first human"
+        },
+        {
+          "start": 6.293,
+          "end": 7.118,
+          "text": "review."
+        },
+        {
+          "start": 7.218,
+          "end": 9.408,
+          "text": "Thirteen is within the fourteen-hour\ntarget."
+        },
+        {
+          "start": 10.036,
+          "end": 11.761,
+          "text": "Next read the effort row."
+        },
+        {
+          "start": 11.836,
+          "end": 15.736,
+          "text": "Twenty-six minus twenty-four gives us a\ntwo-minute increase in median active"
+        },
+        {
+          "start": 15.786,
+          "end": 16.636,
+          "text": "review."
+        },
+        {
+          "start": 16.711,
+          "end": 19.005,
+          "text": "Twenty-six fits the twenty-seven minute\nlimit."
+        },
+        {
+          "start": 19.664,
+          "end": 22.264,
+          "text": "Say both findings in the same meeting."
+        },
+        {
+          "start": 22.339,
+          "end": 26.764,
+          "text": "This result can reflect a shorter queue\nalongside a little more reviewer work."
+        },
+        {
+          "start": 26.839,
+          "end": 30.514,
+          "text": "Report the medians separately because\nthey describe different parts of the"
+        },
+        {
+          "start": 30.564,
+          "end": 31.491,
+          "text": "review process."
+        },
+        {
+          "start": 32.162,
+          "end": 35.072,
+          "text": "Ask which row would reveal a reviewer\nworkload problem."
+        }
+      ]
+    },
+    {
+      "id": "quality",
+      "kind": "github",
+      "eyebrow": "Quality",
+      "title": "Calculate quality rates",
+      "body": "Express quality with counts and rates.",
+      "narration": "Now divide the rework count by the number of eligible requests. In the baseline, six divided by forty gives fifteen percent. In the pilot, seven divided by forty gives seventeen and a half percent. That is two and a half percentage points above the limit, even though the count changed by just one. This is the guardrail the team missed. The defect count is one in each group, or two and a half percent. With one event in each, report the counts and be careful about drawing a trend.",
+      "code": "Baseline rework: 6 ÷ 40 = 15%\nPilot rework: 7 ÷ 40 = 17.5%\nPost-merge defects: 1 ÷ 40 in each group",
+      "result": "Rework missed by 2.5 percentage points",
+      "focus": "One extra rework case crosses the ceiling",
+      "action": "Divide the rework count by eligible PRs",
+      "durationFrames": 746,
+      "duration": 31.083333333333332,
+      "cues": [
+        {
+          "start": 0.439,
+          "end": 4.439,
+          "text": "Now divide the rework count by the\nnumber of eligible requests."
+        },
+        {
+          "start": 4.514,
+          "end": 8.235,
+          "text": "In the baseline, six divided by forty\ngives fifteen percent."
+        },
+        {
+          "start": 8.872,
+          "end": 13.597,
+          "text": "In the pilot, seven divided by forty\ngives seventeen and a half percent."
+        },
+        {
+          "start": 13.672,
+          "end": 16.697,
+          "text": "That is two and a half percentage points\nabove the limit,"
+        },
+        {
+          "start": 16.747,
+          "end": 18.873,
+          "text": "even though the count changed by just\none."
+        },
+        {
+          "start": 19.475,
+          "end": 21.7,
+          "text": "This is the guardrail the team missed."
+        },
+        {
+          "start": 21.75,
+          "end": 25.75,
+          "text": "The defect count is one in each group,\nor two and a half percent."
+        },
+        {
+          "start": 25.8,
+          "end": 29.5,
+          "text": "With one event in each, report the\ncounts and be careful about drawing a"
+        },
+        {
+          "start": 29.55,
+          "end": 30.006,
+          "text": "trend."
+        }
+      ]
+    },
+    {
+      "id": "cost",
+      "kind": "editor",
+      "eyebrow": "Incremental cost",
+      "title": "Calculate the pilot cost",
+      "body": "Make expenses and allocation choices explicit.",
+      "narration": "Open the pilot ledger. Charge a hundred dollars for allocated licenses, twenty for approved remote test and review workspace use, and a hundred and twenty for enablement. A hundred plus twenty plus a hundred and twenty gives two hundred and forty. Divide by forty eligible requests and you get six dollars per request. The cap was three hundred, leaving sixty dollars of headroom. The ledger tracks these incremental expenses. Reviewer minutes appear on the effort row. If the organization plans to value that labor, agree on the rate and allocation first.",
+      "code": "Licenses $100 + workspace $20 + training $120\nTotal $240 | Cap $300\n$240 ÷ 40 eligible PRs = $6 per PR",
+      "result": "Budget headroom: $60",
+      "focus": "The ledger comes to $6 per eligible PR",
+      "action": "Add the entries and show the denominator",
+      "durationFrames": 866,
+      "duration": 36.083333333333336,
+      "cues": [
+        {
+          "start": 0.396,
+          "end": 2.171,
+          "text": "Open the pilot ledger."
+        },
+        {
+          "start": 2.246,
+          "end": 5.071,
+          "text": "Charge a hundred dollars for allocated\nlicenses,"
+        },
+        {
+          "start": 5.121,
+          "end": 8.621,
+          "text": "twenty for approved remote test and\nreview workspace use,"
+        },
+        {
+          "start": 8.671,
+          "end": 10.581,
+          "text": "and a hundred and twenty for enablement."
+        },
+        {
+          "start": 11.205,
+          "end": 15.805,
+          "text": "A hundred plus twenty plus a hundred and\ntwenty gives two hundred and forty."
+        },
+        {
+          "start": 15.88,
+          "end": 20.135,
+          "text": "Divide by forty eligible requests and\nyou get six dollars per request."
+        },
+        {
+          "start": 20.734,
+          "end": 24.189,
+          "text": "The cap was three hundred, leaving sixty\ndollars of headroom."
+        },
+        {
+          "start": 24.239,
+          "end": 27.039,
+          "text": "The ledger tracks these incremental\nexpenses."
+        },
+        {
+          "start": 27.114,
+          "end": 29.143,
+          "text": "Reviewer minutes appear on the effort\nrow."
+        },
+        {
+          "start": 29.777,
+          "end": 32.702,
+          "text": "If the organization plans to value that\nlabor,"
+        },
+        {
+          "start": 32.777,
+          "end": 34.974,
+          "text": "agree on the rate and allocation first."
+        }
+      ]
+    },
+    {
+      "id": "inspect",
+      "kind": "github",
+      "eyebrow": "Follow the evidence",
+      "title": "Read the requests that needed rework",
+      "body": "Connect an aggregate result to specific review evidence.",
+      "narration": "A scorecard tells us which question to ask next. Open the seven rework cases and read the file lists and review reasons. In four cases the reviewer asked the author to remove edits outside the ticket. For instance, a one-line validator fix also reformatted a configuration file. Separate that extra change and note why the reviewer asked for it. Four of seven is enough to make scope worth investigating here. It gives the team something concrete to improve. Share the pattern and example. Keep individual usage statistics out of that discussion.",
+      "code": "4/7 cases: files outside the task\nExample review: move unrelated edits out\nEvidence: file list and material rework reason",
+      "result": "Candidate adjustment: explicit file scope",
+      "focus": "Four of seven rework cases touched extra files",
+      "action": "Read each diff and pair it with feedback",
+      "durationFrames": 845,
+      "duration": 35.208333333333336,
+      "cues": [
+        {
+          "start": 0.414,
+          "end": 3.614,
+          "text": "A scorecard tells us which question to\nask next."
+        },
+        {
+          "start": 3.689,
+          "end": 7.552,
+          "text": "Open the seven rework cases and read the\nfile lists and review reasons."
+        },
+        {
+          "start": 8.165,
+          "end": 11.74,
+          "text": "In four cases the reviewer asked the\nauthor to remove edits outside the"
+        },
+        {
+          "start": 11.79,
+          "end": 12.79,
+          "text": "ticket."
+        },
+        {
+          "start": 12.84,
+          "end": 17.735,
+          "text": "For instance, a one-line validator fix\nalso reformatted a configuration file."
+        },
+        {
+          "start": 18.384,
+          "end": 22.384,
+          "text": "Separate that extra change and note why\nthe reviewer asked for it."
+        },
+        {
+          "start": 22.459,
+          "end": 25.667,
+          "text": "Four of seven is enough to make scope\nworth investigating here."
+        },
+        {
+          "start": 26.291,
+          "end": 29.216,
+          "text": "It gives the team something concrete to\nimprove."
+        },
+        {
+          "start": 29.316,
+          "end": 31.141,
+          "text": "Share the pattern and example."
+        },
+        {
+          "start": 31.216,
+          "end": 34.133,
+          "text": "Keep individual usage statistics out of\nthat discussion."
+        }
+      ]
+    },
+    {
+      "id": "report",
+      "kind": "decision",
+      "eyebrow": "Scorecard to decision",
+      "title": "Summarize the measurements",
+      "body": "Report benefit, guardrail miss, and relevant context.",
+      "narration": "Prepare a short update for the decision meeting. The median wait reached thirteen hours, the median active review stayed within its limit, and spending stayed within budget. Rework missed the threshold. Add the sample size, the seven rework cases, and any reason the windows might differ. For example, a change in reviewer coverage could affect wait time. Here's the exercise. Try reporting the results in two sentences with one benefit, one guardrail miss, and no causal claim. A decision owner should be able to tell exactly what needs attention.",
+      "code": "Met: wait 13 h, effort 26 min, spend $240\nMissed: rework 17.5% vs 15%\nMonitor: defects and serious incidents",
+      "result": "Carry the rework cases to the decision meeting",
+      "focus": "A benefit and a guardrail miss coexist",
+      "action": "Write one line about each finding",
+      "durationFrames": 856,
+      "duration": 35.666666666666664,
+      "cues": [
+        {
+          "start": 0.368,
+          "end": 3.318,
+          "text": "Prepare a short update for the decision\nmeeting."
+        },
+        {
+          "start": 3.368,
+          "end": 7.443,
+          "text": "The median wait reached thirteen hours,\nthe median active review stayed within"
+        },
+        {
+          "start": 7.493,
+          "end": 10.197,
+          "text": "its limit, and spending stayed within\nbudget."
+        },
+        {
+          "start": 10.8,
+          "end": 12.6,
+          "text": "Rework missed the threshold."
+        },
+        {
+          "start": 12.675,
+          "end": 15.605,
+          "text": "Add the sample size, the seven rework\ncases,"
+        },
+        {
+          "start": 15.695,
+          "end": 18.02,
+          "text": "and any reason the windows might differ."
+        },
+        {
+          "start": 18.07,
+          "end": 21.685,
+          "text": "For example, a change in reviewer\ncoverage could affect wait time."
+        },
+        {
+          "start": 22.309,
+          "end": 23.984,
+          "text": "Here's the exercise."
+        },
+        {
+          "start": 24.059,
+          "end": 27.559,
+          "text": "Try reporting the results in two\nsentences with one benefit,"
+        },
+        {
+          "start": 27.609,
+          "end": 30.059,
+          "text": "one guardrail miss, and no causal claim."
+        },
+        {
+          "start": 30.693,
+          "end": 34.183,
+          "text": "A decision owner should be able to tell\nexactly what needs attention."
+        }
+      ]
+    }
+  ],
+  "fps": 24,
+  "width": 1280,
+  "height": 720,
+  "durationFrames": 4966,
+  "voiceBuild": "6096cc2b63855212fcff10680bf1c1ac62d7234065ef89c062a66b07e8d3f0da"
+}
