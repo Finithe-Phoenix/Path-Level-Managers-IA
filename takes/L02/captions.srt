@@ -1,0 +1,314 @@
+1
+00:00:00,393 --> 00:00:04,143
+Take the model choice from the previous
+lesson and turn it into an access
+
+2
+00:00:04,193 --> 00:00:05,293
+decision.
+
+3
+00:00:05,368 --> 00:00:08,555
+Issue seventeen asks for a validator
+change and a test.
+
+4
+00:00:09,179 --> 00:00:11,839
+Write down the two files, the working
+branch,
+
+5
+00:00:11,889 --> 00:00:14,514
+and what you expect the assistant to
+produce.
+
+6
+00:00:14,589 --> 00:00:18,588
+Keep production credentials and shared
+deployment systems outside this task.
+
+7
+00:00:19,222 --> 00:00:22,972
+A manager can check the boundary by
+asking the author to explain every
+
+8
+00:00:23,022 --> 00:00:25,372
+proposed permission against the ticket.
+
+9
+00:00:25,447 --> 00:00:26,808
+Try it with the test file.
+
+10
+00:00:27,457 --> 00:00:30,682
+Reading that file helps match the
+existing test style.
+
+11
+00:00:30,757 --> 00:00:33,439
+Changing a pipeline falls outside the
+planned work.
+
+12
+00:00:34,935 --> 00:00:36,610
+Sketch two boxes.
+
+13
+00:00:36,660 --> 00:00:41,390
+The first is the client, such as Visual
+Studio Code or a CLI in the corporate
+
+14
+00:00:41,440 --> 00:00:42,807
+Google Cloud workspace.
+
+15
+00:00:43,410 --> 00:00:45,785
+The second is the model endpoint.
+
+16
+00:00:45,860 --> 00:00:50,035
+Draw an arrow between them and label it
+with the selected code, ticket text,
+
+17
+00:00:50,195 --> 00:00:52,450
+and synthetic test examples that may
+travel.
+
+18
+00:00:53,074 --> 00:00:56,799
+Have the platform owner confirm the
+actual provider, endpoint,
+
+19
+00:00:56,849 --> 00:00:59,574
+and retention terms for the approved
+setup.
+
+20
+00:00:59,624 --> 00:01:02,708
+The machine that runs the client tells
+you one part of that story.
+
+21
+00:01:03,332 --> 00:01:07,382
+If you cannot name the configured
+destination, keep the real source out of
+
+22
+00:01:07,407 --> 00:01:09,659
+the request until the owner confirms it.
+
+23
+00:01:11,185 --> 00:01:15,135
+Start with the permissions to read,
+edit, test, and publish.
+
+24
+00:01:15,185 --> 00:01:18,735
+The assistant may read the scoped
+context and propose the patch on the
+
+25
+00:01:18,785 --> 00:01:19,633
+working branch.
+
+26
+00:01:20,225 --> 00:01:23,925
+The author inspects the edits and
+permits the specific test run in an
+
+27
+00:01:23,975 --> 00:01:25,700
+approved environment.
+
+28
+00:01:25,775 --> 00:01:29,625
+The author publishes the branch and
+opens the pull request with their own
+
+29
+00:01:29,675 --> 00:01:30,222
+account.
+
+30
+00:01:30,845 --> 00:01:33,520
+A different authorized teammate reviews
+it.
+
+31
+00:01:33,595 --> 00:01:36,370
+Read the table from bottom to top as a
+check.
+
+32
+00:01:36,445 --> 00:01:40,020
+If you see the same identity beside
+publish and final approval,
+
+33
+00:01:40,095 --> 00:01:43,495
+identify who will perform the
+independent review before you start the
+
+34
+00:01:43,545 --> 00:01:44,084
+pilot.
+
+35
+00:01:45,560 --> 00:01:47,310
+Here is a permission prompt.
+
+36
+00:01:47,360 --> 00:01:50,460
+The assistant asks to download a new
+test library.
+
+37
+00:01:50,535 --> 00:01:53,110
+Pause and ask what would justify it.
+
+38
+00:01:53,185 --> 00:01:56,985
+This repository already has tests in
+Python's standard library,
+
+39
+00:01:57,035 --> 00:01:59,567
+so we have the capability needed for the
+zero case.
+
+40
+00:02:00,170 --> 00:02:04,295
+Decline the network request and ask the
+assistant to follow the existing test
+
+41
+00:02:04,345 --> 00:02:05,345
+style.
+
+42
+00:02:05,420 --> 00:02:08,801
+Then inspect the diff for package files
+or dependency edits.
+
+43
+00:02:09,425 --> 00:02:12,375
+If your team sees a repeated request of
+this kind,
+
+44
+00:02:12,425 --> 00:02:17,000
+the platform lead can use the examples
+to clarify the task instructions or the
+
+45
+00:02:17,050 --> 00:02:18,035
+permission defaults.
+
+46
+00:02:19,543 --> 00:02:22,418
+Now follow the evidence after
+publication.
+
+47
+00:02:22,493 --> 00:02:26,893
+In the approved remote terminal, the
+reviewer uses GitHub CLI to read the
+
+48
+00:02:26,943 --> 00:02:29,493
+diff and the checks for pull request
+forty-two.
+
+49
+00:02:30,106 --> 00:02:33,531
+They confirm the zero regression, see
+that the checks passed,
+
+50
+00:02:33,581 --> 00:02:36,481
+and submit a review with their own
+identity.
+
+51
+00:02:36,556 --> 00:02:40,281
+For the manager walkthrough, read back
+that recorded decision and link it to
+
+52
+00:02:40,331 --> 00:02:41,318
+issue seventeen.
+
+53
+00:02:41,921 --> 00:02:45,746
+A passing check answers whether the test
+suite ran successfully.
+
+54
+00:02:45,796 --> 00:02:48,971
+The review record answers who evaluated
+the change.
+
+55
+00:02:49,046 --> 00:02:52,344
+Ask learners to point to one piece of
+evidence for each question.
+
+56
+00:02:53,856 --> 00:02:56,481
+Make the permission decision easy to
+look up.
+
+57
+00:02:56,581 --> 00:03:00,341
+Save the task, the approved data class,
+where the assistant runs,
+
+58
+00:03:00,391 --> 00:03:03,128
+the actions it can take, and who handles
+exceptions.
+
+59
+00:03:03,730 --> 00:03:07,880
+If you later evaluate Claude Code or
+OpenCode in the corporate Google Cloud
+
+60
+00:03:07,930 --> 00:03:12,580
+workspace, check which identities grant
+access to the shell, repository,
+
+61
+00:03:12,780 --> 00:03:13,280
+and model.
+
+62
+00:03:13,904 --> 00:03:16,754
+Their boundaries may differ from the
+editor workflow.
+
+63
+00:03:16,829 --> 00:03:18,854
+Try one final exercise.
+
+64
+00:03:18,929 --> 00:03:21,447
+A teammate asks to connect another data
+source.
+
+65
+00:03:22,046 --> 00:03:24,071
+Who has to review that request?
+
+66
+00:03:24,146 --> 00:03:27,506
+In this example, the platform lead
+checks the new destination and
+
+67
+00:03:27,556 --> 00:03:29,234
+permission before approving use.

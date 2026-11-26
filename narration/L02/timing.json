@@ -1,0 +1,392 @@
+{
+  "fps": 24,
+  "voiceBuild": "c02ad7dac1f30dbd6428e83a4203d032aff08deb6da85c358b10e8045068c232",
+  "paceBuild": "69a63fe493fb00bccd2e5844b8ca490f2b7ea8941fc5bcf01c7df2b09b36037a",
+  "delivery": {
+    "targetWordsPerMinute": 146,
+    "inputWordsPerMinute": 158.58,
+    "tempo": 0.93320712,
+    "outputWordsPerMinute": 145.99
+  },
+  "audioSha256": "2a610a1adde656b77456872ca710e94d158603416a521885c233e315ba964ddb",
+  "captionsSha256": "513e6942fefe23e092ef330908f92321452fd126cc5a7f68e4bd4d7b1eff78eb",
+  "scenes": [
+    {
+      "id": "task",
+      "scriptSha256": "7346a16c8af4221a7e62686c5275381fb58486764d01be2a840907548d98e666",
+      "durationFrames": 903,
+      "cues": [
+        {
+          "start": 0.421,
+          "end": 4.44,
+          "text": "Take the model choice from the previous\nlesson and turn it into an access"
+        },
+        {
+          "start": 4.493,
+          "end": 5.672,
+          "text": "decision."
+        },
+        {
+          "start": 5.752,
+          "end": 9.167,
+          "text": "Issue seventeen asks for a validator\nchange and a test."
+        },
+        {
+          "start": 9.836,
+          "end": 12.686,
+          "text": "Write down the two files, the working\nbranch,"
+        },
+        {
+          "start": 12.74,
+          "end": 15.553,
+          "text": "and what you expect the assistant to\nproduce."
+        },
+        {
+          "start": 15.633,
+          "end": 19.918,
+          "text": "Keep production credentials and shared\ndeployment systems outside this task."
+        },
+        {
+          "start": 20.598,
+          "end": 24.616,
+          "text": "A manager can check the boundary by\nasking the author to explain every"
+        },
+        {
+          "start": 24.67,
+          "end": 27.188,
+          "text": "proposed permission against the ticket."
+        },
+        {
+          "start": 27.268,
+          "end": 28.727,
+          "text": "Try it with the test file."
+        },
+        {
+          "start": 29.422,
+          "end": 32.878,
+          "text": "Reading that file helps match the\nexisting test style."
+        },
+        {
+          "start": 32.958,
+          "end": 35.832,
+          "text": "Changing a pipeline falls outside the\nplanned work."
+        }
+      ]
+    },
+    {
+      "id": "data",
+      "scriptSha256": "ae9a11da96af098ed85d52c90dbc5b706cf0692494cf207257fc3d27ca1c1181",
+      "durationFrames": 941,
+      "cues": [
+        {
+          "start": 0.466,
+          "end": 2.261,
+          "text": "Sketch two boxes."
+        },
+        {
+          "start": 2.315,
+          "end": 7.383,
+          "text": "The first is the client, such as Visual\nStudio Code or a CLI in the corporate"
+        },
+        {
+          "start": 7.437,
+          "end": 8.902,
+          "text": "Google Cloud workspace."
+        },
+        {
+          "start": 9.548,
+          "end": 12.093,
+          "text": "The second is the model endpoint."
+        },
+        {
+          "start": 12.173,
+          "end": 16.647,
+          "text": "Draw an arrow between them and label it\nwith the selected code, ticket text,"
+        },
+        {
+          "start": 16.818,
+          "end": 19.235,
+          "text": "and synthetic test examples that may\ntravel."
+        },
+        {
+          "start": 19.903,
+          "end": 23.895,
+          "text": "Have the platform owner confirm the\nactual provider, endpoint,"
+        },
+        {
+          "start": 23.949,
+          "end": 26.869,
+          "text": "and retention terms for the approved\nsetup."
+        },
+        {
+          "start": 26.922,
+          "end": 30.227,
+          "text": "The machine that runs the client tells\nyou one part of that story."
+        },
+        {
+          "start": 30.896,
+          "end": 35.235,
+          "text": "If you cannot name the configured\ndestination, keep the real source out of"
+        },
+        {
+          "start": 35.262,
+          "end": 37.675,
+          "text": "the request until the owner confirms it."
+        }
+      ]
+    },
+    {
+      "id": "access",
+      "scriptSha256": "49d3d588d9b7524261ade6748688463066b9a84c6bb33d9ad9383d0671a164cb",
+      "durationFrames": 901,
+      "cues": [
+        {
+          "start": 0.466,
+          "end": 4.699,
+          "text": "Start with the permissions to read,\nedit, test, and publish."
+        },
+        {
+          "start": 4.752,
+          "end": 8.557,
+          "text": "The assistant may read the scoped\ncontext and propose the patch on the"
+        },
+        {
+          "start": 8.61,
+          "end": 9.519,
+          "text": "working branch."
+        },
+        {
+          "start": 10.153,
+          "end": 14.118,
+          "text": "The author inspects the edits and\npermits the specific test run in an"
+        },
+        {
+          "start": 14.172,
+          "end": 16.02,
+          "text": "approved environment."
+        },
+        {
+          "start": 16.1,
+          "end": 20.226,
+          "text": "The author publishes the branch and\nopens the pull request with their own"
+        },
+        {
+          "start": 20.28,
+          "end": 20.866,
+          "text": "account."
+        },
+        {
+          "start": 21.533,
+          "end": 24.4,
+          "text": "A different authorized teammate reviews\nit."
+        },
+        {
+          "start": 24.48,
+          "end": 27.454,
+          "text": "Read the table from bottom to top as a\ncheck."
+        },
+        {
+          "start": 27.534,
+          "end": 31.365,
+          "text": "If you see the same identity beside\npublish and final approval,"
+        },
+        {
+          "start": 31.445,
+          "end": 35.089,
+          "text": "identify who will perform the\nindependent review before you start the"
+        },
+        {
+          "start": 35.142,
+          "end": 35.72,
+          "text": "pilot."
+        }
+      ]
+    },
+    {
+      "id": "prompt",
+      "scriptSha256": "84fd0031be02d2a2783f4936dfc3393e01a1b2ea17d4f5eec3a60ac9e6a24dd6",
+      "durationFrames": 889,
+      "cues": [
+        {
+          "start": 0.421,
+          "end": 2.296,
+          "text": "Here is a permission prompt."
+        },
+        {
+          "start": 2.35,
+          "end": 5.672,
+          "text": "The assistant asks to download a new\ntest library."
+        },
+        {
+          "start": 5.752,
+          "end": 8.512,
+          "text": "Pause and ask what would justify it."
+        },
+        {
+          "start": 8.592,
+          "end": 12.664,
+          "text": "This repository already has tests in\nPython's standard library,"
+        },
+        {
+          "start": 12.717,
+          "end": 15.431,
+          "text": "so we have the capability needed for the\nzero case."
+        },
+        {
+          "start": 16.077,
+          "end": 20.497,
+          "text": "Decline the network request and ask the\nassistant to follow the existing test"
+        },
+        {
+          "start": 20.551,
+          "end": 21.622,
+          "text": "style."
+        },
+        {
+          "start": 21.703,
+          "end": 25.326,
+          "text": "Then inspect the diff for package files\nor dependency edits."
+        },
+        {
+          "start": 25.994,
+          "end": 29.155,
+          "text": "If your team sees a repeated request of\nthis kind,"
+        },
+        {
+          "start": 29.209,
+          "end": 34.111,
+          "text": "the platform lead can use the examples\nto clarify the task instructions or the"
+        },
+        {
+          "start": 34.165,
+          "end": 35.22,
+          "text": "permission defaults."
+        }
+      ]
+    },
+    {
+      "id": "controls",
+      "scriptSha256": "86c59391fb4a23a64372da5ff8727cd4131cacb9adc866b80caf39f946367e0b",
+      "durationFrames": 891,
+      "cues": [
+        {
+          "start": 0.448,
+          "end": 3.529,
+          "text": "Now follow the evidence after\npublication."
+        },
+        {
+          "start": 3.609,
+          "end": 8.324,
+          "text": "In the approved remote terminal, the\nreviewer uses GitHub CLI to read the"
+        },
+        {
+          "start": 8.378,
+          "end": 11.11,
+          "text": "diff and the checks for pull request\nforty-two."
+        },
+        {
+          "start": 11.767,
+          "end": 15.437,
+          "text": "They confirm the zero regression, see\nthat the checks passed,"
+        },
+        {
+          "start": 15.491,
+          "end": 18.598,
+          "text": "and submit a review with their own\nidentity."
+        },
+        {
+          "start": 18.679,
+          "end": 22.67,
+          "text": "For the manager walkthrough, read back\nthat recorded decision and link it to"
+        },
+        {
+          "start": 22.724,
+          "end": 23.781,
+          "text": "issue seventeen."
+        },
+        {
+          "start": 24.428,
+          "end": 28.526,
+          "text": "A passing check answers whether the test\nsuite ran successfully."
+        },
+        {
+          "start": 28.58,
+          "end": 31.982,
+          "text": "The review record answers who evaluated\nthe change."
+        },
+        {
+          "start": 32.063,
+          "end": 35.597,
+          "text": "Ask learners to point to one piece of\nevidence for each question."
+        }
+      ]
+    },
+    {
+      "id": "record",
+      "scriptSha256": "06583fdc2c1e6116dc669917aaaaca829d750995170fe5d1944b80a9b63a324f",
+      "durationFrames": 969,
+      "cues": [
+        {
+          "start": 0.47,
+          "end": 3.283,
+          "text": "Make the permission decision easy to\nlook up."
+        },
+        {
+          "start": 3.39,
+          "end": 7.42,
+          "text": "Save the task, the approved data class,\nwhere the assistant runs,"
+        },
+        {
+          "start": 7.473,
+          "end": 10.406,
+          "text": "the actions it can take, and who handles\nexceptions."
+        },
+        {
+          "start": 11.051,
+          "end": 15.498,
+          "text": "If you later evaluate Claude Code or\nOpenCode in the corporate Google Cloud"
+        },
+        {
+          "start": 15.552,
+          "end": 20.535,
+          "text": "workspace, check which identities grant\naccess to the shell, repository,"
+        },
+        {
+          "start": 20.749,
+          "end": 21.285,
+          "text": "and model."
+        },
+        {
+          "start": 21.953,
+          "end": 25.007,
+          "text": "Their boundaries may differ from the\neditor workflow."
+        },
+        {
+          "start": 25.088,
+          "end": 27.258,
+          "text": "Try one final exercise."
+        },
+        {
+          "start": 27.338,
+          "end": 30.036,
+          "text": "A teammate asks to connect another data\nsource."
+        },
+        {
+          "start": 30.678,
+          "end": 32.848,
+          "text": "Who has to review that request?"
+        },
+        {
+          "start": 32.928,
+          "end": 36.529,
+          "text": "In this example, the platform lead\nchecks the new destination and"
+        },
+        {
+          "start": 36.582,
+          "end": 38.381,
+          "text": "permission before approving use."
+        }
+      ]
+    }
+  ]
+}
