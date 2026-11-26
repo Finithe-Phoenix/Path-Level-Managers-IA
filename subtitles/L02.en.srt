@@ -1,193 +1,314 @@
 1
-00:00:00,340 --> 00:00:03,669
-The pilot author has a ticket for the
-order validator.
+00:00:00,421 --> 00:00:04,440
+Take the model choice from the previous
+lesson and turn it into an access
 
 2
-00:00:03,849 --> 00:00:08,631
-The assistant needs to understand two
-files and propose a small edit with a
+00:00:04,493 --> 00:00:05,672
+decision.
 
 3
-00:00:08,631 --> 00:00:09,651
-regression test.
+00:00:05,752 --> 00:00:09,167
+Issue seventeen asks for a validator
+change and a test.
 
 4
-00:00:09,831 --> 00:00:14,417
-The manager and platform lead agree on
-that task before choosing permissions.
+00:00:09,836 --> 00:00:12,686
+Write down the two files, the working
+branch,
 
 5
-00:00:14,597 --> 00:00:19,419
-In the same team, remote assistants can
-have different network and credential
+00:00:12,740 --> 00:00:15,553
+and what you expect the assistant to
+produce.
 
 6
-00:00:19,419 --> 00:00:23,929
-access, so we make this decision for this
-particular tool and workspace.
+00:00:15,633 --> 00:00:19,918
+Keep production credentials and shared
+deployment systems outside this task.
 
 7
-00:00:24,109 --> 00:00:26,693
-The answer to who may do what is written
-down.
+00:00:20,598 --> 00:00:24,616
+A manager can check the boundary by
+asking the author to explain every
 
 8
-00:00:28,173 --> 00:00:29,723
-First map the data.
+00:00:24,670 --> 00:00:27,188
+proposed permission against the ticket.
 
 9
-00:00:29,903 --> 00:00:33,307
-The editor reads approved repository
-context.
+00:00:27,268 --> 00:00:28,727
+Try it with the test file.
 
 10
-00:00:33,487 --> 00:00:37,647
-The model request goes to the approved
-service for that configuration.
+00:00:29,422 --> 00:00:32,878
+Reading that file helps match the
+existing test style.
 
 11
-00:00:37,827 --> 00:00:43,223
-A remote workspace is another place to run
-a client, and the provider, endpoint, and
+00:00:32,958 --> 00:00:35,832
+Changing a pipeline falls outside the
+planned work.
 
 12
-00:00:43,223 --> 00:00:46,242
-retention settings need their own
-confirmation.
+00:00:38,091 --> 00:00:39,886
+Sketch two boxes.
 
 13
-00:00:46,422 --> 00:00:51,471
-The manager asks the platform owner to
-record these details, along with which
+00:00:39,940 --> 00:00:45,008
+The first is the client, such as Visual
+Studio Code or a CLI in the corporate
 
 14
-00:00:51,471 --> 00:00:53,962
-code and test data this pilot permits.
+00:00:45,062 --> 00:00:46,527
+Google Cloud workspace.
 
 15
-00:00:55,423 --> 00:01:00,320
-Allow the agent to read the needed
-repository context and propose edits on
+00:00:47,173 --> 00:00:49,718
+The second is the model endpoint.
 
 16
-00:01:00,320 --> 00:01:01,577
-the working branch.
+00:00:49,798 --> 00:00:54,272
+Draw an arrow between them and label it
+with the selected code, ticket text,
 
 17
-00:01:01,757 --> 00:01:06,470
-Keep test execution within the approved
-environment and choose the permissions
+00:00:54,443 --> 00:00:56,860
+and synthetic test examples that may
+travel.
 
 18
-00:01:06,470 --> 00:01:07,920
-supported by that setup.
+00:00:57,528 --> 00:01:01,520
+Have the platform owner confirm the
+actual provider, endpoint,
 
 19
-00:01:08,100 --> 00:01:12,914
-The author confirms the resulting diff and
-publishes the branch with their own
+00:01:01,574 --> 00:01:04,494
+and retention terms for the approved
+setup.
 
 20
-00:01:12,914 --> 00:01:13,902
-approved access.
+00:01:04,547 --> 00:01:07,852
+The machine that runs the client tells
+you one part of that story.
 
 21
-00:01:14,082 --> 00:01:17,688
-The reviewer has a separate identity and
-submits the review.
+00:01:08,521 --> 00:01:12,860
+If you cannot name the configured
+destination, keep the real source out of
 
 22
-00:01:17,868 --> 00:01:20,898
-Production access is outside the pilot
-scope.
+00:01:12,887 --> 00:01:15,300
+the request until the owner confirms it.
 
 23
-00:01:22,340 --> 00:01:27,192
-Now imagine the assistant thinks it needs
-a new dependency to write the test.
+00:01:17,299 --> 00:01:21,532
+Start with the permissions to read,
+edit, test, and publish.
 
 24
-00:01:27,372 --> 00:01:30,446
-The author sees a request to make a
-network call.
+00:01:21,585 --> 00:01:25,390
+The assistant may read the scoped
+context and propose the patch on the
 
 25
-00:01:30,626 --> 00:01:35,540
-The planned test uses the standard
-library, so the author declines the action
+00:01:25,443 --> 00:01:26,352
+working branch.
 
 26
-00:01:35,540 --> 00:01:38,603
-and asks for a solution within the agreed
-files.
+00:01:26,986 --> 00:01:30,951
+The author inspects the edits and
+permits the specific test run in an
 
 27
-00:01:38,783 --> 00:01:41,079
-Pause here and decide what you would do.
+00:01:31,005 --> 00:01:32,853
+approved environment.
 
 28
-00:01:41,259 --> 00:01:45,229
-Write down how the team reports repeated
-unexpected requests.
+00:01:32,933 --> 00:01:37,059
+The author publishes the branch and
+opens the pull request with their own
 
 29
-00:01:46,673 --> 00:01:51,111
-The author checks the diff, tests the
-change, and opens the pull request.
+00:01:37,113 --> 00:01:37,699
+account.
 
 30
-00:01:51,291 --> 00:01:55,886
-From an approved remote terminal, a
-separate reviewer sees the stated scope,
+00:01:38,366 --> 00:01:41,233
+A different authorized teammate reviews
+it.
 
 31
-00:01:55,886 --> 00:01:58,183
-the actual diff, and the check result.
+00:01:41,313 --> 00:01:44,287
+Read the table from bottom to top as a
+check.
 
 32
-00:01:58,363 --> 00:02:00,606
-They can approve or ask for a correction.
+00:01:44,367 --> 00:01:48,198
+If you see the same identity beside
+publish and final approval,
 
 33
-00:02:00,786 --> 00:02:05,446
-A manager can ask for the pull request
-link and review record as evidence that
+00:01:48,278 --> 00:01:51,922
+identify who will perform the
+independent review before you start the
 
 34
-00:02:05,446 --> 00:02:09,031
-those responsibilities stayed separate
-through the workflow.
+00:01:51,975 --> 00:01:52,553
+pilot.
 
 35
-00:02:10,507 --> 00:02:15,341
-The manager records the approved
-environment, data scope, action limits,
+00:01:54,796 --> 00:01:56,671
+Here is a permission prompt.
 
 36
-00:02:15,341 --> 00:02:19,167
-named human roles, and the person who
-handles exceptions.
+00:01:56,725 --> 00:02:00,047
+The assistant asks to download a new
+test library.
 
 37
-00:02:19,347 --> 00:02:24,882
-Apply the same questions if you later
-pilot Claude Code or OpenCode inside the
+00:02:00,127 --> 00:02:02,887
+Pause and ask what would justify it.
 
 38
-00:02:24,882 --> 00:02:26,727
-corporate cloud workspace.
+00:02:02,967 --> 00:02:07,039
+This repository already has tests in
+Python's standard library,
 
 39
-00:02:26,907 --> 00:02:32,484
-Ask which identity actually grants access
-and which controls the workspace enforces.
+00:02:07,092 --> 00:02:09,806
+so we have the capability needed for the
+zero case.
 
 40
-00:02:32,664 --> 00:02:37,394
-A new connector, new data source, or
-expanded permission brings the decision
+00:02:10,452 --> 00:02:14,872
+Decline the network request and ask the
+assistant to follow the existing test
 
 41
-00:02:37,394 --> 00:02:39,075
-back to the platform owner.
+00:02:14,926 --> 00:02:15,997
+style.
+
+42
+00:02:16,078 --> 00:02:19,701
+Then inspect the diff for package files
+or dependency edits.
+
+43
+00:02:20,369 --> 00:02:23,530
+If your team sees a repeated request of
+this kind,
+
+44
+00:02:23,584 --> 00:02:28,486
+the platform lead can use the examples
+to clarify the task instructions or the
+
+45
+00:02:28,540 --> 00:02:29,595
+permission defaults.
+
+46
+00:02:31,865 --> 00:02:34,946
+Now follow the evidence after
+publication.
+
+47
+00:02:35,026 --> 00:02:39,741
+In the approved remote terminal, the
+reviewer uses GitHub CLI to read the
+
+48
+00:02:39,795 --> 00:02:42,527
+diff and the checks for pull request
+forty-two.
+
+49
+00:02:43,184 --> 00:02:46,854
+They confirm the zero regression, see
+that the checks passed,
+
+50
+00:02:46,908 --> 00:02:50,015
+and submit a review with their own
+identity.
+
+51
+00:02:50,096 --> 00:02:54,087
+For the manager walkthrough, read back
+that recorded decision and link it to
+
+52
+00:02:54,141 --> 00:02:55,198
+issue seventeen.
+
+53
+00:02:55,845 --> 00:02:59,943
+A passing check answers whether the test
+suite ran successfully.
+
+54
+00:02:59,997 --> 00:03:03,399
+The review record answers who evaluated
+the change.
+
+55
+00:03:03,480 --> 00:03:07,014
+Ask learners to point to one piece of
+evidence for each question.
+
+56
+00:03:09,012 --> 00:03:11,825
+Make the permission decision easy to
+look up.
+
+57
+00:03:11,932 --> 00:03:15,962
+Save the task, the approved data class,
+where the assistant runs,
+
+58
+00:03:16,015 --> 00:03:18,948
+the actions it can take, and who handles
+exceptions.
+
+59
+00:03:19,593 --> 00:03:24,040
+If you later evaluate Claude Code or
+OpenCode in the corporate Google Cloud
+
+60
+00:03:24,094 --> 00:03:29,077
+workspace, check which identities grant
+access to the shell, repository,
+
+61
+00:03:29,291 --> 00:03:29,827
+and model.
+
+62
+00:03:30,495 --> 00:03:33,549
+Their boundaries may differ from the
+editor workflow.
+
+63
+00:03:33,630 --> 00:03:35,800
+Try one final exercise.
+
+64
+00:03:35,880 --> 00:03:38,578
+A teammate asks to connect another data
+source.
+
+65
+00:03:39,220 --> 00:03:41,390
+Who has to review that request?
+
+66
+00:03:41,470 --> 00:03:45,071
+In this example, the platform lead
+checks the new destination and
+
+67
+00:03:45,124 --> 00:03:46,923
+permission before approving use.
