@@ -1,208 +1,276 @@
 1
-00:00:00,340 --> 00:00:05,362
-An engineering manager has three coding
-tools available and a team whose small
+00:00:00,465 --> 00:00:03,248
+Imagine you own a small order service.
 
 2
-00:00:05,362 --> 00:00:07,294
-fixes sit in the review queue.
+00:00:03,304 --> 00:00:06,087
+The team says it wants AI to speed up
+coding,
 
 3
-00:00:07,474 --> 00:00:12,514
-For this fictional order service, the
-business task is to make routine validator
+00:00:06,143 --> 00:00:08,740
+so you pull up the last few routine
+fixes.
 
 4
-00:00:12,514 --> 00:00:15,539
-fixes easier to review while preserving
-quality.
+00:00:09,423 --> 00:00:14,544
+One was ready on Tuesday and received
+its first useful review on Thursday.
 
 5
-00:00:15,719 --> 00:00:20,309
-The manager starts with a real kind of
-change: a ticket that spells out which
+00:00:14,628 --> 00:00:17,984
+Across the baseline, the wait was
+eighteen business hours.
 
 6
-00:00:20,309 --> 00:00:21,680
-quantities should pass.
+00:00:18,665 --> 00:00:21,393
+That gives us a better starting
+question.
 
 7
-00:00:21,860 --> 00:00:24,840
-This gives the team a clear way to judge
-the result.
+00:00:21,448 --> 00:00:25,901
+Could a small, well-tested change be
+easier for a teammate to pick up?
 
 8
-00:00:26,298 --> 00:00:28,583
-The ticket gives us four examples.
+00:00:25,985 --> 00:00:30,382
+Mark that waiting step, then choose a
+task with a result the reviewer can
 
 9
-00:00:28,763 --> 00:00:30,366
-One and five are valid.
+00:00:30,438 --> 00:00:33,736
+verify, like fixing the minimum order
+quantity.
 
 10
-00:00:30,546 --> 00:00:33,259
-Zero and negative one should be rejected.
+00:00:36,044 --> 00:00:40,079
+Here is the task a developer could hand
+to a coding assistant.
 
 11
-00:00:33,439 --> 00:00:37,556
-We also want a small diff and a test that
-fails before the fix.
+00:00:40,135 --> 00:00:44,109
+The order validator accepts zero, and
+the minimum is one.
 
 12
-00:00:37,736 --> 00:00:43,268
-For a manager, these are useful acceptance
-criteria because a reviewer can check them
+00:00:44,165 --> 00:00:46,086
+Put four examples in the ticket.
 
 13
-00:00:43,268 --> 00:00:44,179
-independently.
+00:00:46,785 --> 00:00:48,511
+One and five pass.
 
 14
-00:00:44,359 --> 00:00:48,326
-Look for equally clear examples in the
-tasks you want to pilot.
+00:00:48,622 --> 00:00:51,294
+Zero and negative one are rejected.
 
 15
-00:00:48,506 --> 00:00:51,908
-The team can discuss quality using the
-same evidence.
+00:00:51,377 --> 00:00:55,162
+Verify the two existing behaviors as
+well as the new one.
 
 16
-00:00:53,382 --> 00:00:58,447
-Copilot in Visual Studio Code is already
-where the author edits and checks diffs.
+00:00:55,246 --> 00:00:59,893
+Write the zero test first, run it while
+the old comparison is still in place,
 
 17
-00:00:58,627 --> 00:01:03,648
-Claude Code and OpenCode are available in
-the approved corporate Google Cloud
+00:01:00,016 --> 00:01:01,135
+and save the failure.
 
 18
-00:01:03,648 --> 00:01:04,300
-workspace.
+00:01:01,841 --> 00:01:05,264
+After the fix, run all four cases again.
 
 19
-00:01:04,480 --> 00:01:10,014
-That remote workspace is a sensible option
-for tasks that genuinely need its tooling.
+00:01:05,347 --> 00:01:09,574
+A reviewer can now trace the request to
+test evidence in the pull request.
 
 20
-00:01:10,194 --> 00:01:13,770
-Here, the small change fits the existing
-editor workflow.
+00:01:11,604 --> 00:01:15,890
+Open the validator and its tests in
+Visual Studio Code.
 
 21
-00:01:13,950 --> 00:01:18,592
-We choose Copilot for the pilot and
-reserve the remote tools for a separate
+00:01:15,946 --> 00:01:18,757
+The author can ask Copilot for a plan
+here,
 
 22
-00:01:18,592 --> 00:01:20,510
-test with a reason to use them.
-
-23
-00:01:21,965 --> 00:01:24,679
-The model is a separate choice from the
+00:01:18,813 --> 00:01:21,521
+then inspect the changes in the same
 editor.
 
+23
+00:01:22,192 --> 00:01:26,590
+Claude Code and OpenCode run in the
+approved corporate Google Cloud
+
 24
-00:01:24,859 --> 00:01:28,412
-Suppose two model options are enabled by
-policy.
+00:01:26,645 --> 00:01:27,953
+workspace.
 
 25
-00:01:28,592 --> 00:01:33,673
-Give them the same eight synthetic tasks,
-the same instructions, and the same time
+00:01:28,037 --> 00:01:32,044
+Those remain options when a task
+benefits from tools that are already
 
 26
-00:01:33,673 --> 00:01:34,107
-budget.
+00:01:32,100 --> 00:01:33,012
+available there.
 
 27
-00:01:34,287 --> 00:01:39,429
-Ask a reviewer to score each final diff
-against the written acceptance criteria.
+00:01:33,683 --> 00:01:38,108
+This exercise needs a two-file change
+and a standard test command,
 
 28
-00:01:39,609 --> 00:01:43,118
-Capture how long the author had to steer
-or repair the work.
+00:01:38,164 --> 00:01:40,529
+so use the editor workflow.
 
 29
-00:01:43,298 --> 00:01:47,469
-Model A and model B are placeholders for
-your approved choices.
+00:01:40,613 --> 00:01:45,372
+Record the tool you selected and where
+its actions run before discussing model
 
 30
-00:01:48,923 --> 00:01:54,010
-In this illustration, model A met all
-criteria on seven of eight tasks.
+00:01:45,427 --> 00:01:46,118
+choices.
 
 31
-00:01:54,190 --> 00:01:56,028
-Model B met them on eight.
+00:01:48,197 --> 00:01:52,622
+Suppose your organization has enabled
+two models for this editor.
 
 32
-00:01:56,208 --> 00:01:58,847
-The author spent a little longer with
-model B.
+00:01:52,705 --> 00:01:54,514
+Call them A and B.
 
 33
-00:01:59,027 --> 00:02:04,099
-Since the team agreed that every boundary
-check must pass for this small benchmark,
+00:01:54,570 --> 00:01:58,395
+Prepare eight synthetic cases with known
+expected behavior.
 
 34
-00:02:04,099 --> 00:02:05,810
-model B is the pilot choice.
+00:01:59,055 --> 00:02:03,814
+Give each model a fresh copy of the same
+starting point and the same time limit
 
 35
-00:02:05,990 --> 00:02:08,852
-Keep the scores and the sample size
-together.
+00:02:03,870 --> 00:02:05,373
+for each case.
 
 36
-00:02:09,032 --> 00:02:13,699
-Eight synthetic tasks give a practical
-starting point, and the pilot will test
+00:02:05,456 --> 00:02:08,601
+A reviewer marks a pass only when the
+tests, scope,
 
 37
-00:02:13,699 --> 00:02:15,195
-how that choice holds up.
+00:02:08,762 --> 00:02:10,578
+and evidence all meet the ticket.
 
 38
-00:02:16,673 --> 00:02:20,311
-Write down the decision while it is still
-easy to reconstruct.
+00:02:11,273 --> 00:02:16,310
+For instance, a working change without
+its zero regression test still misses
 
 39
-00:02:20,491 --> 00:02:25,532
-We are using Copilot in the editor with
-the second approved model for tightly
+00:02:16,366 --> 00:02:18,481
+the evidence requirement.
 
 40
-00:02:25,532 --> 00:02:27,038
-scoped validator fixes.
+00:02:18,564 --> 00:02:23,323
+In a second column, log the minutes the
+author spent steering the assistant or
 
 41
-00:02:27,218 --> 00:02:29,577
-The engineering lead owns the pilot.
+00:02:23,379 --> 00:02:24,753
+repairing its output.
 
 42
-00:02:29,757 --> 00:02:32,267
-A human reviews every proposed change.
+00:02:27,090 --> 00:02:30,057
+In this exercise, A passes seven of
+eight.
 
 43
-00:02:32,447 --> 00:02:37,993
-Revisit the choice if the approved model
-changes, scope expands, or review quality
+00:02:30,141 --> 00:02:31,866
+B passes eight of eight.
 
 44
-00:02:37,993 --> 00:02:38,399
-slips.
+00:02:31,922 --> 00:02:35,259
+The median steering time is two minutes
+for A and three for B.
 
 45
-00:02:38,579 --> 00:02:44,041
-The next episode turns those expectations
-into explicit boundaries for an agent.
+00:02:35,954 --> 00:02:41,381
+We agreed up front that every case had
+to pass, including the regression check.
+
+46
+00:02:41,464 --> 00:02:45,159
+B clears the gate for one extra median
+minute of author effort.
+
+47
+00:02:45,854 --> 00:02:49,332
+Choose B for the pilot and keep that
+trade-off visible.
+
+48
+00:02:49,416 --> 00:02:53,785
+If you chose based on speed alone, you
+would pick A, so test yourself now.
+
+49
+00:02:54,476 --> 00:02:58,622
+Which criterion rules out A, and where
+would the reviewer see the missing
+
+50
+00:02:58,678 --> 00:02:59,410
+evidence?
+
+51
+00:03:01,947 --> 00:03:05,982
+Save a short note with the task, the
+tool and model choice,
+
+52
+00:03:06,038 --> 00:03:10,546
+the dated benchmark with its sample
+size, and the pilot owner.
+
+53
+00:03:10,630 --> 00:03:15,355
+In our example, the engineering lead
+starts with routine validator fixes in
+
+54
+00:03:15,411 --> 00:03:16,790
+Visual Studio Code.
+
+55
+00:03:17,489 --> 00:03:21,915
+Model B is the better option in these
+eight synthetic cases.
+
+56
+00:03:21,998 --> 00:03:25,338
+If the organization changes the
+available model,
+
+57
+00:03:25,393 --> 00:03:29,150
+if the pilot starts touching other parts
+of the order service,
+
+58
+00:03:29,234 --> 00:03:32,960
+or if review quality slips, bring the
+choice back for review.
+
+59
+00:03:33,689 --> 00:03:37,408
+Now fill in those four fields for a task
+your team already handles.
