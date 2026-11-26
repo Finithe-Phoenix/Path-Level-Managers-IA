@@ -1,0 +1,437 @@
+{
+  "id": "L05",
+  "title": "Decide Whether to Expand, Adjust, or Pause",
+  "subtitle": "Use the scorecard and review evidence to record a bounded decision.",
+  "sources": [
+    {
+      "label": "GitHub Docs · Pilot a feature or model",
+      "url": "https://docs.github.com/en/enterprise-cloud@latest/copilot/tutorials/roll-out-at-scale/govern-at-scale/pilot-a-feature-or-model"
+    },
+    {
+      "label": "DORA · AI Capabilities Model",
+      "url": "https://dora.dev/ai/capabilities-model/report/"
+    },
+    {
+      "label": "NIST · AI Risk Management Framework",
+      "url": "https://www.nist.gov/itl/ai-risk-management-framework"
+    }
+  ],
+  "scenes": [
+    {
+      "id": "meeting",
+      "kind": "decision",
+      "eyebrow": "Fictional order service",
+      "title": "Reopen the agreed rules",
+      "body": "Use the rules the team agreed on before looking at results.",
+      "narration": "You are in the decision meeting. Before opening the scorecard, read the rules the team approved at kickoff. Expand when the benefit and guardrails are met. Adjust when a specific issue can be addressed in a bounded follow-up. Pause for a serious data or access incident, or when the quality risk needs investigation before continuing. This sequence matters because a strong speed result is easy to focus on. Put all three decisions on the table. Ask a teammate which evidence would make them choose each one before showing the pilot numbers.",
+      "code": "Expand: benefit and guardrails met\nAdjust: concrete, correctable issue\nPause: serious incident or unresolved risk",
+      "result": "Use the original decision rules",
+      "focus": "The decision starts with the pre-pilot gates",
+      "action": "State all three outcomes aloud",
+      "durationFrames": 796,
+      "duration": 33.166666666666664,
+      "cues": [
+        {
+          "start": 0.418,
+          "end": 2.243,
+          "text": "You are in the decision meeting."
+        },
+        {
+          "start": 2.293,
+          "end": 6.468,
+          "text": "Before opening the scorecard, read the\nrules the team approved at kickoff."
+        },
+        {
+          "start": 6.568,
+          "end": 9.003,
+          "text": "Expand when the benefit and guardrails\nare met."
+        },
+        {
+          "start": 9.605,
+          "end": 13.63,
+          "text": "Adjust when a specific issue can be\naddressed in a bounded follow-up."
+        },
+        {
+          "start": 13.705,
+          "end": 16.755,
+          "text": "Pause for a serious data or access\nincident,"
+        },
+        {
+          "start": 16.83,
+          "end": 20.071,
+          "text": "or when the quality risk needs\ninvestigation before continuing."
+        },
+        {
+          "start": 20.684,
+          "end": 25.009,
+          "text": "This sequence matters because a strong\nspeed result is easy to focus on."
+        },
+        {
+          "start": 25.059,
+          "end": 27.409,
+          "text": "Put all three decisions on the table."
+        },
+        {
+          "start": 27.484,
+          "end": 31.184,
+          "text": "Ask a teammate which evidence would make\nthem choose each one before showing the"
+        },
+        {
+          "start": 31.234,
+          "end": 32.089,
+          "text": "pilot numbers."
+        }
+      ]
+    },
+    {
+      "id": "outcomes",
+      "kind": "diagram",
+      "eyebrow": "Results",
+      "title": "Find the deciding row",
+      "body": "Read all thresholds before recommending a change.",
+      "narration": "Walk down the scorecard. Wait is thirteen business hours against fourteen. Active review is twenty-six minutes against twenty-seven. Spending is two hundred and forty dollars against three hundred. Each clears its threshold. Seven of forty requests needed rework, so that row lands at seventeen and a half percent. The ceiling was fifteen. The defect count is one in each group, and there were zero serious data or access incidents. The rework row rules out expansion under the team's agreement. Now check whether it gives you a clear change to try.",
+      "code": "Wait 13 h <= 14 h | Effort 26 min <= 27 min\nCost $240 <= $300 | Rework 17.5% > 15%\nSerious data or access incidents: 0",
+      "result": "Decision candidate: adjust",
+      "focus": "17.5% rework exceeds a 15% gate",
+      "action": "Circle the guardrail miss",
+      "durationFrames": 832,
+      "duration": 34.666666666666664,
+      "cues": [
+        {
+          "start": 0.414,
+          "end": 2.039,
+          "text": "Walk down the scorecard."
+        },
+        {
+          "start": 2.114,
+          "end": 5.089,
+          "text": "Wait is thirteen business hours against\nfourteen."
+        },
+        {
+          "start": 5.164,
+          "end": 8.085,
+          "text": "Active review is twenty-six minutes\nagainst twenty-seven."
+        },
+        {
+          "start": 8.734,
+          "end": 12.209,
+          "text": "Spending is two hundred and forty\ndollars against three hundred."
+        },
+        {
+          "start": 12.284,
+          "end": 14.134,
+          "text": "Each clears its threshold."
+        },
+        {
+          "start": 14.234,
+          "end": 18.434,
+          "text": "Seven of forty requests needed rework,\nso that row lands at seventeen and a"
+        },
+        {
+          "start": 18.484,
+          "end": 19.218,
+          "text": "half percent."
+        },
+        {
+          "start": 19.821,
+          "end": 21.396,
+          "text": "The ceiling was fifteen."
+        },
+        {
+          "start": 21.446,
+          "end": 25.596,
+          "text": "The defect count is one in each group,\nand there were zero serious data or"
+        },
+        {
+          "start": 25.646,
+          "end": 27.171,
+          "text": "access incidents."
+        },
+        {
+          "start": 27.246,
+          "end": 30.265,
+          "text": "The rework row rules out expansion under\nthe team's agreement."
+        },
+        {
+          "start": 30.921,
+          "end": 33.6,
+          "text": "Now check whether it gives you a clear\nchange to try."
+        }
+      ]
+    },
+    {
+      "id": "sample",
+      "kind": "github",
+      "eyebrow": "Review evidence",
+      "title": "Choose a targeted adjustment",
+      "body": "Respond to the documented rework pattern.",
+      "narration": "Pull up the review notes. Four of the seven rework cases included files outside the intended change. In one of those cases the reviewer asked to drop unrelated formatting. Turn that observation into two concrete steps. The author lists the expected files in Copilot Plan and checks every actual changed path before publishing the branch. If a third file appears, the author asks what it contributes to the stated acceptance criteria. The independent reviewer still checks the final pull request. This is an adjustment the team can observe in the follow-up.",
+      "code": "Observed: 4/7 rework cases touched extra files\nPlan: name the two expected files\nBefore publication: inspect all changed paths",
+      "result": "Keep independent review in the workflow",
+      "focus": "Four rework cases include unrelated edits",
+      "action": "Add a scope constraint and a diff check",
+      "durationFrames": 868,
+      "duration": 36.166666666666664,
+      "cues": [
+        {
+          "start": 0.368,
+          "end": 2.018,
+          "text": "Pull up the review notes."
+        },
+        {
+          "start": 2.093,
+          "end": 6.818,
+          "text": "Four of the seven rework cases included\nfiles outside the intended change."
+        },
+        {
+          "start": 6.893,
+          "end": 10.731,
+          "text": "In one of those cases the reviewer asked\nto drop unrelated formatting."
+        },
+        {
+          "start": 11.343,
+          "end": 14.393,
+          "text": "Turn that observation into two concrete\nsteps."
+        },
+        {
+          "start": 14.443,
+          "end": 19.068,
+          "text": "The author lists the expected files in\nCopilot Plan and checks every actual"
+        },
+        {
+          "start": 19.118,
+          "end": 21.34,
+          "text": "changed path before publishing the\nbranch."
+        },
+        {
+          "start": 21.984,
+          "end": 26.184,
+          "text": "If a third file appears, the author asks\nwhat it contributes to the stated"
+        },
+        {
+          "start": 26.234,
+          "end": 28.109,
+          "text": "acceptance criteria."
+        },
+        {
+          "start": 28.159,
+          "end": 31.405,
+          "text": "The independent reviewer still checks\nthe final pull request."
+        },
+        {
+          "start": 32.06,
+          "end": 35.081,
+          "text": "This is an adjustment the team can\nobserve in the follow-up."
+        }
+      ]
+    },
+    {
+      "id": "adjust",
+      "kind": "editor",
+      "eyebrow": "Follow-up pilot",
+      "title": "Run a bounded follow-up",
+      "body": "Keep the test small and the measures comparable.",
+      "narration": "The engineering lead owns the next four weeks. Keep the service, eligibility, and metric definitions in place so the next readout can be compared with the pilot. At forty requests, six rework cases would meet fifteen percent. If only thirty requests qualify, four cases equal about thirteen point three percent and five equal about sixteen point seven. Use the actual denominator. Check the reason each time work comes back. You need evidence that the extra-file pattern improved, together with the time and spending measures that supported the original pilot.",
+      "code": "Same service, eligibility, and metric definitions\nFollow-up: four weeks | Owner: engineering lead\nAt 40 PRs: 6/40 = 15%; 7/40 = 17.5%",
+      "result": "Check the file-scope pattern each week",
+      "focus": "Six of forty would meet the original ceiling",
+      "action": "Set a four-week review with the same gates",
+      "durationFrames": 865,
+      "duration": 36.041666666666664,
+      "cues": [
+        {
+          "start": 0.393,
+          "end": 3.343,
+          "text": "The engineering lead owns the next four\nweeks."
+        },
+        {
+          "start": 3.418,
+          "end": 7.738,
+          "text": "Keep the service, eligibility, and\nmetric definitions in place so the next"
+        },
+        {
+          "start": 7.788,
+          "end": 9.67,
+          "text": "readout can be compared with the pilot."
+        },
+        {
+          "start": 10.298,
+          "end": 14.648,
+          "text": "At forty requests, six rework cases\nwould meet fifteen percent."
+        },
+        {
+          "start": 14.723,
+          "end": 19.148,
+          "text": "If only thirty requests qualify, four\ncases equal about thirteen point three"
+        },
+        {
+          "start": 19.198,
+          "end": 22.339,
+          "text": "percent and five equal about sixteen\npoint seven."
+        },
+        {
+          "start": 22.976,
+          "end": 25.001,
+          "text": "Use the actual denominator."
+        },
+        {
+          "start": 25.076,
+          "end": 27.851,
+          "text": "Check the reason each time work comes\nback."
+        },
+        {
+          "start": 27.926,
+          "end": 31.051,
+          "text": "You need evidence that the extra-file\npattern improved,"
+        },
+        {
+          "start": 31.101,
+          "end": 34.351,
+          "text": "together with the time and spending\nmeasures that supported the original"
+        },
+        {
+          "start": 34.401,
+          "end": 34.932,
+          "text": "pilot."
+        }
+      ]
+    },
+    {
+      "id": "paths",
+      "kind": "decision",
+      "eyebrow": "Decision branches",
+      "title": "Practice a different outcome",
+      "body": "Practice selecting an action from the observed outcome.",
+      "narration": "Try three short scenarios. First, the follow-up meets the wait, effort, rework, and budget thresholds. Propose expansion to one comparable team and name its onboarding owner. Second, one routine guardrail misses by a little and review evidence points to a fixable cause. Consider another bounded adjustment. Third, someone sends restricted data to an unapproved model endpoint. Pause the affected workflow and use the existing incident process. Practice saying each decision with the evidence that triggered it. The person who owns the next action should hear exactly what to do.",
+      "code": "All gates met → expand to one comparable team\nCorrectable quality miss → adjust and retest\nSerious data/access incident → pause and escalate",
+      "result": "Use the branch that the evidence supports",
+      "focus": "A serious incident changes the decision immediately",
+      "action": "Match each scenario to its next action",
+      "durationFrames": 909,
+      "duration": 37.875,
+      "cues": [
+        {
+          "start": 0.393,
+          "end": 2.468,
+          "text": "Try three short scenarios."
+        },
+        {
+          "start": 2.543,
+          "end": 7.293,
+          "text": "First, the follow-up meets the wait,\neffort, rework, and budget thresholds."
+        },
+        {
+          "start": 7.343,
+          "end": 11.088,
+          "text": "Propose expansion to one comparable team\nand name its onboarding owner."
+        },
+        {
+          "start": 11.757,
+          "end": 16.392,
+          "text": "Second, one routine guardrail misses by\na little and review evidence points to a"
+        },
+        {
+          "start": 16.467,
+          "end": 17.967,
+          "text": "fixable cause."
+        },
+        {
+          "start": 18.042,
+          "end": 19.975,
+          "text": "Consider another bounded adjustment."
+        },
+        {
+          "start": 20.599,
+          "end": 25.124,
+          "text": "Third, someone sends restricted data to\nan unapproved model endpoint."
+        },
+        {
+          "start": 25.199,
+          "end": 29.103,
+          "text": "Pause the affected workflow and use the\nexisting incident process."
+        },
+        {
+          "start": 29.69,
+          "end": 33.365,
+          "text": "Practice saying each decision with the\nevidence that triggered it."
+        },
+        {
+          "start": 33.415,
+          "end": 36.789,
+          "text": "The person who owns the next action\nshould hear exactly what to do."
+        }
+      ]
+    },
+    {
+      "id": "record",
+      "kind": "decision",
+      "eyebrow": "Decision record",
+      "title": "Write and own the decision",
+      "body": "Leave an actionable decision and a date to revisit it.",
+      "narration": "Open a decision record and fill in a date, an owner, the decision, and the next review. For this case we choose adjust. Median wait met the target, rework did not, and the extra-file pattern gives us a focused intervention. Name the engineering lead, attach the scorecard and the review evidence, and put a follow-up on the calendar four weeks from the relaunch. Then hand the note to a teammate. If they can tell which workflow to change and what evidence will determine the next decision, the record is ready.",
+      "code": "Decision: adjust the order-service pilot\nAction: file scope + author diff checkpoint\nOwner: engineering lead | Next review: 4 weeks",
+      "result": "Attach the scorecard and example review evidence",
+      "focus": "One note captures evidence, action, and timing",
+      "action": "Record adjust and assign the follow-up",
+      "durationFrames": 758,
+      "duration": 31.583333333333332,
+      "cues": [
+        {
+          "start": 0.396,
+          "end": 4.051,
+          "text": "Open a decision record and fill in a\ndate, an owner, the decision,"
+        },
+        {
+          "start": 4.101,
+          "end": 5.576,
+          "text": "and the next review."
+        },
+        {
+          "start": 5.626,
+          "end": 7.726,
+          "text": "For this case we choose adjust."
+        },
+        {
+          "start": 7.801,
+          "end": 10.711,
+          "text": "Median wait met the target, rework did\nnot,"
+        },
+        {
+          "start": 10.761,
+          "end": 13.701,
+          "text": "and the extra-file pattern gives us a\nfocused intervention."
+        },
+        {
+          "start": 14.35,
+          "end": 18.55,
+          "text": "Name the engineering lead, attach the\nscorecard and the review evidence,"
+        },
+        {
+          "start": 18.6,
+          "end": 21.569,
+          "text": "and put a follow-up on the calendar four\nweeks from the relaunch."
+        },
+        {
+          "start": 22.203,
+          "end": 24.153,
+          "text": "Then hand the note to a teammate."
+        },
+        {
+          "start": 24.228,
+          "end": 27.753,
+          "text": "If they can tell which workflow to\nchange and what evidence will determine"
+        },
+        {
+          "start": 27.778,
+          "end": 30.109,
+          "text": "the next decision, the record is ready."
+        }
+      ]
+    }
+  ],
+  "fps": 24,
+  "width": 1280,
+  "height": 720,
+  "durationFrames": 5028,
+  "voiceBuild": "c0119fd5eb0cd4867710f8425067df8061a5ee9c557667b0b1f6c1656dd3dcc3"
+}
