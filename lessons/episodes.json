@@ -1,0 +1,467 @@
+[
+  {
+    "id": "L01",
+    "title": "Choose a Model and Tool for a Business Task",
+    "subtitle": "Choose from the tools your team can use and test them against the work.",
+    "sources": [
+      {
+        "label": "GitHub Docs · Choosing a model",
+        "url": "https://docs.github.com/en/copilot/reference/ai-models/model-comparison"
+      },
+      {
+        "label": "GitHub Docs · Pilot a feature or model",
+        "url": "https://docs.github.com/en/enterprise-cloud@latest/copilot/tutorials/roll-out-at-scale/govern-at-scale/pilot-a-feature-or-model"
+      }
+    ],
+    "scenes": [
+      {
+        "id": "task",
+        "kind": "decision",
+        "eyebrow": "Fictional order service",
+        "title": "Identify the outcome",
+        "body": "Use a measurable business outcome to select the first task.",
+        "narration": "Imagine you own a small order service. The team says it wants AI to speed up coding, so you pull up the last few routine fixes. One was ready on Tuesday and received its first useful review on Thursday. Across the baseline, the wait was eighteen business hours. That gives us a better starting question. Could a small, well-tested change be easier for a teammate to pick up? Mark that waiting step, then choose a task with a result the reviewer can verify, like fixing the minimum order quantity.",
+        "code": "Ready for review → first human code review\nMedian wait: 18 business hours\nCandidate task: a small order-validator fix",
+        "result": "Evidence to inspect: diff and boundary tests",
+        "focus": "The symptom is a wait after PR readiness",
+        "action": "Mark the delay on the ticket"
+      },
+      {
+        "id": "criteria",
+        "kind": "diagram",
+        "eyebrow": "Acceptance examples",
+        "title": "Write the acceptance cases",
+        "body": "Define the evidence a reviewer can reproduce.",
+        "narration": "Here is the task a developer could hand to a coding assistant. The order validator accepts zero, and the minimum is one. Put four examples in the ticket. One and five pass. Zero and negative one are rejected. Verify the two existing behaviors as well as the new one. Write the zero test first, run it while the old comparison is still in place, and save the failure. After the fix, run all four cases again. A reviewer can now trace the request to test evidence in the pull request.",
+        "code": "Accept quantities: 1, 5\nReject quantities: 0, -1\nKeep the existing validator interface",
+        "result": "Regression: zero fails before the fix and passes after",
+        "focus": "Zero is the boundary the ticket exposes",
+        "action": "Put all four cases in the ticket"
+      },
+      {
+        "id": "surface",
+        "kind": "diagram",
+        "eyebrow": "Tools and environments",
+        "title": "Select the working surface",
+        "body": "Match the task to the approved working environment.",
+        "narration": "Open the validator and its tests in Visual Studio Code. The author can ask Copilot for a plan here, then inspect the changes in the same editor. Claude Code and OpenCode run in the approved corporate Google Cloud workspace. Those remain options when a task benefits from tools that are already available there. This exercise needs a two-file change and a standard test command, so use the editor workflow. Record the tool you selected and where its actions run before discussing model choices.",
+        "code": "Local editor: VS Code with Copilot\nCorporate GCP: Claude Code or OpenCode\nThis task: Copilot in the editor",
+        "result": "Remote review and checks use approved access",
+        "focus": "VS Code fits the two-file task",
+        "action": "Pick the tool and record where it runs"
+      },
+      {
+        "id": "model",
+        "kind": "editor",
+        "eyebrow": "Controlled comparison",
+        "title": "Benchmark two approved models",
+        "body": "Give each enabled option identical work and a common quality bar.",
+        "narration": "Suppose your organization has enabled two models for this editor. Call them A and B. Prepare eight synthetic cases with known expected behavior. Give each model a fresh copy of the same starting point and the same time limit for each case. A reviewer marks a pass only when the tests, scope, and evidence all meet the ticket. For instance, a working change without its zero regression test still misses the evidence requirement. In a second column, log the minutes the author spent steering the assistant or repairing its output.",
+        "code": "Eight synthetic cases per approved option\nSame initial code, task text, and time budget\nPass = cases + focused diff + test evidence",
+        "result": "Measure author steering and repair minutes",
+        "focus": "The inputs and scoring match",
+        "action": "Score the same eight cases for both"
+      },
+      {
+        "id": "score",
+        "kind": "terminal",
+        "eyebrow": "Illustrative model benchmark",
+        "title": "Make the trade-off explicit",
+        "body": "Evaluate the quality gate and the author effort together.",
+        "narration": "In this exercise, A passes seven of eight. B passes eight of eight. The median steering time is two minutes for A and three for B. We agreed up front that every case had to pass, including the regression check. B clears the gate for one extra median minute of author effort. Choose B for the pilot and keep that trade-off visible. If you chose based on speed alone, you would pick A, so test yourself now. Which criterion rules out A, and where would the reviewer see the missing evidence?",
+        "code": "Model A: 7/8 pass | 2 min median steering\nModel B: 8/8 pass | 3 min median steering\nGate: every benchmark case passes",
+        "result": "Choose B for the scoped pilot",
+        "focus": "A missed one case and B met the gate",
+        "action": "Choose the model that clears the gate"
+      },
+      {
+        "id": "decision",
+        "kind": "decision",
+        "eyebrow": "Decision record",
+        "title": "Keep a decision you can revisit",
+        "body": "Record the scope, evidence, and decision owner.",
+        "narration": "Save a short note with the task, the tool and model choice, the dated benchmark with its sample size, and the pilot owner. In our example, the engineering lead starts with routine validator fixes in Visual Studio Code. Model B is the better option in these eight synthetic cases. If the organization changes the available model, if the pilot starts touching other parts of the order service, or if review quality slips, bring the choice back for review. Now fill in those four fields for a task your team already handles.",
+        "code": "Tool: Copilot in VS Code | Model: approved B\nScope: routine validator fixes\nOwner: engineering lead",
+        "result": "Revisit on model, scope, or evidence changes",
+        "focus": "The model choice has a defined scope",
+        "action": "Save the choice and its review trigger"
+      }
+    ]
+  },
+  {
+    "id": "L02",
+    "title": "Decide What an Agent Can Do",
+    "subtitle": "Map permissions to actions and keep approvals with the people who own them.",
+    "sources": [
+      {
+        "label": "NIST · AI Risk Management Framework",
+        "url": "https://www.nist.gov/itl/ai-risk-management-framework"
+      },
+      {
+        "label": "NIST · Generative AI Profile",
+        "url": "https://doi.org/10.6028/NIST.AI.600-1"
+      },
+      {
+        "label": "VS Code · Security for AI",
+        "url": "https://code.visualstudio.com/docs/agents/run/security"
+      },
+      {
+        "label": "Google Cloud · Use IAM securely",
+        "url": "https://docs.cloud.google.com/iam/docs/using-iam-securely"
+      }
+    ],
+    "scenes": [
+      {
+        "id": "task",
+        "kind": "decision",
+        "eyebrow": "Fictional order service",
+        "title": "Set the permission boundary",
+        "body": "Start with the specific task and its expected files.",
+        "narration": "Take the model choice from the previous lesson and turn it into an access decision. Issue seventeen asks for a validator change and a test. Write down the two files, the working branch, and what you expect the assistant to produce. Keep production credentials and shared deployment systems outside this task. A manager can check the boundary by asking the author to explain every proposed permission against the ticket. Try it with the test file. Reading that file helps match the existing test style. Changing a pipeline falls outside the planned work.",
+        "code": "Task: issue #17, reject order quantity zero\nFiles: order_quantity.py, test_order_quantity.py\nBranch: fix/reject-zero-quantity",
+        "result": "Expected output: small diff and a regression test",
+        "focus": "The task needs two repository files",
+        "action": "Name the files and the working branch"
+      },
+      {
+        "id": "data",
+        "kind": "diagram",
+        "eyebrow": "Data flow",
+        "title": "Trace the data",
+        "body": "Confirm what can travel and where it ends up.",
+        "narration": "Sketch two boxes. The first is the client, such as Visual Studio Code or a CLI in the corporate Google Cloud workspace. The second is the model endpoint. Draw an arrow between them and label it with the selected code, ticket text, and synthetic test examples that may travel. Have the platform owner confirm the actual provider, endpoint, and retention terms for the approved setup. The machine that runs the client tells you one part of that story. If you cannot name the configured destination, keep the real source out of the request until the owner confirms it.",
+        "code": "VS Code or GCP workspace → configured endpoint\nRecord: provider, policy, retention and owner\nApproved inputs: source examples and test data",
+        "result": "Resolve an unknown endpoint before sharing code",
+        "focus": "Client location and model endpoint differ",
+        "action": "Record the destination and data class"
+      },
+      {
+        "id": "access",
+        "kind": "editor",
+        "eyebrow": "Action matrix",
+        "title": "Assign actions to roles",
+        "body": "Set who may read, edit, test, publish, and review.",
+        "narration": "Start with the permissions to read, edit, test, and publish. The assistant may read the scoped context and propose the patch on the working branch. The author inspects the edits and permits the specific test run in an approved environment. The author publishes the branch and opens the pull request with their own account. A different authorized teammate reviews it. Read the table from bottom to top as a check. If you see the same identity beside publish and final approval, identify who will perform the independent review before you start the pilot.",
+        "code": "Agent: read two files and propose scoped edits\nAuthor: approve tests and publish the branch\nReviewer: inspect the PR and submit a decision",
+        "result": "Use the approved test environment",
+        "focus": "Publishing and approval have distinct owners",
+        "action": "Fill in the owner for each operation"
+      },
+      {
+        "id": "prompt",
+        "kind": "terminal",
+        "eyebrow": "Unexpected action",
+        "title": "Decide on an unexpected request",
+        "body": "Keep the work inside the permissions it actually needs.",
+        "narration": "Here is a permission prompt. The assistant asks to download a new test library. Pause and ask what would justify it. This repository already has tests in Python's standard library, so we have the capability needed for the zero case. Decline the network request and ask the assistant to follow the existing test style. Then inspect the diff for package files or dependency edits. If your team sees a repeated request of this kind, the platform lead can use the examples to clarify the task instructions or the permission defaults.",
+        "code": "Proposed action: download a test dependency\nAgreed command: python -B -m unittest discover -s tests",
+        "result": "Decline the network request",
+        "focus": "The proposed dependency exceeds scope",
+        "action": "Decline it and request the standard test"
+      },
+      {
+        "id": "controls",
+        "kind": "github",
+        "eyebrow": "Human controls",
+        "title": "Read the human review evidence",
+        "body": "Inspect what the check and independent review each prove.",
+        "narration": "Now follow the evidence after publication. In the approved remote terminal, the reviewer uses GitHub CLI to read the diff and the checks for pull request forty-two. They confirm the zero regression, see that the checks passed, and submit a review with their own identity. For the manager walkthrough, read back that recorded decision and link it to issue seventeen. A passing check answers whether the test suite ran successfully. The review record answers who evaluated the change. Ask learners to point to one piece of evidence for each question.",
+        "code": "gh pr diff 42\ngh pr checks 42\ngh pr view 42 --json reviews",
+        "result": "Evidence: separate reviewer and recorded decision",
+        "focus": "PR #42 shows the check and reviewer",
+        "action": "Open the diff, checks, and review record"
+      },
+      {
+        "id": "record",
+        "kind": "decision",
+        "eyebrow": "Permission decision",
+        "title": "Record the approval boundary",
+        "body": "Document who decides when scope changes.",
+        "narration": "Make the permission decision easy to look up. Save the task, the approved data class, where the assistant runs, the actions it can take, and who handles exceptions. If you later evaluate Claude Code or OpenCode in the corporate Google Cloud workspace, check which identities grant access to the shell, repository, and model. Their boundaries may differ from the editor workflow. Try one final exercise. A teammate asks to connect another data source. Who has to review that request? In this example, the platform lead checks the new destination and permission before approving use.",
+        "code": "Engineering lead: owns the pilot\nPlatform lead: controls data and permissions\nReviewer: evaluates the proposed change",
+        "result": "Reassess before changing tools, data, or access",
+        "focus": "New data, tools, or access trigger a review",
+        "action": "Assign a named owner for exceptions"
+      }
+    ]
+  },
+  {
+    "id": "L03",
+    "title": "Design a Pilot Around a Real Bottleneck",
+    "subtitle": "Turn a review bottleneck into a testable pilot with a baseline and decision rules.",
+    "sources": [
+      {
+        "label": "DORA · Software delivery performance metrics",
+        "url": "https://dora.dev/guides/dora-metrics/"
+      },
+      {
+        "label": "GitHub Docs · Measuring a Copilot trial",
+        "url": "https://docs.github.com/en/copilot/tutorials/roll-out-at-scale/measure-success"
+      }
+    ],
+    "scenes": [
+      {
+        "id": "flow",
+        "kind": "diagram",
+        "eyebrow": "Fictional order service",
+        "title": "Locate the bottleneck",
+        "body": "Read the queue from the time a PR becomes ready.",
+        "narration": "I have two timestamps on this example pull request. The author marked it ready at ten on Monday. The first teammate commented on the code at two on Tuesday. The team counts business hours, so with a nine-to-five schedule that is seven hours on Monday and five on Tuesday, twelve in all. The baseline across forty requests is eighteen business hours. This measurement starts at readiness. It tells the manager where work is waiting after the author has asked for a review. Try tracing the same two points on a pull request from your team.",
+        "code": "Ticket → authoring → ready for review\nReady → first substantive review → merge\nBaseline median wait: 18 business hours",
+        "result": "Measure the interval the team wants to improve",
+        "focus": "The queue starts when a PR is ready",
+        "action": "Mark readiness and the first human review"
+      },
+      {
+        "id": "hypothesis",
+        "kind": "decision",
+        "eyebrow": "Pilot hypothesis",
+        "title": "Write a testable intervention",
+        "body": "Describe the change you expect the intervention to produce.",
+        "narration": "Suppose reviewers say small fixes are hard to pick up when the expected outcomes are buried in the ticket. The pilot gives every eligible change a focused diff, clear boundary tests, and a short summary. Copilot helps the author prepare that package. Ask for a prediction the team can check. We expect those pull requests to reach their first substantive review sooner. Write an eligibility rule and try two examples. The zero-quantity issue qualifies. A database migration with several services and design decisions keeps its usual process.",
+        "code": "Eligible: routine order-validator fixes\nAdd: scoped diff, boundary tests, PR summary\nKeep the existing human review path",
+        "result": "Hypothesis: reviewers pick up clearer PRs sooner",
+        "focus": "The author prepares a narrower PR",
+        "action": "Define what belongs in the pilot"
+      },
+      {
+        "id": "baseline",
+        "kind": "editor",
+        "eyebrow": "Baseline window",
+        "title": "Build comparable windows",
+        "body": "Apply the same eligibility and collection rules.",
+        "narration": "Set aside four weeks for the baseline and four for the pilot. Use the same service and the same definition of an eligible fix in both windows. Keep a small table of the task mix and which reviewers covered the queue each week. Suppose the pilot's third week had an extra reviewer. Flag it in the scorecard. That coverage could contribute to the result. This is a useful pilot design for a local decision. A historical comparison leaves several explanations open, so save the context and bring it to the review meeting.",
+        "code": "Baseline: 40 eligible PRs across four weeks\nPilot: 40 eligible PRs across four weeks\nRecord reviewer shifts and queue volume",
+        "result": "Compare the same type of work in one service",
+        "focus": "Two four-week groups use the same rule",
+        "action": "Log task mix and staffing changes"
+      },
+      {
+        "id": "measure",
+        "kind": "terminal",
+        "eyebrow": "Outcome and guardrails",
+        "title": "Define the inputs",
+        "body": "Decide which signals count before looking at outcomes.",
+        "narration": "Agree on how to count before you start measuring. A substantive first review discusses the change. A bot result or an acknowledgment such as ‘looking soon’ leaves the clock running. Active review minutes measure time spent reading and evaluating the pull request. Material rework means the author has to change an important part of the proposed behavior, tests, or scope. A spelling suggestion is a different kind of feedback. Give reviewers two sample comments and have them label each one. Compare answers so the team starts with a common definition.",
+        "code": "Wait: ready → first human code review\nEffort: active reviewer minutes on that PR\nRework: PR needs a material author revision",
+        "result": "Collect evidence with each measurement",
+        "focus": "Wait hours and active minutes measure different work",
+        "action": "Write what counts as meaningful rework"
+      },
+      {
+        "id": "thresholds",
+        "kind": "decision",
+        "eyebrow": "Rules before results",
+        "title": "Set the decision thresholds",
+        "body": "Use a measurable target, guardrails, and stop conditions.",
+        "narration": "The team sets the finish line before the results arrive. Median wait should drop from eighteen business hours to fourteen or less. Active review starts at twenty-four minutes, and the team allows three additional minutes. Twenty-four plus three gives us a twenty-seven minute limit. The rework ceiling is fifteen percent and the spending cap is three hundred dollars. Track post-merge defects with a fixed follow-up period. A serious data or access incident triggers a pause and the agreed response process. Put these rules where the decision owner can find them.",
+        "code": "Wait <= 14 h | Effort <= 27 min\nRework <= 15% | Incremental cost <= $300\nMonitor post-merge defects and access incidents",
+        "result": "Serious data or access incident triggers a pause",
+        "focus": "The allowed effort increase is three minutes",
+        "action": "Write the benefit and guardrail values"
+      },
+      {
+        "id": "launch",
+        "kind": "github",
+        "eyebrow": "Pilot record",
+        "title": "Launch with an evidence trail",
+        "body": "Assign responsibility for evidence during the pilot.",
+        "narration": "The engineering lead is accountable for the pilot record. The author and reviewer own their parts of each pull request. Use issue seventeen and pull request forty-two as the walkthrough. Read the change, check the times, and ask who would label a rework request. Schedule a quick weekly check to catch missing evidence while the team can still recover it. Before starting, hand the record to a teammate. Ask them to explain which tasks qualify, when the review clock starts, and what result would make the team pause. Fix anything they interpret differently.",
+        "code": "Pilot record: windows, eligibility, metrics, owner\nEvidence exercise: issue #17 → PR #42\nWeekly check: exceptions, staffing, data gaps",
+        "result": "Start after the review roles are assigned",
+        "focus": "Issue #17 links to the first example PR",
+        "action": "Give the scorecard a named owner"
+      }
+    ]
+  },
+  {
+    "id": "L04",
+    "title": "Measure Review Time, Quality, and Cost",
+    "subtitle": "Read a team-level scorecard and investigate the work behind the numbers.",
+    "sources": [
+      {
+        "label": "DORA · Software delivery performance metrics",
+        "url": "https://dora.dev/guides/dora-metrics/"
+      },
+      {
+        "label": "DORA · ROI of AI-assisted development",
+        "url": "https://dora.dev/ai/roi/report/"
+      },
+      {
+        "label": "GitHub Docs · Communicate Copilot impact",
+        "url": "https://docs.github.com/en/copilot/tutorials/roll-out-at-scale/communicate-copilot-impact"
+      },
+      {
+        "label": "Microsoft Research · SPACE of Developer Productivity",
+        "url": "https://www.microsoft.com/en-us/research/publication/the-space-of-developer-productivity-theres-more-to-it-than-you-think/"
+      }
+    ],
+    "scenes": [
+      {
+        "id": "sample",
+        "kind": "diagram",
+        "eyebrow": "Synthetic pilot results",
+        "title": "Check the comparison",
+        "body": "Keep the unit, denominator, and follow-up consistent.",
+        "narration": "The pilot is complete and the scorecard starts with two counts. Forty eligible requests in the baseline and forty in the pilot. Each row is one pull request, even if three teammates reviewed it. Count the rows and confirm the same eligibility rule applied in both windows. In this synthetic sample every request merged and had the same defect follow-up. In your own data, flag rows with missing dates or insufficient follow-up. That tells the next reader which denominator you used for each metric.",
+        "code": "Baseline: 40 eligible PRs | Pilot: 40 eligible PRs\nMatched definitions, same service\nAll merged with the same follow-up window",
+        "result": "Sample size stays visible",
+        "focus": "Each row represents one eligible PR",
+        "action": "Count both groups and review missing rows"
+      },
+      {
+        "id": "time",
+        "kind": "terminal",
+        "eyebrow": "Time",
+        "title": "Read the two time measures",
+        "body": "Read waiting and active effort as separate measures.",
+        "narration": "Read the wait row first. Eighteen minus thirteen is five fewer business hours before the first human review. Thirteen is within the fourteen-hour target. Next read the effort row. Twenty-six minus twenty-four gives us a two-minute increase in median active review. Twenty-six fits the twenty-seven minute limit. Say both findings in the same meeting. This result can reflect a shorter queue alongside a little more reviewer work. Report the medians separately because they describe different parts of the review process. Ask which row would reveal a reviewer workload problem.",
+        "code": "Wait: 18 h → 13 h | Target <= 14 h\nEffort: 24 min → 26 min | Limit <= 27 min",
+        "result": "Both time thresholds met",
+        "focus": "Wait fell five hours and effort rose two minutes",
+        "action": "Compare both medians to their thresholds"
+      },
+      {
+        "id": "quality",
+        "kind": "github",
+        "eyebrow": "Quality",
+        "title": "Calculate quality rates",
+        "body": "Express quality with counts and rates.",
+        "narration": "Now divide the rework count by the number of eligible requests. In the baseline, six divided by forty gives fifteen percent. In the pilot, seven divided by forty gives seventeen and a half percent. That is two and a half percentage points above the limit, even though the count changed by just one. This is the guardrail the team missed. The defect count is one in each group, or two and a half percent. With one event in each, report the counts and be careful about drawing a trend.",
+        "code": "Baseline rework: 6 ÷ 40 = 15%\nPilot rework: 7 ÷ 40 = 17.5%\nPost-merge defects: 1 ÷ 40 in each group",
+        "result": "Rework missed by 2.5 percentage points",
+        "focus": "One extra rework case crosses the ceiling",
+        "action": "Divide the rework count by eligible PRs"
+      },
+      {
+        "id": "cost",
+        "kind": "editor",
+        "eyebrow": "Incremental cost",
+        "title": "Calculate the pilot cost",
+        "body": "Make expenses and allocation choices explicit.",
+        "narration": "Open the pilot ledger. Charge a hundred dollars for allocated licenses, twenty for approved remote test and review workspace use, and a hundred and twenty for enablement. A hundred plus twenty plus a hundred and twenty gives two hundred and forty. Divide by forty eligible requests and you get six dollars per request. The cap was three hundred, leaving sixty dollars of headroom. The ledger tracks these incremental expenses. Reviewer minutes appear on the effort row. If the organization plans to value that labor, agree on the rate and allocation first.",
+        "code": "Licenses $100 + workspace $20 + training $120\nTotal $240 | Cap $300\n$240 ÷ 40 eligible PRs = $6 per PR",
+        "result": "Budget headroom: $60",
+        "focus": "The ledger comes to $6 per eligible PR",
+        "action": "Add the entries and show the denominator"
+      },
+      {
+        "id": "inspect",
+        "kind": "github",
+        "eyebrow": "Follow the evidence",
+        "title": "Read the requests that needed rework",
+        "body": "Connect an aggregate result to specific review evidence.",
+        "narration": "A scorecard tells us which question to ask next. Open the seven rework cases and read the file lists and review reasons. In four cases the reviewer asked the author to remove edits outside the ticket. For instance, a one-line validator fix also reformatted a configuration file. Separate that extra change and note why the reviewer asked for it. Four of seven is enough to make scope worth investigating here. It gives the team something concrete to improve. Share the pattern and example. Keep individual usage statistics out of that discussion.",
+        "code": "4/7 cases: files outside the task\nExample review: move unrelated edits out\nEvidence: file list and material rework reason",
+        "result": "Candidate adjustment: explicit file scope",
+        "focus": "Four of seven rework cases touched extra files",
+        "action": "Read each diff and pair it with feedback"
+      },
+      {
+        "id": "report",
+        "kind": "decision",
+        "eyebrow": "Scorecard to decision",
+        "title": "Summarize the measurements",
+        "body": "Report benefit, guardrail miss, and relevant context.",
+        "narration": "Prepare a short update for the decision meeting. The median wait reached thirteen hours, the median active review stayed within its limit, and spending stayed within budget. Rework missed the threshold. Add the sample size, the seven rework cases, and any reason the windows might differ. For example, a change in reviewer coverage could affect wait time. Here's the exercise. Try reporting the results in two sentences with one benefit, one guardrail miss, and no causal claim. A decision owner should be able to tell exactly what needs attention.",
+        "code": "Met: wait 13 h, effort 26 min, spend $240\nMissed: rework 17.5% vs 15%\nMonitor: defects and serious incidents",
+        "result": "Carry the rework cases to the decision meeting",
+        "focus": "A benefit and a guardrail miss coexist",
+        "action": "Write one line about each finding"
+      }
+    ]
+  },
+  {
+    "id": "L05",
+    "title": "Decide Whether to Expand, Adjust, or Pause",
+    "subtitle": "Use the scorecard and review evidence to record a bounded decision.",
+    "sources": [
+      {
+        "label": "GitHub Docs · Pilot a feature or model",
+        "url": "https://docs.github.com/en/enterprise-cloud@latest/copilot/tutorials/roll-out-at-scale/govern-at-scale/pilot-a-feature-or-model"
+      },
+      {
+        "label": "DORA · AI Capabilities Model",
+        "url": "https://dora.dev/ai/capabilities-model/report/"
+      },
+      {
+        "label": "NIST · AI Risk Management Framework",
+        "url": "https://www.nist.gov/itl/ai-risk-management-framework"
+      }
+    ],
+    "scenes": [
+      {
+        "id": "meeting",
+        "kind": "decision",
+        "eyebrow": "Fictional order service",
+        "title": "Reopen the agreed rules",
+        "body": "Use the rules the team agreed on before looking at results.",
+        "narration": "You are in the decision meeting. Before opening the scorecard, read the rules the team approved at kickoff. Expand when the benefit and guardrails are met. Adjust when a specific issue can be addressed in a bounded follow-up. Pause for a serious data or access incident, or when the quality risk needs investigation before continuing. This sequence matters because a strong speed result is easy to focus on. Put all three decisions on the table. Ask a teammate which evidence would make them choose each one before showing the pilot numbers.",
+        "code": "Expand: benefit and guardrails met\nAdjust: concrete, correctable issue\nPause: serious incident or unresolved risk",
+        "result": "Use the original decision rules",
+        "focus": "The decision starts with the pre-pilot gates",
+        "action": "State all three outcomes aloud"
+      },
+      {
+        "id": "outcomes",
+        "kind": "diagram",
+        "eyebrow": "Results",
+        "title": "Find the deciding row",
+        "body": "Read all thresholds before recommending a change.",
+        "narration": "Walk down the scorecard. Wait is thirteen business hours against fourteen. Active review is twenty-six minutes against twenty-seven. Spending is two hundred and forty dollars against three hundred. Each clears its threshold. Seven of forty requests needed rework, so that row lands at seventeen and a half percent. The ceiling was fifteen. The defect count is one in each group, and there were zero serious data or access incidents. The rework row rules out expansion under the team's agreement. Now check whether it gives you a clear change to try.",
+        "code": "Wait 13 h <= 14 h | Effort 26 min <= 27 min\nCost $240 <= $300 | Rework 17.5% > 15%\nSerious data or access incidents: 0",
+        "result": "Decision candidate: adjust",
+        "focus": "17.5% rework exceeds a 15% gate",
+        "action": "Circle the guardrail miss"
+      },
+      {
+        "id": "sample",
+        "kind": "github",
+        "eyebrow": "Review evidence",
+        "title": "Choose a targeted adjustment",
+        "body": "Respond to the documented rework pattern.",
+        "narration": "Pull up the review notes. Four of the seven rework cases included files outside the intended change. In one of those cases the reviewer asked to drop unrelated formatting. Turn that observation into two concrete steps. The author lists the expected files in Copilot Plan and checks every actual changed path before publishing the branch. If a third file appears, the author asks what it contributes to the stated acceptance criteria. The independent reviewer still checks the final pull request. This is an adjustment the team can observe in the follow-up.",
+        "code": "Observed: 4/7 rework cases touched extra files\nPlan: name the two expected files\nBefore publication: inspect all changed paths",
+        "result": "Keep independent review in the workflow",
+        "focus": "Four rework cases include unrelated edits",
+        "action": "Add a scope constraint and a diff check"
+      },
+      {
+        "id": "adjust",
+        "kind": "editor",
+        "eyebrow": "Follow-up pilot",
+        "title": "Run a bounded follow-up",
+        "body": "Keep the test small and the measures comparable.",
+        "narration": "The engineering lead owns the next four weeks. Keep the service, eligibility, and metric definitions in place so the next readout can be compared with the pilot. At forty requests, six rework cases would meet fifteen percent. If only thirty requests qualify, four cases equal about thirteen point three percent and five equal about sixteen point seven. Use the actual denominator. Check the reason each time work comes back. You need evidence that the extra-file pattern improved, together with the time and spending measures that supported the original pilot.",
+        "code": "Same service, eligibility, and metric definitions\nFollow-up: four weeks | Owner: engineering lead\nAt 40 PRs: 6/40 = 15%; 7/40 = 17.5%",
+        "result": "Check the file-scope pattern each week",
+        "focus": "Six of forty would meet the original ceiling",
+        "action": "Set a four-week review with the same gates"
+      },
+      {
+        "id": "paths",
+        "kind": "decision",
+        "eyebrow": "Decision branches",
+        "title": "Practice a different outcome",
+        "body": "Practice selecting an action from the observed outcome.",
+        "narration": "Try three short scenarios. First, the follow-up meets the wait, effort, rework, and budget thresholds. Propose expansion to one comparable team and name its onboarding owner. Second, one routine guardrail misses by a little and review evidence points to a fixable cause. Consider another bounded adjustment. Third, someone sends restricted data to an unapproved model endpoint. Pause the affected workflow and use the existing incident process. Practice saying each decision with the evidence that triggered it. The person who owns the next action should hear exactly what to do.",
+        "code": "All gates met → expand to one comparable team\nCorrectable quality miss → adjust and retest\nSerious data/access incident → pause and escalate",
+        "result": "Use the branch that the evidence supports",
+        "focus": "A serious incident changes the decision immediately",
+        "action": "Match each scenario to its next action"
+      },
+      {
+        "id": "record",
+        "kind": "decision",
+        "eyebrow": "Decision record",
+        "title": "Write and own the decision",
+        "body": "Leave an actionable decision and a date to revisit it.",
+        "narration": "Open a decision record and fill in a date, an owner, the decision, and the next review. For this case we choose adjust. Median wait met the target, rework did not, and the extra-file pattern gives us a focused intervention. Name the engineering lead, attach the scorecard and the review evidence, and put a follow-up on the calendar four weeks from the relaunch. Then hand the note to a teammate. If they can tell which workflow to change and what evidence will determine the next decision, the record is ready.",
+        "code": "Decision: adjust the order-service pilot\nAction: file scope + author diff checkpoint\nOwner: engineering lead | Next review: 4 weeks",
+        "result": "Attach the scorecard and example review evidence",
+        "focus": "One note captures evidence, action, and timing",
+        "action": "Record adjust and assign the follow-up"
+      }
+    ]
+  }
+]

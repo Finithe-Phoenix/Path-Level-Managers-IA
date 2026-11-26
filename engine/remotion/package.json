@@ -1,0 +1,22 @@
+{
+  "name": "ai-field-lab-remotion",
+  "version": "2.0.0",
+  "private": true,
+  "type": "commonjs",
+  "scripts": {
+    "studio": "remotion studio src.jsx",
+    "still": "remotion still src.jsx Workshop",
+    "render": "remotion render src.jsx Workshop"
+  },
+  "dependencies": {
+    "@remotion/cli": "4.0.547",
+    "react": "18.3.1",
+    "react-dom": "18.3.1",
+    "remotion": "4.0.547"
+  },
+  "devDependencies": {
+    "@types/react": "18.3.24",
+    "@types/react-dom": "18.3.7",
+    "typescript": "5.9.3"
+  }
+}
