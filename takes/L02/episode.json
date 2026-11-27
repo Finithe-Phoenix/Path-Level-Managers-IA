@@ -32,62 +32,62 @@
       "result": "Expected output: small diff and a regression test",
       "focus": "The task needs two repository files",
       "action": "Name the files and the working branch",
-      "durationFrames": 828,
-      "duration": 34.5,
+      "durationFrames": 777,
+      "duration": 32.375,
       "cues": [
         {
-          "start": 0.393,
-          "end": 4.143,
+          "start": 0.235,
+          "end": 4.02,
           "text": "Take the model choice from the previous\nlesson and turn it into an access"
         },
         {
-          "start": 4.193,
-          "end": 5.293,
+          "start": 4.02,
+          "end": 4.467,
           "text": "decision."
         },
         {
-          "start": 5.368,
-          "end": 8.555,
+          "start": 4.828,
+          "end": 7.858,
           "text": "Issue seventeen asks for a validator\nchange and a test."
         },
         {
-          "start": 9.179,
-          "end": 11.839,
+          "start": 8.259,
+          "end": 10.596,
           "text": "Write down the two files, the working\nbranch,"
         },
         {
-          "start": 11.889,
-          "end": 14.514,
+          "start": 10.847,
+          "end": 12.843,
           "text": "and what you expect the assistant to\nproduce."
         },
         {
-          "start": 14.589,
-          "end": 18.588,
+          "start": 13.164,
+          "end": 17.464,
           "text": "Keep production credentials and shared\ndeployment systems outside this task."
         },
         {
-          "start": 19.222,
-          "end": 22.972,
+          "start": 17.995,
+          "end": 21.854,
           "text": "A manager can check the boundary by\nasking the author to explain every"
         },
         {
-          "start": 23.022,
-          "end": 25.372,
+          "start": 21.854,
+          "end": 23.967,
           "text": "proposed permission against the ticket."
         },
         {
-          "start": 25.447,
-          "end": 26.808,
-          "text": "Try it with the test file."
+          "start": 24.308,
+          "end": 28.332,
+          "text": "Try it with the test file. Reading that\nfile helps match the existing test"
         },
         {
-          "start": 27.457,
-          "end": 30.682,
-          "text": "Reading that file helps match the\nexisting test style."
+          "start": 28.332,
+          "end": 28.748,
+          "text": "style."
         },
         {
-          "start": 30.757,
-          "end": 33.439,
+          "start": 29.178,
+          "end": 31.613,
           "text": "Changing a pipeline falls outside the\nplanned work."
         }
       ]
@@ -103,63 +103,58 @@
       "result": "Resolve an unknown endpoint before sharing code",
       "focus": "Client location and model endpoint differ",
       "action": "Record the destination and data class",
-      "durationFrames": 870,
-      "duration": 36.25,
+      "durationFrames": 797,
+      "duration": 33.208333333333336,
       "cues": [
         {
-          "start": 0.435,
-          "end": 2.11,
-          "text": "Sketch two boxes."
+          "start": 0.295,
+          "end": 3.029,
+          "text": "Sketch two boxes. The first is the\nclient,"
         },
         {
-          "start": 2.16,
-          "end": 6.89,
-          "text": "The first is the client, such as Visual\nStudio Code or a CLI in the corporate"
+          "start": 3.12,
+          "end": 8.137,
+          "text": "such as Visual Studio Code or a CLI in\nthe corporate Google Cloud workspace."
         },
         {
-          "start": 6.94,
-          "end": 8.307,
-          "text": "Google Cloud workspace."
-        },
-        {
-          "start": 8.91,
-          "end": 11.285,
+          "start": 8.478,
+          "end": 9.975,
           "text": "The second is the model endpoint."
         },
         {
-          "start": 11.36,
-          "end": 15.535,
+          "start": 10.357,
+          "end": 14.278,
           "text": "Draw an arrow between them and label it\nwith the selected code, ticket text,"
         },
         {
-          "start": 15.695,
-          "end": 17.95,
+          "start": 14.469,
+          "end": 16.765,
           "text": "and synthetic test examples that may\ntravel."
         },
         {
-          "start": 18.574,
-          "end": 22.299,
+          "start": 17.106,
+          "end": 20.605,
           "text": "Have the platform owner confirm the\nactual provider, endpoint,"
         },
         {
-          "start": 22.349,
-          "end": 25.074,
+          "start": 20.856,
+          "end": 23.031,
           "text": "and retention terms for the approved\nsetup."
         },
         {
-          "start": 25.124,
-          "end": 28.208,
+          "start": 23.272,
+          "end": 26.475,
           "text": "The machine that runs the client tells\nyou one part of that story."
         },
         {
-          "start": 28.832,
-          "end": 32.882,
-          "text": "If you cannot name the configured\ndestination, keep the real source out of"
+          "start": 26.755,
+          "end": 29.108,
+          "text": "If you cannot name the configured\ndestination,"
         },
         {
-          "start": 32.907,
-          "end": 35.159,
-          "text": "the request until the owner confirms it."
+          "start": 29.358,
+          "end": 32.552,
+          "text": "keep the real source out of the request\nuntil the owner confirms it."
         }
       ]
     },
@@ -174,67 +169,67 @@
       "result": "Use the approved test environment",
       "focus": "Publishing and approval have distinct owners",
       "action": "Fill in the owner for each operation",
-      "durationFrames": 826,
-      "duration": 34.416666666666664,
+      "durationFrames": 760,
+      "duration": 31.666666666666668,
       "cues": [
         {
-          "start": 0.435,
-          "end": 4.385,
+          "start": 0.276,
+          "end": 3.626,
           "text": "Start with the permissions to read,\nedit, test, and publish."
         },
         {
-          "start": 4.435,
-          "end": 7.985,
+          "start": 3.987,
+          "end": 7.557,
           "text": "The assistant may read the scoped\ncontext and propose the patch on the"
         },
         {
-          "start": 8.035,
-          "end": 8.883,
+          "start": 7.557,
+          "end": 8.314,
           "text": "working branch."
         },
         {
-          "start": 9.475,
-          "end": 13.175,
+          "start": 8.715,
+          "end": 12.526,
           "text": "The author inspects the edits and\npermits the specific test run in an"
         },
         {
-          "start": 13.225,
-          "end": 14.95,
+          "start": 12.526,
+          "end": 13.512,
           "text": "approved environment."
         },
         {
-          "start": 15.025,
-          "end": 18.875,
+          "start": 13.852,
+          "end": 17.366,
           "text": "The author publishes the branch and\nopens the pull request with their own"
         },
         {
-          "start": 18.925,
-          "end": 19.472,
+          "start": 17.366,
+          "end": 17.792,
           "text": "account."
         },
         {
-          "start": 20.095,
-          "end": 22.77,
-          "text": "A different authorized teammate reviews\nit."
+          "start": 18.213,
+          "end": 22.654,
+          "text": "A different authorized teammate reviews\nit. Read the table from bottom to top as"
         },
         {
-          "start": 22.845,
-          "end": 25.62,
-          "text": "Read the table from bottom to top as a\ncheck."
+          "start": 22.654,
+          "end": 23.08,
+          "text": "a check."
         },
         {
-          "start": 25.695,
-          "end": 29.27,
+          "start": 23.481,
+          "end": 26.695,
           "text": "If you see the same identity beside\npublish and final approval,"
         },
         {
-          "start": 29.345,
-          "end": 32.745,
+          "start": 27.025,
+          "end": 30.574,
           "text": "identify who will perform the\nindependent review before you start the"
         },
         {
-          "start": 32.795,
-          "end": 33.334,
+          "start": 30.574,
+          "end": 30.959,
           "text": "pilot."
         }
       ]
@@ -250,62 +245,62 @@
       "result": "Decline the network request",
       "focus": "The proposed dependency exceeds scope",
       "action": "Decline it and request the standard test",
-      "durationFrames": 815,
-      "duration": 33.958333333333336,
+      "durationFrames": 737,
+      "duration": 30.708333333333332,
       "cues": [
         {
-          "start": 0.393,
-          "end": 2.143,
-          "text": "Here is a permission prompt."
+          "start": 0.235,
+          "end": 4.186,
+          "text": "Here is a permission prompt. The\nassistant asks to download a new test"
         },
         {
-          "start": 2.193,
-          "end": 5.293,
-          "text": "The assistant asks to download a new\ntest library."
+          "start": 4.186,
+          "end": 4.791,
+          "text": "library."
         },
         {
-          "start": 5.368,
-          "end": 7.943,
+          "start": 5.052,
+          "end": 6.833,
           "text": "Pause and ask what would justify it."
         },
         {
-          "start": 8.018,
-          "end": 11.818,
+          "start": 7.153,
+          "end": 10.711,
           "text": "This repository already has tests in\nPython's standard library,"
         },
         {
-          "start": 11.868,
-          "end": 14.4,
+          "start": 11.003,
+          "end": 13.481,
           "text": "so we have the capability needed for the\nzero case."
         },
         {
-          "start": 15.003,
-          "end": 19.128,
+          "start": 13.842,
+          "end": 17.556,
           "text": "Decline the network request and ask the\nassistant to follow the existing test"
         },
         {
-          "start": 19.178,
-          "end": 20.178,
+          "start": 17.556,
+          "end": 17.962,
           "text": "style."
         },
         {
-          "start": 20.253,
-          "end": 23.634,
+          "start": 18.267,
+          "end": 21.285,
           "text": "Then inspect the diff for package files\nor dependency edits."
         },
         {
-          "start": 24.258,
-          "end": 27.208,
+          "start": 21.686,
+          "end": 24.282,
           "text": "If your team sees a repeated request of\nthis kind,"
         },
         {
-          "start": 27.258,
-          "end": 31.833,
+          "start": 24.593,
+          "end": 29.039,
           "text": "the platform lead can use the examples\nto clarify the task instructions or the"
         },
         {
-          "start": 31.883,
-          "end": 32.868,
+          "start": 29.039,
+          "end": 29.976,
           "text": "permission defaults."
         }
       ]
@@ -321,57 +316,57 @@
       "result": "Evidence: separate reviewer and recorded decision",
       "focus": "PR #42 shows the check and reviewer",
       "action": "Open the diff, checks, and review record",
-      "durationFrames": 823,
-      "duration": 34.291666666666664,
+      "durationFrames": 776,
+      "duration": 32.333333333333336,
       "cues": [
         {
-          "start": 0.418,
-          "end": 3.293,
+          "start": 0.276,
+          "end": 2.28,
           "text": "Now follow the evidence after\npublication."
         },
         {
-          "start": 3.368,
-          "end": 7.768,
+          "start": 2.852,
+          "end": 7.868,
           "text": "In the approved remote terminal, the\nreviewer uses GitHub CLI to read the"
         },
         {
-          "start": 7.818,
-          "end": 10.368,
+          "start": 7.868,
+          "end": 10.358,
           "text": "diff and the checks for pull request\nforty-two."
         },
         {
-          "start": 10.981,
-          "end": 14.406,
+          "start": 10.643,
+          "end": 14.035,
           "text": "They confirm the zero regression, see\nthat the checks passed,"
         },
         {
-          "start": 14.456,
-          "end": 17.356,
+          "start": 14.326,
+          "end": 16.319,
           "text": "and submit a review with their own\nidentity."
         },
         {
-          "start": 17.431,
-          "end": 21.156,
+          "start": 16.78,
+          "end": 20.696,
           "text": "For the manager walkthrough, read back\nthat recorded decision and link it to"
         },
         {
-          "start": 21.206,
-          "end": 22.193,
+          "start": 20.696,
+          "end": 21.564,
           "text": "issue seventeen."
         },
         {
-          "start": 22.796,
-          "end": 26.621,
+          "start": 22.005,
+          "end": 25.324,
           "text": "A passing check answers whether the test\nsuite ran successfully."
         },
         {
-          "start": 26.671,
-          "end": 29.846,
+          "start": 25.605,
+          "end": 28.047,
           "text": "The review record answers who evaluated\nthe change."
         },
         {
-          "start": 29.921,
-          "end": 33.219,
+          "start": 28.548,
+          "end": 31.647,
           "text": "Ask learners to point to one piece of\nevidence for each question."
         }
       ]
@@ -387,67 +382,62 @@
       "result": "Reassess before changing tools, data, or access",
       "focus": "New data, tools, or access trigger a review",
       "action": "Assign a named owner for exceptions",
-      "durationFrames": 896,
-      "duration": 37.333333333333336,
+      "durationFrames": 838,
+      "duration": 34.916666666666664,
       "cues": [
         {
-          "start": 0.439,
-          "end": 3.064,
+          "start": 0.255,
+          "end": 2.514,
           "text": "Make the permission decision easy to\nlook up."
         },
         {
-          "start": 3.164,
-          "end": 6.924,
+          "start": 2.875,
+          "end": 6.557,
           "text": "Save the task, the approved data class,\nwhere the assistant runs,"
         },
         {
-          "start": 6.974,
-          "end": 9.711,
+          "start": 6.728,
+          "end": 9.447,
           "text": "the actions it can take, and who handles\nexceptions."
         },
         {
-          "start": 10.313,
-          "end": 14.463,
+          "start": 9.848,
+          "end": 13.657,
           "text": "If you later evaluate Claude Code or\nOpenCode in the corporate Google Cloud"
         },
         {
-          "start": 14.513,
-          "end": 19.163,
+          "start": 13.657,
+          "end": 17.986,
           "text": "workspace, check which identities grant\naccess to the shell, repository,"
         },
         {
-          "start": 19.363,
-          "end": 19.863,
+          "start": 18.056,
+          "end": 18.587,
           "text": "and model."
         },
         {
-          "start": 20.487,
-          "end": 23.337,
+          "start": 18.912,
+          "end": 21.362,
           "text": "Their boundaries may differ from the\neditor workflow."
         },
         {
-          "start": 23.412,
-          "end": 25.437,
-          "text": "Try one final exercise."
+          "start": 21.723,
+          "end": 25.87,
+          "text": "Try one final exercise. A teammate asks\nto connect another data source."
         },
         {
-          "start": 25.512,
-          "end": 28.03,
-          "text": "A teammate asks to connect another data\nsource."
-        },
-        {
-          "start": 28.629,
-          "end": 30.654,
+          "start": 26.401,
+          "end": 27.738,
           "text": "Who has to review that request?"
         },
         {
-          "start": 30.729,
-          "end": 34.089,
+          "start": 28.44,
+          "end": 32.069,
           "text": "In this example, the platform lead\nchecks the new destination and"
         },
         {
-          "start": 34.139,
-          "end": 35.817,
+          "start": 32.069,
+          "end": 33.896,
           "text": "permission before approving use."
         }
       ]
@@ -456,6 +446,6 @@
   "fps": 24,
   "width": 1280,
   "height": 720,
-  "durationFrames": 5058,
-  "voiceBuild": "c02ad7dac1f30dbd6428e83a4203d032aff08deb6da85c358b10e8045068c232"
+  "durationFrames": 4685,
+  "voiceBuild": "072d7f57a23ccf98535121fdaab0303457dba16bd891abf2353333ea5046616f"
 }
