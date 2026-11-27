@@ -1,64 +1,60 @@
 {
+  "audioEdition": 3,
   "fps": 24,
-  "voiceBuild": "1263dd2b58f7c12e83cdeb4dde8953a5d69de366619e8002e4559190df980d1a",
-  "paceBuild": "a4bdbd0016385f4b56da93f3048e18fecd2becedab5297cbddfecb359dfc9604",
+  "voiceBuild": "aca8948267eec5d504fed628ab7259e0ad6150220fba8363b38c02b11ab602dc",
+  "paceBuild": "29400981ec785b2725ee279f683421e968c0e89206261efddca2ccd65929bf2b",
   "delivery": {
-    "targetWordsPerMinute": 146,
-    "inputWordsPerMinute": 164.84,
-    "tempo": 0.89829538,
-    "outputWordsPerMinute": 146.0
+    "targetWordsPerMinute": 149,
+    "inputWordsPerMinute": 179.16,
+    "tempo": 0.84369849,
+    "outputWordsPerMinute": 148.99
   },
-  "audioSha256": "306fce8ed45e55de24969186e352259efe0bc0254dd94d1ab9a41c5212690a35",
-  "captionsSha256": "fdbd427802d22ed8f8d6244724703540f21c404327c11256ec8e4a0b045000f2",
+  "audioSha256": "6b80fa652292935852b666da1b17b328f57de9ac9f2449c4fb47ebefd206b8ab",
+  "captionsSha256": "aea649ef1839052b61e7e4123f8b39fd4dae57380a1c3c1cedf7527790452480",
   "scenes": [
     {
       "id": "task",
       "scriptSha256": "c1a3344c88736a7dac0f9e598f744c0ad62158f0a16589e207035962719c0dd6",
-      "durationFrames": 854,
+      "durationFrames": 878,
       "cues": [
         {
-          "start": 0.465,
-          "end": 3.248,
-          "text": "Imagine you own a small order service."
+          "start": 0.326,
+          "end": 5.401,
+          "text": "Imagine you own a small order service.\nThe team says it wants AI to speed up"
         },
         {
-          "start": 3.304,
-          "end": 6.087,
-          "text": "The team says it wants AI to speed up\ncoding,"
+          "start": 5.413,
+          "end": 8.99,
+          "text": "coding, so you pull up the last few\nroutine fixes."
         },
         {
-          "start": 6.143,
-          "end": 8.74,
-          "text": "so you pull up the last few routine\nfixes."
-        },
-        {
-          "start": 9.423,
-          "end": 14.544,
+          "start": 9.489,
+          "end": 14.518,
           "text": "One was ready on Tuesday and received\nits first useful review on Thursday."
         },
         {
-          "start": 14.628,
-          "end": 17.984,
+          "start": 14.875,
+          "end": 18.149,
           "text": "Across the baseline, the wait was\neighteen business hours."
         },
         {
-          "start": 18.665,
-          "end": 21.393,
-          "text": "That gives us a better starting\nquestion."
+          "start": 18.553,
+          "end": 22.267,
+          "text": "That gives us a better starting\nquestion. Could a small,"
         },
         {
-          "start": 21.448,
-          "end": 25.901,
-          "text": "Could a small, well-tested change be\neasier for a teammate to pick up?"
+          "start": 22.587,
+          "end": 26.444,
+          "text": "well-tested change be easier for a\nteammate to pick up?"
         },
         {
-          "start": 25.985,
-          "end": 30.382,
+          "start": 27.179,
+          "end": 31.528,
           "text": "Mark that waiting step, then choose a\ntask with a result the reviewer can"
         },
         {
-          "start": 30.438,
-          "end": 33.736,
+          "start": 31.528,
+          "end": 35.046,
           "text": "verify, like fixing the minimum order\nquantity."
         }
       ]
@@ -66,180 +62,176 @@
     {
       "id": "criteria",
       "scriptSha256": "124e1419cddf8996b957ec093e04de534a4eb099d0db27dc6fcb85431ea0c2e1",
-      "durationFrames": 854,
+      "durationFrames": 832,
       "cues": [
         {
-          "start": 0.461,
-          "end": 4.496,
+          "start": 0.327,
+          "end": 4.108,
           "text": "Here is the task a developer could hand\nto a coding assistant."
         },
         {
-          "start": 4.552,
-          "end": 8.526,
+          "start": 4.489,
+          "end": 8.29,
           "text": "The order validator accepts zero, and\nthe minimum is one."
         },
         {
-          "start": 8.582,
-          "end": 10.503,
-          "text": "Put four examples in the ticket."
+          "start": 8.605,
+          "end": 12.106,
+          "text": "Put four examples in the ticket. One and\nfive pass."
         },
         {
-          "start": 11.202,
-          "end": 12.928,
-          "text": "One and five pass."
+          "start": 12.653,
+          "end": 17.741,
+          "text": "Zero and negative one are rejected.\nVerify the two existing behaviors as"
         },
         {
-          "start": 13.039,
-          "end": 15.711,
-          "text": "Zero and negative one are rejected."
+          "start": 17.741,
+          "end": 18.688,
+          "text": "well as the new one."
         },
         {
-          "start": 15.794,
-          "end": 19.579,
-          "text": "Verify the two existing behaviors as\nwell as the new one."
-        },
-        {
-          "start": 19.663,
-          "end": 24.31,
+          "start": 19.067,
+          "end": 23.813,
           "text": "Write the zero test first, run it while\nthe old comparison is still in place,"
         },
         {
-          "start": 24.433,
-          "end": 25.552,
+          "start": 24.253,
+          "end": 25.597,
           "text": "and save the failure."
         },
         {
-          "start": 26.258,
-          "end": 29.681,
-          "text": "After the fix, run all four cases again."
+          "start": 25.977,
+          "end": 31.547,
+          "text": "After the fix, run all four cases again.\nA reviewer can now trace the request to"
         },
         {
-          "start": 29.764,
-          "end": 33.991,
-          "text": "A reviewer can now trace the request to\ntest evidence in the pull request."
+          "start": 31.547,
+          "end": 33.406,
+          "text": "test evidence in the pull request."
         }
       ]
     },
     {
       "id": "surface",
       "scriptSha256": "84ca634c4ecc92d98fed4f03a629972674d86a09f025668994cc7a0fc5254f18",
-      "durationFrames": 877,
+      "durationFrames": 844,
       "cues": [
         {
-          "start": 0.437,
-          "end": 4.723,
+          "start": 0.351,
+          "end": 3.985,
           "text": "Open the validator and its tests in\nVisual Studio Code."
         },
         {
-          "start": 4.779,
-          "end": 7.59,
+          "start": 4.478,
+          "end": 7.192,
           "text": "The author can ask Copilot for a plan\nhere,"
         },
         {
-          "start": 7.646,
-          "end": 10.354,
+          "start": 7.584,
+          "end": 10.09,
           "text": "then inspect the changes in the same\neditor."
         },
         {
-          "start": 11.025,
-          "end": 15.423,
+          "start": 10.423,
+          "end": 14.741,
           "text": "Claude Code and OpenCode run in the\napproved corporate Google Cloud"
         },
         {
-          "start": 15.478,
-          "end": 16.786,
+          "start": 14.741,
+          "end": 15.495,
           "text": "workspace."
         },
         {
-          "start": 16.87,
-          "end": 20.877,
+          "start": 15.994,
+          "end": 20.356,
           "text": "Those remain options when a task\nbenefits from tools that are already"
         },
         {
-          "start": 20.933,
-          "end": 21.845,
+          "start": 20.356,
+          "end": 21.29,
           "text": "available there."
         },
         {
-          "start": 22.516,
-          "end": 26.941,
+          "start": 21.669,
+          "end": 25.859,
           "text": "This exercise needs a two-file change\nand a standard test command,"
         },
         {
-          "start": 26.997,
-          "end": 29.362,
+          "start": 26.297,
+          "end": 27.923,
           "text": "so use the editor workflow."
         },
         {
-          "start": 29.446,
-          "end": 34.205,
+          "start": 28.375,
+          "end": 33.275,
           "text": "Record the tool you selected and where\nits actions run before discussing model"
         },
         {
-          "start": 34.26,
-          "end": 34.951,
-          "text": "choices."
+          "start": 33.275,
+          "end": 33.925,
+          "text": "choices.",
+          "speechEnd": 33.911
         }
       ]
     },
     {
       "id": "model",
       "scriptSha256": "5fe73dbfaa34191eda3a4b5a07b77e19e5bbd38f90ce6933020a4e30ac2f958d",
-      "durationFrames": 934,
+      "durationFrames": 920,
       "cues": [
         {
-          "start": 0.489,
-          "end": 4.914,
+          "start": 0.326,
+          "end": 4.422,
           "text": "Suppose your organization has enabled\ntwo models for this editor."
         },
         {
-          "start": 4.997,
-          "end": 6.806,
-          "text": "Call them A and B."
+          "start": 4.778,
+          "end": 9.516,
+          "text": "Call them A and B. Prepare eight\nsynthetic cases with known expected"
         },
         {
-          "start": 6.862,
-          "end": 10.687,
-          "text": "Prepare eight synthetic cases with known\nexpected behavior."
+          "start": 9.516,
+          "end": 10.187,
+          "text": "behavior."
         },
         {
-          "start": 11.347,
-          "end": 16.106,
+          "start": 10.746,
+          "end": 15.712,
           "text": "Give each model a fresh copy of the same\nstarting point and the same time limit"
         },
         {
-          "start": 16.162,
-          "end": 17.665,
+          "start": 15.712,
+          "end": 16.538,
           "text": "for each case."
         },
         {
-          "start": 17.748,
-          "end": 20.893,
+          "start": 17.038,
+          "end": 20.404,
           "text": "A reviewer marks a pass only when the\ntests, scope,"
         },
         {
-          "start": 21.054,
-          "end": 22.87,
+          "start": 20.75,
+          "end": 22.641,
           "text": "and evidence all meet the ticket."
         },
         {
-          "start": 23.565,
-          "end": 28.602,
+          "start": 23.199,
+          "end": 28.545,
           "text": "For instance, a working change without\nits zero regression test still misses"
         },
         {
-          "start": 28.658,
-          "end": 30.773,
+          "start": 28.545,
+          "end": 29.942,
           "text": "the evidence requirement."
         },
         {
-          "start": 30.856,
-          "end": 35.615,
+          "start": 30.5,
+          "end": 35.421,
           "text": "In a second column, log the minutes the\nauthor spent steering the assistant or"
         },
         {
-          "start": 35.671,
-          "end": 37.045,
+          "start": 35.421,
+          "end": 36.795,
           "text": "repairing its output."
         }
       ]
@@ -247,103 +239,99 @@
     {
       "id": "score",
       "scriptSha256": "b16b73cbd68fe656ee5c06c7357354ce529069105cd10ffa03ed743ccf6136f3",
-      "durationFrames": 836,
+      "durationFrames": 821,
       "cues": [
         {
-          "start": 0.465,
-          "end": 3.432,
-          "text": "In this exercise, A passes seven of\neight."
+          "start": 0.302,
+          "end": 4.985,
+          "text": "In this exercise, A passes seven of\neight. B passes eight of eight."
         },
         {
-          "start": 3.516,
-          "end": 5.241,
-          "text": "B passes eight of eight."
-        },
-        {
-          "start": 5.297,
-          "end": 8.634,
+          "start": 5.52,
+          "end": 8.98,
           "text": "The median steering time is two minutes\nfor A and three for B."
         },
         {
-          "start": 9.329,
-          "end": 14.756,
+          "start": 9.597,
+          "end": 14.39,
           "text": "We agreed up front that every case had\nto pass, including the regression check."
         },
         {
-          "start": 14.839,
-          "end": 18.534,
+          "start": 14.842,
+          "end": 18.594,
           "text": "B clears the gate for one extra median\nminute of author effort."
         },
         {
-          "start": 19.229,
-          "end": 22.707,
+          "start": 18.998,
+          "end": 22.24,
           "text": "Choose B for the pilot and keep that\ntrade-off visible."
         },
         {
-          "start": 22.791,
-          "end": 27.16,
+          "start": 22.775,
+          "end": 27.164,
           "text": "If you chose based on speed alone, you\nwould pick A, so test yourself now."
         },
         {
-          "start": 27.851,
-          "end": 31.997,
+          "start": 27.497,
+          "end": 32.168,
           "text": "Which criterion rules out A, and where\nwould the reviewer see the missing"
         },
         {
-          "start": 32.053,
-          "end": 32.785,
-          "text": "evidence?"
+          "start": 32.168,
+          "end": 32.818,
+          "text": "evidence?",
+          "speechEnd": 32.649
         }
       ]
     },
     {
       "id": "decision",
       "scriptSha256": "5d3f09260fa33b87d6473c0625c234622c734cbbefe88715a1406efb9a4ec685",
-      "durationFrames": 912,
+      "durationFrames": 866,
       "cues": [
         {
-          "start": 0.489,
-          "end": 4.524,
+          "start": 0.326,
+          "end": 3.734,
           "text": "Save a short note with the task, the\ntool and model choice,"
         },
         {
-          "start": 4.58,
-          "end": 9.088,
+          "start": 4.078,
+          "end": 7.747,
           "text": "the dated benchmark with its sample\nsize, and the pilot owner."
         },
         {
-          "start": 9.172,
-          "end": 13.897,
+          "start": 8.08,
+          "end": 13.178,
           "text": "In our example, the engineering lead\nstarts with routine validator fixes in"
         },
         {
-          "start": 13.953,
-          "end": 15.332,
+          "start": 13.191,
+          "end": 14.438,
           "text": "Visual Studio Code."
         },
         {
-          "start": 16.031,
-          "end": 20.457,
+          "start": 14.866,
+          "end": 18.424,
           "text": "Model B is the better option in these\neight synthetic cases."
         },
         {
-          "start": 20.54,
-          "end": 23.88,
+          "start": 18.875,
+          "end": 21.616,
           "text": "If the organization changes the\navailable model,"
         },
         {
-          "start": 23.935,
-          "end": 27.692,
+          "start": 22.054,
+          "end": 25.362,
           "text": "if the pilot starts touching other parts\nof the order service,"
         },
         {
-          "start": 27.776,
-          "end": 31.502,
+          "start": 25.873,
+          "end": 29.916,
           "text": "or if review quality slips, bring the\nchoice back for review."
         },
         {
-          "start": 32.231,
-          "end": 35.95,
+          "start": 30.439,
+          "end": 34.499,
           "text": "Now fill in those four fields for a task\nyour team already handles."
         }
       ]
