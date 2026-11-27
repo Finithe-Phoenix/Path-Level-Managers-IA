@@ -1,0 +1,276 @@
+1
+00:00:00,418 --> 00:00:02,918
+Imagine you own a small order service.
+
+2
+00:00:02,968 --> 00:00:05,468
+The team says it wants AI to speed up
+coding,
+
+3
+00:00:05,518 --> 00:00:07,851
+so you pull up the last few routine
+fixes.
+
+4
+00:00:08,465 --> 00:00:13,065
+One was ready on Tuesday and received
+its first useful review on Thursday.
+
+5
+00:00:13,140 --> 00:00:16,155
+Across the baseline, the wait was
+eighteen business hours.
+
+6
+00:00:16,767 --> 00:00:19,217
+That gives us a better starting
+question.
+
+7
+00:00:19,267 --> 00:00:23,267
+Could a small, well-tested change be
+easier for a teammate to pick up?
+
+8
+00:00:23,342 --> 00:00:27,292
+Mark that waiting step, then choose a
+task with a result the reviewer can
+
+9
+00:00:27,342 --> 00:00:30,305
+verify, like fixing the minimum order
+quantity.
+
+10
+00:00:31,789 --> 00:00:35,414
+Here is the task a developer could hand
+to a coding assistant.
+
+11
+00:00:35,464 --> 00:00:39,034
+The order validator accepts zero, and
+the minimum is one.
+
+12
+00:00:39,084 --> 00:00:40,810
+Put four examples in the ticket.
+
+13
+00:00:41,438 --> 00:00:42,988
+One and five pass.
+
+14
+00:00:43,088 --> 00:00:45,488
+Zero and negative one are rejected.
+
+15
+00:00:45,563 --> 00:00:48,963
+Verify the two existing behaviors as
+well as the new one.
+
+16
+00:00:49,038 --> 00:00:53,213
+Write the zero test first, run it while
+the old comparison is still in place,
+
+17
+00:00:53,323 --> 00:00:54,328
+and save the failure.
+
+18
+00:00:54,962 --> 00:00:58,037
+After the fix, run all four cases again.
+
+19
+00:00:58,112 --> 00:01:01,909
+A reviewer can now trace the request to
+test evidence in the pull request.
+
+20
+00:01:03,393 --> 00:01:07,243
+Open the validator and its tests in
+Visual Studio Code.
+
+21
+00:01:07,293 --> 00:01:09,818
+The author can ask Copilot for a plan
+here,
+
+22
+00:01:09,868 --> 00:01:12,301
+then inspect the changes in the same
+editor.
+
+23
+00:01:12,904 --> 00:01:16,854
+Claude Code and OpenCode run in the
+approved corporate Google Cloud
+
+24
+00:01:16,904 --> 00:01:18,079
+workspace.
+
+25
+00:01:18,154 --> 00:01:21,754
+Those remain options when a task
+benefits from tools that are already
+
+26
+00:01:21,804 --> 00:01:22,623
+available there.
+
+27
+00:01:23,226 --> 00:01:27,201
+This exercise needs a two-file change
+and a standard test command,
+
+28
+00:01:27,251 --> 00:01:29,376
+so use the editor workflow.
+
+29
+00:01:29,451 --> 00:01:33,726
+Record the tool you selected and where
+its actions run before discussing model
+
+30
+00:01:33,776 --> 00:01:34,396
+choices.
+
+31
+00:01:35,939 --> 00:01:39,914
+Suppose your organization has enabled
+two models for this editor.
+
+32
+00:01:39,989 --> 00:01:41,614
+Call them A and B.
+
+33
+00:01:41,664 --> 00:01:45,100
+Prepare eight synthetic cases with known
+expected behavior.
+
+34
+00:01:45,693 --> 00:01:49,968
+Give each model a fresh copy of the same
+starting point and the same time limit
+
+35
+00:01:50,018 --> 00:01:51,368
+for each case.
+
+36
+00:01:51,443 --> 00:01:54,268
+A reviewer marks a pass only when the
+tests, scope,
+
+37
+00:01:54,413 --> 00:01:56,044
+and evidence all meet the ticket.
+
+38
+00:01:56,668 --> 00:02:01,193
+For instance, a working change without
+its zero regression test still misses
+
+39
+00:02:01,243 --> 00:02:03,143
+the evidence requirement.
+
+40
+00:02:03,218 --> 00:02:07,493
+In a second column, log the minutes the
+author spent steering the assistant or
+
+41
+00:02:07,543 --> 00:02:08,777
+repairing its output.
+
+42
+00:02:10,293 --> 00:02:12,958
+In this exercise, A passes seven of
+eight.
+
+43
+00:02:13,033 --> 00:02:14,583
+B passes eight of eight.
+
+44
+00:02:14,633 --> 00:02:17,631
+The median steering time is two minutes
+for A and three for B.
+
+45
+00:02:18,255 --> 00:02:23,130
+We agreed up front that every case had
+to pass, including the regression check.
+
+46
+00:02:23,205 --> 00:02:26,524
+B clears the gate for one extra median
+minute of author effort.
+
+47
+00:02:27,148 --> 00:02:30,273
+Choose B for the pilot and keep that
+trade-off visible.
+
+48
+00:02:30,348 --> 00:02:34,273
+If you chose based on speed alone, you
+would pick A, so test yourself now.
+
+49
+00:02:34,893 --> 00:02:38,618
+Which criterion rules out A, and where
+would the reviewer see the missing
+
+50
+00:02:38,668 --> 00:02:39,326
+evidence?
+
+51
+00:02:41,022 --> 00:02:44,647
+Save a short note with the task, the
+tool and model choice,
+
+52
+00:02:44,697 --> 00:02:48,747
+the dated benchmark with its sample
+size, and the pilot owner.
+
+53
+00:02:48,822 --> 00:02:53,067
+In our example, the engineering lead
+starts with routine validator fixes in
+
+54
+00:02:53,117 --> 00:02:54,356
+Visual Studio Code.
+
+55
+00:02:54,984 --> 00:02:58,959
+Model B is the better option in these
+eight synthetic cases.
+
+56
+00:02:59,034 --> 00:03:02,034
+If the organization changes the
+available model,
+
+57
+00:03:02,084 --> 00:03:05,459
+if the pilot starts touching other parts
+of the order service,
+
+58
+00:03:05,534 --> 00:03:08,881
+or if review quality slips, bring the
+choice back for review.
+
+59
+00:03:09,536 --> 00:03:12,877
+Now fill in those four fields for a task
+your team already handles.

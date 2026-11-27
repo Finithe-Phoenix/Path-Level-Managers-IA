@@ -1,0 +1,13 @@
+node_modules/
+__pycache__/
+*.pyc
+.venv/
+.studio-*/
+build/
+.cache/
+*.partial
+.DS_Store
+
+/engine/remotion/public/
+/engine/remotion/props-*.json
+/engine/remotion/out/

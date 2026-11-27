@@ -1,0 +1,9 @@
+{
+  "language": "en-gb",
+  "voices": {"bf_emma": 0.72, "bf_isabella": 0.28},
+  "speed": 0.94,
+  "clause_pause": 0.16,
+  "sentence_pause": 0.38,
+  "integrated_lufs": -18,
+  "true_peak_dbtp": -1.5
+}

@@ -1,0 +1,294 @@
+1
+00:00:00,418 --> 00:00:02,243
+You are in the decision meeting.
+
+2
+00:00:02,293 --> 00:00:06,468
+Before opening the scorecard, read the
+rules the team approved at kickoff.
+
+3
+00:00:06,568 --> 00:00:09,003
+Expand when the benefit and guardrails
+are met.
+
+4
+00:00:09,605 --> 00:00:13,630
+Adjust when a specific issue can be
+addressed in a bounded follow-up.
+
+5
+00:00:13,705 --> 00:00:16,755
+Pause for a serious data or access
+incident,
+
+6
+00:00:16,830 --> 00:00:20,071
+or when the quality risk needs
+investigation before continuing.
+
+7
+00:00:20,684 --> 00:00:25,009
+This sequence matters because a strong
+speed result is easy to focus on.
+
+8
+00:00:25,059 --> 00:00:27,409
+Put all three decisions on the table.
+
+9
+00:00:27,484 --> 00:00:31,184
+Ask a teammate which evidence would make
+them choose each one before showing the
+
+10
+00:00:31,234 --> 00:00:32,089
+pilot numbers.
+
+11
+00:00:33,581 --> 00:00:35,206
+Walk down the scorecard.
+
+12
+00:00:35,281 --> 00:00:38,256
+Wait is thirteen business hours against
+fourteen.
+
+13
+00:00:38,331 --> 00:00:41,252
+Active review is twenty-six minutes
+against twenty-seven.
+
+14
+00:00:41,901 --> 00:00:45,376
+Spending is two hundred and forty
+dollars against three hundred.
+
+15
+00:00:45,451 --> 00:00:47,301
+Each clears its threshold.
+
+16
+00:00:47,401 --> 00:00:51,601
+Seven of forty requests needed rework,
+so that row lands at seventeen and a
+
+17
+00:00:51,651 --> 00:00:52,385
+half percent.
+
+18
+00:00:52,988 --> 00:00:54,563
+The ceiling was fifteen.
+
+19
+00:00:54,613 --> 00:00:58,763
+The defect count is one in each group,
+and there were zero serious data or
+
+20
+00:00:58,813 --> 00:01:00,338
+access incidents.
+
+21
+00:01:00,413 --> 00:01:03,432
+The rework row rules out expansion under
+the team's agreement.
+
+22
+00:01:04,088 --> 00:01:06,767
+Now check whether it gives you a clear
+change to try.
+
+23
+00:01:08,201 --> 00:01:09,851
+Pull up the review notes.
+
+24
+00:01:09,926 --> 00:01:14,651
+Four of the seven rework cases included
+files outside the intended change.
+
+25
+00:01:14,726 --> 00:01:18,564
+In one of those cases the reviewer asked
+to drop unrelated formatting.
+
+26
+00:01:19,176 --> 00:01:22,226
+Turn that observation into two concrete
+steps.
+
+27
+00:01:22,276 --> 00:01:26,901
+The author lists the expected files in
+Copilot Plan and checks every actual
+
+28
+00:01:26,951 --> 00:01:29,173
+changed path before publishing the
+branch.
+
+29
+00:01:29,817 --> 00:01:34,017
+If a third file appears, the author asks
+what it contributes to the stated
+
+30
+00:01:34,067 --> 00:01:35,942
+acceptance criteria.
+
+31
+00:01:35,992 --> 00:01:39,238
+The independent reviewer still checks
+the final pull request.
+
+32
+00:01:39,893 --> 00:01:42,914
+This is an adjustment the team can
+observe in the follow-up.
+
+33
+00:01:44,393 --> 00:01:47,343
+The engineering lead owns the next four
+weeks.
+
+34
+00:01:47,418 --> 00:01:51,738
+Keep the service, eligibility, and
+metric definitions in place so the next
+
+35
+00:01:51,788 --> 00:01:53,670
+readout can be compared with the pilot.
+
+36
+00:01:54,298 --> 00:01:58,648
+At forty requests, six rework cases
+would meet fifteen percent.
+
+37
+00:01:58,723 --> 00:02:03,148
+If only thirty requests qualify, four
+cases equal about thirteen point three
+
+38
+00:02:03,198 --> 00:02:06,339
+percent and five equal about sixteen
+point seven.
+
+39
+00:02:06,976 --> 00:02:09,001
+Use the actual denominator.
+
+40
+00:02:09,076 --> 00:02:11,851
+Check the reason each time work comes
+back.
+
+41
+00:02:11,926 --> 00:02:15,051
+You need evidence that the extra-file
+pattern improved,
+
+42
+00:02:15,101 --> 00:02:18,351
+together with the time and spending
+measures that supported the original
+
+43
+00:02:18,401 --> 00:02:18,932
+pilot.
+
+44
+00:02:20,435 --> 00:02:22,510
+Try three short scenarios.
+
+45
+00:02:22,585 --> 00:02:27,335
+First, the follow-up meets the wait,
+effort, rework, and budget thresholds.
+
+46
+00:02:27,385 --> 00:02:31,130
+Propose expansion to one comparable team
+and name its onboarding owner.
+
+47
+00:02:31,799 --> 00:02:36,434
+Second, one routine guardrail misses by
+a little and review evidence points to a
+
+48
+00:02:36,509 --> 00:02:38,009
+fixable cause.
+
+49
+00:02:38,084 --> 00:02:40,017
+Consider another bounded adjustment.
+
+50
+00:02:40,641 --> 00:02:45,166
+Third, someone sends restricted data to
+an unapproved model endpoint.
+
+51
+00:02:45,241 --> 00:02:49,145
+Pause the affected workflow and use the
+existing incident process.
+
+52
+00:02:49,732 --> 00:02:53,407
+Practice saying each decision with the
+evidence that triggered it.
+
+53
+00:02:53,457 --> 00:02:56,831
+The person who owns the next action
+should hear exactly what to do.
+
+54
+00:02:58,313 --> 00:03:01,968
+Open a decision record and fill in a
+date, an owner, the decision,
+
+55
+00:03:02,018 --> 00:03:03,493
+and the next review.
+
+56
+00:03:03,543 --> 00:03:05,643
+For this case we choose adjust.
+
+57
+00:03:05,718 --> 00:03:08,628
+Median wait met the target, rework did
+not,
+
+58
+00:03:08,678 --> 00:03:11,618
+and the extra-file pattern gives us a
+focused intervention.
+
+59
+00:03:12,267 --> 00:03:16,467
+Name the engineering lead, attach the
+scorecard and the review evidence,
+
+60
+00:03:16,517 --> 00:03:19,486
+and put a follow-up on the calendar four
+weeks from the relaunch.
+
+61
+00:03:20,120 --> 00:03:22,070
+Then hand the note to a teammate.
+
+62
+00:03:22,145 --> 00:03:25,670
+If they can tell which workflow to
+change and what evidence will determine
+
+63
+00:03:25,695 --> 00:03:28,026
+the next decision, the record is ready.

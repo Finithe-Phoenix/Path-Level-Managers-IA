@@ -1,0 +1,11 @@
+{
+  "name": "ai-field-lab-hyperframes",
+  "version": "2.0.0",
+  "private": true,
+  "engines": {
+    "node": ">=22"
+  },
+  "dependencies": {
+    "hyperframes": "0.9.99"
+  }
+}

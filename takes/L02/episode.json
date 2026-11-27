@@ -1,0 +1,461 @@
+{
+  "id": "L02",
+  "title": "Decide What an Agent Can Do",
+  "subtitle": "Map permissions to actions and keep approvals with the people who own them.",
+  "sources": [
+    {
+      "label": "NIST · AI Risk Management Framework",
+      "url": "https://www.nist.gov/itl/ai-risk-management-framework"
+    },
+    {
+      "label": "NIST · Generative AI Profile",
+      "url": "https://doi.org/10.6028/NIST.AI.600-1"
+    },
+    {
+      "label": "VS Code · Security for AI",
+      "url": "https://code.visualstudio.com/docs/agents/run/security"
+    },
+    {
+      "label": "Google Cloud · Use IAM securely",
+      "url": "https://docs.cloud.google.com/iam/docs/using-iam-securely"
+    }
+  ],
+  "scenes": [
+    {
+      "id": "task",
+      "kind": "decision",
+      "eyebrow": "Fictional order service",
+      "title": "Set the permission boundary",
+      "body": "Start with the specific task and its expected files.",
+      "narration": "Take the model choice from the previous lesson and turn it into an access decision. Issue seventeen asks for a validator change and a test. Write down the two files, the working branch, and what you expect the assistant to produce. Keep production credentials and shared deployment systems outside this task. A manager can check the boundary by asking the author to explain every proposed permission against the ticket. Try it with the test file. Reading that file helps match the existing test style. Changing a pipeline falls outside the planned work.",
+      "code": "Task: issue #17, reject order quantity zero\nFiles: order_quantity.py, test_order_quantity.py\nBranch: fix/reject-zero-quantity",
+      "result": "Expected output: small diff and a regression test",
+      "focus": "The task needs two repository files",
+      "action": "Name the files and the working branch",
+      "durationFrames": 828,
+      "duration": 34.5,
+      "cues": [
+        {
+          "start": 0.393,
+          "end": 4.143,
+          "text": "Take the model choice from the previous\nlesson and turn it into an access"
+        },
+        {
+          "start": 4.193,
+          "end": 5.293,
+          "text": "decision."
+        },
+        {
+          "start": 5.368,
+          "end": 8.555,
+          "text": "Issue seventeen asks for a validator\nchange and a test."
+        },
+        {
+          "start": 9.179,
+          "end": 11.839,
+          "text": "Write down the two files, the working\nbranch,"
+        },
+        {
+          "start": 11.889,
+          "end": 14.514,
+          "text": "and what you expect the assistant to\nproduce."
+        },
+        {
+          "start": 14.589,
+          "end": 18.588,
+          "text": "Keep production credentials and shared\ndeployment systems outside this task."
+        },
+        {
+          "start": 19.222,
+          "end": 22.972,
+          "text": "A manager can check the boundary by\nasking the author to explain every"
+        },
+        {
+          "start": 23.022,
+          "end": 25.372,
+          "text": "proposed permission against the ticket."
+        },
+        {
+          "start": 25.447,
+          "end": 26.808,
+          "text": "Try it with the test file."
+        },
+        {
+          "start": 27.457,
+          "end": 30.682,
+          "text": "Reading that file helps match the\nexisting test style."
+        },
+        {
+          "start": 30.757,
+          "end": 33.439,
+          "text": "Changing a pipeline falls outside the\nplanned work."
+        }
+      ]
+    },
+    {
+      "id": "data",
+      "kind": "diagram",
+      "eyebrow": "Data flow",
+      "title": "Trace the data",
+      "body": "Confirm what can travel and where it ends up.",
+      "narration": "Sketch two boxes. The first is the client, such as Visual Studio Code or a CLI in the corporate Google Cloud workspace. The second is the model endpoint. Draw an arrow between them and label it with the selected code, ticket text, and synthetic test examples that may travel. Have the platform owner confirm the actual provider, endpoint, and retention terms for the approved setup. The machine that runs the client tells you one part of that story. If you cannot name the configured destination, keep the real source out of the request until the owner confirms it.",
+      "code": "VS Code or GCP workspace → configured endpoint\nRecord: provider, policy, retention and owner\nApproved inputs: source examples and test data",
+      "result": "Resolve an unknown endpoint before sharing code",
+      "focus": "Client location and model endpoint differ",
+      "action": "Record the destination and data class",
+      "durationFrames": 870,
+      "duration": 36.25,
+      "cues": [
+        {
+          "start": 0.435,
+          "end": 2.11,
+          "text": "Sketch two boxes."
+        },
+        {
+          "start": 2.16,
+          "end": 6.89,
+          "text": "The first is the client, such as Visual\nStudio Code or a CLI in the corporate"
+        },
+        {
+          "start": 6.94,
+          "end": 8.307,
+          "text": "Google Cloud workspace."
+        },
+        {
+          "start": 8.91,
+          "end": 11.285,
+          "text": "The second is the model endpoint."
+        },
+        {
+          "start": 11.36,
+          "end": 15.535,
+          "text": "Draw an arrow between them and label it\nwith the selected code, ticket text,"
+        },
+        {
+          "start": 15.695,
+          "end": 17.95,
+          "text": "and synthetic test examples that may\ntravel."
+        },
+        {
+          "start": 18.574,
+          "end": 22.299,
+          "text": "Have the platform owner confirm the\nactual provider, endpoint,"
+        },
+        {
+          "start": 22.349,
+          "end": 25.074,
+          "text": "and retention terms for the approved\nsetup."
+        },
+        {
+          "start": 25.124,
+          "end": 28.208,
+          "text": "The machine that runs the client tells\nyou one part of that story."
+        },
+        {
+          "start": 28.832,
+          "end": 32.882,
+          "text": "If you cannot name the configured\ndestination, keep the real source out of"
+        },
+        {
+          "start": 32.907,
+          "end": 35.159,
+          "text": "the request until the owner confirms it."
+        }
+      ]
+    },
+    {
+      "id": "access",
+      "kind": "editor",
+      "eyebrow": "Action matrix",
+      "title": "Assign actions to roles",
+      "body": "Set who may read, edit, test, publish, and review.",
+      "narration": "Start with the permissions to read, edit, test, and publish. The assistant may read the scoped context and propose the patch on the working branch. The author inspects the edits and permits the specific test run in an approved environment. The author publishes the branch and opens the pull request with their own account. A different authorized teammate reviews it. Read the table from bottom to top as a check. If you see the same identity beside publish and final approval, identify who will perform the independent review before you start the pilot.",
+      "code": "Agent: read two files and propose scoped edits\nAuthor: approve tests and publish the branch\nReviewer: inspect the PR and submit a decision",
+      "result": "Use the approved test environment",
+      "focus": "Publishing and approval have distinct owners",
+      "action": "Fill in the owner for each operation",
+      "durationFrames": 826,
+      "duration": 34.416666666666664,
+      "cues": [
+        {
+          "start": 0.435,
+          "end": 4.385,
+          "text": "Start with the permissions to read,\nedit, test, and publish."
+        },
+        {
+          "start": 4.435,
+          "end": 7.985,
+          "text": "The assistant may read the scoped\ncontext and propose the patch on the"
+        },
+        {
+          "start": 8.035,
+          "end": 8.883,
+          "text": "working branch."
+        },
+        {
+          "start": 9.475,
+          "end": 13.175,
+          "text": "The author inspects the edits and\npermits the specific test run in an"
+        },
+        {
+          "start": 13.225,
+          "end": 14.95,
+          "text": "approved environment."
+        },
+        {
+          "start": 15.025,
+          "end": 18.875,
+          "text": "The author publishes the branch and\nopens the pull request with their own"
+        },
+        {
+          "start": 18.925,
+          "end": 19.472,
+          "text": "account."
+        },
+        {
+          "start": 20.095,
+          "end": 22.77,
+          "text": "A different authorized teammate reviews\nit."
+        },
+        {
+          "start": 22.845,
+          "end": 25.62,
+          "text": "Read the table from bottom to top as a\ncheck."
+        },
+        {
+          "start": 25.695,
+          "end": 29.27,
+          "text": "If you see the same identity beside\npublish and final approval,"
+        },
+        {
+          "start": 29.345,
+          "end": 32.745,
+          "text": "identify who will perform the\nindependent review before you start the"
+        },
+        {
+          "start": 32.795,
+          "end": 33.334,
+          "text": "pilot."
+        }
+      ]
+    },
+    {
+      "id": "prompt",
+      "kind": "terminal",
+      "eyebrow": "Unexpected action",
+      "title": "Decide on an unexpected request",
+      "body": "Keep the work inside the permissions it actually needs.",
+      "narration": "Here is a permission prompt. The assistant asks to download a new test library. Pause and ask what would justify it. This repository already has tests in Python's standard library, so we have the capability needed for the zero case. Decline the network request and ask the assistant to follow the existing test style. Then inspect the diff for package files or dependency edits. If your team sees a repeated request of this kind, the platform lead can use the examples to clarify the task instructions or the permission defaults.",
+      "code": "Proposed action: download a test dependency\nAgreed command: python -B -m unittest discover -s tests",
+      "result": "Decline the network request",
+      "focus": "The proposed dependency exceeds scope",
+      "action": "Decline it and request the standard test",
+      "durationFrames": 815,
+      "duration": 33.958333333333336,
+      "cues": [
+        {
+          "start": 0.393,
+          "end": 2.143,
+          "text": "Here is a permission prompt."
+        },
+        {
+          "start": 2.193,
+          "end": 5.293,
+          "text": "The assistant asks to download a new\ntest library."
+        },
+        {
+          "start": 5.368,
+          "end": 7.943,
+          "text": "Pause and ask what would justify it."
+        },
+        {
+          "start": 8.018,
+          "end": 11.818,
+          "text": "This repository already has tests in\nPython's standard library,"
+        },
+        {
+          "start": 11.868,
+          "end": 14.4,
+          "text": "so we have the capability needed for the\nzero case."
+        },
+        {
+          "start": 15.003,
+          "end": 19.128,
+          "text": "Decline the network request and ask the\nassistant to follow the existing test"
+        },
+        {
+          "start": 19.178,
+          "end": 20.178,
+          "text": "style."
+        },
+        {
+          "start": 20.253,
+          "end": 23.634,
+          "text": "Then inspect the diff for package files\nor dependency edits."
+        },
+        {
+          "start": 24.258,
+          "end": 27.208,
+          "text": "If your team sees a repeated request of\nthis kind,"
+        },
+        {
+          "start": 27.258,
+          "end": 31.833,
+          "text": "the platform lead can use the examples\nto clarify the task instructions or the"
+        },
+        {
+          "start": 31.883,
+          "end": 32.868,
+          "text": "permission defaults."
+        }
+      ]
+    },
+    {
+      "id": "controls",
+      "kind": "github",
+      "eyebrow": "Human controls",
+      "title": "Read the human review evidence",
+      "body": "Inspect what the check and independent review each prove.",
+      "narration": "Now follow the evidence after publication. In the approved remote terminal, the reviewer uses GitHub CLI to read the diff and the checks for pull request forty-two. They confirm the zero regression, see that the checks passed, and submit a review with their own identity. For the manager walkthrough, read back that recorded decision and link it to issue seventeen. A passing check answers whether the test suite ran successfully. The review record answers who evaluated the change. Ask learners to point to one piece of evidence for each question.",
+      "code": "gh pr diff 42\ngh pr checks 42\ngh pr view 42 --json reviews",
+      "result": "Evidence: separate reviewer and recorded decision",
+      "focus": "PR #42 shows the check and reviewer",
+      "action": "Open the diff, checks, and review record",
+      "durationFrames": 823,
+      "duration": 34.291666666666664,
+      "cues": [
+        {
+          "start": 0.418,
+          "end": 3.293,
+          "text": "Now follow the evidence after\npublication."
+        },
+        {
+          "start": 3.368,
+          "end": 7.768,
+          "text": "In the approved remote terminal, the\nreviewer uses GitHub CLI to read the"
+        },
+        {
+          "start": 7.818,
+          "end": 10.368,
+          "text": "diff and the checks for pull request\nforty-two."
+        },
+        {
+          "start": 10.981,
+          "end": 14.406,
+          "text": "They confirm the zero regression, see\nthat the checks passed,"
+        },
+        {
+          "start": 14.456,
+          "end": 17.356,
+          "text": "and submit a review with their own\nidentity."
+        },
+        {
+          "start": 17.431,
+          "end": 21.156,
+          "text": "For the manager walkthrough, read back\nthat recorded decision and link it to"
+        },
+        {
+          "start": 21.206,
+          "end": 22.193,
+          "text": "issue seventeen."
+        },
+        {
+          "start": 22.796,
+          "end": 26.621,
+          "text": "A passing check answers whether the test\nsuite ran successfully."
+        },
+        {
+          "start": 26.671,
+          "end": 29.846,
+          "text": "The review record answers who evaluated\nthe change."
+        },
+        {
+          "start": 29.921,
+          "end": 33.219,
+          "text": "Ask learners to point to one piece of\nevidence for each question."
+        }
+      ]
+    },
+    {
+      "id": "record",
+      "kind": "decision",
+      "eyebrow": "Permission decision",
+      "title": "Record the approval boundary",
+      "body": "Document who decides when scope changes.",
+      "narration": "Make the permission decision easy to look up. Save the task, the approved data class, where the assistant runs, the actions it can take, and who handles exceptions. If you later evaluate Claude Code or OpenCode in the corporate Google Cloud workspace, check which identities grant access to the shell, repository, and model. Their boundaries may differ from the editor workflow. Try one final exercise. A teammate asks to connect another data source. Who has to review that request? In this example, the platform lead checks the new destination and permission before approving use.",
+      "code": "Engineering lead: owns the pilot\nPlatform lead: controls data and permissions\nReviewer: evaluates the proposed change",
+      "result": "Reassess before changing tools, data, or access",
+      "focus": "New data, tools, or access trigger a review",
+      "action": "Assign a named owner for exceptions",
+      "durationFrames": 896,
+      "duration": 37.333333333333336,
+      "cues": [
+        {
+          "start": 0.439,
+          "end": 3.064,
+          "text": "Make the permission decision easy to\nlook up."
+        },
+        {
+          "start": 3.164,
+          "end": 6.924,
+          "text": "Save the task, the approved data class,\nwhere the assistant runs,"
+        },
+        {
+          "start": 6.974,
+          "end": 9.711,
+          "text": "the actions it can take, and who handles\nexceptions."
+        },
+        {
+          "start": 10.313,
+          "end": 14.463,
+          "text": "If you later evaluate Claude Code or\nOpenCode in the corporate Google Cloud"
+        },
+        {
+          "start": 14.513,
+          "end": 19.163,
+          "text": "workspace, check which identities grant\naccess to the shell, repository,"
+        },
+        {
+          "start": 19.363,
+          "end": 19.863,
+          "text": "and model."
+        },
+        {
+          "start": 20.487,
+          "end": 23.337,
+          "text": "Their boundaries may differ from the\neditor workflow."
+        },
+        {
+          "start": 23.412,
+          "end": 25.437,
+          "text": "Try one final exercise."
+        },
+        {
+          "start": 25.512,
+          "end": 28.03,
+          "text": "A teammate asks to connect another data\nsource."
+        },
+        {
+          "start": 28.629,
+          "end": 30.654,
+          "text": "Who has to review that request?"
+        },
+        {
+          "start": 30.729,
+          "end": 34.089,
+          "text": "In this example, the platform lead\nchecks the new destination and"
+        },
+        {
+          "start": 34.139,
+          "end": 35.817,
+          "text": "permission before approving use."
+        }
+      ]
+    }
+  ],
+  "fps": 24,
+  "width": 1280,
+  "height": 720,
+  "durationFrames": 5058,
+  "voiceBuild": "c02ad7dac1f30dbd6428e83a4203d032aff08deb6da85c358b10e8045068c232"
+}
