@@ -24,57 +24,52 @@
       "result": "Measure the interval the team wants to improve",
       "focus": "The queue starts when a PR is ready",
       "action": "Mark readiness and the first human review",
-      "durationFrames": 785,
-      "duration": 32.708333333333336,
+      "durationFrames": 748,
+      "duration": 31.166666666666668,
       "cues": [
         {
-          "start": 0.393,
-          "end": 3.718,
+          "start": 0.255,
+          "end": 2.85,
           "text": "I have two timestamps on this example\npull request."
         },
         {
-          "start": 3.768,
-          "end": 6.318,
-          "text": "The author marked it ready at ten on\nMonday."
+          "start": 3.211,
+          "end": 7.341,
+          "text": "The author marked it ready at ten on\nMonday. The first teammate commented on"
         },
         {
-          "start": 6.368,
-          "end": 9.259,
-          "text": "The first teammate commented on the code\nat two on Tuesday."
+          "start": 7.341,
+          "end": 8.868,
+          "text": "the code at two on Tuesday."
         },
         {
-          "start": 9.878,
-          "end": 13.878,
+          "start": 9.148,
+          "end": 13.472,
           "text": "The team counts business hours, so with\na nine-to-five schedule that is seven"
         },
         {
-          "start": 13.928,
-          "end": 16.87,
+          "start": 13.472,
+          "end": 16.413,
           "text": "hours on Monday and five on Tuesday,\ntwelve in all."
         },
         {
-          "start": 17.473,
-          "end": 21.348,
+          "start": 16.719,
+          "end": 19.933,
           "text": "The baseline across forty requests is\neighteen business hours."
         },
         {
-          "start": 21.423,
-          "end": 23.598,
-          "text": "This measurement starts at readiness."
+          "start": 20.234,
+          "end": 24.514,
+          "text": "This measurement starts at readiness. It\ntells the manager where work is waiting"
         },
         {
-          "start": 23.673,
-          "end": 27.123,
-          "text": "It tells the manager where work is\nwaiting after the author has asked for a"
+          "start": 24.524,
+          "end": 26.779,
+          "text": "after the author has asked for a review."
         },
         {
-          "start": 27.173,
-          "end": 27.619,
-          "text": "review."
-        },
-        {
-          "start": 28.263,
-          "end": 31.625,
+          "start": 27.06,
+          "end": 30.51,
           "text": "Try tracing the same two points on a\npull request from your team."
         }
       ]
@@ -90,62 +85,62 @@
       "result": "Hypothesis: reviewers pick up clearer PRs sooner",
       "focus": "The author prepares a narrower PR",
       "action": "Define what belongs in the pilot",
-      "durationFrames": 835,
-      "duration": 34.791666666666664,
+      "durationFrames": 785,
+      "duration": 32.708333333333336,
       "cues": [
         {
-          "start": 0.439,
-          "end": 3.939,
+          "start": 0.275,
+          "end": 4.428,
           "text": "Suppose reviewers say small fixes are\nhard to pick up when the expected"
         },
         {
-          "start": 3.989,
-          "end": 6.164,
+          "start": 4.428,
+          "end": 6.256,
           "text": "outcomes are buried in the ticket."
         },
         {
-          "start": 6.214,
-          "end": 10.689,
+          "start": 6.771,
+          "end": 10.934,
           "text": "The pilot gives every eligible change a\nfocused diff, clear boundary tests,"
         },
         {
-          "start": 10.759,
-          "end": 11.732,
+          "start": 11.165,
+          "end": 12.159,
           "text": "and a short summary."
         },
         {
-          "start": 12.345,
-          "end": 15.245,
-          "text": "Copilot helps the author prepare that\npackage."
+          "start": 12.46,
+          "end": 16.757,
+          "text": "Copilot helps the author prepare that\npackage. Ask for a prediction the team"
         },
         {
-          "start": 15.32,
-          "end": 17.645,
-          "text": "Ask for a prediction the team can check."
+          "start": 16.757,
+          "end": 17.264,
+          "text": "can check."
         },
         {
-          "start": 17.695,
-          "end": 21.829,
+          "start": 17.604,
+          "end": 21.532,
           "text": "We expect those pull requests to reach\ntheir first substantive review sooner."
         },
         {
-          "start": 22.467,
-          "end": 25.717,
-          "text": "Write an eligibility rule and try two\nexamples."
+          "start": 21.813,
+          "end": 25.833,
+          "text": "Write an eligibility rule and try two\nexamples. The zero-quantity issue"
         },
         {
-          "start": 25.767,
-          "end": 28.242,
-          "text": "The zero-quantity issue qualifies."
+          "start": 25.833,
+          "end": 26.521,
+          "text": "qualifies."
         },
         {
-          "start": 28.317,
-          "end": 32.692,
+          "start": 26.821,
+          "end": 31.046,
           "text": "A database migration with several\nservices and design decisions keeps its"
         },
         {
-          "start": 32.742,
-          "end": 33.719,
+          "start": 31.056,
+          "end": 31.969,
           "text": "usual process."
         }
       ]
@@ -161,62 +156,57 @@
       "result": "Compare the same type of work in one service",
       "focus": "Two four-week groups use the same rule",
       "action": "Log task mix and staffing changes",
-      "durationFrames": 784,
-      "duration": 32.666666666666664,
+      "durationFrames": 757,
+      "duration": 31.541666666666668,
       "cues": [
         {
-          "start": 0.439,
-          "end": 3.989,
+          "start": 0.275,
+          "end": 3.578,
           "text": "Set aside four weeks for the baseline\nand four for the pilot."
         },
         {
-          "start": 4.064,
-          "end": 8.214,
+          "start": 4.109,
+          "end": 8.003,
           "text": "Use the same service and the same\ndefinition of an eligible fix in both"
         },
         {
-          "start": 8.264,
-          "end": 8.875,
+          "start": 8.003,
+          "end": 8.489,
           "text": "windows."
         },
         {
-          "start": 9.477,
-          "end": 13.252,
+          "start": 8.96,
+          "end": 13.148,
           "text": "Keep a small table of the task mix and\nwhich reviewers covered the queue each"
         },
         {
-          "start": 13.302,
-          "end": 14.102,
+          "start": 13.148,
+          "end": 13.403,
           "text": "week."
         },
         {
-          "start": 14.177,
-          "end": 16.914,
+          "start": 13.934,
+          "end": 16.477,
           "text": "Suppose the pilot's third week had an\nextra reviewer."
         },
         {
-          "start": 17.573,
-          "end": 19.298,
-          "text": "Flag it in the scorecard."
+          "start": 16.838,
+          "end": 20.905,
+          "text": "Flag it in the scorecard. That coverage\ncould contribute to the result."
         },
         {
-          "start": 19.373,
-          "end": 21.873,
-          "text": "That coverage could contribute to the\nresult."
-        },
-        {
-          "start": 21.948,
-          "end": 25.348,
+          "start": 21.381,
+          "end": 24.035,
           "text": "This is a useful pilot design for a\nlocal decision."
         },
         {
-          "start": 25.423,
-          "end": 28.873,
+          "start": 24.355,
+          "end": 27.591,
           "text": "A historical comparison leaves several\nexplanations open,"
         },
         {
-          "start": 28.923,
-          "end": 31.577,
+          "start": 27.882,
+          "end": 30.716,
           "text": "so save the context and bring it to the\nreview meeting."
         }
       ]
@@ -232,57 +222,57 @@
       "result": "Collect evidence with each measurement",
       "focus": "Wait hours and active minutes measure different work",
       "action": "Write what counts as meaningful rework",
-      "durationFrames": 819,
-      "duration": 34.125,
+      "durationFrames": 758,
+      "duration": 31.583333333333332,
       "cues": [
         {
-          "start": 0.414,
-          "end": 3.264,
+          "start": 0.276,
+          "end": 2.477,
           "text": "Agree on how to count before you start\nmeasuring."
         },
         {
-          "start": 3.339,
-          "end": 6.289,
+          "start": 2.859,
+          "end": 5.361,
           "text": "A substantive first review discusses the\nchange."
         },
         {
-          "start": 6.364,
-          "end": 9.964,
+          "start": 5.762,
+          "end": 9.308,
           "text": "A bot result or an acknowledgment such\nas ‘looking soon’ leaves the clock"
         },
         {
-          "start": 10.014,
-          "end": 10.389,
+          "start": 9.318,
+          "end": 9.669,
           "text": "running."
         },
         {
-          "start": 11.002,
-          "end": 15.752,
+          "start": 10.18,
+          "end": 14.184,
           "text": "Active review minutes measure time spent\nreading and evaluating the pull request."
         },
         {
-          "start": 15.827,
-          "end": 20.227,
+          "start": 14.584,
+          "end": 18.579,
           "text": "Material rework means the author has to\nchange an important part of the proposed"
         },
         {
-          "start": 20.277,
-          "end": 22.558,
+          "start": 18.579,
+          "end": 20.549,
           "text": "behavior, tests, or scope."
         },
         {
-          "start": 23.171,
-          "end": 26.171,
+          "start": 21.08,
+          "end": 23.755,
           "text": "A spelling suggestion is a different\nkind of feedback."
         },
         {
-          "start": 26.246,
-          "end": 29.871,
+          "start": 24.176,
+          "end": 27.422,
           "text": "Give reviewers two sample comments and\nhave them label each one."
         },
         {
-          "start": 29.946,
-          "end": 33.039,
+          "start": 27.703,
+          "end": 30.85,
           "text": "Compare answers so the team starts with\na common definition."
         }
       ]
@@ -298,62 +288,62 @@
       "result": "Serious data or access incident triggers a pause",
       "focus": "The allowed effort increase is three minutes",
       "action": "Write the benefit and guardrail values",
-      "durationFrames": 832,
-      "duration": 34.666666666666664,
+      "durationFrames": 760,
+      "duration": 31.666666666666668,
       "cues": [
         {
-          "start": 0.389,
-          "end": 3.639,
+          "start": 0.22,
+          "end": 2.905,
           "text": "The team sets the finish line before the\nresults arrive."
         },
         {
-          "start": 3.714,
-          "end": 7.339,
+          "start": 3.307,
+          "end": 6.93,
           "text": "Median wait should drop from eighteen\nbusiness hours to fourteen or less."
         },
         {
-          "start": 7.973,
-          "end": 11.623,
-          "text": "Active review starts at twenty-four\nminutes, and the team allows three"
+          "start": 7.471,
+          "end": 9.591,
+          "text": "Active review starts at twenty-four\nminutes,"
         },
         {
-          "start": 11.673,
-          "end": 13.223,
-          "text": "additional minutes."
+          "start": 10.003,
+          "end": 11.942,
+          "text": "and the team allows three additional\nminutes."
         },
         {
-          "start": 13.298,
-          "end": 16.263,
+          "start": 12.464,
+          "end": 15.426,
           "text": "Twenty-four plus three gives us a\ntwenty-seven minute limit."
         },
         {
-          "start": 16.897,
-          "end": 20.672,
+          "start": 15.747,
+          "end": 19.548,
           "text": "The rework ceiling is fifteen percent\nand the spending cap is three hundred"
         },
         {
-          "start": 20.722,
-          "end": 21.722,
+          "start": 19.548,
+          "end": 19.975,
           "text": "dollars."
         },
         {
-          "start": 21.797,
-          "end": 24.781,
+          "start": 20.336,
+          "end": 23.182,
           "text": "Track post-merge defects with a fixed\nfollow-up period."
         },
         {
-          "start": 25.415,
-          "end": 29.865,
+          "start": 23.563,
+          "end": 27.674,
           "text": "A serious data or access incident\ntriggers a pause and the agreed response"
         },
         {
-          "start": 29.915,
-          "end": 30.99,
+          "start": 27.674,
+          "end": 28.199,
           "text": "process."
         },
         {
-          "start": 31.04,
-          "end": 33.577,
+          "start": 28.565,
+          "end": 30.986,
           "text": "Put these rules where the decision owner\ncan find them."
         }
       ]
@@ -369,57 +359,57 @@
       "result": "Start after the review roles are assigned",
       "focus": "Issue #17 links to the first example PR",
       "action": "Give the scorecard a named owner",
-      "durationFrames": 834,
-      "duration": 34.75,
+      "durationFrames": 773,
+      "duration": 32.208333333333336,
       "cues": [
         {
-          "start": 0.371,
-          "end": 3.721,
+          "start": 0.235,
+          "end": 3.07,
           "text": "The engineering lead is accountable for\nthe pilot record."
         },
         {
-          "start": 3.771,
-          "end": 7.346,
+          "start": 3.371,
+          "end": 6.353,
           "text": "The author and reviewer own their parts\nof each pull request."
         },
         {
-          "start": 7.421,
-          "end": 10.859,
+          "start": 6.815,
+          "end": 10.178,
           "text": "Use issue seventeen and pull request\nforty-two as the walkthrough."
         },
         {
-          "start": 11.496,
-          "end": 16.396,
+          "start": 10.589,
+          "end": 14.556,
           "text": "Read the change, check the times, and\nask who would label a rework request."
         },
         {
-          "start": 16.496,
-          "end": 19.821,
+          "start": 15.107,
+          "end": 19.043,
           "text": "Schedule a quick weekly check to catch\nmissing evidence while the team can"
         },
         {
-          "start": 19.871,
-          "end": 20.849,
+          "start": 19.043,
+          "end": 19.891,
           "text": "still recover it."
         },
         {
-          "start": 21.427,
-          "end": 24.202,
+          "start": 20.302,
+          "end": 22.544,
           "text": "Before starting, hand the record to a\nteammate."
         },
         {
-          "start": 24.277,
-          "end": 28.402,
+          "start": 22.925,
+          "end": 26.629,
           "text": "Ask them to explain which tasks qualify,\nwhen the review clock starts,"
         },
         {
-          "start": 28.452,
-          "end": 30.382,
+          "start": 26.8,
+          "end": 28.757,
           "text": "and what result would make the team\npause."
         },
         {
-          "start": 31.049,
-          "end": 33.301,
+          "start": 29.388,
+          "end": 31.286,
           "text": "Fix anything they interpret differently."
         }
       ]
@@ -428,6 +418,6 @@
   "fps": 24,
   "width": 1280,
   "height": 720,
-  "durationFrames": 4889,
-  "voiceBuild": "0af8a179ac728cacd230318fad356a9d15b082cc9bc16df0a9a8fd5c477ffddf"
+  "durationFrames": 4581,
+  "voiceBuild": "06465bd0e89133f6f4b68c7923709571a51a42e9effaeda5adfb541cc69811a3"
 }

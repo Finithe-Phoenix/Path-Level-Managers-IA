@@ -1,297 +1,289 @@
 1
-00:00:00,427 --> 00:00:04,042
+00:00:00,290 --> 00:00:03,239
 I have two timestamps on this example
 pull request.
 
 2
-00:00:04,096 --> 00:00:06,868
+00:00:03,649 --> 00:00:08,343
 The author marked it ready at ten on
-Monday.
+Monday. The first teammate commented on
 
 3
-00:00:06,923 --> 00:00:10,066
-The first teammate commented on the code
-at two on Tuesday.
+00:00:08,343 --> 00:00:10,078
+the code at two on Tuesday.
 
 4
-00:00:10,739 --> 00:00:15,087
+00:00:10,397 --> 00:00:15,311
 The team counts business hours, so with
 a nine-to-five schedule that is seven
 
 5
-00:00:15,141 --> 00:00:18,340
+00:00:15,311 --> 00:00:18,653
 hours on Monday and five on Tuesday,
 twelve in all.
 
 6
-00:00:18,995 --> 00:00:23,208
+00:00:19,001 --> 00:00:22,654
 The baseline across forty requests is
 eighteen business hours.
 
 7
-00:00:23,289 --> 00:00:25,654
-This measurement starts at readiness.
+00:00:22,996 --> 00:00:27,860
+This measurement starts at readiness. It
+tells the manager where work is waiting
 
 8
-00:00:25,735 --> 00:00:29,486
-It tells the manager where work is
-waiting after the author has asked for a
+00:00:27,871 --> 00:00:30,434
+after the author has asked for a review.
 
 9
-00:00:29,540 --> 00:00:30,025
-review.
-
-10
-00:00:30,725 --> 00:00:34,380
+00:00:30,754 --> 00:00:34,674
 Try tracing the same two points on a
 pull request from your team.
 
-11
-00:00:36,435 --> 00:00:40,240
+10
+00:00:36,105 --> 00:00:40,824
 Suppose reviewers say small fixes are
 hard to pick up when the expected
 
-12
-00:00:40,295 --> 00:00:42,659
+11
+00:00:40,824 --> 00:00:42,902
 outcomes are buried in the ticket.
 
-13
-00:00:42,713 --> 00:00:47,578
+12
+00:00:43,487 --> 00:00:48,218
 The pilot gives every eligible change a
 focused diff, clear boundary tests,
 
-14
-00:00:47,654 --> 00:00:48,712
+13
+00:00:48,481 --> 00:00:49,611
 and a short summary.
 
-15
-00:00:49,378 --> 00:00:52,531
+14
+00:00:49,953 --> 00:00:54,836
 Copilot helps the author prepare that
-package.
+package. Ask for a prediction the team
+
+15
+00:00:54,836 --> 00:00:55,412
+can check.
 
 16
-00:00:52,613 --> 00:00:55,140
-Ask for a prediction the team can check.
-
-17
-00:00:55,195 --> 00:00:59,689
+00:00:55,799 --> 00:01:00,263
 We expect those pull requests to reach
 their first substantive review sooner.
 
-18
-00:01:00,382 --> 00:01:03,915
+17
+00:01:00,582 --> 00:01:05,151
 Write an eligibility rule and try two
-examples.
+examples. The zero-quantity issue
+
+18
+00:01:05,151 --> 00:01:05,933
+qualifies.
 
 19
-00:01:03,970 --> 00:01:06,660
-The zero-quantity issue qualifies.
-
-20
-00:01:06,742 --> 00:01:11,498
+00:01:06,274 --> 00:01:11,076
 A database migration with several
 services and design decisions keeps its
 
-21
-00:01:11,552 --> 00:01:12,614
+20
+00:01:11,087 --> 00:01:12,125
 usual process.
 
-22
-00:01:14,894 --> 00:01:18,754
+21
+00:01:13,938 --> 00:01:17,691
 Set aside four weeks for the baseline
 and four for the pilot.
 
-23
-00:01:18,835 --> 00:01:23,347
+22
+00:01:18,295 --> 00:01:22,720
 Use the same service and the same
 definition of an eligible fix in both
 
-24
-00:01:23,401 --> 00:01:24,065
+23
+00:01:22,720 --> 00:01:23,370
 windows.
 
-25
-00:01:24,720 --> 00:01:28,823
+24
+00:01:23,808 --> 00:01:28,568
 Keep a small table of the task mix and
 which reviewers covered the queue each
 
-26
-00:01:28,878 --> 00:01:29,748
+25
+00:01:28,568 --> 00:01:29,218
 week.
 
-27
-00:01:29,829 --> 00:01:32,804
+26
+00:01:29,461 --> 00:01:32,351
 Suppose the pilot's third week had an
 extra reviewer.
 
+27
+00:01:32,761 --> 00:01:37,383
+Flag it in the scorecard. That coverage
+could contribute to the result.
+
 28
-00:01:33,521 --> 00:01:35,396
-Flag it in the scorecard.
-
-29
-00:01:35,478 --> 00:01:38,195
-That coverage could contribute to the
-result.
-
-30
-00:01:38,277 --> 00:01:41,973
+00:01:37,924 --> 00:01:40,941
 This is a useful pilot design for a
 local decision.
 
-31
-00:01:42,055 --> 00:01:45,805
+29
+00:01:41,304 --> 00:01:44,982
 A historical comparison leaves several
 explanations open,
 
-32
-00:01:45,860 --> 00:01:48,745
+30
+00:01:45,313 --> 00:01:48,534
 so save the context and bring it to the
 review meeting.
 
-33
-00:01:51,033 --> 00:01:54,131
+31
+00:01:50,439 --> 00:01:52,940
 Agree on how to count before you start
 measuring.
 
-34
-00:01:54,213 --> 00:01:57,420
+32
+00:01:53,374 --> 00:01:56,218
 A substantive first review discusses the
 change.
 
-35
-00:01:57,501 --> 00:02:01,415
+33
+00:01:56,673 --> 00:02:00,703
 A bot result or an acknowledgment such
 as ‘looking soon’ leaves the clock
 
-36
-00:02:01,469 --> 00:02:01,877
+34
+00:02:00,715 --> 00:02:01,365
 running.
 
-37
-00:02:02,543 --> 00:02:07,707
+35
+00:02:01,695 --> 00:02:06,245
 Active review minutes measure time spent
 reading and evaluating the pull request.
 
-38
-00:02:07,789 --> 00:02:12,572
+36
+00:02:06,700 --> 00:02:11,240
 Material rework means the author has to
 change an important part of the proposed
 
-39
-00:02:12,626 --> 00:02:15,106
+37
+00:02:11,240 --> 00:02:13,479
 behavior, tests, or scope.
 
-40
-00:02:15,773 --> 00:02:19,034
+38
+00:02:14,082 --> 00:02:17,122
 A spelling suggestion is a different
 kind of feedback.
 
-41
-00:02:19,115 --> 00:02:23,056
+39
+00:02:17,601 --> 00:02:21,290
 Give reviewers two sample comments and
 have them label each one.
 
-42
-00:02:23,138 --> 00:02:26,500
+40
+00:02:21,609 --> 00:02:25,186
 Compare answers so the team starts with
 a common definition.
 
-43
-00:02:28,756 --> 00:02:32,289
+41
+00:02:26,917 --> 00:02:29,969
 The team sets the finish line before the
 results arrive.
 
-44
-00:02:32,371 --> 00:02:36,311
+42
+00:02:30,425 --> 00:02:34,543
 Median wait should drop from eighteen
 business hours to fourteen or less.
 
-45
-00:02:37,001 --> 00:02:40,969
+43
+00:02:35,158 --> 00:02:37,567
 Active review starts at twenty-four
-minutes, and the team allows three
+minutes,
 
-46
-00:02:41,023 --> 00:02:42,708
-additional minutes.
+44
+00:02:38,035 --> 00:02:40,239
+and the team allows three additional
+minutes.
 
-47
-00:02:42,789 --> 00:02:46,013
+45
+00:02:40,832 --> 00:02:44,199
 Twenty-four plus three gives us a
 twenty-seven minute limit.
 
-48
-00:02:46,702 --> 00:02:50,806
+46
+00:02:44,563 --> 00:02:48,883
 The rework ceiling is fifteen percent
 and the spending cap is three hundred
 
-49
-00:02:50,860 --> 00:02:51,947
+47
+00:02:48,883 --> 00:02:49,533
 dollars.
 
-50
-00:02:52,029 --> 00:02:55,273
+48
+00:02:49,779 --> 00:02:53,013
 Track post-merge defects with a fixed
 follow-up period.
 
-51
-00:02:55,962 --> 00:03:00,800
+49
+00:02:53,446 --> 00:02:58,118
 A serious data or access incident
 triggers a pause and the agreed response
 
-52
-00:03:00,854 --> 00:03:02,023
+50
+00:02:58,118 --> 00:02:58,768
 process.
 
-53
-00:03:02,077 --> 00:03:04,835
+51
+00:02:59,131 --> 00:03:01,882
 Put these rules where the decision owner
 can find them.
 
-54
-00:03:07,070 --> 00:03:10,712
+52
+00:03:03,559 --> 00:03:06,781
 The engineering lead is accountable for
 the pilot record.
 
-55
-00:03:10,767 --> 00:03:14,653
+53
+00:03:07,123 --> 00:03:10,512
 The author and reviewer own their parts
 of each pull request.
 
-56
-00:03:14,734 --> 00:03:18,472
+54
+00:03:11,037 --> 00:03:14,859
 Use issue seventeen and pull request
 forty-two as the walkthrough.
 
-57
-00:03:19,164 --> 00:03:24,491
+55
+00:03:15,326 --> 00:03:19,835
 Read the change, check the times, and
 ask who would label a rework request.
 
-58
-00:03:24,600 --> 00:03:28,215
+56
+00:03:20,461 --> 00:03:24,934
 Schedule a quick weekly check to catch
 missing evidence while the team can
 
-59
-00:03:28,269 --> 00:03:29,332
+57
+00:03:24,934 --> 00:03:25,898
 still recover it.
 
-60
-00:03:29,961 --> 00:03:32,977
+58
+00:03:26,365 --> 00:03:28,913
 Before starting, hand the record to a
 teammate.
 
-61
-00:03:33,059 --> 00:03:37,543
+59
+00:03:29,346 --> 00:03:33,556
 Ask them to explain which tasks qualify,
 when the review clock starts,
 
-62
-00:03:37,598 --> 00:03:39,696
+60
+00:03:33,750 --> 00:03:35,974
 and what result would make the team
 pause.
 
-63
-00:03:40,421 --> 00:03:42,869
+61
+00:03:36,691 --> 00:03:38,848
 Fix anything they interpret differently.
