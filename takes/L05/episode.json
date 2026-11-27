@@ -28,58 +28,53 @@
       "result": "Use the original decision rules",
       "focus": "The decision starts with the pre-pilot gates",
       "action": "State all three outcomes aloud",
-      "durationFrames": 796,
-      "duration": 33.166666666666664,
+      "durationFrames": 778,
+      "duration": 32.416666666666664,
       "cues": [
         {
-          "start": 0.418,
-          "end": 2.243,
-          "text": "You are in the decision meeting."
+          "start": 0.255,
+          "end": 3.489,
+          "text": "You are in the decision meeting. Before\nopening the scorecard,"
         },
         {
-          "start": 2.293,
-          "end": 6.468,
-          "text": "Before opening the scorecard, read the\nrules the team approved at kickoff."
+          "start": 3.779,
+          "end": 5.932,
+          "text": "read the rules the team approved at\nkickoff."
         },
         {
-          "start": 6.568,
-          "end": 9.003,
-          "text": "Expand when the benefit and guardrails\nare met."
+          "start": 6.372,
+          "end": 11.035,
+          "text": "Expand when the benefit and guardrails\nare met. Adjust when a specific issue"
         },
         {
-          "start": 9.605,
-          "end": 13.63,
-          "text": "Adjust when a specific issue can be\naddressed in a bounded follow-up."
+          "start": 11.035,
+          "end": 13.114,
+          "text": "can be addressed in a bounded follow-up."
         },
         {
-          "start": 13.705,
-          "end": 16.755,
+          "start": 13.454,
+          "end": 15.953,
           "text": "Pause for a serious data or access\nincident,"
         },
         {
-          "start": 16.83,
-          "end": 20.071,
+          "start": 16.265,
+          "end": 19.547,
           "text": "or when the quality risk needs\ninvestigation before continuing."
         },
         {
-          "start": 20.684,
-          "end": 25.009,
+          "start": 19.998,
+          "end": 23.889,
           "text": "This sequence matters because a strong\nspeed result is easy to focus on."
         },
         {
-          "start": 25.059,
-          "end": 27.409,
-          "text": "Put all three decisions on the table."
+          "start": 24.3,
+          "end": 28.469,
+          "text": "Put all three decisions on the table.\nAsk a teammate which evidence would make"
         },
         {
-          "start": 27.484,
-          "end": 31.184,
-          "text": "Ask a teammate which evidence would make\nthem choose each one before showing the"
-        },
-        {
-          "start": 31.234,
-          "end": 32.089,
-          "text": "pilot numbers."
+          "start": 28.469,
+          "end": 31.618,
+          "text": "them choose each one before showing the\npilot numbers."
         }
       ]
     },
@@ -94,67 +89,57 @@
       "result": "Decision candidate: adjust",
       "focus": "17.5% rework exceeds a 15% gate",
       "action": "Circle the guardrail miss",
-      "durationFrames": 832,
-      "duration": 34.666666666666664,
+      "durationFrames": 748,
+      "duration": 31.166666666666668,
       "cues": [
         {
-          "start": 0.414,
-          "end": 2.039,
-          "text": "Walk down the scorecard."
+          "start": 0.275,
+          "end": 3.839,
+          "text": "Walk down the scorecard. Wait is\nthirteen business hours against"
         },
         {
-          "start": 2.114,
-          "end": 5.089,
-          "text": "Wait is thirteen business hours against\nfourteen."
+          "start": 3.839,
+          "end": 4.455,
+          "text": "fourteen."
         },
         {
-          "start": 5.164,
-          "end": 8.085,
+          "start": 4.796,
+          "end": 7.771,
           "text": "Active review is twenty-six minutes\nagainst twenty-seven."
         },
         {
-          "start": 8.734,
-          "end": 12.209,
+          "start": 8.111,
+          "end": 11.371,
           "text": "Spending is two hundred and forty\ndollars against three hundred."
         },
         {
-          "start": 12.284,
-          "end": 14.134,
-          "text": "Each clears its threshold."
+          "start": 11.691,
+          "end": 15.165,
+          "text": "Each clears its threshold. Seven of\nforty requests needed rework,"
         },
         {
-          "start": 14.234,
-          "end": 18.434,
-          "text": "Seven of forty requests needed rework,\nso that row lands at seventeen and a"
+          "start": 15.395,
+          "end": 17.748,
+          "text": "so that row lands at seventeen and a\nhalf percent."
         },
         {
-          "start": 18.484,
-          "end": 19.218,
-          "text": "half percent."
+          "start": 18.108,
+          "end": 21.484,
+          "text": "The ceiling was fifteen. The defect\ncount is one in each group,"
         },
         {
-          "start": 19.821,
-          "end": 21.396,
-          "text": "The ceiling was fifteen."
+          "start": 21.695,
+          "end": 24.43,
+          "text": "and there were zero serious data or\naccess incidents."
         },
         {
-          "start": 21.446,
-          "end": 25.596,
-          "text": "The defect count is one in each group,\nand there were zero serious data or"
-        },
-        {
-          "start": 25.646,
-          "end": 27.171,
-          "text": "access incidents."
-        },
-        {
-          "start": 27.246,
-          "end": 30.265,
+          "start": 24.79,
+          "end": 27.685,
           "text": "The rework row rules out expansion under\nthe team's agreement."
         },
         {
-          "start": 30.921,
-          "end": 33.6,
+          "start": 28.046,
+          "end": 30.528,
           "text": "Now check whether it gives you a clear\nchange to try."
         }
       ]
@@ -170,57 +155,57 @@
       "result": "Keep independent review in the workflow",
       "focus": "Four rework cases include unrelated edits",
       "action": "Add a scope constraint and a diff check",
-      "durationFrames": 868,
-      "duration": 36.166666666666664,
+      "durationFrames": 780,
+      "duration": 32.5,
       "cues": [
         {
-          "start": 0.368,
-          "end": 2.018,
-          "text": "Pull up the review notes."
+          "start": 0.22,
+          "end": 4.221,
+          "text": "Pull up the review notes. Four of the\nseven rework cases included files"
         },
         {
-          "start": 2.093,
-          "end": 6.818,
-          "text": "Four of the seven rework cases included\nfiles outside the intended change."
+          "start": 4.221,
+          "end": 5.539,
+          "text": "outside the intended change."
         },
         {
-          "start": 6.893,
-          "end": 10.731,
+          "start": 5.9,
+          "end": 9.5,
           "text": "In one of those cases the reviewer asked\nto drop unrelated formatting."
         },
         {
-          "start": 11.343,
-          "end": 14.393,
+          "start": 9.82,
+          "end": 12.106,
           "text": "Turn that observation into two concrete\nsteps."
         },
         {
-          "start": 14.443,
-          "end": 19.068,
+          "start": 12.468,
+          "end": 16.956,
           "text": "The author lists the expected files in\nCopilot Plan and checks every actual"
         },
         {
-          "start": 19.118,
-          "end": 21.34,
+          "start": 16.956,
+          "end": 19.057,
           "text": "changed path before publishing the\nbranch."
         },
         {
-          "start": 21.984,
-          "end": 26.184,
+          "start": 19.567,
+          "end": 23.476,
           "text": "If a third file appears, the author asks\nwhat it contributes to the stated"
         },
         {
-          "start": 26.234,
-          "end": 28.109,
+          "start": 23.476,
+          "end": 24.715,
           "text": "acceptance criteria."
         },
         {
-          "start": 28.159,
-          "end": 31.405,
+          "start": 25.021,
+          "end": 28.115,
           "text": "The independent reviewer still checks\nthe final pull request."
         },
         {
-          "start": 32.06,
-          "end": 35.081,
+          "start": 28.476,
+          "end": 31.739,
           "text": "This is an adjustment the team can\nobserve in the follow-up."
         }
       ]
@@ -236,62 +221,57 @@
       "result": "Check the file-scope pattern each week",
       "focus": "Six of forty would meet the original ceiling",
       "action": "Set a four-week review with the same gates",
-      "durationFrames": 865,
-      "duration": 36.041666666666664,
+      "durationFrames": 787,
+      "duration": 32.791666666666664,
       "cues": [
         {
-          "start": 0.393,
-          "end": 3.343,
+          "start": 0.235,
+          "end": 2.293,
           "text": "The engineering lead owns the next four\nweeks."
         },
         {
-          "start": 3.418,
-          "end": 7.738,
+          "start": 2.674,
+          "end": 7.492,
           "text": "Keep the service, eligibility, and\nmetric definitions in place so the next"
         },
         {
-          "start": 7.788,
-          "end": 9.67,
+          "start": 7.503,
+          "end": 9.376,
           "text": "readout can be compared with the pilot."
         },
         {
-          "start": 10.298,
-          "end": 14.648,
+          "start": 9.766,
+          "end": 12.969,
           "text": "At forty requests, six rework cases\nwould meet fifteen percent."
         },
         {
-          "start": 14.723,
-          "end": 19.148,
+          "start": 13.33,
+          "end": 17.128,
           "text": "If only thirty requests qualify, four\ncases equal about thirteen point three"
         },
         {
-          "start": 19.198,
-          "end": 22.339,
+          "start": 17.128,
+          "end": 19.903,
           "text": "percent and five equal about sixteen\npoint seven."
         },
         {
-          "start": 22.976,
-          "end": 25.001,
-          "text": "Use the actual denominator."
+          "start": 20.284,
+          "end": 24.175,
+          "text": "Use the actual denominator. Check the\nreason each time work comes back."
         },
         {
-          "start": 25.076,
-          "end": 27.851,
-          "text": "Check the reason each time work comes\nback."
-        },
-        {
-          "start": 27.926,
-          "end": 31.051,
+          "start": 24.646,
+          "end": 27.562,
           "text": "You need evidence that the extra-file\npattern improved,"
         },
         {
-          "start": 31.101,
-          "end": 34.351,
+          "start": 27.833,
+          "end": 31.686,
           "text": "together with the time and spending\nmeasures that supported the original"
         },
         {
-          "start": 34.401,
-          "end": 34.932,
+          "start": 31.686,
+          "end": 32.112,
           "text": "pilot."
         }
       ]
@@ -307,57 +287,57 @@
       "result": "Use the branch that the evidence supports",
       "focus": "A serious incident changes the decision immediately",
       "action": "Match each scenario to its next action",
-      "durationFrames": 909,
-      "duration": 37.875,
+      "durationFrames": 849,
+      "duration": 35.375,
       "cues": [
         {
-          "start": 0.393,
-          "end": 2.468,
-          "text": "Try three short scenarios."
+          "start": 0.255,
+          "end": 4.37,
+          "text": "Try three short scenarios. First, the\nfollow-up meets the wait, effort,"
         },
         {
-          "start": 2.543,
-          "end": 7.293,
-          "text": "First, the follow-up meets the wait,\neffort, rework, and budget thresholds."
+          "start": 4.5,
+          "end": 6.232,
+          "text": "rework, and budget thresholds."
         },
         {
-          "start": 7.343,
-          "end": 11.088,
+          "start": 6.723,
+          "end": 10.594,
           "text": "Propose expansion to one comparable team\nand name its onboarding owner."
         },
         {
-          "start": 11.757,
-          "end": 16.392,
+          "start": 10.975,
+          "end": 15.632,
           "text": "Second, one routine guardrail misses by\na little and review evidence points to a"
         },
         {
-          "start": 16.467,
-          "end": 17.967,
+          "start": 15.632,
+          "end": 16.439,
           "text": "fixable cause."
         },
         {
-          "start": 18.042,
-          "end": 19.975,
-          "text": "Consider another bounded adjustment."
+          "start": 16.97,
+          "end": 21.258,
+          "text": "Consider another bounded adjustment.\nThird, someone sends restricted data to"
         },
         {
-          "start": 20.599,
-          "end": 25.124,
-          "text": "Third, someone sends restricted data to\nan unapproved model endpoint."
+          "start": 21.258,
+          "end": 22.858,
+          "text": "an unapproved model endpoint."
         },
         {
-          "start": 25.199,
-          "end": 29.103,
+          "start": 23.239,
+          "end": 26.835,
           "text": "Pause the affected workflow and use the\nexisting incident process."
         },
         {
-          "start": 29.69,
-          "end": 33.365,
+          "start": 27.265,
+          "end": 30.896,
           "text": "Practice saying each decision with the\nevidence that triggered it."
         },
         {
-          "start": 33.415,
-          "end": 36.789,
+          "start": 31.312,
+          "end": 34.674,
           "text": "The person who owns the next action\nshould hear exactly what to do."
         }
       ]
@@ -373,57 +353,52 @@
       "result": "Attach the scorecard and example review evidence",
       "focus": "One note captures evidence, action, and timing",
       "action": "Record adjust and assign the follow-up",
-      "durationFrames": 758,
-      "duration": 31.583333333333332,
+      "durationFrames": 742,
+      "duration": 30.916666666666668,
       "cues": [
         {
-          "start": 0.396,
-          "end": 4.051,
+          "start": 0.295,
+          "end": 4.239,
           "text": "Open a decision record and fill in a\ndate, an owner, the decision,"
         },
         {
-          "start": 4.101,
-          "end": 5.576,
+          "start": 4.45,
+          "end": 5.323,
           "text": "and the next review."
         },
         {
-          "start": 5.626,
-          "end": 7.726,
-          "text": "For this case we choose adjust."
+          "start": 5.934,
+          "end": 10.391,
+          "text": "For this case we choose adjust. Median\nwait met the target, rework did not,"
         },
         {
-          "start": 7.801,
-          "end": 10.711,
-          "text": "Median wait met the target, rework did\nnot,"
-        },
-        {
-          "start": 10.761,
-          "end": 13.701,
+          "start": 10.682,
+          "end": 13.556,
           "text": "and the extra-file pattern gives us a\nfocused intervention."
         },
         {
-          "start": 14.35,
-          "end": 18.55,
+          "start": 13.977,
+          "end": 18.017,
           "text": "Name the engineering lead, attach the\nscorecard and the review evidence,"
         },
         {
-          "start": 18.6,
-          "end": 21.569,
+          "start": 18.468,
+          "end": 21.506,
           "text": "and put a follow-up on the calendar four\nweeks from the relaunch."
         },
         {
-          "start": 22.203,
-          "end": 24.153,
+          "start": 22.022,
+          "end": 23.498,
           "text": "Then hand the note to a teammate."
         },
         {
-          "start": 24.228,
-          "end": 27.753,
+          "start": 23.84,
+          "end": 27.742,
           "text": "If they can tell which workflow to\nchange and what evidence will determine"
         },
         {
-          "start": 27.778,
-          "end": 30.109,
+          "start": 27.742,
+          "end": 30.021,
           "text": "the next decision, the record is ready."
         }
       ]
@@ -432,6 +407,6 @@
   "fps": 24,
   "width": 1280,
   "height": 720,
-  "durationFrames": 5028,
-  "voiceBuild": "c0119fd5eb0cd4867710f8425067df8061a5ee9c557667b0b1f6c1656dd3dcc3"
+  "durationFrames": 4684,
+  "voiceBuild": "3e47a4bd1b5abae2f529e2f1b776e8c7c783943970d225c524a769a64212d930"
 }
