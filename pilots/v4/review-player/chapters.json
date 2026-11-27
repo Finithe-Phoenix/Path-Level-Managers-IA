@@ -1,0 +1,42 @@
+[
+  {
+    "title": "Would you expand this pilot?",
+    "start": 0.0,
+    "end": 33.792
+  },
+  {
+    "title": "Find the start and stop of the wait",
+    "start": 33.792,
+    "end": 73.625
+  },
+  {
+    "title": "Check what the reviewer spent",
+    "start": 73.625,
+    "end": 108.25
+  },
+  {
+    "title": "Count the requests that came back",
+    "start": 108.25,
+    "end": 160.5
+  },
+  {
+    "title": "Reconcile the pilot ledger",
+    "start": 160.5,
+    "end": 189.792
+  },
+  {
+    "title": "Open the seven rework cases",
+    "start": 189.792,
+    "end": 236.875
+  },
+  {
+    "title": "Try a different denominator",
+    "start": 236.875,
+    "end": 271.0
+  },
+  {
+    "title": "Decide what the new numbers establish",
+    "start": 271.0,
+    "end": 309.375
+  }
+]

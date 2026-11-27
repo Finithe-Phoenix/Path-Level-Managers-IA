@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="color-scheme" content="dark"><title>Reproductor de la lección</title>
+<style>
+:root{font:100%/1.5 "Inter",system-ui,sans-serif;color:#eef3fc;background:#10161c}*{box-sizing:border-box}body{margin:0}main{max-width:980px;margin:auto;padding:clamp(14px,4vw,42px)}h1{font-size:clamp(1.45rem,5vw,2.35rem);line-height:1.15;letter-spacing:-.022em;margin:0 0 1rem}video{display:block;width:100%;aspect-ratio:16/9;background:black;border-radius:10px;box-shadow:0 6px 32px #0006}video::cue{color:white;background:#000d;font-family:system-ui,sans-serif}.tools{display:flex;flex-wrap:wrap;align-items:end;gap:12px;margin:18px 0 10px}.tools>label{flex:1;min-width:min(235px,100%)}label{display:grid;gap:4px}label,summary{font-weight:630}button,select,input{font:inherit;color:inherit}button,select{min-height:46px;border:1px solid #62778b;border-radius:8px;background:#1d2933;padding:6px 12px}button{cursor:pointer;font-weight:650}button[aria-pressed=true]{background:#b4e8d1;color:#14251d;border-color:#b4e8d1}button[disabled],select[disabled]{opacity:.6;cursor:default}select{max-width:100%;width:100%}button:focus-visible,select:focus-visible,input:focus-visible,summary:focus-visible{outline:3px solid #f6c983;outline-offset:3px}p{margin:6px 0 12px}#state{font-size:.92rem;min-height:1.4em;color:#bed1df}details{border-top:1px solid #394853;margin-top:1.3rem;padding:12px 0}summary{cursor:pointer;min-height:40px;align-content:center}details p{max-width:65ch;color:#d4dee4}.files{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(215px,100%),1fr));gap:12px}.files label{font-size:.9rem}.files input{width:100%;min-height:44px;padding:6px 0}input::file-selector-button{color:#e9f1f2;background:#263640;border:1px solid #637787;padding:7px 11px;border-radius:6px}
+</style>
+</head>
+<body><main>
+<h1 id="title">Reproductor de la lección</h1>
+<video id="film" controls playsinline preload="metadata" aria-label="Video de la lección"></video>
+<div class="tools"><button type="button" id="cc" disabled aria-pressed="false">CC en inglés</button><label>Ir a un capítulo<select id="chapters" disabled><option value="">Selecciona un capítulo</option></select></label></div>
+<p id="state" role="status" aria-live="polite"></p>
+<details id="files"><summary>Abrir los archivos de la lección</summary><p>En una copia local, extrae el ZIP y selecciona sus archivos. Puedes cambiar de capítulo y activar los subtítulos mientras ves el video.</p>
+<div class="files"><label>Video MP4<input type="file" id="videoFile" accept=".mp4,video/mp4"></label><label>Subtítulos en inglés<input type="file" id="captionFile" accept=".vtt,text/vtt"></label><label>Capítulos<input type="file" id="chapterFile" accept=".json,application/json"></label></div></details>
+</main>
+<script>
+'use strict';
+const $=id=>document.getElementById(id), film=$('film'), cc=$('cc'), selector=$('chapters'), state=$('state');
+let track=null, chapterList=[], currentIndex=-1, videoObject=null, captionObject=null, pendingSeek=null, wantsCaptions=false;
+function status(message){state.textContent=message;}
+function switchCC(enabled){wantsCaptions=enabled;if(track)track.track.mode=enabled?'showing':'hidden';cc.setAttribute('aria-pressed',String(enabled));}
+function attachCaptions(url){
+  if(track)track.remove();
+  track=document.createElement('track');track.kind='captions';track.srclang='en';track.label='English';
+  cc.disabled=true;track.addEventListener('load',()=>{cc.disabled=false;switchCC(wantsCaptions);status('Pista de subtítulos en inglés disponible.');});
+  track.addEventListener('error',()=>{cc.disabled=true;status('Comprueba que el archivo de subtítulos tenga formato WebVTT.');});
+  track.src=url;film.append(track);switchCC(wantsCaptions);
+}
+function chooseVideo(url){film.src=url;film.load();if(track)switchCC(wantsCaptions);}
+function setChapters(list){
+  if(!Array.isArray(list)||list.length===0||list.some((c,i)=>!c||typeof c.title!=='string'||!c.title.trim()||!Number.isFinite(c.start)||!Number.isFinite(c.end)||c.start<0||c.end<=c.start||i>0&&c.start<list[i-1].start))throw new Error('Capítulos inválidos');
+  chapterList=list;currentIndex=-1;selector.replaceChildren(new Option('Selecciona un capítulo',''));
+  list.forEach((c,i)=>{const t=Math.floor(c.start);const display=Math.floor(t/60)+':'+String(t%60).padStart(2,'0');selector.add(new Option(display+'  '+c.title,String(i)));});
+  selector.disabled=!film.currentSrc&&!film.getAttribute('src');syncChapter();
+}
+function syncChapter(){if(!chapterList.length)return;let i=chapterList.findIndex(c=>film.currentTime>=c.start&&film.currentTime<c.end);if(i<0&&film.ended)i=chapterList.length-1;if(i!==currentIndex){currentIndex=i;selector.value=i<0?'':String(i);}}
+function seekTo(second){if(film.readyState>=1){film.currentTime=second;pendingSeek=null;}else{pendingSeek=second;}}
+film.addEventListener('loadedmetadata',()=>{selector.disabled=chapterList.length===0;if(track)switchCC(wantsCaptions);if(pendingSeek!==null)seekTo(pendingSeek);syncChapter();});
+film.addEventListener('timeupdate',syncChapter);
+film.addEventListener('error',()=>status('El reproductor no pudo abrir el MP4. Selecciona el archivo de la lección.'));
+cc.addEventListener('click',()=>{switchCC(!wantsCaptions);status(wantsCaptions?'Subtítulos en inglés activados.':'Subtítulos en inglés desactivados.');});
+selector.addEventListener('change',()=>{if(!selector.value)return;const c=chapterList[Number(selector.value)];seekTo(c.start+.001);status('Viendo el capítulo «'+c.title+'».');});
+function localPicker(id,action){$(id).addEventListener('change',async event=>{const file=event.target.files[0];if(!file)return;try{await action(file);}catch{status('El archivo no se pudo leer. Comprueba que corresponde a la lección.');}});}
+localPicker('videoFile',f=>{const old=videoObject;videoObject=URL.createObjectURL(f);chooseVideo(videoObject);if(old)URL.revokeObjectURL(old);});
+localPicker('captionFile',async f=>{const old=captionObject;const text=await f.text();if(!text.replace(/^\uFEFF/,'').startsWith('WEBVTT'))throw Error();captionObject=URL.createObjectURL(new Blob([text],{type:'text/vtt'}));attachCaptions(captionObject);if(old)URL.revokeObjectURL(old);});
+localPicker('chapterFile',async f=>setChapters(JSON.parse(await f.text())));
+function sameOrigin(path){if(typeof path!=='string'||!path.trim())throw Error('Ruta inválida');const u=new URL(path,location.href);if(u.origin!==location.origin||!['http:','https:'].includes(u.protocol))throw Error('Solo archivos del curso');return u.href;}
+async function loadLesson(){
+  if(!['http:','https:'].includes(location.protocol)||new URLSearchParams(location.search).get('local')==='1'){$('files').open=true;status('Selecciona los tres archivos de la carpeta extraída.');return;}
+  try{
+    const response=await fetch('lesson.json');if(!response.ok)throw Error();const lesson=await response.json();
+    const chapterResponse=await fetch(sameOrigin(lesson.chapters));if(!chapterResponse.ok)throw Error();
+    const chapters=await chapterResponse.json();const video=sameOrigin(lesson.video),captions=sameOrigin(lesson.captions);
+    if(lesson.title){$('title').textContent=lesson.title;document.title=lesson.title;}
+    let seekableVideo=video;
+    // A basic development server may ignore byte ranges. Buffer its complete MP4 once so chapter seeks work.
+    let ranged=false;try{const head=await fetch(video,{method:'HEAD'});ranged=head.ok&&/bytes/i.test(head.headers.get('accept-ranges')||'');}catch{}
+    if(!ranged){status('Cargando el video para habilitar los saltos de capítulo…');const media=await fetch(video);if(!media.ok)throw Error();videoObject=URL.createObjectURL(await media.blob());seekableVideo=videoObject;}
+    chooseVideo(seekableVideo);setChapters(chapters);attachCaptions(captions);
+  }catch{$('files').open=true;status('Selecciona los archivos de la lección para empezar.');}
+}
+loadLesson();
+</script>
+</body></html>

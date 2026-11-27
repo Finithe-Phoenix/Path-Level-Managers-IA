@@ -1,0 +1,38 @@
+{
+  "limits": {
+    "waitHours": 14,
+    "effortMinutes": 27,
+    "reworkPercent": 15,
+    "spend": 300
+  },
+  "scopeExample": {
+    "id": "P020",
+    "requested": "src/validator.ts",
+    "unrelated": "config/format.json",
+    "disposition": "Remove the unrelated edit before review.",
+    "clockEvents": [
+      {
+        "when": "Mon 15:00",
+        "event": "author marks ready"
+      },
+      {
+        "when": "Tue 09:05",
+        "event": "bot check"
+      },
+      {
+        "when": "Tue 11:15",
+        "event": "human acknowledgment only"
+      },
+      {
+        "when": "Tue 17:00",
+        "event": "first human review that examines the change"
+      }
+    ],
+    "hours": 10
+  },
+  "transfer": {
+    "eligible": 50,
+    "rework": 8,
+    "otherGates": "Assume they hold. This is a separate hypothetical cohort."
+  }
+}

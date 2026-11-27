@@ -1,0 +1,16 @@
+{
+  "name": "ai-workshop-pilot-hyperframes",
+  "version": "4.0.0",
+  "private": true,
+  "engines": {
+    "node": ">=22"
+  },
+  "dependencies": {
+    "hyperframes": "0.9.99"
+  },
+  "scripts": {
+    "preview": "hyperframes preview .",
+    "snapshot": "hyperframes snapshot .",
+    "render": "hyperframes render . --fps 24"
+  }
+}

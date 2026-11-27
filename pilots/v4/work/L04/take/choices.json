@@ -1,0 +1,20 @@
+{
+  "quality_definition_01": {
+    "alternate": true,
+    "seed": 793384411,
+    "speed": 0.898,
+    "splitSentences": false
+  },
+  "decision_example_03": {
+    "alternate": true,
+    "seed": 727634003,
+    "speed": 0.918,
+    "splitSentences": false
+  },
+  "debrief_close_01": {
+    "alternate": true,
+    "seed": 2064989424,
+    "speed": 0.918,
+    "splitSentences": false
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "name": "ai-workshop-pilot-studio",
+  "version": "4.0.0-rc.1",
+  "private": true,
+  "description": "Frame-accurate 1080p workshop pilots with portable scene sources",
+  "engines": {
+    "node": ">=20.9.0"
+  },
+  "scripts": {
+    "render": "node render.cjs",
+    "project": "node project.cjs"
+  },
+  "dependencies": {
+    "sharp": "0.35.5"
+  }
+}

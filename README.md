@@ -1,5 +1,7 @@
 # Managers · Cómo decidir si ampliar un piloto de IA
 
+**Piloto en evaluación.** [Ver L04 de la edición 4 y sus fuentes](pilots/v4/README.md).
+
 ![La espera de revisión baja de 18 a 13 horas en el piloto ilustrativo, con una meta de 14 horas.](docs/portada.png)
 
 Un equipo quiere acortar la espera de revisión de sus PR. Acompaña el piloto desde la elección de herramienta hasta la decisión de ampliarlo, ajustarlo o pausarlo. Todos los cálculos se hacen sobre el mismo caso simulado.

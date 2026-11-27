@@ -1,0 +1,43 @@
+{
+  "timingSha256": "e67c81aa8c7b18d6a0caa863e220e6facfe3a909a396578e400d9fc6f1a9ce0c",
+  "sceneCount": 8,
+  "frames": 7425,
+  "seconds": 309.375,
+  "transferChallengeHold": 6,
+  "qualityDivisionHold": 2.5,
+  "qualityAnswerBeatStart": 27.587,
+  "transferAnswerAbsent": true,
+  "terminalShots": [
+    {
+      "seconds": 0,
+      "state": "ledger"
+    },
+    {
+      "seconds": 8.25,
+      "state": "opened"
+    },
+    {
+      "seconds": 8.625,
+      "state": "formula"
+    },
+    {
+      "seconds": 10.875,
+      "state": "total"
+    },
+    {
+      "seconds": 16.375,
+      "state": "headroom"
+    },
+    {
+      "seconds": 20.75,
+      "state": "unit"
+    },
+    {
+      "seconds": 23.5,
+      "state": "ledger"
+    }
+  ],
+  "includesCalculatedResults": true,
+  "finalNarrationCues": 92,
+  "typedFormulaVisibleSeconds": 2.25
+}

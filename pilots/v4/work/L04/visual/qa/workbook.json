@@ -1,0 +1,11 @@
+{
+  "application": "LibreOffice Calc",
+  "synthetic": true,
+  "formulaResults": {
+    "totalUsd": 240,
+    "cap": 300,
+    "headroomUsd": 60,
+    "eligible": 40,
+    "usdPerPr": 6
+  }
+}

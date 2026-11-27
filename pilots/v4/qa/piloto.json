@@ -1,0 +1,115 @@
+{
+  "file": "L04.mp4",
+  "bytes": 23159022,
+  "sha256": "787780a30ae839037f84d916dd3b045b81d807677b32f87fcaef3df6e341c6cd",
+  "width": 1920,
+  "height": 1080,
+  "fps": "24/1",
+  "frames": 7425,
+  "duration": 309.375,
+  "videoPayload": "5ae59c1d945d08a926be90864646ebbcbae225e8368127039a1be3b28e0e450e",
+  "audioPayload": "c0ea9256e1002a745a80528d4d1ff375c6b3df892c98f40eee01999b1959ecb8",
+  "captions": true,
+  "chapters": [
+    {
+      "title": "Would you expand this pilot?",
+      "start": 0.0,
+      "end": 33.792
+    },
+    {
+      "title": "Find the start and stop of the wait",
+      "start": 33.792,
+      "end": 73.625
+    },
+    {
+      "title": "Check what the reviewer spent",
+      "start": 73.625,
+      "end": 108.25
+    },
+    {
+      "title": "Count the requests that came back",
+      "start": 108.25,
+      "end": 160.5
+    },
+    {
+      "title": "Reconcile the pilot ledger",
+      "start": 160.5,
+      "end": 189.792
+    },
+    {
+      "title": "Open the seven rework cases",
+      "start": 189.792,
+      "end": 236.875
+    },
+    {
+      "title": "Try a different denominator",
+      "start": 236.875,
+      "end": 271.0
+    },
+    {
+      "title": "Decide what the new numbers establish",
+      "start": 271.0,
+      "end": 309.375
+    }
+  ],
+  "sound": {
+    "integratedLufs": -18.04,
+    "truePeakDbtp": -1.66,
+    "rangeLu": 2.9
+  },
+  "cueCount": 92,
+  "spokenWords": 730,
+  "motion": [
+    {
+      "chapter": "Would you expand this pilot?",
+      "comparisons": 128,
+      "workbenchActivityPct": 7.0,
+      "changeOver2Pct": 7.0
+    },
+    {
+      "chapter": "Find the start and stop of the wait",
+      "comparisons": 153,
+      "workbenchActivityPct": 9.2,
+      "changeOver2Pct": 6.5
+    },
+    {
+      "chapter": "Check what the reviewer spent",
+      "comparisons": 132,
+      "workbenchActivityPct": 6.1,
+      "changeOver2Pct": 2.3
+    },
+    {
+      "chapter": "Count the requests that came back",
+      "comparisons": 202,
+      "workbenchActivityPct": 4.5,
+      "changeOver2Pct": 3.0
+    },
+    {
+      "chapter": "Reconcile the pilot ledger",
+      "comparisons": 110,
+      "workbenchActivityPct": 10.0,
+      "changeOver2Pct": 8.2
+    },
+    {
+      "chapter": "Open the seven rework cases",
+      "comparisons": 182,
+      "workbenchActivityPct": 4.9,
+      "changeOver2Pct": 3.3
+    },
+    {
+      "chapter": "Try a different denominator",
+      "comparisons": 130,
+      "workbenchActivityPct": 2.3,
+      "changeOver2Pct": 1.5
+    },
+    {
+      "chapter": "Decide what the new numbers establish",
+      "comparisons": 147,
+      "workbenchActivityPct": 4.1,
+      "changeOver2Pct": 4.1
+    }
+  ],
+  "cleanStemIdentity": true,
+  "fullDecode": true,
+  "subtitleTextAndTiming": true
+}

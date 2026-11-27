@@ -1,0 +1,24 @@
+{
+  "id": "L04",
+  "seconds": 309.375,
+  "scenes": 8,
+  "beats": 23,
+  "cues": 92,
+  "authoredHolds": [
+    {
+      "scene": "quality",
+      "beat": "rate",
+      "seconds": 2.5
+    },
+    {
+      "scene": "transfer",
+      "beat": "challenge",
+      "seconds": 6.0
+    }
+  ],
+  "sha256": "6ea2c0cc206a3fb2de7f733f2147963647c82338ec6aa8fa07afe0ca84a3ed61",
+  "captionsSha256": "a2b1b7469e683f3e40ae7f7464a0cf3234932da1dc03c2e7c75c6d64bae82487",
+  "integratedLUFS": -18.04,
+  "truePeakDBTP": -1.66,
+  "loudnessRangeLU": 2.9
+}

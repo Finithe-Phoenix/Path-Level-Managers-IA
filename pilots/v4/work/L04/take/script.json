@@ -1,0 +1,450 @@
+[
+  {
+    "id": "question_decision_01",
+    "scene": "question",
+    "beat": "decision",
+    "text": "An AI pilot has finished and the review queue is moving faster. The manager asks, can we expand?",
+    "intent": "question",
+    "seed": 1220427316
+  },
+  {
+    "id": "question_decision_02",
+    "scene": "question",
+    "beat": "decision",
+    "text": "Open the agreement the team made before the pilot.",
+    "intent": "action",
+    "seed": 2039092730
+  },
+  {
+    "id": "question_records_01",
+    "scene": "question",
+    "beat": "records",
+    "text": "This fictional scorecard covers forty eligible pull requests before the pilot and forty during it.",
+    "intent": "narrative",
+    "seed": 1787908937
+  },
+  {
+    "id": "question_records_02",
+    "scene": "question",
+    "beat": "records",
+    "text": "Count each request once, even when several reviewers worked on it.",
+    "intent": "action",
+    "seed": 4242145430
+  },
+  {
+    "id": "question_rule_01",
+    "scene": "question",
+    "beat": "rule",
+    "text": "Both groups cover the same service, eligibility rule, and follow-up after merge.",
+    "intent": "narrative",
+    "seed": 2920409514
+  },
+  {
+    "id": "question_rule_02",
+    "scene": "question",
+    "beat": "rule",
+    "text": "Expansion requires the time benefit and every guardrail to clear. Keep that agreement in view.",
+    "intent": "narrative",
+    "seed": 518325678
+  },
+  {
+    "id": "wait_clock_01",
+    "scene": "wait",
+    "beat": "clock",
+    "text": "Open one request. Start the clock when the author marks it ready. Stop at the first human comment that examines the change.",
+    "intent": "action",
+    "seed": 3285663339
+  },
+  {
+    "id": "wait_clock_02",
+    "scene": "wait",
+    "beat": "clock",
+    "text": "A bot check or a quick acknowledgment leaves the clock running. Use working hours on the team calendar.",
+    "intent": "narrative",
+    "seed": 2311401227
+  },
+  {
+    "id": "wait_median_01",
+    "scene": "wait",
+    "beat": "median",
+    "text": "Sort forty waits from shortest to longest. Average the twentieth and twenty-first values.",
+    "intent": "narrative",
+    "seed": 1708583716
+  },
+  {
+    "id": "wait_median_02",
+    "scene": "wait",
+    "beat": "median",
+    "text": "Repeat for the other group. The baseline median is eighteen business hours.",
+    "intent": "narrative",
+    "seed": 1550749342
+  },
+  {
+    "id": "wait_median_03",
+    "scene": "wait",
+    "beat": "median",
+    "text": "The pilot median is thirteen.",
+    "intent": "narrative",
+    "seed": 331953402
+  },
+  {
+    "id": "wait_interpret_01",
+    "scene": "wait",
+    "beat": "interpret",
+    "text": "Five fewer business hours at the median. Thirteen clears the fourteen-hour target.",
+    "intent": "narrative",
+    "seed": 3524701393
+  },
+  {
+    "id": "wait_interpret_02",
+    "scene": "wait",
+    "beat": "interpret",
+    "text": "How much time did a reviewer spend reading?",
+    "intent": "question",
+    "seed": 2392383403
+  },
+  {
+    "id": "wait_interpret_03",
+    "scene": "wait",
+    "beat": "interpret",
+    "text": "For that, we need another measure.",
+    "intent": "narrative",
+    "seed": 44370616
+  },
+  {
+    "id": "effort_active_01",
+    "scene": "effort",
+    "beat": "active",
+    "text": "Switch to active review. These are the minutes spent reading and evaluating a request.",
+    "intent": "narrative",
+    "seed": 1092436922
+  },
+  {
+    "id": "effort_active_02",
+    "scene": "effort",
+    "beat": "active",
+    "text": "The hours spent waiting belong to the first measure.",
+    "intent": "narrative",
+    "seed": 1997559394
+  },
+  {
+    "id": "effort_compare_01",
+    "scene": "effort",
+    "beat": "compare",
+    "text": "The median was twenty-four minutes before and twenty-six during the pilot.",
+    "intent": "narrative",
+    "seed": 1568382578
+  },
+  {
+    "id": "effort_compare_02",
+    "scene": "effort",
+    "beat": "compare",
+    "text": "Effort rose two minutes. The pilot is one minute inside the agreed ceiling of twenty-seven.",
+    "intent": "narrative",
+    "seed": 3157187130
+  },
+  {
+    "id": "effort_report_01",
+    "scene": "effort",
+    "beat": "report",
+    "text": "Carry both observations into the meeting. The queue was shorter in this sample, and the typical review took a little more work.",
+    "intent": "narrative",
+    "seed": 2632911507
+  },
+  {
+    "id": "effort_report_02",
+    "scene": "effort",
+    "beat": "report",
+    "text": "Staffing or the mix of changes may also have differed between the two periods.",
+    "intent": "narrative",
+    "seed": 4004973454
+  },
+  {
+    "id": "quality_definition_01",
+    "scene": "quality",
+    "beat": "definition",
+    "text": "Count a request once when a reviewer asks for a material change to behavior, tests, or scope.",
+    "intent": "action",
+    "seed": 793376492
+  },
+  {
+    "id": "quality_definition_02",
+    "scene": "quality",
+    "beat": "definition",
+    "text": "Three comments on that request still count as one case. A spelling correction alone falls outside this definition.",
+    "intent": "narrative",
+    "seed": 2239648245
+  },
+  {
+    "id": "quality_rate_01",
+    "scene": "quality",
+    "beat": "rate",
+    "text": "Six of the forty baseline requests needed rework. That is fifteen percent.",
+    "intent": "narrative",
+    "seed": 676701730
+  },
+  {
+    "id": "quality_rate_02",
+    "scene": "quality",
+    "beat": "rate",
+    "text": "In the pilot, seven of forty needed rework. Give yourself a moment to divide seven by forty.",
+    "intent": "narrative",
+    "seed": 4076183114
+  },
+  {
+    "id": "quality_threshold_01",
+    "scene": "quality",
+    "beat": "threshold",
+    "text": "Seventeen and a half percent.",
+    "intent": "narrative",
+    "seed": 2115494588
+  },
+  {
+    "id": "quality_threshold_02",
+    "scene": "quality",
+    "beat": "threshold",
+    "text": "One additional request moved the rate two and a half percentage points above the fifteen-percent ceiling.",
+    "intent": "narrative",
+    "seed": 368430920
+  },
+  {
+    "id": "quality_threshold_03",
+    "scene": "quality",
+    "beat": "threshold",
+    "text": "Keep the counts beside the rates.",
+    "intent": "action",
+    "seed": 4166382040
+  },
+  {
+    "id": "quality_defects_01",
+    "scene": "quality",
+    "beat": "defects",
+    "text": "Each group saw one post-merge defect in the same follow-up window.",
+    "intent": "narrative",
+    "seed": 2226033683
+  },
+  {
+    "id": "quality_defects_02",
+    "scene": "quality",
+    "beat": "defects",
+    "text": "Record one out of forty in each. With two events altogether, we have little basis for a claim about a defect trend.",
+    "intent": "action",
+    "seed": 3832025948
+  },
+  {
+    "id": "cost_ledger_01",
+    "scene": "cost",
+    "beat": "ledger",
+    "text": "Open the ledger. One hundred dollars for licenses, twenty for the approved workspace, and one hundred and twenty for training.",
+    "intent": "action",
+    "seed": 2043480743
+  },
+  {
+    "id": "cost_ledger_02",
+    "scene": "cost",
+    "beat": "ledger",
+    "text": "Add the three entries. The total is two hundred and forty dollars.",
+    "intent": "action",
+    "seed": 3793965607
+  },
+  {
+    "id": "cost_unit_01",
+    "scene": "cost",
+    "beat": "unit",
+    "text": "The agreed cap is three hundred dollars. That leaves sixty.",
+    "intent": "narrative",
+    "seed": 591416279
+  },
+  {
+    "id": "cost_unit_02",
+    "scene": "cost",
+    "beat": "unit",
+    "text": "Divide the total by forty eligible requests and you get six dollars per request.",
+    "intent": "action",
+    "seed": 2116791794
+  },
+  {
+    "id": "cost_unit_03",
+    "scene": "cost",
+    "beat": "unit",
+    "text": "Reviewer labor is still measured in minutes here. Pricing that labor would require an agreed rate.",
+    "intent": "narrative",
+    "seed": 1235380769
+  },
+  {
+    "id": "decision_gates_01",
+    "scene": "decision",
+    "beat": "gates",
+    "text": "Time and spending clear their thresholds. Rework misses, and the pilot recorded zero serious data or access incidents.",
+    "intent": "narrative",
+    "seed": 1604399240
+  },
+  {
+    "id": "decision_gates_02",
+    "scene": "decision",
+    "beat": "gates",
+    "text": "What would you change?",
+    "intent": "question",
+    "seed": 1527920047
+  },
+  {
+    "id": "decision_gates_03",
+    "scene": "decision",
+    "beat": "gates",
+    "text": "Start with the seven requests behind the missed guardrail.",
+    "intent": "action",
+    "seed": 3151326842
+  },
+  {
+    "id": "decision_example_01",
+    "scene": "decision",
+    "beat": "example",
+    "text": "Read the review reason beside the changed files. The ticket asks for a validator fix.",
+    "intent": "action",
+    "seed": 2960288961
+  },
+  {
+    "id": "decision_example_02",
+    "scene": "decision",
+    "beat": "example",
+    "text": "The diff also changes an unrelated configuration file. The reviewer asks the author to remove it.",
+    "intent": "narrative",
+    "seed": 3279185975
+  },
+  {
+    "id": "decision_example_03",
+    "scene": "decision",
+    "beat": "example",
+    "text": "Four of the seven cases show that pattern.",
+    "intent": "narrative",
+    "seed": 727626084
+  },
+  {
+    "id": "decision_action_01",
+    "scene": "decision",
+    "beat": "action",
+    "text": "Recommend one adjustment. Ask authors to name their intended files and check the final diff against that scope.",
+    "intent": "narrative",
+    "seed": 3543770211
+  },
+  {
+    "id": "decision_action_02",
+    "scene": "decision",
+    "beat": "action",
+    "text": "Retest in the same service with the same thresholds. The pattern suggests a change to try.",
+    "intent": "narrative",
+    "seed": 609370180
+  },
+  {
+    "id": "decision_action_03",
+    "scene": "decision",
+    "beat": "action",
+    "text": "It cannot tell us what caused the difference between periods.",
+    "intent": "evidence",
+    "seed": 2760153185
+  },
+  {
+    "id": "transfer_reset_01",
+    "scene": "transfer",
+    "beat": "reset",
+    "text": "Try a fresh hypothetical cohort. Fifty eligible requests. Eight needed material rework.",
+    "intent": "narrative",
+    "seed": 2538520194
+  },
+  {
+    "id": "transfer_reset_02",
+    "scene": "transfer",
+    "beat": "reset",
+    "text": "The ceiling is fifteen percent. Assume every other guardrail and the time target are met.",
+    "intent": "narrative",
+    "seed": 1463236430
+  },
+  {
+    "id": "transfer_challenge_01",
+    "scene": "transfer",
+    "beat": "challenge",
+    "text": "Pause here. What is the rework rate?",
+    "intent": "question",
+    "seed": 2602313228
+  },
+  {
+    "id": "transfer_challenge_02",
+    "scene": "transfer",
+    "beat": "challenge",
+    "text": "What is the largest whole number of reworked requests that would still meet the ceiling?",
+    "intent": "question",
+    "seed": 864735376
+  },
+  {
+    "id": "transfer_challenge_03",
+    "scene": "transfer",
+    "beat": "challenge",
+    "text": "Write both answers, then name one piece of evidence you would want before recommending a change.",
+    "intent": "action",
+    "seed": 725031095
+  },
+  {
+    "id": "debrief_math_01",
+    "scene": "debrief",
+    "beat": "math",
+    "text": "Eight out of fifty is sixteen percent. Seven out of fifty is fourteen percent.",
+    "intent": "narrative",
+    "seed": 1676469239
+  },
+  {
+    "id": "debrief_math_02",
+    "scene": "debrief",
+    "beat": "math",
+    "text": "Seven is the largest whole count that meets the ceiling.",
+    "intent": "narrative",
+    "seed": 1199740610
+  },
+  {
+    "id": "debrief_next_01",
+    "scene": "debrief",
+    "beat": "next",
+    "text": "Would you prescribe the same fix again?",
+    "intent": "question",
+    "seed": 1030081074
+  },
+  {
+    "id": "debrief_next_02",
+    "scene": "debrief",
+    "beat": "next",
+    "text": "We have only a count. Read the review requests and their diffs.",
+    "intent": "narrative",
+    "seed": 4043108779
+  },
+  {
+    "id": "debrief_next_03",
+    "scene": "debrief",
+    "beat": "next",
+    "text": "If they reveal a correctable pattern, propose one change and retest.",
+    "intent": "narrative",
+    "seed": 3797180877
+  },
+  {
+    "id": "debrief_next_04",
+    "scene": "debrief",
+    "beat": "next",
+    "text": "If the cause remains unclear, investigate before choosing the intervention.",
+    "intent": "narrative",
+    "seed": 665379299
+  },
+  {
+    "id": "debrief_close_01",
+    "scene": "debrief",
+    "beat": "close",
+    "text": "A defensible update can be short. Eight of fifty requests needed rework, above our agreed limit.",
+    "intent": "narrative",
+    "seed": 2064981505
+  },
+  {
+    "id": "debrief_close_02",
+    "scene": "debrief",
+    "beat": "close",
+    "text": "We will hold expansion and examine those eight cases before choosing the next step.",
+    "intent": "narrative",
+    "seed": 3492808262
+  }
+]

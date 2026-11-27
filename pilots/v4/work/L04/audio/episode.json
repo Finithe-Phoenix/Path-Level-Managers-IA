@@ -1,0 +1,925 @@
+{
+  "id": "L04",
+  "title": "Measure Review Time, Quality, and Cost",
+  "subtitle": "Decide what to do when an AI pilot clears its time targets and misses a quality guardrail",
+  "level": "Managers",
+  "language": "en-US",
+  "edition": 4,
+  "learningObjective": "Use a defined cohort, independent thresholds, and case-level review evidence to recommend an action under uncertainty.",
+  "productionNotes": {
+    "setting": "Fictional team and pull request data. This episode teaches interpretation with a synthetic scorecard and ledger.",
+    "capture": "Display reproducibly calculated rows from the editable synthetic fixture and expose the arithmetic. The document and diff extracts are illustrative teaching artifacts.",
+    "direction": "Talk one decision owner through a real agenda. Speak the units, leave a beat before revealing a calculation, and keep the current recommendation provisional where the evidence runs out."
+  },
+  "sources": [
+    {
+      "label": "DORA · Software delivery performance metrics",
+      "url": "https://dora.dev/guides/dora-metrics/",
+      "use": "Background on team-level delivery measurement. The decision thresholds and finance figures are local to this exercise."
+    },
+    {
+      "label": "Microsoft Research · The SPACE of Developer Productivity",
+      "url": "https://www.microsoft.com/en-us/research/publication/the-space-of-developer-productivity-theres-more-to-it-than-you-think/",
+      "use": "Background on interpreting multiple dimensions of developer productivity."
+    }
+  ],
+  "scenes": [
+    {
+      "id": "question",
+      "title": "Would you expand this pilot?",
+      "kind": "decision",
+      "narration": "An AI pilot has finished and the review queue is moving faster. The manager asks, can we expand? Open the agreement the team made before the pilot. This fictional scorecard covers forty eligible pull requests before the pilot and forty during it. Count each request once, even when several reviewers worked on it. Both groups cover the same service, eligibility rule, and follow-up after merge. Expansion requires the time benefit and every guardrail to clear. Keep that agreement in view.",
+      "action": "Check the decision rule, eligible requests and comparison windows.",
+      "focus": "The team requires the benefit and every guardrail to clear before expansion.",
+      "code": "Baseline: 40 eligible PRs\nPilot: 40 eligible PRs\nSame service, eligibility rule, and post-merge follow-up.",
+      "result": "One row per pull request. Thresholds were set before the pilot.",
+      "voiceDirection": "Open like a meeting where a colleague wants a decision. Invite the viewer to sit with the uncertainty.",
+      "beats": [
+        {
+          "id": "decision",
+          "text": "An AI pilot has finished and the review queue is moving faster. The manager asks, can we expand? Open the agreement the team made before the pilot.",
+          "shot": "Establish the fictional review room and the pending expand decision. Open the pre-agreed benefit and guardrails on the working scorecard.",
+          "voiceDirection": "Ask the manager’s question as genuine curiosity.",
+          "start": 0.2,
+          "end": 12.021,
+          "startFrame": 5,
+          "endFrame": 289,
+          "speechEnd": 11.481,
+          "holdSeconds": 0.54
+        },
+        {
+          "id": "records",
+          "text": "This fictional scorecard covers forty eligible pull requests before the pilot and forty during it. Count each request once, even when several reviewers worked on it.",
+          "shot": "Open the baseline and pilot cohorts. Count 40 distinct request identifiers in each. Show one request once as reviewer participation changes.",
+          "voiceDirection": "Give both forties equal weight.",
+          "start": 12.021,
+          "end": 22.382,
+          "startFrame": 289,
+          "endFrame": 537,
+          "speechEnd": 21.842,
+          "holdSeconds": 0.54
+        },
+        {
+          "id": "rule",
+          "text": "Both groups cover the same service, eligibility rule, and follow-up after merge. Expansion requires the time benefit and every guardrail to clear. Keep that agreement in view.",
+          "shot": "Expose cohort definition and common follow-up, then pin decision criteria while the work surface changes.",
+          "voiceDirection": "Let the invitation to keep the agreement visible sound practical.",
+          "start": 22.382,
+          "end": 33.773,
+          "startFrame": 537,
+          "endFrame": 811,
+          "speechEnd": 33.023,
+          "holdSeconds": 0.75
+        }
+      ],
+      "durationFrames": 811,
+      "duration": 33.791666666666664,
+      "cues": [
+        {
+          "start": 0.255,
+          "end": 4.293,
+          "text": "An AI pilot has finished and the\nreview queue is moving faster."
+        },
+        {
+          "start": 4.764,
+          "end": 7.118,
+          "text": "The manager asks, can we expand?"
+        },
+        {
+          "start": 8.609,
+          "end": 11.266,
+          "text": "Open the agreement the team made\nbefore the pilot."
+        },
+        {
+          "start": 12.097,
+          "end": 15.907,
+          "text": "This fictional scorecard covers forty\neligible pull requests before the"
+        },
+        {
+          "start": 15.907,
+          "end": 17.428,
+          "text": "pilot and forty during it."
+        },
+        {
+          "start": 17.929,
+          "end": 21.766,
+          "text": "Count each request once, even when\nseveral reviewers worked on it."
+        },
+        {
+          "start": 22.397,
+          "end": 25.457,
+          "text": "Both groups cover the same service,\neligibility rule,"
+        },
+        {
+          "start": 25.628,
+          "end": 26.982,
+          "text": "and follow-up after merge."
+        },
+        {
+          "start": 27.523,
+          "end": 31.143,
+          "text": "Expansion requires the time benefit\nand every guardrail to clear."
+        },
+        {
+          "start": 31.514,
+          "end": 32.888,
+          "text": "Keep that agreement in view."
+        }
+      ],
+      "startFrame": 0
+    },
+    {
+      "id": "wait",
+      "title": "Find the start and stop of the wait",
+      "kind": "diagram",
+      "narration": "Open one request. Start the clock when the author marks it ready. Stop at the first human comment that examines the change. A bot check or a quick acknowledgment leaves the clock running. Use working hours on the team calendar. Sort forty waits from shortest to longest. Average the twentieth and twenty-first values. Repeat for the other group. The baseline median is eighteen business hours. The pilot median is thirteen. Five fewer business hours at the median. Thirteen clears the fourteen-hour target. How much time did a reviewer spend reading? For that, we need another measure.",
+      "action": "Trace readiness and first substantive human review, then read both medians.",
+      "focus": "Median wait falls from 18 to 13 business hours. The target is 14 or less.",
+      "code": "First substantive human review − marked ready for review\nBaseline median: 18 business hours\nPilot median: 13 business hours | target ≤ 14",
+      "result": "5 fewer business hours at the median. The pilot clears the wait target.",
+      "voiceDirection": "Draw attention to who ends the wait. Leave a little space around the two medians.",
+      "beats": [
+        {
+          "id": "clock",
+          "text": "Open one request. Start the clock when the author marks it ready. Stop at the first human comment that examines the change. A bot check or a quick acknowledgment leaves the clock running. Use working hours on the team calendar.",
+          "shot": "Mark Ready, pass over any illustrative acknowledgment and stop at a human substantive review. Distinguish the training calendar from elapsed wall time.",
+          "voiceDirection": "Light stress on actually examines.",
+          "start": 0.2,
+          "end": 15.786,
+          "startFrame": 5,
+          "endFrame": 379,
+          "speechEnd": 15.246,
+          "holdSeconds": 0.54
+        },
+        {
+          "id": "median",
+          "text": "Sort forty waits from shortest to longest. Average the twentieth and twenty-first values. Repeat for the other group. The baseline median is eighteen business hours. The pilot median is thirteen.",
+          "shot": "Use the actual two central sorted rows from the editable fixture to calculate each median. Never imply columns are matched request pairs.",
+          "voiceDirection": "Give the viewer time to locate each of the middle rows.",
+          "start": 15.786,
+          "end": 28.258,
+          "startFrame": 379,
+          "endFrame": 678,
+          "speechEnd": 27.718,
+          "holdSeconds": 0.54
+        },
+        {
+          "id": "interpret",
+          "text": "Five fewer business hours at the median. Thirteen clears the fourteen-hour target. How much time did a reviewer spend reading? For that, we need another measure.",
+          "shot": "Move from the two medians to their difference, then contrast the waiting interval with an active reviewer-time field in the same record.",
+          "voiceDirection": "Pause briefly after the question.",
+          "start": 28.258,
+          "end": 39.829,
+          "startFrame": 678,
+          "endFrame": 956,
+          "speechEnd": 39.079,
+          "holdSeconds": 0.75
+        }
+      ],
+      "durationFrames": 956,
+      "duration": 39.833333333333336,
+      "cues": [
+        {
+          "start": 0.275,
+          "end": 4.175,
+          "text": "Open one request. Start the clock when\nthe author marks it ready."
+        },
+        {
+          "start": 4.686,
+          "end": 8.184,
+          "text": "Stop at the first human comment that\nexamines the change."
+        },
+        {
+          "start": 8.926,
+          "end": 12.264,
+          "text": "A bot check or a quick acknowledgment\nleaves the clock running."
+        },
+        {
+          "start": 12.835,
+          "end": 14.93,
+          "text": "Use working hours on the team\ncalendar."
+        },
+        {
+          "start": 15.842,
+          "end": 17.999,
+          "text": "Sort forty waits from shortest to\nlongest."
+        },
+        {
+          "start": 18.451,
+          "end": 20.77,
+          "text": "Average the twentieth and twenty-first\nvalues."
+        },
+        {
+          "start": 21.331,
+          "end": 24.174,
+          "text": "Repeat for the other group. The\nbaseline median is"
+        },
+        {
+          "start": 24.205,
+          "end": 25.5,
+          "text": "eighteen business hours."
+        },
+        {
+          "start": 26.022,
+          "end": 27.642,
+          "text": "The pilot median is thirteen."
+        },
+        {
+          "start": 28.354,
+          "end": 30.329,
+          "text": "Five fewer business hours at the\nmedian."
+        },
+        {
+          "start": 30.701,
+          "end": 33.037,
+          "text": "Thirteen clears the fourteen-hour\ntarget."
+        },
+        {
+          "start": 33.458,
+          "end": 35.879,
+          "text": "How much time did a reviewer spend\nreading?"
+        },
+        {
+          "start": 37.111,
+          "end": 38.779,
+          "text": "For that, we need another measure."
+        }
+      ],
+      "startFrame": 811
+    },
+    {
+      "id": "effort",
+      "title": "Check what the reviewer spent",
+      "kind": "diagram",
+      "narration": "Switch to active review. These are the minutes spent reading and evaluating a request. The hours spent waiting belong to the first measure. The median was twenty-four minutes before and twenty-six during the pilot. Effort rose two minutes. The pilot is one minute inside the agreed ceiling of twenty-seven. Carry both observations into the meeting. The queue was shorter in this sample, and the typical review took a little more work. Staffing or the mix of changes may also have differed between the two periods.",
+      "action": "Read active reviewer minutes and compare the pilot median with its cap.",
+      "focus": "Median active review rises by 2 minutes and stays within the 27-minute ceiling.",
+      "code": "Baseline median active review: 24 min\nPilot median active review: 26 min\nLimit: ≤ 27 min",
+      "result": "The typical queue got shorter while typical active review became longer.",
+      "voiceDirection": "Speak like an analyst trying to keep two distinct effects in focus.",
+      "beats": [
+        {
+          "id": "active",
+          "text": "Switch to active review. These are the minutes spent reading and evaluating a request. The hours spent waiting belong to the first measure.",
+          "shot": "Move from the queue event pair to the separate active-minute measurement. Label its unit.",
+          "voiceDirection": "Place the emphasis on active.",
+          "start": 0.2,
+          "end": 9.328,
+          "startFrame": 5,
+          "endFrame": 224,
+          "speechEnd": 8.788,
+          "holdSeconds": 0.54
+        },
+        {
+          "id": "compare",
+          "text": "The median was twenty-four minutes before and twenty-six during the pilot. Effort rose two minutes. The pilot is one minute inside the agreed ceiling of twenty-seven.",
+          "shot": "Build the baseline and pilot markers, then resolve the two-minute increase and one-minute headroom in order.",
+          "voiceDirection": "Keep the direction of change audible.",
+          "start": 9.328,
+          "end": 20.555,
+          "startFrame": 224,
+          "endFrame": 493,
+          "speechEnd": 20.015,
+          "holdSeconds": 0.54
+        },
+        {
+          "id": "report",
+          "text": "Carry both observations into the meeting. The queue was shorter in this sample, and the typical review took a little more work. Staffing or the mix of changes may also have differed between the two periods.",
+          "shot": "Keep wait and effort visible at once. Label staffing and change mix as possible explanations, separate from these observations.",
+          "voiceDirection": "Careful, curious delivery. Do not imply an explanation has been proven.",
+          "start": 20.555,
+          "end": 34.608,
+          "startFrame": 493,
+          "endFrame": 831,
+          "speechEnd": 33.858,
+          "holdSeconds": 0.75
+        }
+      ],
+      "durationFrames": 831,
+      "duration": 34.625,
+      "cues": [
+        {
+          "start": 0.316,
+          "end": 3.862,
+          "text": "Switch to active review. These are the\nminutes spent reading and"
+        },
+        {
+          "start": 3.862,
+          "end": 5.181,
+          "text": "evaluating a request."
+        },
+        {
+          "start": 5.743,
+          "end": 8.591,
+          "text": "The hours spent waiting belong to the\nfirst measure."
+        },
+        {
+          "start": 9.343,
+          "end": 12.802,
+          "text": "The median was twenty-four minutes\nbefore and twenty-six"
+        },
+        {
+          "start": 12.873,
+          "end": 13.805,
+          "text": "during the pilot."
+        },
+        {
+          "start": 14.285,
+          "end": 18.774,
+          "text": "Effort rose two minutes. The pilot is\none minute inside the agreed ceiling"
+        },
+        {
+          "start": 18.774,
+          "end": 19.72,
+          "text": "of twenty-seven."
+        },
+        {
+          "start": 20.61,
+          "end": 24.9,
+          "text": "Carry both observations into the\nmeeting. The queue was shorter in this"
+        },
+        {
+          "start": 24.9,
+          "end": 28.329,
+          "text": "sample, and the typical review took a\nlittle more work."
+        },
+        {
+          "start": 28.99,
+          "end": 32.692,
+          "text": "Staffing or the mix of changes may\nalso have differed between"
+        },
+        {
+          "start": 32.692,
+          "end": 33.541,
+          "text": "the two periods."
+        }
+      ],
+      "startFrame": 1767
+    },
+    {
+      "id": "quality",
+      "title": "Count the requests that came back",
+      "kind": "diagram",
+      "narration": "Count a request once when a reviewer asks for a material change to behavior, tests, or scope. Three comments on that request still count as one case. A spelling correction alone falls outside this definition. Six of the forty baseline requests needed rework. That is fifteen percent. In the pilot, seven of forty needed rework. Give yourself a moment to divide seven by forty. Seventeen and a half percent. One additional request moved the rate two and a half percentage points above the fifteen-percent ceiling. Keep the counts beside the rates. Each group saw one post-merge defect in the same follow-up window. Record one out of forty in each. With two events altogether, we have little basis for a claim about a defect trend.",
+      "action": "Calculate both material-rework rates from their counts.",
+      "focus": "Seven of forty is 17.5%, which exceeds the 15% ceiling.",
+      "code": "Baseline: 6 ÷ 40 = 15%\nPilot: 7 ÷ 40 = 17.5%\nCeiling: 15% | pilot gap: +2.5 percentage points\nPost-merge defects: 1/40 per cohort",
+      "result": "One additional reworked request puts the pilot above the quality ceiling.",
+      "voiceDirection": "Let the viewer do the division. Precision matters more than speed.",
+      "beats": [
+        {
+          "id": "definition",
+          "text": "Count a request once when a reviewer asks for a material change to behavior, tests, or scope. Three comments on that request still count as one case. A spelling correction alone falls outside this definition.",
+          "shot": "Start with request IDs, merge repeated comments on one ID, and display the predefined material-rework field.",
+          "voiceDirection": "Calm emphasis on once.",
+          "start": 0.2,
+          "end": 14.291,
+          "startFrame": 5,
+          "endFrame": 343,
+          "speechEnd": 13.751,
+          "holdSeconds": 0.54
+        },
+        {
+          "id": "rate",
+          "text": "Six of the forty baseline requests needed rework. That is fifteen percent. In the pilot, seven of forty needed rework. Give yourself a moment to divide seven by forty.",
+          "shot": "Count the highlighted requests in each cohort. Hold the pilot fraction before revealing its percent.",
+          "voiceDirection": "Leave a brief work pause.",
+          "practiceHoldSeconds": 2.5,
+          "start": 14.291,
+          "end": 27.587,
+          "startFrame": 343,
+          "endFrame": 662,
+          "speechEnd": 25.087,
+          "holdSeconds": 2.5
+        },
+        {
+          "id": "threshold",
+          "text": "Seventeen and a half percent. One additional request moved the rate two and a half percentage points above the fifteen-percent ceiling. Keep the counts beside the rates.",
+          "shot": "Show the seventh request crossing the ceiling. Label the excess as percentage points and keep both denominators readable.",
+          "voiceDirection": "Say percentage points clearly.",
+          "start": 27.587,
+          "end": 38.727,
+          "startFrame": 662,
+          "endFrame": 929,
+          "speechEnd": 38.187,
+          "holdSeconds": 0.54
+        },
+        {
+          "id": "defects",
+          "text": "Each group saw one post-merge defect in the same follow-up window. Record one out of forty in each. With two events altogether, we have little basis for a claim about a defect trend.",
+          "shot": "Open the corresponding defect evidence and leave both one-event counts visible.",
+          "voiceDirection": "Measured and neutral about uncertainty.",
+          "start": 38.727,
+          "end": 52.235,
+          "startFrame": 929,
+          "endFrame": 1254,
+          "speechEnd": 51.485,
+          "holdSeconds": 0.75
+        }
+      ],
+      "durationFrames": 1254,
+      "duration": 52.25,
+      "cues": [
+        {
+          "start": 0.275,
+          "end": 4.248,
+          "text": "Count a request once when a reviewer\nasks for a material change to"
+        },
+        {
+          "start": 4.248,
+          "end": 6.277,
+          "text": "behavior, tests, or scope."
+        },
+        {
+          "start": 6.857,
+          "end": 9.931,
+          "text": "Three comments on that request still\ncount as one case."
+        },
+        {
+          "start": 10.402,
+          "end": 13.696,
+          "text": "A spelling correction alone falls\noutside this definition."
+        },
+        {
+          "start": 14.467,
+          "end": 17.003,
+          "text": "Six of the forty baseline requests\nneeded rework."
+        },
+        {
+          "start": 17.374,
+          "end": 18.567,
+          "text": "That is fifteen percent."
+        },
+        {
+          "start": 19.068,
+          "end": 21.724,
+          "text": "In the pilot, seven of forty needed\nrework."
+        },
+        {
+          "start": 22.155,
+          "end": 24.751,
+          "text": "Give yourself a moment to divide seven\nby forty."
+        },
+        {
+          "start": 27.684,
+          "end": 29.19,
+          "text": "Seventeen and a half percent."
+        },
+        {
+          "start": 29.753,
+          "end": 33.944,
+          "text": "One additional request moved the rate\ntwo and a half percentage points above"
+        },
+        {
+          "start": 33.944,
+          "end": 35.625,
+          "text": "the fifteen-percent ceiling."
+        },
+        {
+          "start": 36.107,
+          "end": 37.869,
+          "text": "Keep the counts beside the rates."
+        },
+        {
+          "start": 38.862,
+          "end": 42.859,
+          "text": "Each group saw one post-merge defect\nin the same follow-up window."
+        },
+        {
+          "start": 43.56,
+          "end": 47.5,
+          "text": "Record one out of forty in each. With\ntwo events altogether,"
+        },
+        {
+          "start": 48.052,
+          "end": 51.189,
+          "text": "we have little basis for a claim about\na defect trend."
+        }
+      ],
+      "startFrame": 2598
+    },
+    {
+      "id": "cost",
+      "title": "Reconcile the pilot ledger",
+      "kind": "diagram",
+      "narration": "Open the ledger. One hundred dollars for licenses, twenty for the approved workspace, and one hundred and twenty for training. Add the three entries. The total is two hundred and forty dollars. The agreed cap is three hundred dollars. That leaves sixty. Divide the total by forty eligible requests and you get six dollars per request. Reviewer labor is still measured in minutes here. Pricing that labor would require an agreed rate.",
+      "action": "Add incremental expenses and divide by eligible requests.",
+      "focus": "The pilot spends $240 of its $300 budget, or $6 per eligible request.",
+      "code": "Allocated licenses $100 + workspace $20 + training $120 = $240\n$300 − $240 = $60 headroom\n$240 ÷ 40 eligible PRs = $6 per PR",
+      "result": "The spending guardrail clears. Reviewer labor has no assigned dollar rate in this ledger.",
+      "voiceDirection": "Keep the arithmetic light and the accounting boundary explicit.",
+      "beats": [
+        {
+          "id": "ledger",
+          "text": "Open the ledger. One hundred dollars for licenses, twenty for the approved workspace, and one hundred and twenty for training. Add the three entries. The total is two hundred and forty dollars.",
+          "shot": "Expose and add the three actual ledger entries. Allow a small hold when the total appears.",
+          "voiceDirection": "Small natural breaks between the amounts.",
+          "start": 0.2,
+          "end": 13.278,
+          "startFrame": 5,
+          "endFrame": 319,
+          "speechEnd": 12.738,
+          "holdSeconds": 0.54
+        },
+        {
+          "id": "unit",
+          "text": "The agreed cap is three hundred dollars. That leaves sixty. Divide the total by forty eligible requests and you get six dollars per request. Reviewer labor is still measured in minutes here. Pricing that labor would require an agreed rate.",
+          "shot": "Resolve budget headroom, then divide by the cohort denominator. Keep the cost ledger and reviewer-minutes row visibly distinct.",
+          "voiceDirection": "Read six dollars per request as the answer to a calculation.",
+          "start": 13.278,
+          "end": 29.264,
+          "startFrame": 319,
+          "endFrame": 702,
+          "speechEnd": 28.514,
+          "holdSeconds": 0.75
+        }
+      ],
+      "durationFrames": 703,
+      "duration": 29.291666666666668,
+      "cues": [
+        {
+          "start": 0.336,
+          "end": 3.274,
+          "text": "Open the ledger. One hundred dollars\nfor licenses,"
+        },
+        {
+          "start": 3.686,
+          "end": 7.728,
+          "text": "twenty for the approved workspace, and\none hundred and twenty for training."
+        },
+        {
+          "start": 8.37,
+          "end": 12.361,
+          "text": "Add the three entries. The total is\ntwo hundred and forty dollars."
+        },
+        {
+          "start": 13.278,
+          "end": 16.621,
+          "text": "The agreed cap is three hundred\ndollars. That leaves sixty."
+        },
+        {
+          "start": 17.283,
+          "end": 20.922,
+          "text": "Divide the total by forty eligible\nrequests and you get six"
+        },
+        {
+          "start": 20.952,
+          "end": 22.144,
+          "text": "dollars per request."
+        },
+        {
+          "start": 22.806,
+          "end": 25.406,
+          "text": "Reviewer labor is still measured in\nminutes here."
+        },
+        {
+          "start": 25.778,
+          "end": 28.438,
+          "text": "Pricing that labor would require an\nagreed rate."
+        }
+      ],
+      "startFrame": 3852
+    },
+    {
+      "id": "decision",
+      "title": "Open the seven rework cases",
+      "kind": "decision",
+      "narration": "Time and spending clear their thresholds. Rework misses, and the pilot recorded zero serious data or access incidents. What would you change? Start with the seven requests behind the missed guardrail. Read the review reason beside the changed files. The ticket asks for a validator fix. The diff also changes an unrelated configuration file. The reviewer asks the author to remove it. Four of the seven cases show that pattern. Recommend one adjustment. Ask authors to name their intended files and check the final diff against that scope. Retest in the same service with the same thresholds. The pattern suggests a change to try. It cannot tell us what caused the difference between periods.",
+      "action": "Pair each material-change request with its diff, then choose a bounded next step.",
+      "focus": "Four of seven rework cases involve out-of-scope edits, giving the team a fix to test.",
+      "code": "Wait 13 h ≤ 14 | effort 26 min ≤ 27 | spend $240 ≤ $300\nRework 17.5% > 15% | serious incidents 0\n4 of 7 rework cases include files outside the ticket.",
+      "result": "Adjust the current pilot. Ask authors to declare intended files, then repeat the measurement.",
+      "voiceDirection": "Make the decision sound conditional on the actual review evidence.",
+      "beats": [
+        {
+          "id": "gates",
+          "text": "Time and spending clear their thresholds. Rework misses, and the pilot recorded zero serious data or access incidents. What would you change? Start with the seven requests behind the missed guardrail.",
+          "shot": "Walk the visible thresholds. From the missed quality row, drill down into seven distinct synthetic request IDs.",
+          "voiceDirection": "Ask the question with a small pause.",
+          "start": 0.2,
+          "end": 13.857,
+          "startFrame": 5,
+          "endFrame": 333,
+          "speechEnd": 13.317,
+          "holdSeconds": 0.54
+        },
+        {
+          "id": "example",
+          "text": "Read the review reason beside the changed files. The ticket asks for a validator fix. The diff also changes an unrelated configuration file. The reviewer asks the author to remove it. Four of the seven cases show that pattern.",
+          "shot": "Open the synthetic ticket, validator change and unrelated config-format change. Pair the actual example review reason with the file list, then return to the 4/7 pattern.",
+          "voiceDirection": "Use here to direct attention to the chosen row.",
+          "start": 13.857,
+          "end": 29.201,
+          "startFrame": 333,
+          "endFrame": 701,
+          "speechEnd": 28.661,
+          "holdSeconds": 0.54
+        },
+        {
+          "id": "action",
+          "text": "Recommend one adjustment. Ask authors to name their intended files and check the final diff against that scope. Retest in the same service with the same thresholds. The pattern suggests a change to try. It cannot tell us what caused the difference between periods.",
+          "shot": "Write the scoped intervention and retest plan into the decision record. Keep the synthetic comparison and the conditional recommendation separate.",
+          "voiceDirection": "Decisive on the next action, cautious on causality.",
+          "start": 29.201,
+          "end": 47.049,
+          "startFrame": 701,
+          "endFrame": 1129,
+          "speechEnd": 46.299,
+          "holdSeconds": 0.75
+        }
+      ],
+      "durationFrames": 1130,
+      "duration": 47.083333333333336,
+      "cues": [
+        {
+          "start": 0.255,
+          "end": 3.371,
+          "text": "Time and spending clear their\nthresholds. Rework misses,"
+        },
+        {
+          "start": 3.722,
+          "end": 7.179,
+          "text": "and the pilot recorded zero serious\ndata or access incidents."
+        },
+        {
+          "start": 7.681,
+          "end": 8.662,
+          "text": "What would you change?"
+        },
+        {
+          "start": 10.096,
+          "end": 13.02,
+          "text": "Start with the seven requests behind\nthe missed guardrail."
+        },
+        {
+          "start": 13.972,
+          "end": 16.732,
+          "text": "Read the review reason beside the\nchanged files."
+        },
+        {
+          "start": 17.124,
+          "end": 19.142,
+          "text": "The ticket asks for a validator fix."
+        },
+        {
+          "start": 19.909,
+          "end": 23.083,
+          "text": "The diff also changes an unrelated\nconfiguration file."
+        },
+        {
+          "start": 23.474,
+          "end": 25.65,
+          "text": "The reviewer asks the author to remove\nit."
+        },
+        {
+          "start": 26.191,
+          "end": 28.525,
+          "text": "Four of the seven cases show that\npattern."
+        },
+        {
+          "start": 29.276,
+          "end": 33.905,
+          "text": "Recommend one adjustment. Ask authors\nto name their intended files and check"
+        },
+        {
+          "start": 33.905,
+          "end": 35.745,
+          "text": "the final diff against that scope."
+        },
+        {
+          "start": 36.407,
+          "end": 39.303,
+          "text": "Retest in the same service with the\nsame thresholds."
+        },
+        {
+          "start": 39.774,
+          "end": 41.929,
+          "text": "The pattern suggests a change to try."
+        },
+        {
+          "start": 42.47,
+          "end": 45.981,
+          "text": "It cannot tell us what caused the\ndifference between periods."
+        }
+      ],
+      "startFrame": 4555
+    },
+    {
+      "id": "transfer",
+      "title": "Try a different denominator",
+      "kind": "decision",
+      "narration": "Try a fresh hypothetical cohort. Fifty eligible requests. Eight needed material rework. The ceiling is fifteen percent. Assume every other guardrail and the time target are met. Pause here. What is the rework rate? What is the largest whole number of reworked requests that would still meet the ceiling? Write both answers, then name one piece of evidence you would want before recommending a change.",
+      "action": "Pause and calculate the highest rework count allowed in a new cohort.",
+      "focus": "The ceiling still applies when the cohort changes from 40 to 50.",
+      "code": "New, hypothetical cohort: 50 eligible PRs\n8 material reworks | ceiling ≤ 15%\nAssume every other guardrail and the time target are met.",
+      "result": "Calculate the rate, the highest passing count, and the evidence you would inspect.",
+      "voiceDirection": "Leave the learner space for an actual decision. Keep the answers offscreen.",
+      "beats": [
+        {
+          "id": "reset",
+          "text": "Try a fresh hypothetical cohort. Fifty eligible requests. Eight needed material rework. The ceiling is fifteen percent. Assume every other guardrail and the time target are met.",
+          "shot": "Start a clean cohort; remove prior rework reasons and mark all other gates as met by assumption. Keep the original cohort separately labeled.",
+          "voiceDirection": "Reset the scene and speak the new denominator distinctly.",
+          "start": 0.2,
+          "end": 12.027,
+          "startFrame": 5,
+          "endFrame": 289,
+          "speechEnd": 11.487,
+          "holdSeconds": 0.54
+        },
+        {
+          "id": "challenge",
+          "text": "Pause here. What is the rework rate? What is the largest whole number of reworked requests that would still meet the ceiling? Write both answers, then name one piece of evidence you would want before recommending a change.",
+          "shot": "Hold the case and three answer blanks with the formula available. Preserve the pause before the debrief begins.",
+          "voiceDirection": "Three calm invitations, with a genuine work pause.",
+          "practiceHoldSeconds": 6,
+          "start": 12.027,
+          "end": 34.103,
+          "startFrame": 289,
+          "endFrame": 818,
+          "speechEnd": 28.103,
+          "holdSeconds": 6.0
+        }
+      ],
+      "durationFrames": 819,
+      "duration": 34.125,
+      "cues": [
+        {
+          "start": 0.235,
+          "end": 3.61,
+          "text": "Try a fresh hypothetical cohort. Fifty\neligible requests."
+        },
+        {
+          "start": 4.001,
+          "end": 5.353,
+          "text": "Eight needed material rework."
+        },
+        {
+          "start": 6.074,
+          "end": 10.426,
+          "text": "The ceiling is fifteen percent. Assume\nevery other guardrail and the time"
+        },
+        {
+          "start": 10.426,
+          "end": 11.232,
+          "text": "target are met."
+        },
+        {
+          "start": 12.103,
+          "end": 14.312,
+          "text": "Pause here. What is the rework rate?"
+        },
+        {
+          "start": 15.503,
+          "end": 20.0,
+          "text": "What is the largest whole number of\nreworked requests that would still"
+        },
+        {
+          "start": 20.0,
+          "end": 20.908,
+          "text": "meet the ceiling?"
+        },
+        {
+          "start": 22.299,
+          "end": 26.061,
+          "text": "Write both answers, then name one\npiece of evidence you would want"
+        },
+        {
+          "start": 26.293,
+          "end": 27.767,
+          "text": "before recommending a change."
+        }
+      ],
+      "startFrame": 5685
+    },
+    {
+      "id": "debrief",
+      "title": "Decide what the new numbers establish",
+      "kind": "decision",
+      "narration": "Eight out of fifty is sixteen percent. Seven out of fifty is fourteen percent. Seven is the largest whole count that meets the ceiling. Would you prescribe the same fix again? We have only a count. Read the review requests and their diffs. If they reveal a correctable pattern, propose one change and retest. If the cause remains unclear, investigate before choosing the intervention. A defensible update can be short. Eight of fifty requests needed rework, above our agreed limit. We will hold expansion and examine those eight cases before choosing the next step.",
+      "action": "Verify the limit and make the next decision conditional on case-level evidence.",
+      "focus": "Eight of fifty misses. Seven of fifty is the largest count within the 15% ceiling.",
+      "code": "8 ÷ 50 = 16% | 7 ÷ 50 = 14%\nLargest allowed whole count = 7\nInspect review reasons and diffs before choosing a change.",
+      "result": "Hold expansion. Inspect the cases. Adjust and retest if they support a correctable pattern.",
+      "voiceDirection": "Offer the worked answer without rushing the reasoning. End with a practical sentence the manager could use.",
+      "beats": [
+        {
+          "id": "math",
+          "text": "Eight out of fifty is sixteen percent. Seven out of fifty is fourteen percent. Seven is the largest whole count that meets the ceiling.",
+          "shot": "Place seven and eight on either side of the limit at the same scale. Keep the fraction and percent paired.",
+          "voiceDirection": "Leave a short beat between the two fractions.",
+          "start": 0.2,
+          "end": 9.411,
+          "startFrame": 5,
+          "endFrame": 226,
+          "speechEnd": 8.871,
+          "holdSeconds": 0.54
+        },
+        {
+          "id": "next",
+          "text": "Would you prescribe the same fix again? We have only a count. Read the review requests and their diffs. If they reveal a correctable pattern, propose one change and retest. If the cause remains unclear, investigate before choosing the intervention.",
+          "shot": "Open the empty case-evidence field for the new cohort. Show two conditional paths: documented pattern, or evidence still needed.",
+          "voiceDirection": "Treat it as a real decision with missing information.",
+          "start": 9.411,
+          "end": 26.493,
+          "startFrame": 226,
+          "endFrame": 636,
+          "speechEnd": 25.953,
+          "holdSeconds": 0.54
+        },
+        {
+          "id": "close",
+          "text": "A defensible update can be short. Eight of fifty requests needed rework, above our agreed limit. We will hold expansion and examine those eight cases before choosing the next step.",
+          "shot": "Write the two-sentence decision in the editable record with the denominator and next action in view.",
+          "voiceDirection": "Close in an unhurried, natural speaking voice.",
+          "start": 26.493,
+          "end": 38.345,
+          "startFrame": 636,
+          "endFrame": 920,
+          "speechEnd": 37.595,
+          "holdSeconds": 0.75
+        }
+      ],
+      "durationFrames": 921,
+      "duration": 38.375,
+      "cues": [
+        {
+          "start": 0.235,
+          "end": 3.794,
+          "text": "Eight out of fifty is sixteen percent.\nSeven out of fifty"
+        },
+        {
+          "start": 3.844,
+          "end": 5.037,
+          "text": "is fourteen percent."
+        },
+        {
+          "start": 5.678,
+          "end": 8.535,
+          "text": "Seven is the largest whole count that\nmeets the ceiling."
+        },
+        {
+          "start": 9.467,
+          "end": 11.911,
+          "text": "Would you prescribe the same fix\nagain?"
+        },
+        {
+          "start": 13.123,
+          "end": 17.132,
+          "text": "We have only a count. Read the review\nrequests and their diffs."
+        },
+        {
+          "start": 17.654,
+          "end": 21.403,
+          "text": "If they reveal a correctable pattern,\npropose one change and retest."
+        },
+        {
+          "start": 21.945,
+          "end": 23.463,
+          "text": "If the cause remains unclear,"
+        },
+        {
+          "start": 23.594,
+          "end": 25.877,
+          "text": "investigate before choosing the\nintervention."
+        },
+        {
+          "start": 26.548,
+          "end": 30.706,
+          "text": "A defensible update can be short.\nEight of fifty requests needed rework,"
+        },
+        {
+          "start": 31.037,
+          "end": 32.189,
+          "text": "above our agreed limit."
+        },
+        {
+          "start": 32.59,
+          "end": 36.882,
+          "text": "We will hold expansion and examine\nthose eight cases before choosing the"
+        },
+        {
+          "start": 36.882,
+          "end": 37.459,
+          "text": "next step."
+        }
+      ],
+      "startFrame": 6504
+    }
+  ],
+  "fps": 24,
+  "width": 1280,
+  "height": 720,
+  "durationFrames": 7425,
+  "delivery": {
+    "status": "provisional",
+    "kind": "English dialogue only",
+    "voiceProfile": "workshop",
+    "sampleRate": 48000,
+    "wordsPerMinute": 143.52,
+    "integratedLUFS": -18.04,
+    "truePeakDBTP": -1.66,
+    "loudnessRangeLU": 2.9
+  },
+  "voiceBuild": "4c280a8ee9d31743c1c886380ea7f61b391bb67d63c63066ff9fccf0f363754b"
+}

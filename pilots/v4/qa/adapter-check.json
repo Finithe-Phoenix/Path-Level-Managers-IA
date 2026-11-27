@@ -1,0 +1,34 @@
+{
+  "episode": "L04",
+  "frame": 3061,
+  "scene": "quality",
+  "width": 1920,
+  "height": 1080,
+  "fps": 24,
+  "durationFrames": 7425,
+  "identicalVectorSamples": 25,
+  "sharedNarrationSha256": "6ea2c0cc206a3fb2de7f733f2147963647c82338ec6aa8fa07afe0ca84a3ed61",
+  "remotion": "4.0.547",
+  "hyperframes": "0.9.99",
+  "normalizedMeanPixelError": {
+    "nativeRemotion": 0.0007711964415395788,
+    "nativeHyperFrames": 0.0005901416122004357,
+    "remotionHyperFrames": 0.00033383260711692086
+  },
+  "clips": {
+    "remotion": {
+      "frames": 24,
+      "seconds": 1,
+      "audioCodec": "aac",
+      "correlation": 0.955719405975503,
+      "offsetMilliseconds": 0
+    },
+    "hyperframes": {
+      "frames": 24,
+      "seconds": 1,
+      "audioCodec": "aac",
+      "correlation": 0.9559490324261104,
+      "offsetMilliseconds": 0
+    }
+  }
+}

@@ -1,0 +1,429 @@
+1
+00:00:00,255 --> 00:00:04,293
+An AI pilot has finished and the
+review queue is moving faster.
+
+2
+00:00:04,764 --> 00:00:07,118
+The manager asks, can we expand?
+
+3
+00:00:08,609 --> 00:00:11,266
+Open the agreement the team made
+before the pilot.
+
+4
+00:00:12,097 --> 00:00:15,907
+This fictional scorecard covers forty
+eligible pull requests before the
+
+5
+00:00:15,907 --> 00:00:17,428
+pilot and forty during it.
+
+6
+00:00:17,929 --> 00:00:21,766
+Count each request once, even when
+several reviewers worked on it.
+
+7
+00:00:22,397 --> 00:00:25,457
+Both groups cover the same service,
+eligibility rule,
+
+8
+00:00:25,628 --> 00:00:26,982
+and follow-up after merge.
+
+9
+00:00:27,523 --> 00:00:31,143
+Expansion requires the time benefit
+and every guardrail to clear.
+
+10
+00:00:31,514 --> 00:00:32,888
+Keep that agreement in view.
+
+11
+00:00:34,067 --> 00:00:37,967
+Open one request. Start the clock when
+the author marks it ready.
+
+12
+00:00:38,478 --> 00:00:41,976
+Stop at the first human comment that
+examines the change.
+
+13
+00:00:42,718 --> 00:00:46,056
+A bot check or a quick acknowledgment
+leaves the clock running.
+
+14
+00:00:46,627 --> 00:00:48,722
+Use working hours on the team
+calendar.
+
+15
+00:00:49,634 --> 00:00:51,791
+Sort forty waits from shortest to
+longest.
+
+16
+00:00:52,243 --> 00:00:54,562
+Average the twentieth and twenty-first
+values.
+
+17
+00:00:55,123 --> 00:00:57,966
+Repeat for the other group. The
+baseline median is
+
+18
+00:00:57,997 --> 00:00:59,292
+eighteen business hours.
+
+19
+00:00:59,814 --> 00:01:01,434
+The pilot median is thirteen.
+
+20
+00:01:02,146 --> 00:01:04,121
+Five fewer business hours at the
+median.
+
+21
+00:01:04,493 --> 00:01:06,829
+Thirteen clears the fourteen-hour
+target.
+
+22
+00:01:07,250 --> 00:01:09,671
+How much time did a reviewer spend
+reading?
+
+23
+00:01:10,903 --> 00:01:12,571
+For that, we need another measure.
+
+24
+00:01:13,941 --> 00:01:17,487
+Switch to active review. These are the
+minutes spent reading and
+
+25
+00:01:17,487 --> 00:01:18,806
+evaluating a request.
+
+26
+00:01:19,368 --> 00:01:22,216
+The hours spent waiting belong to the
+first measure.
+
+27
+00:01:22,968 --> 00:01:26,427
+The median was twenty-four minutes
+before and twenty-six
+
+28
+00:01:26,498 --> 00:01:27,430
+during the pilot.
+
+29
+00:01:27,910 --> 00:01:32,399
+Effort rose two minutes. The pilot is
+one minute inside the agreed ceiling
+
+30
+00:01:32,399 --> 00:01:33,345
+of twenty-seven.
+
+31
+00:01:34,235 --> 00:01:38,525
+Carry both observations into the
+meeting. The queue was shorter in this
+
+32
+00:01:38,525 --> 00:01:41,954
+sample, and the typical review took a
+little more work.
+
+33
+00:01:42,615 --> 00:01:46,317
+Staffing or the mix of changes may
+also have differed between
+
+34
+00:01:46,317 --> 00:01:47,166
+the two periods.
+
+35
+00:01:48,525 --> 00:01:52,498
+Count a request once when a reviewer
+asks for a material change to
+
+36
+00:01:52,498 --> 00:01:54,527
+behavior, tests, or scope.
+
+37
+00:01:55,107 --> 00:01:58,181
+Three comments on that request still
+count as one case.
+
+38
+00:01:58,652 --> 00:02:01,946
+A spelling correction alone falls
+outside this definition.
+
+39
+00:02:02,717 --> 00:02:05,253
+Six of the forty baseline requests
+needed rework.
+
+40
+00:02:05,624 --> 00:02:06,817
+That is fifteen percent.
+
+41
+00:02:07,318 --> 00:02:09,974
+In the pilot, seven of forty needed
+rework.
+
+42
+00:02:10,405 --> 00:02:13,001
+Give yourself a moment to divide seven
+by forty.
+
+43
+00:02:15,934 --> 00:02:17,440
+Seventeen and a half percent.
+
+44
+00:02:18,003 --> 00:02:22,194
+One additional request moved the rate
+two and a half percentage points above
+
+45
+00:02:22,194 --> 00:02:23,875
+the fifteen-percent ceiling.
+
+46
+00:02:24,357 --> 00:02:26,119
+Keep the counts beside the rates.
+
+47
+00:02:27,112 --> 00:02:31,109
+Each group saw one post-merge defect
+in the same follow-up window.
+
+48
+00:02:31,810 --> 00:02:35,750
+Record one out of forty in each. With
+two events altogether,
+
+49
+00:02:36,302 --> 00:02:39,439
+we have little basis for a claim about
+a defect trend.
+
+50
+00:02:40,836 --> 00:02:43,774
+Open the ledger. One hundred dollars
+for licenses,
+
+51
+00:02:44,186 --> 00:02:48,228
+twenty for the approved workspace, and
+one hundred and twenty for training.
+
+52
+00:02:48,870 --> 00:02:52,861
+Add the three entries. The total is
+two hundred and forty dollars.
+
+53
+00:02:53,778 --> 00:02:57,121
+The agreed cap is three hundred
+dollars. That leaves sixty.
+
+54
+00:02:57,783 --> 00:03:01,422
+Divide the total by forty eligible
+requests and you get six
+
+55
+00:03:01,452 --> 00:03:02,644
+dollars per request.
+
+56
+00:03:03,306 --> 00:03:05,906
+Reviewer labor is still measured in
+minutes here.
+
+57
+00:03:06,278 --> 00:03:08,938
+Pricing that labor would require an
+agreed rate.
+
+58
+00:03:10,047 --> 00:03:13,163
+Time and spending clear their
+thresholds. Rework misses,
+
+59
+00:03:13,514 --> 00:03:16,971
+and the pilot recorded zero serious
+data or access incidents.
+
+60
+00:03:17,473 --> 00:03:18,454
+What would you change?
+
+61
+00:03:19,888 --> 00:03:22,812
+Start with the seven requests behind
+the missed guardrail.
+
+62
+00:03:23,764 --> 00:03:26,524
+Read the review reason beside the
+changed files.
+
+63
+00:03:26,916 --> 00:03:28,934
+The ticket asks for a validator fix.
+
+64
+00:03:29,701 --> 00:03:32,875
+The diff also changes an unrelated
+configuration file.
+
+65
+00:03:33,266 --> 00:03:35,442
+The reviewer asks the author to remove
+it.
+
+66
+00:03:35,983 --> 00:03:38,317
+Four of the seven cases show that
+pattern.
+
+67
+00:03:39,068 --> 00:03:43,697
+Recommend one adjustment. Ask authors
+to name their intended files and check
+
+68
+00:03:43,697 --> 00:03:45,537
+the final diff against that scope.
+
+69
+00:03:46,199 --> 00:03:49,095
+Retest in the same service with the
+same thresholds.
+
+70
+00:03:49,566 --> 00:03:51,721
+The pattern suggests a change to try.
+
+71
+00:03:52,262 --> 00:03:55,773
+It cannot tell us what caused the
+difference between periods.
+
+72
+00:03:57,110 --> 00:04:00,485
+Try a fresh hypothetical cohort. Fifty
+eligible requests.
+
+73
+00:04:00,876 --> 00:04:02,228
+Eight needed material rework.
+
+74
+00:04:02,949 --> 00:04:07,301
+The ceiling is fifteen percent. Assume
+every other guardrail and the time
+
+75
+00:04:07,301 --> 00:04:08,107
+target are met.
+
+76
+00:04:08,978 --> 00:04:11,187
+Pause here. What is the rework rate?
+
+77
+00:04:12,378 --> 00:04:16,875
+What is the largest whole number of
+reworked requests that would still
+
+78
+00:04:16,875 --> 00:04:17,783
+meet the ceiling?
+
+79
+00:04:19,174 --> 00:04:22,936
+Write both answers, then name one
+piece of evidence you would want
+
+80
+00:04:23,168 --> 00:04:24,642
+before recommending a change.
+
+81
+00:04:31,235 --> 00:04:34,794
+Eight out of fifty is sixteen percent.
+Seven out of fifty
+
+82
+00:04:34,844 --> 00:04:36,037
+is fourteen percent.
+
+83
+00:04:36,678 --> 00:04:39,535
+Seven is the largest whole count that
+meets the ceiling.
+
+84
+00:04:40,467 --> 00:04:42,911
+Would you prescribe the same fix
+again?
+
+85
+00:04:44,123 --> 00:04:48,132
+We have only a count. Read the review
+requests and their diffs.
+
+86
+00:04:48,654 --> 00:04:52,403
+If they reveal a correctable pattern,
+propose one change and retest.
+
+87
+00:04:52,945 --> 00:04:54,463
+If the cause remains unclear,
+
+88
+00:04:54,594 --> 00:04:56,877
+investigate before choosing the
+intervention.
+
+89
+00:04:57,548 --> 00:05:01,706
+A defensible update can be short.
+Eight of fifty requests needed rework,
+
+90
+00:05:02,037 --> 00:05:03,189
+above our agreed limit.
+
+91
+00:05:03,590 --> 00:05:07,882
+We will hold expansion and examine
+those eight cases before choosing the
+
+92
+00:05:07,882 --> 00:05:08,459
+next step.

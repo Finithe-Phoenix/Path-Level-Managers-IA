@@ -1,0 +1,53 @@
+{
+  "reference": {
+    "engine": "supertonic",
+    "preset": "M3",
+    "steps": 10,
+    "speed": {
+      "question": 0.85,
+      "action": 0.88,
+      "evidence": 0.87,
+      "narrative": 0.91
+    },
+    "pause": {
+      "question": 0.53,
+      "action": 0.32,
+      "evidence": 0.36,
+      "narrative": 0.21
+    }
+  },
+  "workshop": {
+    "engine": "supertonic",
+    "preset": "F2",
+    "steps": 14,
+    "speed": {
+      "question": 0.86,
+      "action": 0.91,
+      "evidence": 0.85,
+      "narrative": 0.93
+    },
+    "pause": {
+      "question": 1.1,
+      "action": 0.39,
+      "evidence": 0.5,
+      "narrative": 0.31
+    }
+  },
+  "reader": {
+    "engine": "supertonic",
+    "preset": "M5",
+    "steps": 14,
+    "speed": {
+      "narrative": 0.96,
+      "action": 0.92,
+      "question": 0.91,
+      "evidence": 0.89
+    },
+    "pause": {
+      "narrative": 0.33,
+      "action": 0.5,
+      "question": 1.1,
+      "evidence": 0.58
+    }
+  }
+}
