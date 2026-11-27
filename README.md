@@ -1,52 +1,36 @@
-# Path de IA · Managers
+# Managers · Cómo decidir si ampliar un piloto de IA
 
-Decide qué delegar, diseña un piloto y calcula si la mejora en tiempo de revisión justifica el costo y el retrabajo.
+![La espera de revisión baja de 18 a 13 horas en el piloto ilustrativo, con una meta de 14 horas.](docs/portada.png)
 
-Cada episodio tiene narración y subtítulos en inglés. El MP4 incluye capítulos para volver a un paso. [Descargar el episodio de muestra L04](https://github.com/Finithe-Phoenix/Path-Level-Managers-IA/raw/refs/heads/main/videos/L04.mp4).
+Un equipo quiere acortar la espera de revisión de sus PR. Acompaña el piloto desde la elección de herramienta hasta la decisión de ampliarlo, ajustarlo o pausarlo. Todos los cálculos se hacen sobre el mismo caso simulado.
 
-[![Fragmentos del episodio L04](preview.gif)](https://github.com/Finithe-Phoenix/Path-Level-Managers-IA/raw/refs/heads/main/videos/L04.mp4)
+**5 episodios · 18:34 en total.** Narración y subtítulos en inglés. Cada MP4 incluye capítulos para repetir un paso.
 
-| Episodio | Demostración | Duración | Archivos |
-|---|---|---:|---|
-| L01 | Choose a Model and Tool for a Business Task | 3:39 | [MP4](https://github.com/Finithe-Phoenix/Path-Level-Managers-IA/raw/refs/heads/main/videos/L01.mp4) · [SRT](subtitles/L01.en.srt) |
-| L02 | Decide What an Agent Can Do | 3:49 | [MP4](https://github.com/Finithe-Phoenix/Path-Level-Managers-IA/raw/refs/heads/main/videos/L02.mp4) · [SRT](subtitles/L02.en.srt) |
-| L03 | Design a Pilot Around a Real Bottleneck | 3:45 | [MP4](https://github.com/Finithe-Phoenix/Path-Level-Managers-IA/raw/refs/heads/main/videos/L03.mp4) · [SRT](subtitles/L03.en.srt) |
-| L04 | Measure Review Time, Quality, and Cost | 3:39 | [MP4](https://github.com/Finithe-Phoenix/Path-Level-Managers-IA/raw/refs/heads/main/videos/L04.mp4) · [SRT](subtitles/L04.en.srt) |
-| L05 | Decide Whether to Expand, Adjust, or Pause | 3:42 | [MP4](https://github.com/Finithe-Phoenix/Path-Level-Managers-IA/raw/refs/heads/main/videos/L05.mp4) · [SRT](subtitles/L05.en.srt) |
+[Descargar el primer episodio (L01)](https://github.com/Finithe-Phoenix/Path-Level-Managers-IA/raw/videos-v2.0.0/videos/L01.mp4) · [Editar o reconstruir los videos](PRODUCCION.md)
 
-## Reconstruir un episodio en GCP
+## Temario
 
-En el workspace remoto, abre la raíz del repositorio. La producción utiliza Linux, Node.js 24, Python 3.12, FFmpeg y DejaVu Sans. La pista de voz, los subtítulos y los tiempos ya están en Git.
+Selecciona el título para descargar el video. Puedes activar los subtítulos en tu reproductor o descargar el archivo SRT de cada episodio.
 
-```bash
-npm ci --prefix engine
-python3 studio.py list
-python3 studio.py render L01
-python3 studio.py verify L01 --decode
-```
+| Episodio | Qué harás en pantalla |
+| --- | --- |
+| **L01** · [Choose a Model and Tool for a Business Task](https://github.com/Finithe-Phoenix/Path-Level-Managers-IA/raw/videos-v2.0.0/videos/L01.mp4)<br>3:39 · [SRT](https://github.com/Finithe-Phoenix/Path-Level-Managers-IA/raw/videos-v2.0.0/subtitles/L01.en.srt) | Compara dos modelos aprobados con los mismos casos de aceptación y documenta la elección de herramienta. |
+| **L02** · [Decide What an Agent Can Do](https://github.com/Finithe-Phoenix/Path-Level-Managers-IA/raw/videos-v2.0.0/videos/L02.mp4)<br>3:49 · [SRT](https://github.com/Finithe-Phoenix/Path-Level-Managers-IA/raw/videos-v2.0.0/subtitles/L02.en.srt) | Asigna lecturas, ediciones y aprobaciones a sus responsables. Decide qué hacer si el agente solicita una dependencia extra. |
+| **L03** · [Design a Pilot Around a Real Bottleneck](https://github.com/Finithe-Phoenix/Path-Level-Managers-IA/raw/videos-v2.0.0/videos/L03.mp4)<br>3:45 · [SRT](https://github.com/Finithe-Phoenix/Path-Level-Managers-IA/raw/videos-v2.0.0/subtitles/L03.en.srt) | Mide la espera de revisión en horas hábiles y establece los grupos de comparación y umbrales del piloto. |
+| **L04** · [Measure Review Time, Quality, and Cost](https://github.com/Finithe-Phoenix/Path-Level-Managers-IA/raw/videos-v2.0.0/videos/L04.mp4)<br>3:39 · [SRT](https://github.com/Finithe-Phoenix/Path-Level-Managers-IA/raw/videos-v2.0.0/subtitles/L04.en.srt) | Separa espera y trabajo activo. Calcula tasas de retrabajo y costo por PR con los mismos denominadores. |
+| **L05** · [Decide Whether to Expand, Adjust, or Pause](https://github.com/Finithe-Phoenix/Path-Level-Managers-IA/raw/videos-v2.0.0/videos/L05.mp4)<br>3:42 · [SRT](https://github.com/Finithe-Phoenix/Path-Level-Managers-IA/raw/videos-v2.0.0/subtitles/L05.en.srt) | Aplica los umbrales acordados, elige el ajuste y deja por escrito qué evidencia necesitarás para la siguiente decisión. |
 
-El MP4 se escribe en `videos/L01.mp4`. Para renderizar el path completo, usa `python3 studio.py render all`. Para generar el proyecto HTML editable y su vista previa, ejecuta `python3 studio.py project L01` y abre `build/L01/preview.html`. Las instrucciones de HyperFrames y Remotion están en [engine/README.md](engine/README.md).
+<details>
+<summary>Ver un fragmento animado de L04</summary>
 
-## Cambiar lo que se explica o cómo suena
+![Fragmento de la demostración L04](preview.gif)
 
-Edita el guion, las acciones y los resultados de pantalla en [lessons/episodes.json](lessons/episodes.json). Cada episodio enlaza sus fuentes técnicas. El estilo, el ritmo y la mezcla de voces están en [voice/profile.json](voice/profile.json). Si cambias el texto hablado o el orden de las escenas, regenera la voz antes del render.
+</details>
 
-```bash
-python3.12 -m venv .venv
-source .venv/bin/activate
-python -m pip install -r voice/requirements.txt
-python voice/assets.py
-python studio.py voice L01
-python studio.py render L01
-python studio.py verify L01 --decode
-```
+## Fuentes editables
 
-Para cambiar solo el ritmo, usa la toma original guardada en `takes/`. Por ejemplo, ejecuta `python3 studio.py pace L01 --target-wpm 142` y vuelve a renderizar. Este ajuste conserva el tono y recalcula escenas y subtítulos. La síntesis de voz descarga dos archivos de modelo con hashes fijados y los reutiliza. Las pistas AAC ya publicadas permiten editar la animación y volver a exportar sin sintetizar voz. [Detalles de narración](voice/README.md).
+Para preparar una nueva edición, empieza por el guion y las referencias técnicas de cada escena. El repositorio también guarda los dibujos, la toma original de voz, el audio final y sus marcas de tiempo. [Guiones y referencias](lessons/episodes.json) · [Guía de producción](PRODUCCION.md) · [Guía para agentes](AGENTS.md) · [Descargar las fuentes de v2.0.0 en ZIP](https://github.com/Finithe-Phoenix/Path-Level-Managers-IA/archive/refs/tags/v2.0.0.zip).
 
-## Versionar la siguiente edición
+## Otras rutas
 
-Crea una rama para el cambio y conserva el ID de cada episodio. Tras revisar el video, ejecuta `python3 studio.py manifest` para renovar el inventario y `python3 studio.py verify all --release` para cotejar los archivos. Si el episodio editado aparece en la vista previa del README, regenera ese fragmento con `python3 preview.py`. Incluye las fuentes y los archivos generados en el mismo PR. La guía de trabajo está en [AGENTS.md](AGENTS.md).
-
-Las pantallas y los datos del curso son simulaciones didácticas. Los PR del ejemplo los revisa una persona mediante `gh` en el terminal autorizado. Claude Code y OpenCode se ejecutan dentro del workspace de GCP.
-
-Puedes consultar los [materiales de producción de la edición 1](archive/v1/) y los [videos originales](https://github.com/Finithe-Phoenix/Path-Level-Managers-IA/releases/tag/v1.0.0).
+[Básico](https://github.com/Finithe-Phoenix/Path-Level-1-IA) · [Medio](https://github.com/Finithe-Phoenix/Path-Level-2-IA) · [Avanzado](https://github.com/Finithe-Phoenix/Path-Level-3-IA)
