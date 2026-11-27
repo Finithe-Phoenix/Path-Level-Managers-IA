@@ -1,295 +1,279 @@
 1
-00:00:00,407 --> 00:00:04,482
+00:00:00,268 --> 00:00:03,945
 The pilot is complete and the scorecard
 starts with two counts.
 
 2
-00:00:04,587 --> 00:00:08,227
+00:00:04,450 --> 00:00:08,085
 Forty eligible requests in the baseline
 and forty in the pilot.
 
 3
-00:00:08,857 --> 00:00:13,455
+00:00:08,428 --> 00:00:12,256
 Each row is one pull request, even if
 three teammates reviewed it.
 
 4
-00:00:13,534 --> 00:00:17,322
+00:00:12,628 --> 00:00:16,866
 Count the rows and confirm the same
 eligibility rule applied in both
 
 5
-00:00:17,374 --> 00:00:18,011
+00:00:16,866 --> 00:00:17,516
 windows.
 
 6
-00:00:18,677 --> 00:00:22,544
+00:00:17,923 --> 00:00:21,989
 In this synthetic sample every request
 merged and had the same defect
 
 7
-00:00:22,596 --> 00:00:23,798
+00:00:21,989 --> 00:00:22,639
 follow-up.
 
 8
-00:00:23,877 --> 00:00:28,318
+00:00:22,934 --> 00:00:27,205
 In your own data, flag rows with missing
 dates or insufficient follow-up.
 
 9
-00:00:28,976 --> 00:00:33,118
+00:00:27,640 --> 00:00:31,495
 That tells the next reader which
 denominator you used for each metric.
 
 10
-00:00:35,062 --> 00:00:36,995
-Read the wait row first.
+00:00:33,087 --> 00:00:38,297
+Read the wait row first. Eighteen minus
+thirteen is five fewer business hours
 
 11
-00:00:37,074 --> 00:00:41,149
-Eighteen minus thirteen is five fewer
-business hours before the first human
+00:00:38,297 --> 00:00:39,847
+before the first human review.
 
 12
-00:00:41,202 --> 00:00:42,064
-review.
+00:00:40,366 --> 00:00:44,495
+Thirteen is within the fourteen-hour
+target. Next read the effort row.
 
 13
-00:00:42,168 --> 00:00:44,457
-Thirteen is within the fourteen-hour
-target.
-
-14
-00:00:45,113 --> 00:00:46,916
-Next read the effort row.
-
-15
-00:00:46,994 --> 00:00:51,070
+00:00:44,907 --> 00:00:49,636
 Twenty-six minus twenty-four gives us a
 two-minute increase in median active
 
-16
-00:00:51,122 --> 00:00:52,011
+14
+00:00:49,636 --> 00:00:50,286
 review.
 
-17
-00:00:52,089 --> 00:00:54,486
+15
+00:00:50,419 --> 00:00:54,940
 Twenty-six fits the twenty-seven minute
-limit.
+limit. Say both findings in the same
 
-18
-00:00:55,175 --> 00:00:57,892
-Say both findings in the same meeting.
+16
+00:00:54,940 --> 00:00:55,590
+meeting.
 
-19
-00:00:57,971 --> 00:01:02,595
+17
+00:00:55,724 --> 00:01:00,250
 This result can reflect a shorter queue
 alongside a little more reviewer work.
 
-20
-00:01:02,673 --> 00:01:06,514
+18
+00:01:00,878 --> 00:01:05,266
 Report the medians separately because
 they describe different parts of the
 
-21
-00:01:06,566 --> 00:01:07,535
+19
+00:01:05,266 --> 00:01:06,290
 review process.
 
-22
-00:01:08,236 --> 00:01:11,277
+20
+00:01:07,148 --> 00:01:10,281
 Ask which row would reveal a reviewer
 workload problem.
 
-23
-00:01:13,459 --> 00:01:17,639
+21
+00:01:11,999 --> 00:01:15,430
 Now divide the rework count by the
 number of eligible requests.
 
-24
-00:01:17,717 --> 00:01:21,606
+22
+00:01:15,887 --> 00:01:19,504
 In the baseline, six divided by forty
 gives fifteen percent.
 
-25
-00:01:22,272 --> 00:01:27,210
+23
+00:01:19,894 --> 00:01:24,260
 In the pilot, seven divided by forty
 gives seventeen and a half percent.
 
-26
-00:01:27,288 --> 00:01:30,449
+24
+00:01:24,649 --> 00:01:27,704
 That is two and a half percentage points
 above the limit,
 
-27
-00:01:30,502 --> 00:01:32,723
+25
+00:01:28,082 --> 00:01:30,404
 even though the count changed by just
 one.
 
-28
-00:01:33,353 --> 00:01:35,678
+26
+00:01:30,725 --> 00:01:35,311
 This is the guardrail the team missed.
-
-29
-00:01:35,730 --> 00:01:39,910
 The defect count is one in each group,
+
+27
+00:01:35,689 --> 00:01:36,959
 or two and a half percent.
 
-30
-00:01:39,963 --> 00:01:43,829
+28
+00:01:37,416 --> 00:01:41,448
 With one event in each, report the
 counts and be careful about drawing a
 
-31
-00:01:43,882 --> 00:01:44,358
+29
+00:01:41,448 --> 00:01:42,098
 trend.
 
-32
-00:01:46,289 --> 00:01:48,144
+30
+00:01:43,440 --> 00:01:44,722
 Open the pilot ledger.
 
-33
-00:01:48,222 --> 00:01:51,175
+31
+00:01:45,192 --> 00:01:47,945
 Charge a hundred dollars for allocated
 licenses,
 
-34
-00:01:51,227 --> 00:01:54,884
+32
+00:01:48,369 --> 00:01:51,923
 twenty for approved remote test and
 review workspace use,
 
-35
-00:01:54,937 --> 00:01:56,933
+33
+00:01:52,276 --> 00:01:54,390
 and a hundred and twenty for enablement.
 
-36
-00:01:57,585 --> 00:02:02,392
+34
+00:01:54,802 --> 00:01:59,242
 A hundred plus twenty plus a hundred and
 twenty gives two hundred and forty.
 
-37
-00:02:02,471 --> 00:02:06,917
+35
+00:01:59,539 --> 00:02:03,714
 Divide by forty eligible requests and
 you get six dollars per request.
 
-38
-00:02:07,543 --> 00:02:11,154
+36
+00:02:04,274 --> 00:02:07,815
 The cap was three hundred, leaving sixty
 dollars of headroom.
 
-39
-00:02:11,206 --> 00:02:14,132
+37
+00:02:08,180 --> 00:02:13,003
 The ledger tracks these incremental
-expenses.
+expenses. Reviewer minutes appear on the
 
-40
-00:02:14,211 --> 00:02:16,331
-Reviewer minutes appear on the effort
-row.
+38
+00:02:13,003 --> 00:02:13,753
+effort row.
 
-41
-00:02:16,994 --> 00:02:20,051
+39
+00:02:14,072 --> 00:02:16,787
 If the organization plans to value that
 labor,
 
-42
-00:02:20,129 --> 00:02:22,425
+40
+00:02:17,188 --> 00:02:19,398
 agree on the rate and allocation first.
 
-43
-00:02:24,683 --> 00:02:28,027
+41
+00:02:21,208 --> 00:02:23,812
 A scorecard tells us which question to
 ask next.
 
-44
-00:02:28,105 --> 00:02:32,142
+42
+00:02:24,316 --> 00:02:28,741
 Open the seven rework cases and read the
 file lists and review reasons.
 
-45
-00:02:32,783 --> 00:02:36,519
+43
+00:02:29,302 --> 00:02:33,455
 In four cases the reviewer asked the
 author to remove edits outside the
 
-46
-00:02:36,571 --> 00:02:37,616
+44
+00:02:33,455 --> 00:02:34,105
 ticket.
 
-47
-00:02:37,669 --> 00:02:42,784
+45
+00:02:34,203 --> 00:02:39,428
 For instance, a one-line validator fix
 also reformatted a configuration file.
 
-48
-00:02:43,462 --> 00:02:47,643
+46
+00:02:39,863 --> 00:02:43,860
 Separate that extra change and note why
 the reviewer asked for it.
 
-49
-00:02:47,721 --> 00:02:51,074
+47
+00:02:44,294 --> 00:02:47,880
 Four of seven is enough to make scope
 worth investigating here.
 
-50
-00:02:51,726 --> 00:02:54,783
+48
+00:02:48,224 --> 00:02:50,790
 It gives the team something concrete to
 improve.
 
+49
+00:02:51,203 --> 00:02:56,133
+Share the pattern and example. Keep
+individual usage statistics out of that
+
+50
+00:02:56,133 --> 00:02:56,894
+discussion.
+
 51
-00:02:54,887 --> 00:02:56,794
-Share the pattern and example.
-
-52
-00:02:56,873 --> 00:02:59,921
-Keep individual usage statistics out of
-that discussion.
-
-53
-00:03:01,802 --> 00:03:04,885
+00:02:58,269 --> 00:03:00,767
 Prepare a short update for the decision
 meeting.
 
-54
-00:03:04,937 --> 00:03:09,195
+52
+00:03:01,156 --> 00:03:05,988
 The median wait reached thirteen hours,
 the median active review stayed within
 
-55
-00:03:09,248 --> 00:03:12,074
+53
+00:03:05,988 --> 00:03:08,760
 its limit, and spending stayed within
 budget.
 
-56
-00:03:12,704 --> 00:03:14,585
-Rework missed the threshold.
+54
+00:03:09,310 --> 00:03:14,039
+Rework missed the threshold. Add the
+sample size, the seven rework cases,
 
-57
-00:03:14,663 --> 00:03:17,725
-Add the sample size, the seven rework
-cases,
-
-58
-00:03:17,819 --> 00:03:20,249
+55
+00:03:14,325 --> 00:03:16,352
 and any reason the windows might differ.
 
-59
-00:03:20,301 --> 00:03:24,079
+56
+00:03:16,649 --> 00:03:20,664
 For example, a change in reviewer
 coverage could affect wait time.
 
-60
-00:03:24,731 --> 00:03:26,482
-Here's the exercise.
+57
+00:03:21,008 --> 00:03:25,478
+Here's the exercise. Try reporting the
+results in two sentences with one
 
-61
-00:03:26,560 --> 00:03:30,218
-Try reporting the results in two
-sentences with one benefit,
+58
+00:03:25,478 --> 00:03:28,735
+benefit, one guardrail miss, and no
+causal claim.
 
-62
-00:03:30,270 --> 00:03:32,831
-one guardrail miss, and no causal claim.
-
-63
-00:03:33,493 --> 00:03:37,140
+59
+00:03:29,147 --> 00:03:33,139
 A decision owner should be able to tell
 exactly what needs attention.

@@ -32,52 +32,52 @@
       "result": "Sample size stays visible",
       "focus": "Each row represents one eligible PR",
       "action": "Count both groups and review missing rows",
-      "durationFrames": 786,
-      "duration": 32.75,
+      "durationFrames": 681,
+      "duration": 28.375,
       "cues": [
         {
-          "start": 0.389,
-          "end": 4.289,
+          "start": 0.235,
+          "end": 3.458,
           "text": "The pilot is complete and the scorecard\nstarts with two counts."
         },
         {
-          "start": 4.389,
-          "end": 7.872,
+          "start": 3.9,
+          "end": 7.086,
           "text": "Forty eligible requests in the baseline\nand forty in the pilot."
         },
         {
-          "start": 8.475,
-          "end": 12.875,
+          "start": 7.387,
+          "end": 10.742,
           "text": "Each row is one pull request, even if\nthree teammates reviewed it."
         },
         {
-          "start": 12.95,
-          "end": 16.575,
+          "start": 11.068,
+          "end": 14.783,
           "text": "Count the rows and confirm the same\neligibility rule applied in both"
         },
         {
-          "start": 16.625,
-          "end": 17.234,
+          "start": 14.783,
+          "end": 15.219,
           "text": "windows."
         },
         {
-          "start": 17.872,
-          "end": 21.572,
+          "start": 15.709,
+          "end": 19.273,
           "text": "In this synthetic sample every request\nmerged and had the same defect"
         },
         {
-          "start": 21.622,
-          "end": 22.772,
+          "start": 19.273,
+          "end": 19.801,
           "text": "follow-up."
         },
         {
-          "start": 22.847,
-          "end": 27.097,
+          "start": 20.101,
+          "end": 23.845,
           "text": "In your own data, flag rows with missing\ndates or insufficient follow-up."
         },
         {
-          "start": 27.727,
-          "end": 31.69,
+          "start": 24.226,
+          "end": 27.605,
           "text": "That tells the next reader which\ndenominator you used for each metric."
         }
       ]
@@ -93,72 +93,62 @@
       "result": "Both time thresholds met",
       "focus": "Wait fell five hours and effort rose two minutes",
       "action": "Compare both medians to their thresholds",
-      "durationFrames": 867,
-      "duration": 36.125,
+      "durationFrames": 806,
+      "duration": 33.583333333333336,
       "cues": [
         {
-          "start": 0.418,
-          "end": 2.268,
-          "text": "Read the wait row first."
+          "start": 0.295,
+          "end": 4.862,
+          "text": "Read the wait row first. Eighteen minus\nthirteen is five fewer business hours"
         },
         {
-          "start": 2.343,
-          "end": 6.243,
-          "text": "Eighteen minus thirteen is five fewer\nbusiness hours before the first human"
+          "start": 4.862,
+          "end": 6.22,
+          "text": "before the first human review."
         },
         {
-          "start": 6.293,
-          "end": 7.118,
-          "text": "review."
+          "start": 6.675,
+          "end": 10.294,
+          "text": "Thirteen is within the fourteen-hour\ntarget. Next read the effort row."
         },
         {
-          "start": 7.218,
-          "end": 9.408,
-          "text": "Thirteen is within the fourteen-hour\ntarget."
-        },
-        {
-          "start": 10.036,
-          "end": 11.761,
-          "text": "Next read the effort row."
-        },
-        {
-          "start": 11.836,
-          "end": 15.736,
+          "start": 10.655,
+          "end": 14.8,
           "text": "Twenty-six minus twenty-four gives us a\ntwo-minute increase in median active"
         },
         {
-          "start": 15.786,
-          "end": 16.636,
+          "start": 14.8,
+          "end": 15.146,
           "text": "review."
         },
         {
-          "start": 16.711,
-          "end": 19.005,
-          "text": "Twenty-six fits the twenty-seven minute\nlimit."
+          "start": 15.487,
+          "end": 19.449,
+          "text": "Twenty-six fits the twenty-seven minute\nlimit. Say both findings in the same"
         },
         {
-          "start": 19.664,
-          "end": 22.264,
-          "text": "Say both findings in the same meeting."
+          "start": 19.449,
+          "end": 19.795,
+          "text": "meeting."
         },
         {
-          "start": 22.339,
-          "end": 26.764,
+          "start": 20.136,
+          "end": 24.103,
           "text": "This result can reflect a shorter queue\nalongside a little more reviewer work."
         },
         {
-          "start": 26.839,
-          "end": 30.514,
+          "start": 24.654,
+          "end": 28.5,
           "text": "Report the medians separately because\nthey describe different parts of the"
         },
         {
-          "start": 30.564,
-          "end": 31.491,
+          "start": 28.5,
+          "end": 29.397,
           "text": "review process."
         },
         {
-          "start": 32.162,
-          "end": 35.072,
+          "start": 30.149,
+          "end": 32.895,
           "text": "Ask which row would reveal a reviewer\nworkload problem."
         }
       ]
@@ -174,52 +164,52 @@
       "result": "Rework missed by 2.5 percentage points",
       "focus": "One extra rework case crosses the ceiling",
       "action": "Divide the rework count by eligible PRs",
-      "durationFrames": 746,
-      "duration": 31.083333333333332,
+      "durationFrames": 653,
+      "duration": 27.208333333333332,
       "cues": [
         {
-          "start": 0.439,
-          "end": 4.439,
+          "start": 0.255,
+          "end": 3.262,
           "text": "Now divide the rework count by the\nnumber of eligible requests."
         },
         {
-          "start": 4.514,
-          "end": 8.235,
+          "start": 3.663,
+          "end": 6.833,
           "text": "In the baseline, six divided by forty\ngives fifteen percent."
         },
         {
-          "start": 8.872,
-          "end": 13.597,
+          "start": 7.175,
+          "end": 11.002,
           "text": "In the pilot, seven divided by forty\ngives seventeen and a half percent."
         },
         {
-          "start": 13.672,
-          "end": 16.697,
+          "start": 11.343,
+          "end": 14.02,
           "text": "That is two and a half percentage points\nabove the limit,"
         },
         {
-          "start": 16.747,
-          "end": 18.873,
+          "start": 14.352,
+          "end": 16.387,
           "text": "even though the count changed by just\none."
         },
         {
-          "start": 19.475,
-          "end": 21.7,
-          "text": "This is the guardrail the team missed."
+          "start": 16.668,
+          "end": 20.688,
+          "text": "This is the guardrail the team missed.\nThe defect count is one in each group,"
         },
         {
-          "start": 21.75,
-          "end": 25.75,
-          "text": "The defect count is one in each group,\nor two and a half percent."
+          "start": 21.019,
+          "end": 22.132,
+          "text": "or two and a half percent."
         },
         {
-          "start": 25.8,
-          "end": 29.5,
+          "start": 22.533,
+          "end": 26.067,
           "text": "With one event in each, report the\ncounts and be careful about drawing a"
         },
         {
-          "start": 29.55,
-          "end": 30.006,
+          "start": 26.067,
+          "end": 26.464,
           "text": "trend."
         }
       ]
@@ -235,62 +225,62 @@
       "result": "Budget headroom: $60",
       "focus": "The ledger comes to $6 per eligible PR",
       "action": "Add the entries and show the denominator",
-      "durationFrames": 866,
-      "duration": 36.083333333333336,
+      "durationFrames": 781,
+      "duration": 32.541666666666664,
       "cues": [
         {
-          "start": 0.396,
-          "end": 2.171,
+          "start": 0.276,
+          "end": 1.4,
           "text": "Open the pilot ledger."
         },
         {
-          "start": 2.246,
-          "end": 5.071,
+          "start": 1.812,
+          "end": 4.225,
           "text": "Charge a hundred dollars for allocated\nlicenses,"
         },
         {
-          "start": 5.121,
-          "end": 8.621,
+          "start": 4.596,
+          "end": 7.711,
           "text": "twenty for approved remote test and\nreview workspace use,"
         },
         {
-          "start": 8.671,
-          "end": 10.581,
+          "start": 8.021,
+          "end": 9.874,
           "text": "and a hundred and twenty for enablement."
         },
         {
-          "start": 11.205,
-          "end": 15.805,
+          "start": 10.235,
+          "end": 14.126,
           "text": "A hundred plus twenty plus a hundred and\ntwenty gives two hundred and forty."
         },
         {
-          "start": 15.88,
-          "end": 20.135,
+          "start": 14.387,
+          "end": 18.046,
           "text": "Divide by forty eligible requests and\nyou get six dollars per request."
         },
         {
-          "start": 20.734,
-          "end": 24.189,
+          "start": 18.537,
+          "end": 21.64,
           "text": "The cap was three hundred, leaving sixty\ndollars of headroom."
         },
         {
-          "start": 24.239,
-          "end": 27.039,
-          "text": "The ledger tracks these incremental\nexpenses."
+          "start": 21.96,
+          "end": 26.188,
+          "text": "The ledger tracks these incremental\nexpenses. Reviewer minutes appear on the"
         },
         {
-          "start": 27.114,
-          "end": 29.143,
-          "text": "Reviewer minutes appear on the effort\nrow."
+          "start": 26.188,
+          "end": 26.845,
+          "text": "effort row."
         },
         {
-          "start": 29.777,
-          "end": 32.702,
+          "start": 27.125,
+          "end": 29.504,
           "text": "If the organization plans to value that\nlabor,"
         },
         {
-          "start": 32.777,
-          "end": 34.974,
+          "start": 29.856,
+          "end": 31.793,
           "text": "agree on the rate and allocation first."
         }
       ]
@@ -306,58 +296,58 @@
       "result": "Candidate adjustment: explicit file scope",
       "focus": "Four of seven rework cases touched extra files",
       "action": "Read each diff and pair it with feedback",
-      "durationFrames": 845,
-      "duration": 35.208333333333336,
+      "durationFrames": 772,
+      "duration": 32.166666666666664,
       "cues": [
         {
-          "start": 0.414,
-          "end": 3.614,
+          "start": 0.255,
+          "end": 2.537,
           "text": "A scorecard tells us which question to\nask next."
         },
         {
-          "start": 3.689,
-          "end": 7.552,
+          "start": 2.979,
+          "end": 6.858,
           "text": "Open the seven rework cases and read the\nfile lists and review reasons."
         },
         {
-          "start": 8.165,
-          "end": 11.74,
+          "start": 7.349,
+          "end": 10.989,
           "text": "In four cases the reviewer asked the\nauthor to remove edits outside the"
         },
         {
-          "start": 11.79,
-          "end": 12.79,
+          "start": 10.989,
+          "end": 11.365,
           "text": "ticket."
         },
         {
-          "start": 12.84,
-          "end": 17.735,
+          "start": 11.645,
+          "end": 16.225,
           "text": "For instance, a one-line validator fix\nalso reformatted a configuration file."
         },
         {
-          "start": 18.384,
-          "end": 22.384,
+          "start": 16.606,
+          "end": 20.109,
           "text": "Separate that extra change and note why\nthe reviewer asked for it."
         },
         {
-          "start": 22.459,
-          "end": 25.667,
+          "start": 20.49,
+          "end": 23.633,
           "text": "Four of seven is enough to make scope\nworth investigating here."
         },
         {
-          "start": 26.291,
-          "end": 29.216,
+          "start": 23.934,
+          "end": 26.183,
           "text": "It gives the team something concrete to\nimprove."
         },
         {
-          "start": 29.316,
-          "end": 31.141,
-          "text": "Share the pattern and example."
+          "start": 26.545,
+          "end": 30.866,
+          "text": "Share the pattern and example. Keep\nindividual usage statistics out of that"
         },
         {
-          "start": 31.216,
-          "end": 34.133,
-          "text": "Keep individual usage statistics out of\nthat discussion."
+          "start": 30.866,
+          "end": 31.533,
+          "text": "discussion."
         }
       ]
     },
@@ -372,62 +362,52 @@
       "result": "Carry the rework cases to the decision meeting",
       "focus": "A benefit and a guardrail miss coexist",
       "action": "Write one line about each finding",
-      "durationFrames": 856,
-      "duration": 35.666666666666664,
+      "durationFrames": 763,
+      "duration": 31.791666666666668,
       "cues": [
         {
-          "start": 0.368,
-          "end": 3.318,
+          "start": 0.236,
+          "end": 2.425,
           "text": "Prepare a short update for the decision\nmeeting."
         },
         {
-          "start": 3.368,
-          "end": 7.443,
+          "start": 2.766,
+          "end": 7.001,
           "text": "The median wait reached thirteen hours,\nthe median active review stayed within"
         },
         {
-          "start": 7.493,
-          "end": 10.197,
+          "start": 7.001,
+          "end": 9.431,
           "text": "its limit, and spending stayed within\nbudget."
         },
         {
-          "start": 10.8,
-          "end": 12.6,
-          "text": "Rework missed the threshold."
+          "start": 9.913,
+          "end": 14.058,
+          "text": "Rework missed the threshold. Add the\nsample size, the seven rework cases,"
         },
         {
-          "start": 12.675,
-          "end": 15.605,
-          "text": "Add the sample size, the seven rework\ncases,"
-        },
-        {
-          "start": 15.695,
-          "end": 18.02,
+          "start": 14.309,
+          "end": 16.085,
           "text": "and any reason the windows might differ."
         },
         {
-          "start": 18.07,
-          "end": 21.685,
+          "start": 16.346,
+          "end": 19.865,
           "text": "For example, a change in reviewer\ncoverage could affect wait time."
         },
         {
-          "start": 22.309,
-          "end": 23.984,
-          "text": "Here's the exercise."
+          "start": 20.166,
+          "end": 24.084,
+          "text": "Here's the exercise. Try reporting the\nresults in two sentences with one"
         },
         {
-          "start": 24.059,
-          "end": 27.559,
-          "text": "Try reporting the results in two\nsentences with one benefit,"
+          "start": 24.084,
+          "end": 26.939,
+          "text": "benefit, one guardrail miss, and no\ncausal claim."
         },
         {
-          "start": 27.609,
-          "end": 30.059,
-          "text": "one guardrail miss, and no causal claim."
-        },
-        {
-          "start": 30.693,
-          "end": 34.183,
+          "start": 27.3,
+          "end": 30.799,
           "text": "A decision owner should be able to tell\nexactly what needs attention."
         }
       ]
@@ -436,6 +416,6 @@
   "fps": 24,
   "width": 1280,
   "height": 720,
-  "durationFrames": 4966,
-  "voiceBuild": "6096cc2b63855212fcff10680bf1c1ac62d7234065ef89c062a66b07e8d3f0da"
+  "durationFrames": 4456,
+  "voiceBuild": "55f27b8ef0c2a3a973d62d085e49e8f9146ddc6e0cc3c80321734c4dc224653f"
 }
