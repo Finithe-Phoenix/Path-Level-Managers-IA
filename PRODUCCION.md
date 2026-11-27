@@ -6,16 +6,16 @@ Esta guía reconstruye **L01** usando la voz y los tiempos de la edición public
 
 Ejecuta los comandos en el workspace Linux de GCP. Puedes abrir ese checkout con VS Code y GitHub Copilot desde tu equipo. Claude Code, OpenCode, las herramientas de compilación y GitHub CLI se ejecutan en el entorno remoto.
 
-La edición se produjo con Python 3.12 y Node.js 24. El máster requiere FFmpeg con libx264 y AAC, además de `ffprobe`. El motor incluye las tipografías y fija las dependencias de Node en su archivo de bloqueo.
+La edición se produjo con Python 3.12.14, Node.js 24.22.3 y FFmpeg 7.1.5. El máster requiere FFmpeg con libx264 y AAC, además de `ffprobe`. El motor incluye las tipografías y fija las dependencias de Node en su archivo de bloqueo.
 
 ```bash
-git clone https://github.com/Finithe-Phoenix/Path-Level-Managers-IA.git
+git clone --branch v3.0.0 https://github.com/Finithe-Phoenix/Path-Level-Managers-IA.git
 cd Path-Level-Managers-IA
 npm ci --prefix engine
 python3 studio.py list
 ```
 
-Para comprobar que las fuentes y los medios de este checkout coinciden con su manifiesto, ejecuta `python3 studio.py verify all --release`.
+Git identifica todos los archivos de esta edición con la etiqueta `v3.0.0`. Para comprobar que el guion, las tomas de voz, los tiempos, los subtítulos y los MP4 coinciden con su manifiesto, ejecuta `python3 studio.py verify all --release`.
 
 ## Reconstruir el MP4 con la pista publicada
 
@@ -26,7 +26,7 @@ python3 studio.py render L01
 python3 studio.py verify L01 --decode
 ```
 
-El resultado queda en `videos/L01.mp4`, con video H.264 a 1280 × 720, audio AAC, capítulos y subtítulos en inglés. La verificación comprueba formatos, duración y capítulos y decodifica el audio y la imagen. Para reconstruir todo el nivel, usa `python3 studio.py render all`.
+El resultado queda en `videos/L01.mp4`, con video H.264 a 1280 × 720, dos pistas AAC en inglés, capítulos y subtítulos seleccionables. La pista predeterminada combina la voz y tres señales sonoras breves. La segunda pista conserva únicamente la narración. La verificación comprueba etiquetas, duración y capítulos, y decodifica ambas pistas y la imagen. Para reconstruir todo el nivel, usa `python3 studio.py render all`.
 
 ## Editar la demostración
 
@@ -35,9 +35,13 @@ El resultado queda en `videos/L01.mp4`, con video H.264 a 1280 × 720, audio AAC
 3. Si conservaste el texto hablado y el orden de las escenas, puedes volver a renderizar el MP4 con el audio versionado. Si cambiaste la narración, los IDs de escena, la cantidad de escenas o su orden, regenera antes la voz siguiendo los pasos siguientes.
 4. Ejecuta `python3 studio.py project L01` y abre `build/L01/preview.html` en la vista previa del workspace. Recorre el instante de la acción y el de su resultado. Para llevar la escena a Remotion o HyperFrames, sigue las instrucciones de la [guía del motor](engine/README.md).
 
+## Editar la apertura, el detalle y el sonido
+
+Las imágenes originales están en [engine/plates/](engine/plates/). Edita el recorrido de la cámara y el primer plano de evidencia en [cold-open.cjs](engine/cold-open.cjs), y los gestos de la demostración en [lab-motion.cjs](engine/lab-motion.cjs). Para cambiar las tres señales de audio, consulta la [guía de sonido](sound/README.md). Al exportar el proyecto también encontrarás la voz limpia en `build/L01/narration-clean.m4a`.
+
 ## Cambiar la voz o el ritmo
 
-Edita `narration` en el guion para cambiar lo que se escucha. La narración se escribe en inglés. El timbre y la mezcla se configuran en [voice/profile.json](voice/profile.json). La primera síntesis descarga el modelo y las voces definidos en [voice/model-lock.json](voice/model-lock.json) y comprueba sus hashes.
+Edita `narration` en el guion para cambiar lo que se escucha. La narración se escribe en inglés. Supertonic 3 usa el preajuste M3. El alineador inglés calcula los tiempos de los subtítulos a partir de las palabras pronunciadas. El timbre y el ritmo se configuran en [voice/profile.json](voice/profile.json). El comando `python voice/assets.py` descarga el modelo y las voces definidos en [voice/model-lock.json](voice/model-lock.json) y comprueba sus hashes.
 
 ```bash
 python3.12 -m venv .venv
@@ -70,7 +74,7 @@ python3 studio.py verify all --release
 
 Incluye el guion, los cambios en el motor o la voz, los archivos generados y el manifiesto actualizado en el mismo PR. Desde el terminal autorizado, el revisor puede consultar el alcance, los cambios y los checks con `gh pr view`, `gh pr diff` y `gh pr checks`. Al publicar, conserva las etiquetas anteriores y actualiza los enlaces del temario a la nueva edición.
 
-[Guía para agentes](AGENTS.md) · [Manifiesto de esta edición](release-manifest.json) · [Fuentes de la primera edición](archive/v1/) · [Videos de la segunda edición](https://github.com/Finithe-Phoenix/Path-Level-Managers-IA/releases/tag/videos-v2.0.0).
+[Guía para agentes](AGENTS.md) · [Manifiesto de esta edición](release-manifest.json) · [Fuentes de la primera edición](archive/v1/) · [Estudio y videos de la segunda edición](https://github.com/Finithe-Phoenix/Path-Level-Managers-IA/releases/tag/v2.0.0).
 
 ## Actualizar la ilustración de la portada
 

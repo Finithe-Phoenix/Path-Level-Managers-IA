@@ -2,6 +2,8 @@
 
 Trabaja desde un checkout del nivel en el workspace autorizado de GCP. VS Code y GitHub Copilot pueden abrirse en el equipo local. Ejecuta los comandos, Claude Code y OpenCode en el workspace remoto. Para revisar un PR del curso, la persona revisora usa `gh pr view`, `gh pr diff` y `gh pr checks` en el terminal autorizado.
 
+Los movimientos de cámara y los primeros planos de evidencia se editan en `engine/cold-open.cjs`. Las acciones dentro de las demostraciones están en `engine/lab-motion.cjs`. Revisa la mezcla con señales en su primera pista y la narración limpia en la segunda.
+
 ## Editar un episodio
 
 1. Lee el episodio en `lessons/episodes.json` y la referencia técnica enlazada en `sources`. Conserva el identificador del episodio. Usa datos sintéticos en pantallas, comandos, salidas y ejemplos.
@@ -11,4 +13,4 @@ Trabaja desde un checkout del nivel en el workspace autorizado de GCP. VS Code y
 5. Renderiza el episodio desde la raíz y ejecuta la verificación con `--decode`. Reproduce el MP4 con audio. Comprueba la pronunciación de comandos, los subtítulos y que el resultado visual aparece cuando la voz lo explica.
 6. Guarda juntos el guion, el motor si cambió, el audio si cambió, los tiempos, los subtítulos y el MP4 resultante. La siguiente revisión puede identificar el episodio por su ID y comparar las escenas en Git. Una edición publicada se identifica por su etiqueta de Git.
 
-La reconstrucción visual usa los archivos de este repositorio. Las dependencias de voz y los pesos con licencia se documentan en `voice/`. El motor se encuentra en `engine/`. La edición anterior está documentada en `archive/v1/`.
+La reconstrucción visual usa los archivos de este repositorio. Las dependencias de voz y los pesos con licencia se documentan en `voice/`. El motor se encuentra en `engine/`. La versión 2 se conserva en la etiqueta `v2.0.0`. Las fuentes de la primera edición también están en `archive/v1/`.

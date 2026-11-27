@@ -4,81 +4,81 @@
     {
       "id": "L01",
       "title": "Choose a Model and Tool for a Business Task",
-      "frames": 5267,
+      "frames": 5161,
       "fps": 24,
       "chapters": 6,
       "sha256": {
-        "videos/L01.mp4": "cbe6c7f7a21739cb0da0dd47b609634646fe82166467a691111a6e84fe536f73",
-        "subtitles/L01.en.srt": "fdbd427802d22ed8f8d6244724703540f21c404327c11256ec8e4a0b045000f2",
-        "narration/L01/narration.m4a": "306fce8ed45e55de24969186e352259efe0bc0254dd94d1ab9a41c5212690a35",
-        "narration/L01/timing.json": "68ac53ba5042e1d9c754184a552fb98aff092bfb04748cdf20e04b37dee6639f",
-        "takes/L01/episode.json": "035e26594451d5d70a4809575cb249be63f284fc3e8c4439dfd329955a08826a",
-        "takes/L01/narration.m4a": "1aba2aa7fbb801ac15dd809181358fcda8303e7ca38ea0b348d93fdea25da28b",
-        "takes/L01/captions.srt": "85c566eb4a3206b6826a6b8c56a055eef6b929ca259ba1b563e05e5788d4bff9"
+        "videos/L01.mp4": "4184cf1fc7554fdc3e60f393e3c00faf466997415e5ce127ed61e3946fc754a2",
+        "subtitles/L01.en.srt": "aea649ef1839052b61e7e4123f8b39fd4dae57380a1c3c1cedf7527790452480",
+        "narration/L01/narration.m4a": "6b80fa652292935852b666da1b17b328f57de9ac9f2449c4fb47ebefd206b8ab",
+        "narration/L01/timing.json": "a2f4f171228d770a2d5b20c8d6b88d7eb4e8faa387f70338454882bc58b1e897",
+        "takes/L01/episode.json": "7c645d4fe0ffd376c0191b88d3506942667feb08b43b72614ef8817b0760301e",
+        "takes/L01/narration.m4a": "e61912d4d32d0c7b8fc184df0aca4ed942e54b1f2082bf9db11b9b648a3ae5da",
+        "takes/L01/captions.srt": "daa71e90e57f5f50c86750a8adbe9e7e92d155523a268a54606d9fa922449eaa"
       }
     },
     {
       "id": "L02",
       "title": "Decide What an Agent Can Do",
-      "frames": 5494,
+      "frames": 5383,
       "fps": 24,
       "chapters": 6,
       "sha256": {
-        "videos/L02.mp4": "39ed40ef6b22407014df023b97549da147b9500e61cd4906e78577536a892099",
-        "subtitles/L02.en.srt": "513e6942fefe23e092ef330908f92321452fd126cc5a7f68e4bd4d7b1eff78eb",
-        "narration/L02/narration.m4a": "2a610a1adde656b77456872ca710e94d158603416a521885c233e315ba964ddb",
-        "narration/L02/timing.json": "0d9ef855b7a1003e2690151a48895c539c69609cb6d46272b757366aece13ee1",
-        "takes/L02/episode.json": "b72a89f7ba4bb3dc09ed84127d8746f8c1e8b1496417dddaf091ee0eb8783751",
-        "takes/L02/narration.m4a": "dc229f3bc72dab5467a2647c068abe4225c8f441c084e85190fb887da45ceca7",
-        "takes/L02/captions.srt": "383afdf835101642b8faeb611fc4a31ff01d06e9c7ed925e626ad992e942fcb9"
+        "videos/L02.mp4": "5122dd4d1dd95eca27c92091373b23df62e994521b9cd2aea9a8fe8c10dd34b2",
+        "subtitles/L02.en.srt": "fc84720683511168f371251a808070c5273d3c3c785481e8eb348af45f0f65ae",
+        "narration/L02/narration.m4a": "1063694a940318a55e0dd14dc17bd9d62960419b338db70a2de390337e12b586",
+        "narration/L02/timing.json": "5097ee0a94a71eaf75a3086afba86dadd347be132693246035e01be2bd128aa1",
+        "takes/L02/episode.json": "407a53358506d315cee862c2e4d4e89e6230d055520f477609f2a4ca539ed08e",
+        "takes/L02/narration.m4a": "588664970066153701579a8e8d070e6f4adcf8f70ba0e70f9fc516d98201b13e",
+        "takes/L02/captions.srt": "d3cceb5bbcd00ec8f6676a535919905ce9cd84eac91f0e3e40bf3e669a748d90"
       }
     },
     {
       "id": "L03",
       "title": "Design a Pilot Around a Real Bottleneck",
-      "frames": 5395,
+      "frames": 5286,
       "fps": 24,
       "chapters": 6,
       "sha256": {
-        "videos/L03.mp4": "6b9ef9afd7ae0599c8cb3e980e1850c9a312eb9a0cdd8a7f13aa69c30b69a159",
-        "subtitles/L03.en.srt": "18314feb9883a8a04670a03c11646929e03923e304c32a5915b5d633b67e2c14",
-        "narration/L03/narration.m4a": "56712ceac67f6ccb05ad56592748aa84f6ab567cd96ec6634ce46df85aedbea0",
-        "narration/L03/timing.json": "c36aacf9c9b4c26f8f6c32a10f73c4f436f94d1313d6cfaf8bbdbf5d91caf8c7",
-        "takes/L03/episode.json": "3e3878d4514544671f4c2256a8e0c025a89878c8eee1027e1a132710525ea68f",
-        "takes/L03/narration.m4a": "44faa495dc0bee39743a6283db8feb666e2223699b0adcb35c30a270af243ae7",
-        "takes/L03/captions.srt": "d2e7dccc4de66c62441af5f4a6e2753286dfdd575835b9bf5e47936402b6ffa2"
+        "videos/L03.mp4": "f5353d206de27a8aacb8493ccf927d910d107411238d89081af82f9f83b68596",
+        "subtitles/L03.en.srt": "1a82905701fc66fef203b89e7d0da6f967c8f7963eb2a6c3ce962f2aa3d82b56",
+        "narration/L03/narration.m4a": "c1da95e46e730f4f7d9b22f4a42b738250557d0bcf06c93f732f842e762f1821",
+        "narration/L03/timing.json": "cc3d6784715c6af981b92f5fc8bcd16f4c21fb704482d579c29a7cc8805fb077",
+        "takes/L03/episode.json": "cb0711c0efbbc0f33bb514ce8bf63e0c16334f218836548c3c545ea73a33dafc",
+        "takes/L03/narration.m4a": "3323cc84b6b4d9cc150877c5a7337666ab7f2ea1d156023122d4252511615bf6",
+        "takes/L03/captions.srt": "7b7e7a7d59921db428061901434fef5a844605e64f87743229fc39102f0349be"
       }
     },
     {
       "id": "L04",
       "title": "Measure Review Time, Quality, and Cost",
-      "frames": 5257,
+      "frames": 5151,
       "fps": 24,
       "chapters": 6,
       "sha256": {
-        "videos/L04.mp4": "e08ecc6741bb5280abe75677902fef2e6b4001b57a3aa6b26a5edd83b26b6555",
-        "subtitles/L04.en.srt": "202f662cb6803e5ec1d2661be7fa48ff54d24b292911c71fcbae165e0f748b26",
-        "narration/L04/narration.m4a": "b3823f2bb4b1cfdfe0e60df55d0965104c6e763bca3476c453462440af13f290",
-        "narration/L04/timing.json": "eb2ca10cdd63783e41e4c0024244f425ff907cbc4bb67081cd3121e995924544",
-        "takes/L04/episode.json": "24ed539fef3612f700597a556351bfe98acea0a3fbd47909e096c496e198be19",
-        "takes/L04/narration.m4a": "a5f07108a8c1ef629e719b98bae841101e263e557afb6f9268af7705fe106e70",
-        "takes/L04/captions.srt": "d9f0d1c1750cece6386b6fcaf07f6f01388e2ed5e2fbedaf09653451e50850f5"
+        "videos/L04.mp4": "4bf14dc92a828dbbaf2c99ce8f9e20bb9d7c769adea423b559086fba0cdafe19",
+        "subtitles/L04.en.srt": "85363b73bc5c028ba9f5b4539ba070d8e711261ca4a2f17034b85597c77c2d3a",
+        "narration/L04/narration.m4a": "1234274414111f36ea41446b82afa839c99f2060ff5ffb22bc2fdd399da17630",
+        "narration/L04/timing.json": "6736bf13f878de9105d5e393a683bc27b56ca0cd37e5634ed7b8a611adc4b653",
+        "takes/L04/episode.json": "d8730bb9048d5405b13c870a0dbb8b33f342a79fb9e6385b48e62e2ae41c7f5e",
+        "takes/L04/narration.m4a": "c14d09ace6578df5dba5186d49f815423e6ef4175cb83c6716bf99b7648a22a5",
+        "takes/L04/captions.srt": "061e70cebb67c93c88852d26f559a101263795a123e43c8c8d8bec131ea72022"
       }
     },
     {
       "id": "L05",
       "title": "Decide Whether to Expand, Adjust, or Pause",
-      "frames": 5326,
+      "frames": 5219,
       "fps": 24,
       "chapters": 6,
       "sha256": {
-        "videos/L05.mp4": "960b50a232ab8a3ca86cc6a4ef2bced5190f190ff5bbb45fede8b7717c07c383",
-        "subtitles/L05.en.srt": "6e4dc4a007530cea3959123e94fec8c495fd9977296a6172d2c91d97ee24a10e",
-        "narration/L05/narration.m4a": "77d7b337798f43f762ceb0dc23a2764f00143a04584eb9db5f562361e3ab7ce7",
-        "narration/L05/timing.json": "5cfca1f4e67bf49b2ddde7c9eaa0f3e9222503ff8dcc56a715ca25c89b76a1c3",
-        "takes/L05/episode.json": "97f7059be541e515c84d79f31b809186d5a587cefa8626d743fc8ff6bf0ddcf4",
-        "takes/L05/narration.m4a": "d2c083c657bdcde40a484c25ea4b2a928642378f61d205e0e0062c143974663b",
-        "takes/L05/captions.srt": "0e9cdcaa7fc6c4a52935884947fe2bd14a22131a3d68ea4e5952e2e1d192d76d"
+        "videos/L05.mp4": "32a8326ff1e92e5499edecfdf9b1b77de80f411be86c798ad163bfa84612fbb8",
+        "subtitles/L05.en.srt": "ef91cd6e53afb84db349ea1a9bd90cc9e9544d15e64dfe991280e1951d442b05",
+        "narration/L05/narration.m4a": "e231b3c66e43b20d35289c8ffcd4f1ff091bd3a043ba8cfd439f529b450ff5cb",
+        "narration/L05/timing.json": "85b4efd6d8cf30aa8f77d5e314dfb5b8ef36f66c4d10834d307a97cabc79d528",
+        "takes/L05/episode.json": "c1690c78018f39ab8e92997ca60ea7b5eacf3da5fac5647c6f93eb86b6d26700",
+        "takes/L05/narration.m4a": "e9d10c88fa036b6f844c09f4c7306acef6ddfc2e7ee7f997370a72ddc006fcfe",
+        "takes/L05/captions.srt": "65beea12d3edb1ff2d8f1bb5c302146c581b6800d81b282d1abba650206504aa"
       }
     }
   ]
