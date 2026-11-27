@@ -8,7 +8,7 @@ from pathlib import Path
 import subprocess
 import tempfile
 
-TARGET_WPM = 146
+TARGET_WPM = 149
 SAMPLE_RATE = 48000
 MANUAL_ACTIONS = {"terminal", "editor", "diff", "decision", "review", "workflow"}
 
@@ -81,7 +81,7 @@ def render(audio, output, fps, segments, tempo):
     filters.append(f"{labels}concat=n={count}:v=0:a=1,alimiter=limit=0.81:level=0:latency=1[out]")
     subprocess.run(["ffmpeg", "-nostdin", "-v", "error", "-i", str(audio), "-filter_complex_threads", "1",
                     "-filter_complex", ";".join(filters), "-map", "[out]", "-ar", str(SAMPLE_RATE),
-                    "-c:a", "aac", "-b:a", "144k", "-movflags", "+faststart", str(output)], check=True)
+                    "-c:a", "aac", "-b:a", "192k", "-movflags", "+faststart", str(output)], check=True)
 
 
 def finish(source, dest, target_wpm=TARGET_WPM):

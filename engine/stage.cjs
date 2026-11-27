@@ -5,10 +5,14 @@
   const plugins=isNode
     ? [require('./manager-visuals.cjs'),require('./architecture.cjs'),require('./foundations.cjs'),require('./workbenches.cjs')]
     : [root.ManagerVisuals,root.WorkshopArchitecture,root.WorkshopFoundations,root.WorkshopWorkbenches];
-  const stage = makeStage(plugins);
+  const cinema = isNode ? require('./cinema.cjs') : root.WorkshopCinema;
+  const cold = isNode ? require('./cold-open.cjs') : root.StudioColdOpen;
+  const action = isNode ? require('./lab-motion.cjs') : root.WorkshopLabMotion;
+  const plates = isNode ? require('./plates.cjs') : root.WorkshopPlates;
+  const stage = makeStage(plugins, cinema, cold, action, plates);
   if (typeof module === 'object' && module.exports) module.exports = stage;
   else root.WorkshopStage = stage;
-})(typeof globalThis === 'object' ? globalThis : this, function (plugins) {
+})(typeof globalThis === 'object' ? globalThis : this, function (plugins, cinema, cold, action, plates) {
   const W = 1280, H = 720, FPS = 24;
   const clamp = (v, min = 0, max = 1) => Math.max(min, Math.min(max, v));
   const ease = t => 1 - (1 - clamp(t)) ** 3;
@@ -105,24 +109,6 @@
       start+=durationFrames;return scene;
     });
     return {...data,scenes,durationFrames:start,fps:FPS,theme:colors[(data.id||'B')[0]]||colors.B};
-  }
-  function logo(x,y,c) {
-    return group(path('M0 20 L11 0 H17 L6 20 Z',c)+path('M13 20 L24 0 H30 L19 20 Z',c),`transform="translate(${x} ${y})"`);
-  }
-  function bg(ep,s,t) {
-    const [ac,base]=ep.theme;
-    let g=rect(0,0,W,H,'url(#ground)')+path('M870 0 L1280 0 L1280 430 Z',base);
-    // Fine spatial grid and two contour paths give the working surface depth.
-    for(let i=0;i<14;i++)g+=line(835+i*39,0,1180+i*39,340,'#d0e6d6',.65,'opacity=".08"');
-    g+=logo(38,23,ac)+label(83,39,'AI FIELD LAB', '#f3f4e9')+line(210,22,210,43,'#69807a')+label(231,39,ep.theme[3],ac);
-    const right=`${ep.id}   /   ${String(s.index+1).padStart(2,'0')} · ${String(ep.scenes.length).padStart(2,'0')}`;
-    g+=txt(1241,40,right,16,'#f4f3e9',400,mono,'text-anchor="end"');
-    g+=line(38,60,1241,60,'#566864',1);
-    const titleSize=Math.min(43,1120/Math.max(1,width(s.title,1)));
-    const arrival=ease(t/.44);
-    g+=transform(0,2*(1-arrival),txt(40,118,s.title,titleSize,'#fbf8ed',700),.58+.42*arrival);
-    g+=txt(40,151,ep.title,19,'#b6c9c7',400);
-    return g;
   }
   function cursor(x,y,c,pulse){
     let g='';
@@ -267,36 +253,55 @@
     g+=receipt(s,t,x+725,y+69,w-745,h-86,'#eec877');
     return g;
   }
+  function plate(level,x,y,w,h,extra='') {
+    const key=({basico:'B',medio:'M',avanzado:'A',managers:'L'})[level]||level;
+    const data=plates[key]||plates[String(key)[0]];
+    if(!data) return '';
+    return '<image x="'+n(x)+'" y="'+n(y)+'" width="'+n(w)+'" height="'+n(h)+'" preserveAspectRatio="xMidYMid slice" xlink:href="'+data+'" '+extra+'/>';
+  }
+  const helpers={rect,line,circle,path,group,transform,txt,label,blocks,fit,wrap,width,icon,ease,clamp,receipt,windowFrame,cursor,plate};
+  function workshop(ep,s,t) {
+    let content=action.feature?.(s,t,helpers)||'';
+    let special=false;
+    if(!content)for(const plugin of plugins.slice(0,3)){
+      content=plugin.draw?.(s,t,helpers)||''; if(content){special=true;break;}
+    }
+    if(!content)content=action.draw?.(s,t,helpers)||'';
+    if(!content)content=plugins[3].draw?.(s,t,helpers)||'';
+    if(!content)content=s.kind==='diagram'?diagram(s,t):s.kind==='decision'?decision(s,t):darkWorkspace(s,t);
+    if(special)content+=action.overlay?.(s,t,helpers)||'';
+    const hasCustomCut=cold.hasCutaway?.(ep,s);
+    const cut=hasCustomCut?cold.cutaway(ep,s,t,helpers):null;
+    const insert=hasCustomCut?null:cinema.evidenceSchedule(s);
+    const covered=insert&&t>=insert.start+.30&&t<=insert.end-.40;
+    let shot='';
+    if(!covered){
+      const work=cut&&cut.opacity>=.999?'':group(cinema.stageCamera(ep,s,t,content,helpers),'data-film-region="workspace"');
+      shot=group(cinema.background(ep,s,t,helpers)+cinema.frameRails(ep,s,t,helpers)+work+cinema.footer(ep,s,t,helpers),'data-film-exposure="base"');
+    }
+    if(insert)shot+=cinema.evidence(ep,s,t,helpers);
+    if(cut && cut.opacity>0)shot+=group(cut.svg,'data-film-exposure="case" opacity="'+n(clamp(cut.opacity))+'"');
+    return shot;
+  }
   function frame(ep,atFrame){
     const f=clamp(Math.floor(atFrame),0,ep.durationFrames-1);
     const s=ep.scenes.find(row=>f<row.start+row.durationFrames)||ep.scenes.at(-1);
-    const t=(f-s.start)/FPS,[ac,base]=ep.theme;
-    let body=bg(ep,s,t);
-    const arrival=ease(t/.52);
-    const helpers={rect,line,circle,path,group,transform,txt,label,blocks,fit,wrap,width,icon,ease,clamp,receipt,windowFrame,cursor};
-    let content='';
-    for(const plugin of plugins){content=plugin.draw?.(s,t,helpers)||'';if(content)break;}
-    if(!content)content=s.kind==='diagram'?diagram(s,t):s.kind==='decision'?decision(s,t):darkWorkspace(s,t);
-    body+=transform(0,13*(1-arrival),content,.64+.36*arrival);
-    const result=t>=s.resultAt;
-    const footColor=result?ac:'#d2dedb';
-    const footerTitle=result?'What to notice':'Your move';
-    const footerContent=result?(s.focus||s.body):(s.action||s.body);
-    body+=rect(38,584,1204,67,'#182c2b',12);
-    body+=rect(54,599,4,37,footColor,2)+txt(70,625,footerTitle,17,footColor,700);
-    body+=line(220,598,220,637,'#4f6761');
-    body+=blocks(footerContent,242,625,965,49,22,'#f2f4ea',600,face,1.17);
-    let pos=38;
-    const spans=ep.scenes.length,gw=1204,gap=6;
-    for(const other of ep.scenes){
-      const width=(gw-gap*(spans-1))*other.durationFrames/ep.durationFrames;
-      const done=other.index<s.index?1:other.index===s.index?clamp(t/s.sec):0;
-      body+=rect(pos,675,width,4,'#40544f',2)+rect(pos,675,width*done,4,ac,2);pos+=width+gap;
+    const t=(f-s.start)/FPS;
+    const intro=Math.min((cold.duration?.(ep,s)??3.60),s.sec*.60);
+    const fade=.48,accent=cinema.theme(ep).accent;
+    let body;
+    if(s.index===0 && t<intro+fade && cold.draw){
+      const opening=cold.draw(ep,s,Math.min(t,intro-1/FPS),helpers);
+      if(opening)body=t<intro?opening:cinema.wipe(opening,workshop(ep,s,t),(t-intro)/fade,accent);
     }
-    const stop=Math.floor(f/FPS),mm=String(Math.floor(stop/60)).padStart(2,'0'),ss=String(stop%60).padStart(2,'0');
-    body+=txt(38,701,`STEP ${String(s.index+1).padStart(2,'0')} / ${String(spans).padStart(2,'0')}`,12,'#bfd1c7',400,mono);
-    body+=txt(1241,701,mm+':'+ss,12,'#bfd1c7',400,mono,'text-anchor="end"');
-    return `<svg xmlns="http://www.w3.org/2000/svg" width="${W}" height="${H}" viewBox="0 0 ${W} ${H}"><defs><linearGradient id="ground" x1="0" y1="1" x2="1" y2="0" gradientUnits="objectBoundingBox"><stop stop-color="#102321"/><stop offset=".62" stop-color="#192a29"/><stop offset="1" stop-color="${base}"/></linearGradient></defs>${body}</svg>`;
+    if(body===undefined){
+      body=workshop(ep,s,t);
+      if(s.index>0 && t<fade){
+        const prev=ep.scenes[s.index-1];
+        body=cinema.wipe(workshop(ep,prev,prev.sec-1/FPS),body,t/fade,accent);
+      }
+    }
+    return '<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="'+W+'" height="'+H+'" viewBox="0 0 '+W+' '+H+'">'+cinema.definitions(ep)+body+'</svg>';
   }
   function captureFrames(ep){
     const frames=new Set();
@@ -304,11 +309,17 @@
       const add=(sec)=>frames.add(s.start+clamp(Math.round(sec*FPS),0,s.durationFrames-1));
       // Densely sample purposeful movement; speech-led holds use sparse samples.
       const motion=(sec,span)=>{for(let j=0;j<=Math.ceil(span*FPS);j+=2)add(sec+j/FPS);};
-      motion(0,.65);s.events.forEach(v=>motion(Math.max(0,v-.15),1.45));
+      if(s.index===0){const duration=Math.min(cold.duration?.(ep,s)??3.60,s.sec*.60);for(let j=0;j<=Math.ceil((duration+.52)*FPS);j++)add(j/FPS);}
+      else for(let j=0;j<=13;j++)add(j/FPS);
+      for(const beat of action.beats?.(s)||[])motion(Math.max(0,beat-.1),.95);
+      for(const beat of cold.beats?.(ep,s)||[])motion(Math.max(0,beat-.1),1.1);
+      const insert=cinema.evidenceSchedule(s);
+      if(insert){motion(insert.start,.9);motion(insert.end-.52,.56);}
+      motion(0,.72);s.events.forEach(v=>motion(Math.max(0,v-.15),1.45));
       for(const plugin of plugins)for(const beat of plugin.beats?.(s)||[])motion(beat,.82);
       motion(Math.max(0,Math.max(s.events.at(-1)+.75,s.resultAt*.62)-.65),1.52);
       motion(s.resultAt,Math.min(2.9,.65+.18*Math.max(s.result.split('\n').length,3)));
-      for(let v=0;v<s.sec;v+=1.25)add(v);
+      for(let v=0;v<s.sec;v+=.78)add(v);
       add(s.sec-1/FPS);
     }
     return [...frames].sort((a,b)=>a-b);

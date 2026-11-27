@@ -1,9 +1,14 @@
 {
-  "language": "en-gb",
-  "voices": {"bf_emma": 0.72, "bf_isabella": 0.28},
-  "speed": 0.94,
-  "clause_pause": 0.16,
-  "sentence_pause": 0.38,
-  "integrated_lufs": -18,
-  "true_peak_dbtp": -1.5
+  "model": "Supertonic 3",
+  "language": "en",
+  "preset": "M3",
+  "diffusion_steps": 10,
+  "speeds": {
+    "narrative": 0.91,
+    "action": 0.88,
+    "question": 0.85,
+    "evidence": 0.87
+  },
+  "integrated_lufs": -18.0,
+  "true_peak_dbtp": -1.8
 }

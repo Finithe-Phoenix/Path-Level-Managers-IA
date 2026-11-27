@@ -1,37 +1,40 @@
-# English narration
+# Narración en inglés
 
-The guide uses a blend of the British English Kokoro voices Emma (72%) and Isabella (28%). The narrator reads a complete thought across consecutive caption pages. A question leaves a little more time to think. Clause pauses let the viewer follow the cursor or read a result. The learning scripts, technical pronunciation dictionary and delivery settings are all editable.
+La edición 3 usa Supertonic 3 en CPU. El motor sintetiza a 44,1 kHz a partir de la voz de catálogo M3. El texto hablado se conserva en `lessons/episodes.json`. El preajuste, el número de pasos de difusión y el ritmo de preguntas, acciones y explicaciones se controlan en [profile.json](profile.json).
 
-## Rebuild
+El motor interpreta grupos de frases completos y conserva las pausas internas que genera al leerlos. Una pregunta deja tiempo para anticipar la respuesta. Después de una indicación o de un resultado hay una pausa para mirar la pantalla. Una semilla por episodio, escena y frase permite repetir la interpretación con la misma configuración.
 
-Use Python 3.12 on Linux and FFmpeg with the AAC encoder and loudnorm filter. The pinned Python packages reproduce the production toolchain. From the repository root, run the following in the approved remote workspace. Supply the path to this repository’s lesson JSON.
+## Cambiar el guion o la interpretación
+
+Ejecuta estos comandos en la raíz del repositorio en el workspace de GCP. El ejemplo `ID` representa un ID de la lista de episodios.
 
 ```bash
 python3.12 -m venv .venv
-. .venv/bin/activate
+source .venv/bin/activate
 python -m pip install -r voice/requirements.txt
 python voice/assets.py
-python voice/narrate.py --lessons PATH_TO_LESSON_LIST.json --out build/narrated --episode EPISODE_ID
-python voice/pace.py --input build/narrated/EPISODE_ID --out build/mastered/EPISODE_ID
-python voice/verify.py --loudness build/mastered/EPISODE_ID
+python studio.py list
+python studio.py voice ID
+python studio.py render ID
+python studio.py verify ID --decode
 ```
 
-Omit `--episode` to synthesize every lesson in the list. Use `--profile path/to/profile.json` to select a different blend or adjust pace. To keep model weights in a custom directory, pass that directory to `assets.py` as its positional argument and to `narrate.py` as `--assets DIRECTORY`.
+La descarga inicial verifica todos los pesos y el preajuste mediante [model-lock.json](model-lock.json). La generación posterior se ejecuta sin conexión. Las sesiones ONNX usan un hilo por defecto. Para comparar otra voz oficial, añade su JSON al manifiesto con la revisión y el SHA-256 correctos y selecciona el nombre en el perfil.
 
-The default cache is `~/.cache/ai-training-voice`. The two model files come from a specific upstream release. The downloader compares their SHA-256 hashes to `model-lock.json`; synthesis verifies both hashes again before opening the model. The full-precision English checkpoint and voice bank occupy approximately 354 MB in decimal units. The maintained release audio stems can be used offline to reconstruct the edit. A fresh synthesis can vary slightly with the inference runtime and platform.
+## Ajustar solo el ritmo
 
-## Listening pace
+```bash
+python studio.py pace ID --target-wpm 145
+python studio.py render ID
+python studio.py verify ID --decode
+```
 
-The first pass creates the actor’s take. The second pass sets the delivery pace to a target of 146 words per minute. It preserves pitch, leaves a short reading hold after the action in a scene, and moves the captions and scene cuts with the voice. Slower takes keep their pace. Adjust the pacing later with `pace.py --target-wpm 142` using the original first-pass stem and timing file. This second pass uses only Python and FFmpeg. The delivery bundle is ready once its `episode.json` exists.
+La toma base está en `takes/ID/`. El ajuste de ritmo parte de esa toma, conserva el tono y adapta las marcas al reloj de 24 fotogramas por segundo. La pista final está en `narration/ID/`, acompañada por `timing.json`. El SRT entregable está en `subtitles/`.
 
-## Episode outputs
+## Alineación y masterización
 
-| File | Purpose |
-| --- | --- |
-| `narration.m4a` | Frame-aligned mono AAC stem at 48 kHz. The delivery stem uses 144 kb/s with extra peak headroom after tempo adjustment. A measured two-pass EBU R128 master targets −18 LUFS and a −1.5 dBTP ceiling before encoding. |
-| `captions.srt` | UTF-8 English subtitles. Original spelling is preserved. |
-| `episode.json` | Source scenes with duration in seconds and 24 fps frames. Each scene contains subtitle cues with start/end times in seconds relative to that scene. |
+El alineador acústico inglés wav2vec 2.0 identifica los fotogramas de audio que corresponden a cada grupo del subtítulo mediante una trayectoria CTC de máxima puntuación. La transcripción mostrada conserva la ortografía del guion aunque la pronunciación de una sigla se desarrolle para la voz. Las marcas se recalculan después del ajuste de tempo. Si una palabra queda sola y breve, `display_captions.py` prolonga el subtítulo hasta 650 milisegundos cuando hay pausa. El dato `speechEnd` conserva el final acústico de la palabra para mezclar los efectos.
 
-The caption pages are phonemized individually, grouped into natural speech takes, and aligned to the acoustic model’s phoneme durations. The `voiceBuild` fingerprint identifies the script, model manifest, settings and episode input. Outputs are staged in the destination and the timing file is replaced last. The pronunciation map in `narrate.py` controls how abbreviations and commands sound. A future editor can also replace the stem with a human recording and adjust the caption cues and scene durations to match.
+El máster de diálogo es mono, AAC a 48 kHz y 192 kb/s. La mezcla usa un filtro pasaaltos a 55 Hz y una medición de sonoridad en dos pasadas con objetivo de −18 LUFS. Los modelos se descargan desde revisiones públicas fijadas. Los pesos de Supertonic están sujetos a la licencia OpenRAIL-M del proveedor y el alineador usa la arquitectura wav2vec 2.0.
 
-[English voice descriptions](https://huggingface.co/hexgrad/Kokoro-82M/blob/main/VOICES.md) · [Model distribution](https://github.com/thewh1teagle/kokoro-onnx/releases/tag/model-files-v1.1) · [Upstream inference library](https://github.com/thewh1teagle/kokoro-onnx).
+[Supertonic 3 y su licencia](https://huggingface.co/Supertone/supertonic-3/tree/3cadd1ee6394adea1bd021217a0e650ede09a323) · [Alineador ONNX](https://huggingface.co/Xenova/wav2vec2-base-960h/tree/a19f851b3d42865797e410752b4c570c871e4825) · [Modelo acústico original](https://huggingface.co/facebook/wav2vec2-base-960h).

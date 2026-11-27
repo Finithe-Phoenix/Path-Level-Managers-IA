@@ -11,6 +11,8 @@ import subprocess
 import sys
 import tempfile
 
+from display_captions import display_captions
+
 ROOT = Path(__file__).resolve().parent
 LESSONS = ROOT / "lessons" / "episodes.json"
 
@@ -63,20 +65,22 @@ def pack_voice(episode, source):
     if raw["id"] != id_ or [s["id"] for s in raw["scenes"]] != [s["id"] for s in episode["scenes"]]:
         raise ValueError(f"{id_} voice build does not match the lesson order.")
     marks = []
-    for timed, scene in zip(raw["scenes"], episode["scenes"]):
+    scenes, caption_text = display_captions(raw["scenes"], raw["fps"])
+    for timed, scene in zip(scenes, episode["scenes"]):
         if timed["narration"] != scene["narration"]:
             raise ValueError(f"{id_}/{scene['id']} has stale speech.")
         marks.append(dict(id=scene["id"], scriptSha256=script_hash(scene),
                           durationFrames=timed["durationFrames"], cues=timed["cues"]))
-    stem, captions = source / "narration.m4a", source / "captions.srt"
+    stem = source / "narration.m4a"
     target = narration(id_)
     target.mkdir(parents=True, exist_ok=True)
     srt(id_).parent.mkdir(parents=True, exist_ok=True)
     with tempfile.TemporaryDirectory(dir=ROOT) as temp:
         staging = Path(temp)
         shutil.copyfile(stem, staging / "narration.m4a")
-        shutil.copyfile(captions, staging / "captions.srt")
-        write_json(staging / "timing.json", dict(fps=raw["fps"], voiceBuild=raw.get("voiceBuild"), paceBuild=raw.get("paceBuild"),
+        captions = staging / "captions.srt"
+        captions.write_text(caption_text, encoding="utf-8")
+        write_json(staging / "timing.json", dict(audioEdition=3, fps=raw["fps"], voiceBuild=raw.get("voiceBuild"), paceBuild=raw.get("paceBuild"),
                    delivery=raw.get("delivery"), audioSha256=digest(stem),
                    captionsSha256=digest(captions), scenes=marks))
         os.replace(staging / "narration.m4a", target / "narration.m4a")
@@ -111,7 +115,7 @@ def composition(episode):
             raise ValueError(f"Speech changed in {id_}/{scene['id']}. Run voice {id_}.")
         frames = mark["durationFrames"]
         scenes.append(dict(scene, durationFrames=frames, duration=frames / fps, cues=mark["cues"]))
-    return dict(episode, fps=fps, width=1280, height=720, scenes=scenes,
+    return dict(episode, fps=fps, audioEdition=timing.get("audioEdition", 2), width=1280, height=720, scenes=scenes,
                 durationFrames=sum(s["durationFrames"] for s in scenes))
 
 
@@ -138,9 +142,19 @@ def verify(timed, path, decode=False):
     names = [c["tags"]["title"] for c in media["chapters"]]
     if names != [s["title"] for s in timed["scenes"]]:
         raise ValueError(f"{path.name} chapter mismatch")
+    if timed.get("audioEdition", 2) >= 3:
+        tracks = [s for s in media["streams"] if s["codec_type"] == "audio"]
+        expected_tracks = ["English · Sound design", "English · Narration only"]
+        if [t["tags"].get("handler_name") for t in tracks] != expected_tracks:
+            raise ValueError(f"Audio tracks differ in {path.name}")
+        if not tracks[0]["disposition"]["default"] or tracks[1]["disposition"]["default"]:
+            raise ValueError(f"Audio selection differs in {path.name}")
+        if any(t["codec_name"] != "aac" or t["tags"].get("language") != "eng"
+               or abs(float(t["duration"]) - expected) > 0.15 for t in tracks):
+            raise ValueError(f"Unexpected audio codec, language or duration in {path.name}")
     if decode:
         run(["ffmpeg", "-v", "error", "-xerror", "-threads", "1", "-i", path, "-map", "0:v:0",
-             "-map", "0:a:0", "-threads", "1", "-f", "null", "-"])
+             "-map", "0:a", "-threads", "1", "-f", "null", "-"])
     return expected
 
 
@@ -148,15 +162,28 @@ def build(timed, work, project):
     id_ = timed["id"]
     source = work / "episode.json"
     write_json(source, timed)
+    clean = narration(id_) / "narration.m4a"
+    mix = work / "film-mix.m4a"
+    run([sys.executable, ROOT / "sound/sounddesign.py", "--episode", source,
+         "--voice", clean, "--output", mix])
     args = ["node", ROOT / "engine/render.cjs", "--episode", source,
-            "--audio", narration(id_) / "narration.m4a", "--subtitles", srt(id_)]
+            "--audio", mix, "--subtitles", srt(id_)]
     if project:
         dest = ROOT / "build" / id_
         run(args + ["--project-dir", dest])
         shutil.copyfile(source, dest / "episode.json")
+        shutil.copyfile(clean, dest / "narration-clean.m4a")
         return dest
+    picture = work / "picture.mp4"
+    run(args + ["--output", picture])
     final = work / "final.mp4"
-    run(args + ["--output", final])
+    # Both tracks share the same edit. Stream copy keeps the mastered voice intact.
+    run(["ffmpeg", "-v", "error", "-y", "-i", picture, "-i", clean, "-map", "0:v:0",
+         "-map", "0:a:0", "-map", "1:a:0", "-map", "0:s:0", "-map_metadata", "0",
+         "-map_chapters", "0", "-c", "copy", "-disposition:a:0", "default", "-disposition:a:1", "0",
+         "-metadata:s:a:0", "language=eng", "-metadata:s:a:1", "language=eng",
+         "-metadata:s:a:0", "handler_name=English · Sound design",
+         "-metadata:s:a:1", "handler_name=English · Narration only", "-movflags", "+faststart", final])
     verify(timed, final)
     output = video(id_)
     output.parent.mkdir(exist_ok=True)
@@ -183,7 +210,7 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("command", choices=("list", "render", "project", "voice", "pace", "verify", "manifest"))
     parser.add_argument("episode", nargs="?", default="all", help="Episode ID or all")
-    parser.add_argument("--assets", type=Path, help="Directory with the pinned Kokoro model and voices")
+    parser.add_argument("--assets", type=Path, help="Directory with the pinned narration model and voice presets")
     parser.add_argument("--decode", action="store_true", help="Decode each frame and audio packet during verify")
     parser.add_argument("--target-wpm", type=int, help="Target instructional pace for voice or pace")
     parser.add_argument("--release", action="store_true", help="Also compare the entire path to release-manifest.json")

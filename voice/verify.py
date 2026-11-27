@@ -2,8 +2,14 @@
 import argparse
 import json
 from pathlib import Path
-import re
 import subprocess
+
+
+def timestamp(seconds):
+    seconds, ms = divmod(round(seconds * 1000), 1000)
+    minutes, seconds = divmod(seconds, 60)
+    hours, minutes = divmod(minutes, 60)
+    return f"{hours:02}:{minutes:02}:{seconds:02},{ms:03}"
 
 
 def report(directory, loudness):
@@ -25,14 +31,16 @@ def report(directory, loudness):
             if not 0 <= previous <= cue["start"] < cue["end"] <= scene["duration"] + .001:
                 raise ValueError(f"Invalid cue in {ep['id']}/{scene['id']}")
             previous = cue["end"]
-            cues.append(cue["text"].replace("\n", " "))
+            start = timestamp(frames / ep["fps"] + cue["start"])
+            end = timestamp(frames / ep["fps"] + cue["end"])
+            cues.append(f"{len(cues) + 1}\n{start} --> {end}\n{cue['text']}")
         transcript = " ".join(cue["text"] for cue in scene["cues"])
         # A subtitle can wrap a hyphenated word at its existing hyphen.
         if transcript.replace("-\n", "-").split() != scene["narration"].split():
             raise ValueError(f"Caption transcript mismatch in {ep['id']}/{scene['id']}")
         frames += scene["durationFrames"]
     srt = (directory / "captions.srt").read_text()
-    if len(cues) != len(re.findall(r" --> ", srt)) or frames != ep["durationFrames"]:
+    if "\n\n".join(cues) + "\n" != srt or frames != ep["durationFrames"]:
         raise ValueError(f"Inconsistent timed data in {directory}")
     if loudness:
         process = subprocess.run(["ffmpeg", "-nostdin", "-hide_banner", "-i", str(audio), "-af",

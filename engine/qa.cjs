@@ -9,7 +9,7 @@ const {parseArgs} = require('node:util');
 
 const components = [
   'manager-visuals.cjs', 'architecture.cjs', 'foundations.cjs',
-  'workbenches.cjs', 'stage.cjs'
+  'workbenches.cjs', 'plates.cjs', 'cinema.cjs', 'cold-open.cjs', 'lab-motion.cjs', 'stage.cjs'
 ];
 const fontFaces = [
   ['Open Sans', '400', 'OpenSans-Regular.ttf'],
@@ -72,7 +72,8 @@ async function openChromium(bin) {
       browser.kill('SIGTERM');
       await done;
     }
-    await fs.rm(profile, {recursive: true, force: true});
+    // Chromium helpers can finish flushing the profile just after the main process exits.
+    await fs.rm(profile, {recursive: true, force: true, maxRetries: 5, retryDelay: 150});
   }
   return {send, close};
 }
@@ -129,7 +130,11 @@ function installProbe() {
     const rectangles = [...h.querySelectorAll('rect')].filter(visible).map(node => ({
       node, box: bounds(node)
     })).filter(({box}) => box.width >= 82 && box.height >= 24
-      && box.x >= 36 && box.y >= 226 && box.right <= 1249 && box.bottom <= 580);
+      && box.x >= 36 && box.y >= 200 && box.right <= 1249 && box.bottom <= 538);
+    // During a film cut the two exposures are different shots. Panels, text and
+    // masks belong to the same exposure; a full-period overlay restarts its surface.
+    const plane = node => node.closest('[data-film-region]') || node.closest('[data-film-exposure]') || h;
+    const exposure = node => node.closest('[data-film-exposure]') || h;
     const result = [];
     for (let i = 0; i < shapes.length; i++) {
       const first = shapes[i];
@@ -137,13 +142,14 @@ function installProbe() {
       if (!inside(box, {x: 0, y: 0, right: width, bottom: height}, 1)) {
         result.push({type: 'viewport', text: first.text, box});
       }
-      if (box.y >= 177 && box.y < 563 && (box.x < 36 || box.right > 1246 || box.bottom > 574)) {
+      if (first.node.closest('[data-film-region="workspace"]') && (box.x < 36 || box.right > 1246 || box.bottom > 544)) {
         result.push({type: 'panel', text: first.text, box});
       }
       const midY = (box.y + box.bottom) / 2;
       // Prefer the smallest preceding panel enclosing the first glyph. A
       // progress track, highlight strip, or later overlay is not a text box.
       const parents = rectangles.filter(({node, box: r}) =>
+        plane(node) === plane(first.node) &&
         (node.compareDocumentPosition(first.node) & Node.DOCUMENT_POSITION_FOLLOWING)
         && box.x >= r.x + 1 && box.x <= r.right - 10
         && midY >= r.y + 1 && midY <= r.bottom - 1
@@ -153,6 +159,9 @@ function installProbe() {
       }
       for (let j = 0; j < i; j++) {
         const second = shapes[j];
+        if (exposure(first.node)!==exposure(second.node)) continue;
+        const p1=first.node.closest('[data-film-region]'), p2=second.node.closest('[data-film-region]');
+        if (p1 && p2 && p1!==p2 && (p1.dataset.filmRegion==='evidence'||p2.dataset.filmRegion==='evidence')) continue;
         const other = second.box;
         const dx = Math.min(box.right, other.right) - Math.max(box.x, other.x);
         const dy = Math.min(first.glyph.bottom, second.glyph.bottom) - Math.max(first.glyph.y, second.glyph.y);
@@ -168,9 +177,12 @@ function installProbe() {
     prepared = stage.prepare(input);
     return prepared.scenes.map(scene => {
       const samples = [...new Set([
-        0, 12, ...scene.events.map(time => Math.round((time + .3) * stage.FPS)),
+        0, 7, 18, ...(scene.index===0?[36,70,86,95]:[]),
+        ...(window.StudioColdOpen.beats?.(prepared,scene)||[]).map(t=>Math.round((t+.33)*stage.FPS)),
+        ...(window.WorkshopLabMotion.beats?.(scene)||[]).map(t=>Math.round((t+.30)*stage.FPS)),
+        ...[1.8,2.65,3.8].map(d=>Math.round((scene.resultAt+d)*stage.FPS)), ...scene.events.map(time => Math.round((time + .3) * stage.FPS)),
         Math.round(scene.resultAt * stage.FPS) + 5, scene.durationFrames - 1
-      ].map(at => Math.min(scene.durationFrames - 1, at)))];
+      ].map(at => Math.max(0,Math.min(scene.durationFrames-1,at))))];
       const issues = [];
       for (const offset of samples) {
         for (const finding of probe(scene.start + offset)) issues.push({offset, ...finding});

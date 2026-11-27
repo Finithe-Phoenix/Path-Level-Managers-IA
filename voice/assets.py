@@ -9,7 +9,7 @@ import tempfile
 import urllib.request
 
 LOCK = Path(__file__).with_name("model-lock.json")
-DEFAULT_CACHE = Path.home() / ".cache" / "ai-training-voice"
+DEFAULT_CACHE = Path.home() / ".cache" / "ai-training-supertonic3"
 
 
 def digest(path):
@@ -26,7 +26,8 @@ def ensure_assets(directory, download=False):
         if not download:
             raise SystemExit(f"Missing or invalid {name}. Run: python voice/assets.py {directory}")
         with tempfile.TemporaryDirectory(dir=directory) as staging:
-            temporary = Path(staging) / name
+            target.parent.mkdir(parents=True, exist_ok=True)
+            temporary = Path(staging) / "download"
             with urllib.request.urlopen(entry["url"], timeout=120) as source, temporary.open("wb") as dest:
                 shutil.copyfileobj(source, dest)
             if digest(temporary) != entry["sha256"]:
